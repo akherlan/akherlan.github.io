@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>website on Engineer of words</title>
+    <link>/tags/website/</link>
+    <description>Recent content in website on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tema Hugo Lithium Tidak Responsif</title>
+      <link>/tema-hugo-lithium-tidak-responsif/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tema-hugo-lithium-tidak-responsif/</guid>
+      <description>Ini merupakan tulisan dokumentasi saya untuk permasalahan tema Lithium yang tidak responsif (saat tulisan ini mulai ditulis). Ukuran gambar tidak menyesuaikan ukuran layar. Sangat fatal ketika dibuka dari ponsel. Padahal sebagian besar akses internet hari ini adalah melalui ponsel. Alamak!
+Awalnya saya tanya di grup GNU/R Indonesia, walaupun ini tidak ada kaitannya sama sekali dengan pemrograman R. Tapi karena saya ngeblog dari R menggunakan paket blogdown, jadi saya coba tanyakan saja.</description>
+    </item>
+    
+  </channel>
+</rss>

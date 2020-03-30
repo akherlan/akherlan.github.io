@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google on Engineer of words</title>
+    <link>/tags/google/</link>
+    <description>Recent content in google on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bermain dengan Data Google Maps</title>
+      <link>/google-maps-data/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/google-maps-data/</guid>
+      <description>Singkat dan langsung saja.
+Data yang saya gunakan adalah data hasil tracking GPS-nya Google di ponsel pintar saya. Ups… Menyebar nich saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.
+Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google.com. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai data punya saya.
+# library yang saya gunakan library(dplyr) library(tidyr) library(ggplot2) # mungkin juga butuh lubridate untuk memuat sampel data library(lubridate) # memuat data (ini sudah dirapikan, aslinya json atau xml, lupa) # jika ingin sample data yang saya pakai silakan # unduh di https://akherlan.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hujan on Engineer of words</title>
+    <link>/tags/hujan/</link>
+    <description>Recent content in hujan on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/hujan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uji Chi Kuadrat pada Data Hujan</title>
+      <link>/uji-chi-kuadrat-pada-data-hujan/</link>
+      <pubDate>Sat, 31 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/uji-chi-kuadrat-pada-data-hujan/</guid>
+      <description>Saya harus belajar statistika lagi…
+TL;DR Mau ngasih tau langkah-langkah pengujian Chi-Square pakai R untuk analisis data curah hujan.
+ Maksud dan Tujuan Kali ini saya akan melakukan pengujian Chi-Square atau Khi-Kuadrat (kata Wikipedia) pada data curah hujan Samarinda. Bacanya khay bukan chiy!
+Pengujian ini termasuk analisis uji kecocokan sebaran, yaitu goodness of fit test (oppo iku?). Dipakai untuk menguji kecocokan distribusi frekuensi sampel data terhadap fungsi distribusi peluang yang diperkirakan dapat menggambarkan atau mewakili distribusi frekuensi tersebut (rumitnya bahasa copas).</description>
+    </item>
+    
+    <item>
+      <title>Visualisasi Ketersediaan Data Hujan</title>
+      <link>/visualisasi-ketersediaan-data-hujan/</link>
+      <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/visualisasi-ketersediaan-data-hujan/</guid>
+      <description>Pusing nggak, sih, nyari data? Huuft…
+Objective Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi “kekosongan” data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen sih kelengkapannya?
+Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.</description>
+    </item>
+    
+  </channel>
+</rss>

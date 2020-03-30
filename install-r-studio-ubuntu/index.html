@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.63.1" />
+
+
+<title>Menginstall R Studio Di Ubuntu - Engineer of words</title>
+<meta property="og:title" content="Menginstall R Studio Di Ubuntu - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Menginstall R Studio Di Ubuntu</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 18 Sep 2018
+      
+    </span>
+    
+
+    <div class="article-content">
+      <p>Malam ini saya coba menginstall R Studio, yaitu IDE untuk pemrograman R. Ternyata R Studio di GNU/Linux lebih ringan (jauh) dibandingkan dengan R Studio di Windows. Atau mungkin itu cuma perasaan saya saja. Tapi tidak, kelihatannya itu benar. Nanti, kita bisa cari informasi tentang itu. Saat ini saya ingin menuliskan tata cara menginstall R Studio di <strong>Ubuntu Bionic</strong> saya.</p>
+<p>Pertama yang saya lakukan adalah mengunduh paket <code>*.deb</code> R Studio dari <a href="https://www.rstudio.com/products/rstudio/download/">laman resminya</a>.</p>
+<p>Kedua, saya coba install langsung melalui <strong>gdebi</strong>, tapi ternyata dia minta dependensi (paket pendukung tambahan) yaitu <code>libgstreamer0.10-0</code>.</p>
+<p>Karena gagal menginstall, jadi saya cari paket yang dibutuhkan itu dari internet, sambil cari cara-cara bagaimana menghadapi permasalahan ini dengan benar. Solusinya ditemukan <a href="http://stackoverflow.com/questions/40413323/ddg#40938717">di forum biasa</a>. Biar saya jabarkan saja sekalian dalam tulisan ini:</p>
+<p>Install paket dependensi yang dibutuhkan: <code>libgstreamer0.10-0</code> dan <code>libgstreamer-plugins-base0.10-0</code>, diunduh dari laman <a href="https://pkgs.org/download/libgstreamer0.10-0">berikut</a> dan laman <a href="https://pkgs.org/download/libgstreamer-plugins-base0.10-0">berikut juga</a>, sesuaikan dengan kebutuhan (saya pakai paket unutk Ubuntu Xenial yang i386 karena pakai Ubuntu 32bit).</p>
+<pre><code class="language-cd" data-lang="cd">sudo dpkg -i libgstreamer0.10-0_danseterusnya.deb
+sudo dpkg -i libgstreamer-plugins-base0.10-0_danseterusnya.deb
+</code></pre><p>Beri tanda pada paket <code>libgstreamer0</code> yang terinstall agar tidak &ldquo;diganggu-gugat&rdquo;</p>
+<pre><code class="language-sudo" data-lang="sudo">sudo apt-mark hold libgstreamer-plugins-base0.10-0
+</code></pre><p>Barulah install paket <code>.deb</code> R Studio-nya:</p>
+<p><code>sudo gdebi rstudio-danseterusnya.deb</code></p>
+<p>R Studio sudah bisa dipakai. Sekian.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.id" class="footer-links-kudos"><img src="/images/cc-by-sa-88x31.png" alt="Creative Commons Licenses" width="50%" height="50%"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on Engineer of words</title>
+    <link>/tags/ruby/</link>
+    <description>Recent content in ruby on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ruby: &#34;Hello World!&#34;</title>
+      <link>/ruby-hello-world/</link>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/ruby-hello-world/</guid>
+      <description>Latar Belakang Saya dapat kerjaan bantu-bantu ngurusin web. Nggak ngoding-ngoding banget, sih. Enak jadinya, cenderung lebih santai. Tapi saya masih belum puas dengan metode yang saat ini sedang dipakai. Berbekal rasa penasaran saya cari tahu teknologi apa yang kiranya cocok digunakan seandainya ganti metode develop-nya.
+Ceritanya, ini adalah website yang diharapkan bisa punya fitur ruang kumpul komunitas dan proses pesan jasa. Saya cari tahu framework yang dipakai oleh kompetitor terbesar saat ini.</description>
+    </item>
+    
+  </channel>
+</rss>

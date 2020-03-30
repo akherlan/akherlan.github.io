@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.63.1" />
+
+
+<title>Uji Chi Kuadrat pada Data Hujan - Engineer of words</title>
+<meta property="og:title" content="Uji Chi Kuadrat pada Data Hujan - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Uji Chi Kuadrat pada Data Hujan</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 31 Aug 2019
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p><em>Saya harus belajar statistika lagi…</em></p>
+<div id="tldr" class="section level2">
+<h2>TL;DR</h2>
+<p>Mau ngasih tau langkah-langkah pengujian Chi-Square pakai R untuk analisis data curah hujan.</p>
+</div>
+<div id="maksud-dan-tujuan" class="section level2">
+<h2>Maksud dan Tujuan</h2>
+<p>Kali ini saya akan melakukan pengujian <strong>Chi-Square</strong> atau <strong>Khi-Kuadrat</strong> (<a href="https://id.wikipedia.org/wiki/Distribusi_khi-kuadrat">kata Wikipedia</a>) pada data curah hujan Samarinda. Bacanya <em>khay</em> bukan <em>chiy</em>!</p>
+<p>Pengujian ini termasuk analisis uji kecocokan sebaran, yaitu <em>goodness of fit test</em> (<a href="https://www.google.com/search?safe=strict&amp;source=hp&amp;ei=VTpqXb2MGJzAz7sPt8mR6Ao&amp;q=the+goodness+of+fit+test">oppo iku?</a>). Dipakai untuk menguji kecocokan distribusi frekuensi sampel data terhadap fungsi distribusi peluang yang diperkirakan dapat menggambarkan atau mewakili distribusi frekuensi tersebut (rumitnya bahasa copas).</p>
+<p>Gampangnya gimana? Kenapa perlu ada uji Chi-Kuadrat <span class="math inline">\((\chi^2)\)</span>?</p>
+<p>Maksud dari pengujian ini adalah untuk menentukan persamaan distribusi yang akan dipilih nanti, apakah bisa mewakili distribusi statistik sampel data yang dianalisis atau tidak.</p>
+<p>Selain dengan metode ini, pengujian lain yang juga sering dipakai untuk analisis kecocokan distribusi curah hujan adalah metode pengujian Kolmogorov-Smirnov. <em>Hwaadaaw~!</em></p>
+<p>Nanti kita belajar yang itu juga, insyaAllah…</p>
+<div id="syarat" class="section level3">
+<h3>Syarat</h3>
+<p>Analisis bisa diterima kalau nilai Chi-Kuadrat yang kita hitung kurang dari Chi-Kuadrat Kritis <span class="math inline">\((\chi_{h}^2 &lt; \chi_{cr}^2)\)</span>. Nilai kritis itu diperoleh dari tabel, atau melalui fungsi yang disediakan oleh R. Hhm… menarik.</p>
+</div>
+</div>
+<div id="sumber-data" class="section level2">
+<h2>Sumber Data</h2>
+<p>Saya dapat data hujan ini dari seorang teman yang tinggal di Samarinda. Dia ambil bidang peminatan studi yang sama dengan saya. Jadi, dia juga ngolah data hujan gitu, seperti saya. Dan dia dapat data ini dari mana? Pasti dari instansi penyedia data meteorologi setempat (saya menerka).</p>
+<p><strong>Data adalah curah hujan maksimum tahunan.</strong></p>
+<p>Data ini sudah saya rapikan dan disimpan dalam format <code>csv</code> agar teman-teman bisa langsung ikut mempraktikan apa yang saya tulis di sini.</p>
+<p>Silakan unduh melalui <a href="https://raw.githubusercontent.com/akherlan/blog/master/static/data/hujan-samarinda.csv">tautan ini</a> (klik kanan lalu <em>save as</em>). Atau tidak usah juga tidak apa. Nanti kita bisa akses langsung saja dari url di RStudio kesayangan Anda. Seperti yang akan kita lakukan berikut.</p>
+</div>
+<div id="persiapan-data" class="section level2">
+<h2>Persiapan Data</h2>
+<p>Lakukan impor data dari repositori github (pakai koneksi internet).</p>
+<pre class="r"><code>url &lt;- &quot;https://raw.githubusercontent.com/akherlan/blog/master/static/data/hujan-samarinda.csv&quot;
+data &lt;- read.csv(url)
+data</code></pre>
+<pre><code>##    tahun  data
+## 1   1999 117.1
+## 2   2000  83.8
+## 3   2001 101.6
+## 4   2002  66.3
+## 5   2003  87.7
+## 6   2004 118.2
+## 7   2005 108.0
+## 8   2006 132.1
+## 9   2007  94.4
+## 10  2008  73.0
+## 11  2009  60.2
+## 12  2010  86.5
+## 13  2011 105.5
+## 14  2012  98.9
+## 15  2013  96.0
+## 16  2014 102.5
+## 17  2015  78.8
+## 18  2016 120.1
+## 19  2017 102.3</code></pre>
+<pre class="r"><code>summary(data)</code></pre>
+<pre><code>##      tahun           data       
+##  Min.   :1999   Min.   : 60.20  
+##  1st Qu.:2004   1st Qu.: 85.15  
+##  Median :2008   Median : 98.90  
+##  Mean   :2008   Mean   : 96.47  
+##  3rd Qu.:2012   3rd Qu.:106.75  
+##  Max.   :2017   Max.   :132.10</code></pre>
+<p>Jika tadi sudah mengunduh datanya terlebih dulu, maka bisa mengganti nilai yang didefinisikan ke <code>url</code> dengan lokasi penyimpanan berkas <code>.csv</code>-nya.</p>
+</div>
+<div id="pengolahan-data" class="section level2">
+<h2>Pengolahan Data</h2>
+<p>Pertama, kita akan membagi data menjadi kelompok-kelompok tertentu (distribusi frekuensi). Tapi sebelumnya, ada beberapa parameter yang harus ditentukan dulu seperti di bawah.</p>
+<div id="jumlah-kelas-data" class="section level3">
+<h3>1. Jumlah kelas data</h3>
+<p>Katakanlah kita ingin membuat kelompok-kelompok tertentu untuk mencacah data kita. Jumlahnya (<span class="math inline">\(G\)</span>) bisa kita hitung dengan persamaan ini:</p>
+<p><span class="math inline">\(G = 1 + 3.322 \times log(n)\)</span></p>
+<p>dengan <span class="math inline">\(n\)</span> merupakan jumlah data yang kita punya.</p>
+<pre class="r"><code># nilai G yang dibulatkan ke atas
+g &lt;- ceiling(1 + 3.322 * log10(nrow(data)))
+g</code></pre>
+<pre><code>## [1] 6</code></pre>
+</div>
+<div id="interval-kelas" class="section level3">
+<h3>2. Interval kelas</h3>
+<p>Interval antar kelompok (<span class="math inline">\(\Delta X\)</span>) bisa kita tentukan dengan cara berikut:</p>
+<p><span class="math inline">\(\Delta X = \frac {X_{max} - X_{min}}{G - 1}\)</span></p>
+<p>Dimana, <span class="math inline">\(X_{max}\)</span> merupakan nilai data paling besar dan <span class="math inline">\(X_{min}\)</span> merupakan nilai data paling kecil.</p>
+<pre class="r"><code># interval data
+int &lt;- (max(data$data) - min(data$data)) / (g-1)
+int</code></pre>
+<pre><code>## [1] 14.38</code></pre>
+</div>
+<div id="batas-batas-kelas" class="section level3">
+<h3>3. Batas-batas kelas</h3>
+<p><span class="math inline">\(X_{awal} = X_{min} - 0.5 \Delta X\)</span></p>
+<p><span class="math inline">\(X_{akhir} = X_{max} + 0.5 \Delta X\)</span></p>
+<pre class="r"><code># batas awal kelas
+awal &lt;- min(data$data) - 0.5*int
+awal</code></pre>
+<pre><code>## [1] 53.01</code></pre>
+<pre class="r"><code># batas akhir kelas
+akhir &lt;- max(data$data) + 0.5*int
+akhir</code></pre>
+<pre><code>## [1] 139.29</code></pre>
+<p>Sampai di sini, kita sudah tahu bahwa nanti kita buat data jadi enam kelompok. Batas awal 53.01 dan batas akhir 139.29 dengan interval 14.38.</p>
+<p>Setelah ditentukan batas-batas dan interval data, sekarang kita bisa mendistribusikan data ke dalam masing-masing kelompoknya, yang ada enam itu.</p>
+<p>Misal, kalau ada rentang data 0-10, kita buat jadi 5 kelompok dengan interval 2. Maka nilai 9 akan kita masukkan ke kelompok data 8-10, bukan kelompok data 4-6, dan dihitung 1. Kalau ada nilai 10. Kita masukkan lagi ke kelompok 8-10. Jadi sekarang ada 2 frekuensinya. Begitu juga dengan nilai lain.</p>
+<p>Caranya…</p>
+<pre class="r"><code># buat kelompok-kelompoknya
+kelompok &lt;- seq(awal, akhir, by=int)
+
+# menghitung frekuensi (banyaknya data) tiap kelompok 
+masuk.kelas &lt;- cut(data$data, kelompok, right = FALSE)
+freq &lt;- table(masuk.kelas)
+dist.freq &lt;- cbind(freq)
+dist.freq</code></pre>
+<pre><code>##             freq
+## [53,67.4)      2
+## [67.4,81.8)    2
+## [81.8,96.2)    5
+## [96.2,111)     6
+## [111,125)      3
+## [125,139)      1</code></pre>
+<p>Sekarang, kita sudah memperoleh frekuensi dari masing-masing kelompok data.</p>
+</div>
+</div>
+<div id="menghitung-chi-kuadrat" class="section level2">
+<h2>Menghitung Chi-Kuadrat</h2>
+<p>Aslinya, rumus untuk menghitung Chi-Kuadrat adalah seperti ini:</p>
+<p><span class="math inline">\(\chi_{h}^2 = \sum\limits_{i=1}^G \frac{{(O_i - E_i)}^2}{E_i}\)</span></p>
+<p>Tapi di R, ada fungsinya, tinggal pakai <code>chisq.test(datakamu)</code>. Untuk kasus data curah hujan yang kita punya, jadi begini:</p>
+<pre class="r"><code>chisq &lt;- chisq.test(dist.freq)
+chisq</code></pre>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  dist.freq
+## X-squared = 5.9474, df = 5, p-value = 0.3114</code></pre>
+<p>Ketika membandingkan <span class="math inline">\(\chi_{h}^2\)</span> dengan <span class="math inline">\(\chi_{cr}^2\)</span> sesungguhnya saya mengalami kebingungan. Ada dua versi…</p>
+<div id="versi-pertama" class="section level3">
+<h3>Versi pertama<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h3>
+<p>Dengan derajat kebebasan (<em>degree of freedom</em> = <code>df</code>) yang diperoleh dari <span class="math inline">\(G-1\)</span>, sehingga menghasilkan <span class="math inline">\(df = 5\)</span>. Nilai ini sesuai dengan hasil perhitungan di R menggunakan fungsi <code>chisq.test()</code>.</p>
+</div>
+<div id="versi-kedua" class="section level3">
+<h3>Versi kedua<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h3>
+<p>Dengan derajat kebebasan yang dihitung berdasarkan dua kondisi, yaitu:</p>
+<ol style="list-style-type: decimal">
+<li>untuk distribusi normal dan binomial <span class="math inline">\((P = 2)\)</span></li>
+<li>untuk distribusi gumbel dan poisson <span class="math inline">\((P = 1)\)</span></li>
+</ol>
+<p>dihitung dengan cara <span class="math inline">\(G-(P+1)\)</span> sehingga menghasilkan <span class="math inline">\(df = 3\)</span> (untuk distribusi normal).</p>
+<p>Entahlah, harus belajar lagi. Tapi untuk sementara mari kita gunakan yang versi kedua untuk kasus kali ini. Nanti kalau sudah ketemu jawaban paling tepat akan saya perbarui artikel ini.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Kita tidak menggunakan nilai p (<code>p-value</code>) yang dihasilkan dari perhitungan Chi-Square melalui fungsi <code>chisq.test()</code> karena <span class="math inline">\(df = 5\)</span> sedangkan yang kita perlukan adalah <span class="math inline">\(df = 3\)</span>. Sehingga kita akan mencari nilai p pada selang kepercayaan 0.05 (persentil ke-95).</p>
+<p>Untuk memperoleh nilai Chi-Square kritis <span class="math inline">\((\chi_{cr}^2)\)</span> bisa dengan fungsi berikut:</p>
+<pre class="r"><code>qchisq(0.95, df = 3)</code></pre>
+<pre><code>## [1] 7.814728</code></pre>
+</div>
+</div>
+<div id="kesimpulan" class="section level2">
+<h2>Kesimpulan</h2>
+<p>Data hujan bisa diterima karena nilai Chi-Kuadrat hitung <span class="math inline">\(\chi_{h}^2 = 5.947\)</span> kurang dari nilai kritis <span class="math inline">\(\chi_{cr}^2 = 7.815\)</span> (selang kepercayaan 0.05 untuk distribusi normal).</p>
+<p>Yah, begitu. Gampang bukan?</p>
+</div>
+<div id="bonus" class="section level2">
+<h2>Bonus!</h2>
+<p>Kalau teman-teman gak mau pakai R, mau pakai Excel saja! Mari bandingkan hasilnya.</p>
+<div class="figure">
+<img src="/post/2019-08-31-uji-chi-kuadrat-pada-data-hujan_files/chi-square-excel.png" alt="Menghitung uji Chi-Square dalam worksheet" />
+<p class="caption">Menghitung uji Chi-Square dalam worksheet</p>
+</div>
+<p>Demikian saya sampaikan. Sekian. Terima kasih.</p>
+</div>
+<div id="referensi" class="section level2">
+<h2>Referensi</h2>
+<ol style="list-style-type: decimal">
+<li>Analisa Frekuensi dan Probabilitas Curah Hujan | <a href="https://t.me/ts2013a/109">unduh pdf</a> lewat telegram (di dalamnya ada tabel <span class="math inline">\(\chi^2\)</span> kritis)</li>
+<li>Distribusi Frekuensi Data Kuantitatif di web <a href="http://www.r-tutor.com/elementary-statistics/quantitative-data/frequency-distribution-quantitative-data">R-Tutor.com</a></li>
+<li>The Goodness Fit di web <a href="http://www.r-tutor.com/elementary-statistics/goodness-fit/multinomial-goodness-fit">R-Tutor.com</a></li>
+<li>Distribusi Chi-Kuadrat di web <a href="http://www.r-tutor.com/elementary-statistics/probability-distributions/chi-squared-distribution">R-Tutor.com</a></li>
+</ol>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Dari pernyataan dalam halaman web <a href="https://sciencing.com/info-8027315-degrees-freedom-chisquare-test.html">Sciencing.com</a> bagian <em>Calculating</em>, juga dalam <a href="https://www.statistikian.com/2012/11/rumus-chi-square.html">Statistikian</a> pada bagian <em>Chi Square Hitung VS Chi Square Tabel</em>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Norma Puspita, S.T., M.T., pada halaman 13 <a href="https://t.me/ts2013a/109">tutorial berikut</a> (format pdf).<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Mohon bagi pembaca yang tahu jawabannya untuk menghubungi saya lewat <a href="https://t.me/akherlan">telegram</a>. Terima kasih~<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.id" class="footer-links-kudos"><img src="/images/cc-by-sa-88x31.png" alt="Creative Commons Licenses" width="50%" height="50%"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>

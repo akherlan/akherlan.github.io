@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistika on Engineer of words</title>
+    <link>/categories/statistika/</link>
+    <description>Recent content in statistika on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/statistika/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uji Chi Kuadrat pada Data Hujan</title>
+      <link>/uji-chi-kuadrat-pada-data-hujan/</link>
+      <pubDate>Sat, 31 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/uji-chi-kuadrat-pada-data-hujan/</guid>
+      <description>Saya harus belajar statistika lagi…
+TL;DR Mau ngasih tau langkah-langkah pengujian Chi-Square pakai R untuk analisis data curah hujan.
+ Maksud dan Tujuan Kali ini saya akan melakukan pengujian Chi-Square atau Khi-Kuadrat (kata Wikipedia) pada data curah hujan Samarinda. Bacanya khay bukan chiy!
+Pengujian ini termasuk analisis uji kecocokan sebaran, yaitu goodness of fit test (oppo iku?). Dipakai untuk menguji kecocokan distribusi frekuensi sampel data terhadap fungsi distribusi peluang yang diperkirakan dapat menggambarkan atau mewakili distribusi frekuensi tersebut (rumitnya bahasa copas).</description>
+    </item>
+    
+  </channel>
+</rss>

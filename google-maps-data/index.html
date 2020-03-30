@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.63.1" />
+
+
+<title>Bermain dengan Data Google Maps - Engineer of words</title>
+<meta property="og:title" content="Bermain dengan Data Google Maps - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Bermain dengan Data Google Maps</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 26 Mar 2020
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>Singkat dan langsung saja.</p>
+<p>Data yang saya gunakan adalah data hasil <em>tracking</em> GPS-nya Google di ponsel pintar saya. Ups… Menyebar <em>nich</em> saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.</p>
+<p>Teman-teman bisa pakai data punya sendiri dengan unduh dari laman <a href="https://takeout.google.com/">takeout.google.com</a>. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai <a href="https://akherlan.github.io/databoard">data punya saya</a>.</p>
+<pre class="r"><code># library yang saya gunakan
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+# mungkin juga butuh lubridate untuk memuat sampel data
+library(lubridate)</code></pre>
+<pre class="r"><code># memuat data (ini sudah dirapikan, aslinya json atau xml, lupa)
+# jika ingin sample data yang saya pakai silakan
+# unduh di https://akherlan.github.io/databoard dengan nama sample_gmap_data
+# ganti &quot;data/data.rds&quot; jadi lokasi tempat menyimpan sample_gmap_data
+google_maps_visited_2019 &lt;- readRDS(&quot;data/data.rds&quot;)</code></pre>
+<p>Lihat-lihat dulu seperti apa isi datanya.</p>
+<pre class="r"><code>glimpse(google_maps_visited_2019)</code></pre>
+<pre><code>## Observations: 1,532
+## Variables: 6
+## $ name  &lt;chr&gt; &quot;MTs Islamiyah Waled&quot;, &quot;MTs Islamiyah Waled&quot;, &quot;Babakan&quot;, &quot;Unive…
+## $ lon   &lt;dbl&gt; 108.7018, 108.7018, 108.7187, 106.8416, 106.8519, 106.8344, 106…
+## $ lat   &lt;dbl&gt; -6.925215, -6.925215, -6.860326, -6.354367, -6.349925, -6.33894…
+## $ start &lt;dttm&gt; 2019-01-05 08:54:14, 2019-01-07 09:21:53, 2019-01-08 14:23:11,…
+## $ end   &lt;dttm&gt; 2019-01-05 11:48:24, 2019-01-08 11:22:53, 2019-01-08 14:45:46,…
+## $ dur   &lt;Duration&gt; 10449.5369999409s (~2.9 hours), 93660.3600001335s (~1.08 d…</code></pre>
+<pre class="r"><code>google_maps_visited_2019[google_maps_visited_2019$name==&quot;KFC&quot;,]</code></pre>
+<pre><code>## # A tibble: 2 x 6
+##   name    lon   lat start               end                
+##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             
+## 1 KFC    107. -6.34 2019-08-23 22:15:49 2019-08-23 23:19:32
+## 2 KFC    107. -6.37 2019-08-24 09:19:07 2019-08-24 13:04:18
+## # … with 1 more variable: dur &lt;Duration&gt;</code></pre>
+<p>Ternyata ada dua KFC yang koordinatnya berbeda!</p>
+<p>Ketika saya hitung jaraknya di web <a href="https://gps-coordinates.org/distance-between-coordinates.php">gps-coordinates.org</a>, jarang antar KFC’s itu ~3km!</p>
+<p><img src="/post/2020-03-26-bermain-dengan-data-google-maps_files/kfc_distance.png" style="width:100.0%" /></p>
+<p>Ini tidak bisa dibiarkan.</p>
+<p>Bikin <code>id</code> unik untuk masing-masing nama tempat dengan komposisi koordinat.</p>
+<pre class="r"><code>place &lt;- google_maps_visited_2019 %&gt;% 
+  select(lon, lat) %&gt;% 
+  unite(&quot;id&quot;, lon:lat, sep = &quot;,&quot;) %&gt;% 
+  bind_cols(., google_maps_visited_2019)</code></pre>
+<p>Seharusnya kita pakai parameter toleransi jarak yang termasuk satu tempat, untuk yang beda koordinat tapi sebetulnya tempatnya sama. Tapi…</p>
+<p>Kayaknya bakal kepanjangan. Lagipula belum cari cara ngitung jarak antar dua koordinat. Sementara bolehlah pakai koordinat unik duluu~</p>
+<p>Berikutnya, apa ada kejadian dimana satu id unik dinamai berbeda?</p>
+<p>Thanks to <a href="https://stackoverflow.com/questions/16905425/find-duplicate-values-in-r">StackOverflow</a> (<em>always</em>):</p>
+<pre class="r"><code>place_unique &lt;- unique(place[1:2])
+occurance &lt;- data.frame(table(place_unique$id)) %&gt;% `names&lt;-`(c(&quot;id&quot;, &quot;freq&quot;))
+place_unique[place_unique$id %in% occurance$id[occurance$freq&gt;1],]</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   id                    name                   
+##   &lt;chr&gt;                 &lt;chr&gt;                  
+## 1 106.789772,-6.2084127 Tempo Institute        
+## 2 106.790123,-6.2087326 Tempo Institute        
+## 3 106.790123,-6.2087326 PT Tempo Inti Media Tbk
+## 4 106.789772,-6.2084127 Ruang &amp; Tempo</code></pre>
+<p>Ternyata ada dua pasang koordinat yang sama tapi namanya berbeda. Jadikan satu nama saja.</p>
+<pre class="r"><code># rename
+place[place$id==&quot;106.789772,-6.2084127&quot;,]$name &lt;- &quot;Ruang &amp; Tempo&quot;
+place[place$id==&quot;106.790123,-6.2087326&quot;,]$name &lt;- &quot;PT Tempo Inti Media Tbk&quot;
+
+# generate ulang karena berubah namanya
+place_unique &lt;- unique(place[1:2])</code></pre>
+<p>Lalu kita tambahkan kolom frekuensi, berapa kali saya ke tempat itu. Juga total durasinya, berapa lama saya di sana.</p>
+<pre class="r"><code># tambah kolom frekuensi
+freq &lt;- data.frame(table(place$id)) %&gt;% `names&lt;-`(c(&quot;id&quot;, &quot;freq&quot;))
+place_unique &lt;- left_join(place_unique, freq, by = &quot;id&quot;)</code></pre>
+<pre><code>## Warning: Column `id` joining character vector and factor, coercing into
+## character vector</code></pre>
+<pre class="r"><code># tambah kolom total durasi
+place_unique &lt;- place %&gt;% 
+  group_by(id) %&gt;% 
+  summarise(dur_acc_sec = sum(dur)) %&gt;% 
+  left_join(place_unique, ., by = &quot;id&quot;)</code></pre>
+<p>Jika begini, kita kembalikan <code>id</code> ini ke habitat awalnya sebagai koordinat.</p>
+<pre class="r"><code># spread id, jadikan data koordinat lagi seperti semula
+place_unique &lt;- separate(place_unique, id, c(&quot;lon&quot;, &quot;lat&quot;), sep=&quot;,&quot;)
+place_unique$lon &lt;- as.numeric(place_unique$lon)
+place_unique$lat &lt;- as.numeric(place_unique$lat)
+print(place_unique)</code></pre>
+<pre><code>## # A tibble: 305 x 5
+##      lon   lat name                             freq dur_acc_sec
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                           &lt;int&gt;       &lt;dbl&gt;
+##  1  109. -6.93 MTs Islamiyah Waled                14     506890.
+##  2  109. -6.86 Babakan                             2       2650.
+##  3  107. -6.35 Universitas Gunadarma, Kampus E    27    2399120.
+##  4  107. -6.35 Cafe Banby                          8     297442.
+##  5  107. -6.34 Universitas Pancasila Station      69      59372.
+##  6  107. -6.17 Harmoni                             1        326.
+##  7  107. -6.19 Kebon Jeruk                         1        470.
+##  8  107. -6.20 Intercon Plaza                      1      11007.
+##  9  107. -6.28 Universitas Nasional                1      12955.
+## 10  107. -6.28 Warnet Arios                        1      10370.
+## # … with 295 more rows</code></pre>
+<p>Bentuk data untuk diplot. Saya mau menunjukkan di mana saya paling lama berada. Juga di mana saya cuma singgah sebentar selama 2019.</p>
+<pre class="r"><code># data sering (durasi panjang)
+sering &lt;- head(arrange(place_unique, desc(dur_acc_sec)), n = 11)
+sering$dur_hari &lt;- round(((sering$dur_acc_sec)/(60*60*24)))
+
+# data jarang (durasi singkat)
+jarang &lt;- head(arrange(place_unique, dur_acc_sec), n = 10)
+jarang$dur_menit &lt;- round((jarang$dur_acc_sec/(60)), 2)</code></pre>
+<p>Mari buat visualisasinya.</p>
+<pre class="r"><code># plot tempat durasi panjang
+ggplot(sering) +
+  geom_bar(aes(x = name, y = dur_hari), stat = &quot;identity&quot;) +
+  coord_flip() +
+  labs(title = &quot;Tempat yang paling sering Andi ada selama 2019&quot;,
+       subtitle = &quot;Sungguh tipu daya saat GPS bilang saya ngekos di masjid!&quot;,
+       caption = &quot;Data gps dari Google Maps (saya selalu on-kan)&quot;,
+       y = &quot;Durasi (hari)&quot;,
+       x = element_blank()) +
+  scale_y_continuous(breaks = seq(0, 120, 30)) +
+  theme_classic() +
+  theme(
+    axis.ticks = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_line(color = &quot;grey&quot;),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  )</code></pre>
+<p><img src="/post/2020-03-26-bermain-dengan-data-google-maps_files/figure-html/plot%20data-1.png" width="672" /></p>
+<pre class="r"><code># plot tempat durasi singkat 
+ggplot(jarang) +
+  geom_bar(aes(x = name, y = dur_menit), stat = &quot;identity&quot;) +
+  coord_flip(ylim = c(4.5,6)) +
+  labs(title = &quot;Tempat yang cuma sebentar Andi ada selama 2019&quot;,
+       subtitle = &quot;Sekali-kali main, lewat: SPBU, tempat makan, halte, apotek&quot;,
+       caption = &quot;Data gps dari Google Maps (saya selalu on-kan)&quot;,
+       y = &quot;Durasi (menit)&quot;,
+       x = element_blank()) +
+  scale_y_continuous(breaks = seq(4.5,6.0,0.5)) +
+  theme_classic() +
+  theme(
+    axis.ticks = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_line(color = &quot;grey&quot;),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  )</code></pre>
+<p><img src="/post/2020-03-26-bermain-dengan-data-google-maps_files/figure-html/plot%20data-2.png" width="672" /></p>
+<p>Bagaimana untuk lihat sebaran lokasinya?</p>
+<p>Kita perlu data tambahan yaitu peta. Unduh peta <a href="https://gadm.org/download_country_v3.html">GADM</a>. Ubah bagian “data/gadm36_IDN_1_sf.rds” jadi lokasi penyimpanan data petamu.</p>
+<pre class="r"><code># data tambahan: peta dari GADM
+map &lt;- readRDS(&quot;data/gadm36_IDN_1_sf.rds&quot;)</code></pre>
+<pre class="r"><code># plot tempat yang pernah disinggahi
+ggplot(data = place_unique) +
+  geom_sf(data = map, fill = &quot;lightgrey&quot;) +
+  geom_point(aes(lon, lat), color = &quot;red&quot;) +
+  coord_sf(
+    xlim = c(min(place_unique$lon) - 0.2, max(place_unique$lon) + 0.2),
+    ylim = c(min(place_unique$lat) - 0.2, max(place_unique$lat) + 0.2)
+  ) +
+  labs(
+    title = &quot;Tempat yang pernah Andi ada selama 2019&quot;,
+    subtitle = &quot;Sekitaran Banten - DKI - Jabar - Jateng&quot;,
+    caption = &quot;Data gps dari Google Maps (saya selalu on-kan)&quot;,
+    y = &quot;Lintang&quot;,
+    x = &quot;Bujur&quot;
+  ) +
+  theme_classic()</code></pre>
+<p><img src="/post/2020-03-26-bermain-dengan-data-google-maps_files/figure-html/plot%20map-1.png" width="672" /></p>
+<p>Mau dengan animasi? Gunakan library <code>gganimate</code>.</p>
+<pre class="r"><code>library(gganimate)
+ggplot(data = google_maps_visited_2019) +
+  geom_sf(data = map, fill = &quot;lightgrey&quot;) +
+  geom_point(aes(lon, lat), color = &quot;red&quot;, alpha = 0.6) +
+  coord_sf(
+    xlim = c(min(place_unique$lon) - 0.2, max(place_unique$lon) + 0.2),
+    ylim = c(min(place_unique$lat) - 0.2, max(place_unique$lat) + 0.2)
+  ) +
+  theme_classic() +
+  labs(
+    title = &quot;Tempat yang pernah Andi ada selama 2019&quot;,
+    subtitle = &quot;Tanggal: {frame_time}&quot;,
+    caption = &quot;Data gps dari Google Maps (saya selalu on-kan)&quot;,
+    y = &quot;Lintang&quot;,
+    x = &quot;Bujur&quot;
+  ) +
+  transition_time(start) +
+  ease_aes(&quot;linear&quot;)</code></pre>
+<p><img src="/post/2020-03-26-bermain-dengan-data-google-maps_files/perjalanan.gif" /></p>
+<p>Sekian dulu.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.id" class="footer-links-kudos"><img src="/images/cc-by-sa-88x31.png" alt="Creative Commons Licenses" width="50%" height="50%"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>

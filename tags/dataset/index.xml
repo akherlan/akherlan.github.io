@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dataset on Engineer of words</title>
+    <link>/tags/dataset/</link>
+    <description>Recent content in dataset on Engineer of words</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dataset/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bermain dengan Data Google Maps</title>
+      <link>/google-maps-data/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/google-maps-data/</guid>
+      <description>Singkat dan langsung saja.
+Data yang saya gunakan adalah data hasil tracking GPS-nya Google di ponsel pintar saya. Ups… Menyebar nich saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.
+Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google.com. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai data punya saya.
+# library yang saya gunakan library(dplyr) library(tidyr) library(ggplot2) # mungkin juga butuh lubridate untuk memuat sampel data library(lubridate) # memuat data (ini sudah dirapikan, aslinya json atau xml, lupa) # jika ingin sample data yang saya pakai silakan # unduh di https://akherlan.</description>
+    </item>
+    
+    <item>
+      <title>Regex: Belajar Merapikan Data</title>
+      <link>/belajar-regex-merapikan-data/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/belajar-regex-merapikan-data/</guid>
+      <description>Siang tadi saya coba untuk perlahan-lahan mengumpulkan data yang saya miliki di laptop untuk disimpan di satu tempat. Supaya terorganisir.
+Karena sebelumnya saya menonton video dari Youtube-nya Mas Aswan, jadi saya pakai bantuan library pins (baru dari RStudio) untuk mengelola koleksi dataset di github.
+Malam ini saya coba mengunggah data gempa yang sudah lama terbengkalai. Bulukan di direktori ~/Downloads.
+Datanya ada 9 files dengan format csv. Untuk bisa mengunggahnya saya harus ubah jadi format rds.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.63.1" />
+
+
+<title>Regex: Belajar Merapikan Data - Engineer of words</title>
+<meta property="og:title" content="Regex: Belajar Merapikan Data - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Regex: Belajar Merapikan Data</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 22 Mar 2020
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>Siang tadi saya coba untuk perlahan-lahan mengumpulkan data yang saya miliki di laptop untuk disimpan di satu tempat. Supaya terorganisir.</p>
+<p>Karena sebelumnya saya menonton video dari Youtube-nya Mas Aswan, jadi saya pakai bantuan library <code>pins</code> (baru dari RStudio) untuk mengelola <a href="https://github.com/akherlan/dataset">koleksi dataset</a> di github.</p>
+<p>Malam ini saya coba mengunggah data gempa yang sudah lama terbengkalai. <em>Bulukan</em> di direktori <code>~/Downloads</code>.</p>
+<p>Datanya ada 9 <em>files</em> dengan format <code>csv</code>. Untuk bisa mengunggahnya saya harus ubah jadi format <code>rds</code>. PR nih~</p>
+<p>Tapi jangan khawatir. Saya mau belajar!</p>
+<p>Saya pakai iterasi untuk impor berkas <code>csv</code>, menggunakan fungsi <code>map_dfr()</code> dari library <code>purrr</code> sesuai Youtube-nya Mas Aswan lagi. Supaya cuma satu kali kerja. Juga dengan bantuan fungsi <code>dir_ls()</code> dari library <code>fs</code> untuk mendaftar lokasi dan nama berkas <code>csv</code>.</p>
+<p>Begini jadinya…</p>
+<pre class="r"><code># impor data dari berkas csv
+files &lt;- fs::dir_ls(&quot;~/Downloads/datagempa/&quot;, regexp = &quot;[0-9]{4}\\.csv&quot;)
+gempa &lt;- purrr::map_dfr(files, read.csv)</code></pre>
+<div id="pelajaran-1-regular-expression-regex" class="section level3">
+<h3>Pelajaran 1 regular expression (regex)</h3>
+<ul>
+<li><code>[0-9]</code> itu untuk mengambil angka 0, 1, 2, …, 8, 9</li>
+<li><code>{4}</code> berarti ada 4 digit yang diambil</li>
+<li><code>\\.csv</code> supaya terambil <em>pattern</em> <code>.csv</code>, sedangkan <code>\\</code> adalah <em>escape character</em> untuk karakter titik (<code>.</code>)</li>
+</ul>
+<p>Saya memerlukan regex ini karena di dalam direktori “datagempa” ada berkas <code>csv</code> lain yang bukan termasuk data yang ingin saya gabungkan. Dan pola namanya gampang, yaitu berupa tahun.</p>
+<div class="figure">
+<img src="/post/2020-03-22-regex-belajar-merapikan-data_files/daftar-datagempa.png" alt="Daftar berkas" style="width:100.0%" />
+<p class="caption">Daftar berkas</p>
+</div>
+<p>Setelah itu rapikan sedikit, karena ada beberapa baris yang tidak perlu.</p>
+<pre class="r"><code># mengambil nilai yang berulang di tiap baris yang ingin dihilangkan
+exclude &lt;- gempa[1,3]
+
+# eliminasi
+gempa &lt;- gempa[gempa$WAKTU != exclude,]
+
+# seleksi kolom yang perlu saja
+gempa &lt;- gempa[,2:14]
+
+# menamai ulang kolom yang ada
+names(gempa) &lt;- c(&quot;tanggal&quot;, &quot;waktu&quot;, &quot;lat&quot;, &quot;lon&quot;,
+                  &quot;kdlm.KM&quot;, &quot;mag.SR&quot;, &quot;typemag&quot;,
+                  &quot;smaj&quot;, &quot;smin&quot;, &quot;az&quot;, &quot;rms&quot;, 
+                  &quot;cphase&quot;, &quot;region&quot;)</code></pre>
+<p>Ini tidak usah banyak dijelaskan, gak ada regex-nya.</p>
+<p>Lanjut…</p>
+<p>Setelah ini agak susah regex-nya (pada awalnya). Saya cari ini sampai sejam lebih hahaha. Tapi setelah ketemu satu, semua tinggal ikuti.</p>
+<p>Coba lihat dulu datanya:</p>
+<pre class="r"><code>head(gempa, 10)</code></pre>
+<pre><code>##     tanggal        waktu     lat       lon kdlm.KM mag.SR typemag  smaj
+## 2  1/1/2009 01:26:04 UTC 3.73 LU 127.34 BT   67 Km 4.6 SR     MLv 10317
+## 3  1/1/2009 03:45:00 UTC 6.84 LS 130.22 BT  103 Km 5.2 SR      mb 22841
+## 4  1/1/2009 05:27:08 UTC 1.45 LU 120.74 BT   10 Km 5.1 SR     MLv 10432
+## 5  1/1/2009 08:42:09 UTC 1.52 LU 122.01 BT   10 Km 4.5 SR     MLv  7557
+## 6  1/1/2009 08:57:01 UTC 8.44 LS 116.17 BT   91 Km 3.4 SR     MLv  2699
+## 7  1/1/2009 10:35:35 UTC 1.41 LU    122 BT   34 Km   5 SR   Mw(mB 84783
+## 8  1/1/2009 12:36:57 UTC 9.37 LU 124.14 BT  529 Km 4.7 SR      mb 40997
+## 9  1/1/2009 13:02:11 UTC 7.17 LS 108.44 BT   10 Km 3.3 SR     MLv  1268
+## 10 1/1/2009 13:23:41 UTC 0.65 LU 100.99 BT  127 Km 3.2 SR     MLv  1642
+## 11 1/1/2009 15:49:54 UTC 4.32 LS 119.56 BT   10 Km 3.1 SR     MLv  3216
+##        smin  az      rms cphase                        region
+## 2  1804.000 147    0.398     25     Talaud Islands, Indonesia
+## 3  2778.000  48 2101.000     37                     Banda Sea
+## 4     1.540 121 1936.000     20 Minahassa Peninsula, Sulawesi
+## 5  1043.000 136    0.826     10 Minahassa Peninsula, Sulawesi
+## 6     0.193 261    0.413     10     Sumbawa Region, Indonesia
+## 7     0.933  46 1633.000     85 Minahassa Peninsula, Sulawesi
+## 8  2694.000 145 1004.000     19         Mindanao, Philippines
+## 9     0.730 133 1467.000      7               Java, Indonesia
+## 10    0.330 255    0.319      5   Northern Sumatra, Indonesia
+## 11    0.407 158    0.736     12           Sulawesi, Indonesia</code></pre>
+</div>
+<div id="pelajaran-2-regex" class="section level3">
+<h3>Pelajaran 2 regex!</h3>
+<p>Regex berikutnya digunakan di kolom koordinat, kedalaman, dan magnitudo. Karena di situ masih campur-campur dengan unitnya (LS, LU, BT, BB, Km, SR).</p>
+<pre class="r"><code># kolom tanggal
+gempa$tanggal &lt;- as.Date(gempa$tanggal, format = &quot;%m/%d/%Y&quot;)
+
+# kolom koordinat
+gempa$lat &lt;- gsub(&quot;^(\\d+)\\.?(\\d+)? LU$&quot;, &quot;\\1\\.\\2&quot;, gempa$lat)
+gempa$lat &lt;- gsub(&quot;^(\\d+)\\.?(\\d+)? LS$&quot;, &quot;-\\1\\.\\2&quot;, gempa$lat)
+
+gempa$lon &lt;- gsub(&quot;^(\\d+)\\.?(\\d+)? BT$&quot;, &quot;\\1\\.\\2&quot;, gempa$lon)
+gempa$lon &lt;- gsub(&quot;^(\\d+)\\.?(\\d+)? BB$&quot;, &quot;-\\1\\.\\2&quot;, gempa$lon)
+
+gempa$lat &lt;- as.double(gempa$lat)
+gempa$lon &lt;- as.double(gempa$lon)
+
+# kolom kedalaman
+gempa$kdlm.KM &lt;- as.numeric(gsub(&quot;^(\\d+)\\.?(\\d+)? Km$&quot;, &quot;\\1\\.\\2&quot;, gempa$kdlm.KM))
+
+# kolom magnitudo
+gempa$mag.SR &lt;- as.numeric(gsub(&quot;^(\\d+)\\.?(\\d+)? SR$&quot;, &quot;\\1\\.\\2&quot;, gempa$mag.SR))
+
+# kolom tipe magnitudo
+gempa[gempa$typemag == &quot;Mw(mB&quot;,]$typemag &lt;- &quot;Mw(mB)&quot;
+gempa$typemag &lt;- as.factor(gempa$typemag)</code></pre>
+<p>Polanya begini:</p>
+<p><code>^(\\d+)\\.?(\\d+)? LU$</code></p>
+<ul>
+<li><code>^ ... $</code> ini menandakan awal (<code>^</code>) dan akhir (<code>$</code>)</li>
+<li><code>(...)</code> tanda kurung adalah untuk <em>grouping</em></li>
+<li><code>\\d</code> mengambil digit (angka) ditambah <code>+</code> untuk mengindikasikan kalau digitnya bisa 0 atau lebih, seperti biasa <code>\\</code> adalah <em>escape character</em>-nya</li>
+<li><code>\\.?</code> mengambil titik (<code>.</code>), tapi karena boleh jadi ada boleh jadi tidak maka ditambah tanda tanya (<code>?</code>)</li>
+</ul>
+<p>Hm… Capek, <em>guys</em>!</p>
+<p>Untuk mempelajari ini, bisa ke web di akhir tulisan.</p>
+<p>Terima kasih!</p>
+</div>
+<div id="situs-belajar-regex" class="section level2">
+<h2>Situs Belajar Regex</h2>
+<ul>
+<li><a href="https://regexone.com" class="uri">https://regexone.com</a> (<strong>saya rekomendasikan</strong>)</li>
+<li><a href="https://www.regular-expressions.info" class="uri">https://www.regular-expressions.info</a></li>
+</ul>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.id" class="footer-links-kudos"><img src="/images/cc-by-sa-88x31.png" alt="Creative Commons Licenses" width="50%" height="50%"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
