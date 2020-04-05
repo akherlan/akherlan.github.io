@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.68.3" />
 
 
-<title>Tema Hugo Lithium Tidak Responsif - Engineer of words</title>
-<meta property="og:title" content="Tema Hugo Lithium Tidak Responsif - Engineer of words">
+<title>Memindahkan Repo Git - Engineer of words</title>
+<meta property="og:title" content="Memindahkan Repo Git - Engineer of words">
 
 
 
@@ -57,41 +57,37 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">2 min read</span>
     
 
-    <h1 class="article-title">Tema Hugo Lithium Tidak Responsif</h1>
+    <h1 class="article-title">Memindahkan Repo Git</h1>
 
     
     <span class="article-date">
       
-      Terakhir diperbarui 26 Mar 2019
+      Terakhir diperbarui 5 Apr 2020
       
     </span>
     
 
     <div class="article-content">
-      
-
-
-<p>Ini merupakan tulisan dokumentasi saya untuk permasalahan tema Lithium yang tidak responsif (saat tulisan ini mulai ditulis). Ukuran gambar tidak menyesuaikan ukuran layar. Sangat fatal ketika dibuka dari ponsel. Padahal sebagian besar akses internet hari ini adalah melalui ponsel. Alamak!</p>
-<p>Awalnya saya tanya di grup <a href="https://t.me/GNURIndonesia">GNU/R Indonesia</a>, walaupun ini tidak ada kaitannya sama sekali dengan pemrograman R. Tapi karena saya ngeblog dari R menggunakan paket <code>blogdown</code>, jadi saya coba tanyakan saja. Cocoklogi. Hihihi… Ada saran, ganti tema yang responsif saja, atau tambahkan skrip bootstrap di dalamnya, alamak! Nggak ngerti!</p>
-<p>Saya tidak menyerah, tetap <em>searching</em>… Seperti biasa. Ketemu!</p>
-<p>Malalui repositori github pembuat awalnya ternyata sudah dibuat responsif. Saya mengira barangkali ini sudah mengalami pemutakhiran kode CSS dari sebelumnya.</p>
-<p>Namun ada satu kendala lagi. Saya harus mencari bagian mana yang diubah. Saya tidak langsung mengganti tema Lithium yang saya gunakan (dari <a href="https://github.com/yihui/hugo-lithium">yihui</a>) dengan tema Lithium yang dimodifikasi oleh pembuat awalnya (<a href="https://github.com/jrutheiser/hugo-lithium-theme">jrutheiser</a>).</p>
-<p>Untungnya ketemu, ada di dalam <code>main.css</code>, seperti berikut:</p>
-<pre class="css"><code>img {
-  max-width: 100%;
-  height: auto;
-}</code></pre>
-<style type="text/css">
-img {
-  max-width: 100%;
-  height: auto;
-}
-</style>
-<p><em>Voila!</em> Ukuran gambar di blog ini sudah menyesuaikan ukuran layar. Sudah. Ternyata begitu saja.</p>
-<p>Sekian. Terima kasih.</p>
+      <p>Tempo hari saya memesan mesin baru. <em>Secondhand</em>. Masih bagus. Dan impian dari lama. Walau saya harus lakukan <em>tweak</em>, untuk pahami beberapa hal, demi optimasi kerja mesin. Tapi ini kita ceritakan nanti saja.</p>
+<p>Hal pertama yang saya pikirkan adalah memindahkan semua proyek kerja yang dilakukan dengan version control git.</p>
+<p>Pertama kali mencoba copas langsung, dari mesin komputer lama saya langsung berhadapan dengan galat (<em>error</em>). Direktori tempat menyimpan proyek dengan git gagal di-<em>push</em> ke awan setelah dilakukan <em>commit</em>.</p>
+<p>Remote dilakukan melalui ssh untuk tampil <em>online</em>, bukan tautan Github https saja.</p>
+<p>Usul punya asal, galat terjadi karena kunci yang saya pakai di mesin baru tidak cocok dengan informasi yang disimpan dalam repositori ini, karena kunci di mesin lama tentu berbeda.</p>
+<p>Jadi bagaimana mengatasi masalah ini? Apakah haru <em>clone</em> repositori yang sudah <em>online</em> di Github? Tidak perlu kisanak. Itu besar sekali. Habis kuota tathering nanti.</p>
+<p>Cara yang saya gunakan untuk mengatasi masalah ini adalah begini:</p>
+<ol>
+<li>Copy folder/direktori repositori dari mesin lama.</li>
+<li>Paste ke tempat yang diinginkan di mesin yang baru.</li>
+<li>Sebelum mulai bekerja dengan repositori ini, lakukan hal berikut:</li>
+</ol>
+<pre><code class="language-{bash}" data-lang="{bash}">git remote update
+</code></pre><p>Ternyata sesimpel itu.</p>
+<p>Setelah ini saya bisa lagi pake ssh untuk remote git dari mesin komputer baru. Tentu setelah menambah konfigurasi ssh baru di pengaturan Github.</p>
+<p>Thanks.</p>
+<p>Kemarin hari yang melelahkan, sekarang saatnya bersantai sejenak. Sruput kopi, bos!</p>
 
     </div>
   </article>

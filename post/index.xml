@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Memindahkan Repo Git</title>
+      <link>/memindahkan-repo-git/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/memindahkan-repo-git/</guid>
+      <description>Tempo hari saya memesan mesin baru. Secondhand. Masih bagus. Dan impian dari lama. Walau saya harus lakukan tweak, untuk pahami beberapa hal, demi optimasi kerja mesin. Tapi ini kita ceritakan nanti saja.
+Hal pertama yang saya pikirkan adalah memindahkan semua proyek kerja yang dilakukan dengan version control git.
+Pertama kali mencoba copas langsung, dari mesin komputer lama saya langsung berhadapan dengan galat (error). Direktori tempat menyimpan proyek dengan git gagal di-push ke awan setelah dilakukan commit.</description>
+    </item>
     
     <item>
       <title>Bermain dengan Data Google Maps</title>
