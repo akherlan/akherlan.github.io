@@ -76,7 +76,7 @@
 
 <p><em>Mari kita plesiran ke blog para jagoan!</em></p>
 <p>Entah kenapa saya tiba-tiba ingat blognya Mas <a href="http://rasyidridha.com/">Rasyid Ridha</a> yang masih saja belum aktif diisi lagi sampai sekarang. Mungkin masih sibuk dengan kegemaran lainnya. Atau jangan-jangan pindah web???</p>
-<p>Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo <a href="https://github.com/rasyidstat/transjakarta">transjakarta</a>. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis <a href="http://rasyidridha.com/datakepo/rute-transjakarta/">sebuah artikel</a> bernuansa <em>transportist</em>. Data yang digunakan diperoleh dari <a href="https://www.trafi.com/id/jakarta/transjakarta">Traffi</a>.</p>
+<p>Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo <a href="https://github.com/rasyidstat/transjakarta">transjakarta</a>. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis <a href="http://rasyidridha.com/datakepo/rute-transjakarta/">sebuah artikel</a> bernuansa <em>transportist</em>. Data yang digunakan diperoleh dari <a href="https://www.trafi.com/id/jakarta/transjakarta">Trafi</a>.</p>
 <p>Supaya saya jadi nggak cuma <em>repost</em> doang di sini, tulisan ini akan mengupas dan mengulas cara-cara Mas Rasyid mengolah data rute TransJakarta. Tentunya dari sudut pandang saya sebagai orang yang sedang mempelajari kode-kodenya Mas Rasyid.</p>
 <p>Catatan ini saya bagi ke dalam empat bagian:</p>
 <ol style="list-style-type: decimal">
@@ -88,17 +88,17 @@
 <p>Mari kita demokan di sini sambil belajar…</p>
 <div id="get-the-data" class="section level2">
 <h2>Get the Data</h2>
-<p>Pertama, Mas Rasyid menggunakan library <code>jsonlite</code> dan library terkenal <code>tidyverse</code> untuk <em>collect the data</em>. Format teks dari data yang disediakan oleh Traffi memang teks javascript json.</p>
+<p>Pertama, Mas Rasyid menggunakan library <code>jsonlite</code> dan library terkenal <code>tidyverse</code> untuk <em>collect the data</em>. Format teks dari data yang disediakan oleh Trafi memang teks javascript json.</p>
 <p>Saya coba sedikit-sedikit menyesuaikan atau edit kode-kodenya Mas Rasyid supaya kita bisa pelajari bersama secara lebih jelas dan deskriptif.</p>
 <p>Berikut untuk memuat library:</p>
 <pre class="r"><code>library(&quot;jsonlite&quot;)
 library(&quot;tidyverse&quot;)</code></pre>
-<pre><code>## ── Attaching packages ───────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ── Attaching packages ──────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.3
 ## ✓ tibble  3.0.0     ✓ dplyr   0.8.5
 ## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ──────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ─────────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter()  masks stats::filter()
 ## x purrr::flatten() masks jsonlite::flatten()
 ## x dplyr::lag()     masks stats::lag()</code></pre>
@@ -235,8 +235,8 @@ df_route &lt;- df_tj %&gt;%
 ## $ is_hidden    &lt;lgl&gt; FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …
 ## $ shape        &lt;chr&gt; &quot;vkbe@kwzjS?kAMSYImB`@uM?YLMTM\\IzTKLk@LqC?uMEc]FaBImBe@…</code></pre>
 <p>Kolom <code>shape</code> (paling akhir) kelihatannya agak aneh ya?</p>
-<p>Itu karena data ini merupakan data geometri yang di-<em>encode</em> menjadi baris karakter melalui <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">Google’s polyline algorithm</a> yang digunakan Traffi.</p>
-<p>Kita bisa konversi ke data yang lebih terbaca. Kita pakai bantuan library <code>googleway</code> dan <code>sf</code>.</p>
+<p>Itu karena data ini merupakan data geometri yang di-<em>encode</em> menjadi baris karakter melalui <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">Google’s polyline algorithm</a> yang digunakan Trafi.</p>
+<p>Kita bisa konversi ke format data <a href="https://r-spatial.github.io/sf/">simple features</a>. Kita pakai bantuan library <code>googleway</code> dan <code>sf</code>.</p>
 <pre class="r"><code># fungsi untuk konversi tipe geometri data GIS-nya
 convert_shape &lt;- function(x, y) {
   x %&gt;%
@@ -267,10 +267,10 @@ df_route &lt;- df_route %&gt;%
           aes(color = route_name)) +
   guides(color = FALSE)</code></pre>
 <p><img src="/post/2020-04-05-rute-transjakarta-dari-trafi_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>Ini adalah rute yang beroperasi pada tanggal tulisan ini diperbarui. Sepertinya lebih sedikit dari yang seharusnya. Bahkan kalau dibandingkan dengan rute pada tanggal 25 Juni 2018 di blog Mas Rasyid (<a href="http://rasyidridha.com/images/datakepo/tj/tj_route.png">gambar</a>), rute hari ini tetap lebih sedikit.</p>
+<p>Ini adalah rute yang beroperasi pada tanggal tulisan ini dibuat (6 April 2020). Sepertinya lebih sedikit dari yang seharusnya. Bahkan kalau dibandingkan dengan rute pada tanggal 25 Juni 2018 di blog Mas Rasyid (<a href="http://rasyidridha.com/images/datakepo/tj/tj_route.png">gambar</a>), rute hari ini tetap lebih sedikit.</p>
 <p>Contoh lain rute yang dibuat pada 7 November 2019, sangat banyak.</p>
 <p><img src = "https://raw.githubusercontent.com/rasyidstat/transjakarta/master/figs/tj_route_20191107.png"></p>
-<p>Mungkin ini operasi khusus selama penyebaran pandemi Covid-19.</p>
+<p>Mungkin rute ini lebih sedikit karena pembatasa operasional BRT Transjakarta khususnya selama penyebaran pandemi Covid-19. Sesuai beritanya.</p>
 <blockquote class="twitter-tweet">
 <p lang="in" dir="ltr">
 Sahabat TiJe, lihat informasi rute Transjakarta yang beroperasi per 6 April 2020 pada gambar di bawah ini. Harap selalu menerapkan social dan physical distancing saat berada di lingkungan Transjakarta. <a href="https://twitter.com/hashtag/TiJeTanggapCorona?src=hash&amp;ref_src=twsrc%5Etfw">#TiJeTanggapCorona</a> <a href="https://t.co/tvMGnQWos0">pic.twitter.com/tvMGnQWos0</a>
@@ -396,8 +396,8 @@ glimpse(transjakarta_route)</code></pre>
 <p>Kalau mau disimpan datanya, mari simpan…</p>
 <pre class="r"><code>saveRDS(transjakarta_route, &quot;data/tj_route.rds&quot;)</code></pre>
 </div>
-<div id="visualisasi" class="section level2">
-<h2>Visualisasi</h2>
+<div id="visualization" class="section level2">
+<h2>Visualization</h2>
 <pre class="r"><code>tj &lt;- transjakarta_route %&gt;% 
   filter(direction == 1, is_main == TRUE)
 
