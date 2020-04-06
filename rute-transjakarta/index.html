@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<title>Contek Kode: Rute TransJakarta - Engineer of words</title>
+<meta property="og:title" content="Contek Kode: Rute TransJakarta - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">13 min read</span>
+    
+
+    <h1 class="article-title">Contek Kode: Rute TransJakarta</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 6 Apr 2020
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p><em>Mari kita plesiran ke blog para jagoan!</em></p>
+<p>Entah kenapa saya tiba-tiba ingat blognya Mas <a href="http://rasyidridha.com/">Rasyid Ridha</a> yang masih saja belum aktif diisi lagi sampai sekarang. Mungkin masih sibuk dengan kegemaran lainnya. Atau jangan-jangan pindah web???</p>
+<p>Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo <a href="https://github.com/rasyidstat/transjakarta">transjakarta</a>. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis <a href="http://rasyidridha.com/datakepo/rute-transjakarta/">sebuah artikel</a> bernuansa <em>transportist</em>. Data yang digunakan diperoleh dari <a href="https://www.trafi.com/id/jakarta/transjakarta">Traffi</a>.</p>
+<p>Supaya saya jadi nggak cuma <em>repost</em> doang di sini, tulisan ini akan mengupas dan mengulas cara-cara Mas Rasyid mengolah data rute TransJakarta. Tentunya dari sudut pandang saya sebagai orang yang sedang mempelajari kode-kodenya Mas Rasyid.</p>
+<p>Catatan ini saya bagi ke dalam empat bagian:</p>
+<ol style="list-style-type: decimal">
+<li>Get the Data</li>
+<li>Explore the Routes</li>
+<li>Reformatting Data</li>
+<li>Visualization</li>
+</ol>
+<p>Mari kita demokan di sini sambil belajar…</p>
+<div id="get-the-data" class="section level2">
+<h2>Get the Data</h2>
+<p>Pertama, Mas Rasyid menggunakan library <code>jsonlite</code> dan library terkenal <code>tidyverse</code> untuk <em>collect the data</em>. Format teks dari data yang disediakan oleh Traffi memang teks javascript json.</p>
+<p>Saya coba sedikit-sedikit menyesuaikan atau edit kode-kodenya Mas Rasyid supaya kita bisa pelajari bersama secara lebih jelas dan deskriptif.</p>
+<p>Berikut untuk memuat library:</p>
+<pre class="r"><code>library(&quot;jsonlite&quot;)
+library(&quot;tidyverse&quot;)</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.3
+## ✓ tibble  3.0.0     ✓ dplyr   0.8.5
+## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter()  masks stats::filter()
+## x purrr::flatten() masks jsonlite::flatten()
+## x dplyr::lag()     masks stats::lag()</code></pre>
+<p>Jadi, kalau yang saya pahami dari cara-cara ini, sama seperti <em>scrapping</em> teks berita. Hanya kali ini yang kita “garuk” adalah teks json. Yaudah cuz…</p>
+<pre class="r"><code># ini tautannya bro
+main_url &lt;- &quot;https://www.trafi.com/api/schedules/jakarta/&quot;
+route &lt;- paste0(main_url, &quot;all?transportType=&quot;)
+json_tj &lt;- paste0(route, &quot;transjakarta&quot;)</code></pre>
+<p>Kita akan mengambil data format json lalu jadikan data.frame di R:</p>
+<pre class="r"><code>df_tj &lt;- fromJSON(json_tj)[[1]] %&gt;% 
+  unnest(cols = c(schedules))</code></pre>
+<p>Saat percobaan untuk mengunduh dan mengonversi data text json menjadi dataframe, transformasinya adalah:</p>
+<ol style="list-style-type: decimal">
+<li>teks json diunduh dari url yang sudah disimpan dalam variabel <code>json_tj</code> dengan menggunakan perintah <code>fromJSON(json_tj)</code> lalu disimpan di memori dalam bentuk list.</li>
+<li><code>[[1]]</code> mengindeks list pertama (dan satu-satunya) hasil dari perintah <code>fromJSON(json_tj)</code>, hasilnya berupa list/data.frame dengan 3 kolom.</li>
+<li><code>unnest(cols = c(schedules))</code> mengambil kolom ke-3 dari data.frame, nama kolomnya <code>schedules</code> yang berupa list/data.frame.</li>
+</ol>
+<p>Sehingga hasilnya menjadi data.frame seperti berikut:</p>
+<pre class="r"><code>glimpse(df_tj) # struktur data</code></pre>
+<pre><code>## Rows: 22
+## Columns: 9
+## $ transportNamePlural &lt;chr&gt; &quot;TransJakarta&quot;, &quot;TransJakarta&quot;, &quot;TransJakarta&quot;, &quot;…
+## $ transportName       &lt;chr&gt; &quot;Transjakarta&quot;, &quot;Transjakarta&quot;, &quot;Transjakarta&quot;, &quot;…
+## $ scheduleId          &lt;chr&gt; &quot;idjkb_1&quot;, &quot;idjkb_2&quot;, &quot;idjkb_2A&quot;, &quot;idjkb_3&quot;, &quot;idj…
+## $ transportId         &lt;chr&gt; &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt…
+## $ validity            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ name                &lt;chr&gt; &quot;1&quot;, &quot;2&quot;, &quot;2A&quot;, &quot;3&quot;, &quot;4&quot;, &quot;4C&quot;, &quot;4D&quot;, &quot;5&quot;, &quot;5C&quot;, …
+## $ longName            &lt;chr&gt; &quot;Blok M - Kota&quot;, &quot;Pulo Gadung - Harmoni&quot;, &quot;Rawa B…
+## $ icon                &lt;chr&gt; &quot;transport/idjkb_brt_transjakarta_D02027_1&quot;, &quot;tra…
+## $ color               &lt;chr&gt; &quot;D02027&quot;, &quot;264798&quot;, &quot;4EA8DE&quot;, &quot;EDB900&quot;, &quot;5D2E64&quot;,…</code></pre>
+<pre class="r"><code>head(df_tj)    # 6 data teratas pada tabel</code></pre>
+<pre><code>## # A tibble: 6 x 9
+##   transportNamePl… transportName scheduleId transportId validity name  longName
+##   &lt;chr&gt;            &lt;chr&gt;         &lt;chr&gt;      &lt;chr&gt;       &lt;lgl&gt;    &lt;chr&gt; &lt;chr&gt;   
+## 1 TransJakarta     Transjakarta  idjkb_1    idjkb_brt   NA       1     Blok M …
+## 2 TransJakarta     Transjakarta  idjkb_2    idjkb_brt   NA       2     Pulo Ga…
+## 3 TransJakarta     Transjakarta  idjkb_2A   idjkb_brt   NA       2A    Rawa Bu…
+## 4 TransJakarta     Transjakarta  idjkb_3    idjkb_brt   NA       3     Kalider…
+## 5 TransJakarta     Transjakarta  idjkb_4    idjkb_brt   NA       4     Pulo Ga…
+## 6 TransJakarta     Transjakarta  idjkb_4C   idjkb_brt   NA       4C    Bundara…
+## # … with 2 more variables: icon &lt;chr&gt;, color &lt;chr&gt;</code></pre>
+<p>Selanjutnya, kita akan membuat sebuah fungsi bantu. Fungsi ini berikutnya akan kita pakai untuk mendapatkan daftar tautan baru.</p>
+<p>Daftar ini di-<em>generate</em> dari salah satu kolom dalam data.frame yang sudah kita peroleh sebelumnya yaitu data.frame <code>df_tj</code>, nama kolomnya <code>scheduleId</code>.</p>
+<pre class="r"><code># bikin fungsi untuk dapatkan detail tiap rute TJ
+route_det &lt;- function(schedule_id, transport) {
+  paste0(main_url, &quot;schedule?scheduleId=&quot;, schedule_id, &quot;&amp;transportType=&quot;, transport)
+}</code></pre>
+<p>Tautan-tautan itu akan disimpan dalam kolom <code>route_url</code>. Selain kolom <code>route_url</code> dibuat juga dua kolom lainnya. Kolom-kolom itu adalah <code>route_info</code> dan <code>load_date</code> (tanggal pada saat data diambil).</p>
+<p>Di dalam <code>route_info</code> juga ada data lagi (data di dalam tabel data) berupa teks json yang dieksrak dari daftar url dalam <code>route_url</code>.</p>
+<p>Kita menggunakan fungsi <code>map</code> dan <code>map2_chr</code> dari library <code>purrr</code>, salah satu library dalam <em>buntelan</em> library <code>tidyverse</code>.</p>
+<pre class="r"><code># jalankan ini dan tunggu sebentar, mungkin agak lama
+df_tj &lt;- df_tj %&gt;%
+  mutate(route_url = map2_chr(scheduleId, &quot;transjakarta&quot;, route_det),
+         route_info = map(route_url, fromJSON),
+         load_date = Sys.Date())</code></pre>
+<p>Coba yuk, kita lihat hasilnya. Kolom-kolom tabel yang ditambahkan ke <code>df_tj</code> adalah tiga kolom berikut.</p>
+<pre class="r"><code>head(df_tj[10:12])</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   route_url                                             route_info    load_date 
+##   &lt;chr&gt;                                                 &lt;list&gt;        &lt;date&gt;    
+## 1 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06
+## 2 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06
+## 3 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06
+## 4 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06
+## 5 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06
+## 6 https://www.trafi.com/api/schedules/jakarta/schedule… &lt;named list … 2020-04-06</code></pre>
+<p>Lalu jika ingin menyimpan data full-nya, kita menggunakan fungsi berikut.</p>
+<pre class="r"><code>saveRDS(df_tj, &quot;data/tj_detail.rds&quot;)</code></pre>
+</div>
+<div id="explore-the-routes" class="section level2">
+<h2>Explore the Routes</h2>
+<p>Berikutnya kita akan mengolah data <code>tj_detail.rds</code> yang tadi sudah disimpan. Tapi karena data ini sudah ada di lingkungan kerja kita dengan nama <code>df_tj</code>, kita akan pakai itu saja.</p>
+<p>Pada bagian ini, kita menambah tiga library untuk membantu pekerjaan yaitu <code>googleway</code>, <code>sf</code>, dan <code>stringr</code>.</p>
+<p><strong>Untuk diperhatikan:</strong> Jika teman-teman menggunakan komputer Linux khususnya Ubuntu, sebaiknya melakukan instalasi beberapa paket dependensi untuk library <code>sf</code> dulu, jika belum pernah menginstal <code>sf</code>.</p>
+<p>Dependensinya adalah GEOS, PROJ, dan GDAL seperti instruksi <a href="https://r-spatial.github.io/sf/#linux">dari sini</a>. Untuk macOS <a href="https://r-spatial.github.io/sf/#macos">di sini</a>. Baru setelahnya instal <code>sf</code>.</p>
+<p>Jika sudah, kita lanjut… memuat library lagi.</p>
+<pre class="r"><code>library(&quot;googleway&quot;)
+library(&quot;stringr&quot;)
+library(&quot;sf&quot;)</code></pre>
+<pre><code>## Linking to GEOS 3.7.1, GDAL 2.4.2, PROJ 5.2.0</code></pre>
+<p>Kita akan melakukan transformasi data.frame <code>df_tj</code>. Langkah-langkah yang dilakukan adalah:</p>
+<ol style="list-style-type: decimal">
+<li>Menambah kolom baru dengan nama <code>halte_detail</code> dan <code>route</code>, sekaligus menghilangkan kolom <code>route_info</code>.</li>
+<li>Membuat data.frame baru dengan nama <code>df_route</code> berisi informasi rute TransJakarta.</li>
+</ol>
+<pre class="r"><code># langkah 1
+df_tj &lt;- df_tj %&gt;%
+  as_tibble() %&gt;%
+  mutate(halte_detail = map(df_tj$route_info, &quot;stops&quot;),
+         route = map(df_tj$route_info, &quot;tracks&quot;)) %&gt;%
+  select(-route_info)
+
+# langkah 2
+df_route &lt;- df_tj %&gt;%
+  select(schedule_id = scheduleId,
+         transport_id = transportId,
+         validity, name, 
+         long_name = longName, 
+         color, route) %&gt;%
+  unnest() %&gt;%
+  rename(route_name = name1,
+         is_hidden = isHidden)</code></pre>
+<p><code>is_hidden</code> digunakan untuk menyembunyikan satu rute yang nggak full pada suatu koridor. Aduh, saya kurang paham apa istilahnya.</p>
+<p>Misal begini: <strong>Koridor 1</strong> adalah <strong>Blok M - Kota</strong>, rute utamanya adalah dari halte Blok M ke halte Kota (<code>main</code>), atau sebaliknya (<code>main_reverse</code>). Selain itu, ada rute perjalanan yang tidak dari halte ujung ke ujung, misalnya rute <strong>Bundaran Senayan - Kota</strong> atau sebaliknya, juga rute <strong>Harmoni - Blok M</strong> atau sebaliknya. Ketiga rute ini semuanya ada dalam koridor 1, tetapi hanya rute Blok M - Kota yang menggunakan argumen <code>isHidden</code> sama dengan <code>FALSE</code>, karena geometri rute utama ini memang harus ditampilkan.</p>
+<p>Semoga bisa diterima penjelasan saya. Hehehe… Untuk lebih jelas saya coba subset tabelnya seperti ini:</p>
+<pre class="r"><code>df_route[1:10, c(4:5, 7:8, 11)]</code></pre>
+<pre><code>## # A tibble: 10 x 5
+##    name  long_name     id     route_name              is_hidden
+##    &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;                   &lt;lgl&gt;    
+##  1 1     Blok M - Kota 1.001  Blok M - Kota           FALSE    
+##  2 1     Blok M - Kota 1.002  Kota - Blok M           FALSE    
+##  3 1     Blok M - Kota 1.404  Bundaran Senayan - Kota TRUE     
+##  4 1     Blok M - Kota 1.008  Kota - Bundaran Senayan TRUE     
+##  5 1     Blok M - Kota 1.502  Harmoni - Kota          TRUE     
+##  6 1     Blok M - Kota 1.006  Kota - Harmoni          TRUE     
+##  7 1     Blok M - Kota 1.009  Blok M - Harmoni        TRUE     
+##  8 1     Blok M - Kota 1.501  Harmoni - Blok M        TRUE     
+##  9 1     Blok M - Kota 1.205A Blok M - Tosari         TRUE     
+## 10 1     Blok M - Kota 1.205B Tosari - Blok M         TRUE</code></pre>
+<p>Dan, mari kita tilik sejenak struktur tabel data.frame baru <code>df_route</code>, hm…</p>
+<pre class="r"><code>glimpse(df_route)</code></pre>
+<pre><code>## Rows: 222
+## Columns: 12
+## $ schedule_id  &lt;chr&gt; &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;…
+## $ transport_id &lt;chr&gt; &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idj…
+## $ validity     &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ name         &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;…
+## $ long_name    &lt;chr&gt; &quot;Blok M - Kota&quot;, &quot;Blok M - Kota&quot;, &quot;Blok M - Kota&quot;, &quot;Blok…
+## $ color        &lt;chr&gt; &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D0202…
+## $ id           &lt;chr&gt; &quot;1.001&quot;, &quot;1.002&quot;, &quot;1.404&quot;, &quot;1.008&quot;, &quot;1.502&quot;, &quot;1.006&quot;, &quot;1…
+## $ route_name   &lt;chr&gt; &quot;Blok M - Kota&quot;, &quot;Kota - Blok M&quot;, &quot;Bundaran Senayan - Ko…
+## $ direction    &lt;int&gt; 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1,…
+## $ stops        &lt;list&gt; [&lt;data.frame[19 x 2]&gt;, &lt;data.frame[19 x 2]&gt;, &lt;data.fram…
+## $ is_hidden    &lt;lgl&gt; FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …
+## $ shape        &lt;chr&gt; &quot;vkbe@kwzjS?kAMSYImB`@uM?YLMTM\\IzTKLk@LqC?uMEc]FaBImBe@…</code></pre>
+<p>Kolom <code>shape</code> (paling akhir) kelihatannya agak aneh ya?</p>
+<p>Itu karena data ini merupakan data geometri yang di-<em>encode</em> menjadi baris karakter melalui <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">Google’s polyline algorithm</a> yang digunakan Traffi.</p>
+<p>Kita bisa konversi ke data yang lebih terbaca. Kita pakai bantuan library <code>googleway</code> dan <code>sf</code>.</p>
+<pre class="r"><code># fungsi untuk konversi tipe geometri data GIS-nya
+convert_shape &lt;- function(x, y) {
+  x %&gt;%
+    st_as_sf(coords = c(&quot;lon&quot;, &quot;lat&quot;)) %&gt;%
+    group_by(gr = y) %&gt;%
+    summarise(do_union = FALSE) %&gt;%
+    st_cast(&quot;LINESTRING&quot;) %&gt;%
+    ungroup() %&gt;%
+    select(geometry)
+}
+
+# decode google&#39;s polyline
+df_route &lt;- df_route %&gt;%
+  mutate(shape_decode = map(shape, decode_pl)) %&gt;%
+  unnest(shape_decode)
+
+# bentuk geometri
+df_route &lt;- df_route %&gt;%
+  st_as_sf(coords = c(&quot;lon&quot;, &quot;lat&quot;)) %&gt;%
+  group_by_at(vars(-geometry, -stops)) %&gt;%
+  summarise(do_union = FALSE) %&gt;%
+  st_cast(&quot;LINESTRING&quot;)</code></pre>
+<p>Sampai di sini, kita sudah mendapatkan bentuk geometri rute yang bisa ditampilkan jadi gambar. Coba kita tes?</p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data = df_route %&gt;%
+            filter(is_hidden == FALSE,
+                   direction == 1),
+          aes(color = route_name)) +
+  guides(color = FALSE)</code></pre>
+<p><img src="/post/2020-04-05-rute-transjakarta-dari-trafi_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Ini adalah rute yang beroperasi pada tanggal tulisan ini diperbarui. Sepertinya lebih sedikit dari yang seharusnya. Bahkan kalau dibandingkan dengan rute pada tanggal 25 Juni 2018 di blog Mas Rasyid (<a href="http://rasyidridha.com/images/datakepo/tj/tj_route.png">gambar</a>), rute hari ini tetap lebih sedikit.</p>
+<p>Contoh lain rute yang dibuat pada 7 November 2019, sangat banyak.</p>
+<p><img src = "https://raw.githubusercontent.com/rasyidstat/transjakarta/master/figs/tj_route_20191107.png"></p>
+<p>Mungkin ini operasi khusus selama penyebaran pandemi Covid-19.</p>
+<blockquote class="twitter-tweet">
+<p lang="in" dir="ltr">
+Sahabat TiJe, lihat informasi rute Transjakarta yang beroperasi per 6 April 2020 pada gambar di bawah ini. Harap selalu menerapkan social dan physical distancing saat berada di lingkungan Transjakarta. <a href="https://twitter.com/hashtag/TiJeTanggapCorona?src=hash&amp;ref_src=twsrc%5Etfw">#TiJeTanggapCorona</a> <a href="https://t.co/tvMGnQWos0">pic.twitter.com/tvMGnQWos0</a>
+</p>
+— Transportasi Jakarta (<span class="citation">@PT_Transjakarta</span>) <a href="https://twitter.com/PT_Transjakarta/status/1247011146676256770?ref_src=twsrc%5Etfw">April 6, 2020</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div id="reformatting-data" class="section level2">
+<h2>Reformatting Data</h2>
+<p>Untuk finalisasi Mas Rasyid membuat data ini jadi lebih rapi.</p>
+<p>Pertama, menamai ulang kolom-kolomnya, lalu mengurutkannya, dan didefinisikan ke <code>transjakarta_route</code>.</p>
+<pre class="r"><code>transjakarta_route &lt;- df_route %&gt;%
+  select(transport_id,
+         schedule_id,
+         corridor_id = name,
+         corridor_name = long_name,
+         corridor_color = color,
+         route_id = id,
+         route_name,
+         direction,
+         validity,
+         is_hidden)</code></pre>
+<p>Kedua, menambahkan sistem koordinat referensi (CRS).</p>
+<pre class="r"><code>transjakarta_route &lt;- transjakarta_route %&gt;%
+  as_tibble() %&gt;%
+  st_as_sf()
+st_crs(transjakarta_route) &lt;- 4326
+transjakarta_route</code></pre>
+<pre><code>## Simple feature collection with 222 features and 10 fields
+## geometry type:  LINESTRING
+## dimension:      XY
+## bbox:           xmin: 106.7054 ymin: -6.3102 xmax: 106.9534 ymax: -6.10947
+## CRS:            EPSG:4326
+## # A tibble: 222 x 11
+##    transport_id schedule_id corridor_id corridor_name corridor_color route_id
+##    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;         &lt;chr&gt;          &lt;chr&gt;   
+##  1 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.001   
+##  2 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.002   
+##  3 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.006   
+##  4 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.008   
+##  5 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.009   
+##  6 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.012   
+##  7 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.012B  
+##  8 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.014   
+##  9 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.205A  
+## 10 idjkb_brt    idjkb_1     1           Blok M - Kota D02027         1.205B  
+## # … with 212 more rows, and 5 more variables: route_name &lt;chr&gt;,
+## #   direction &lt;int&gt;, validity &lt;lgl&gt;, is_hidden &lt;lgl&gt;, geometry &lt;LINESTRING [°]&gt;</code></pre>
+<p>Data rute TJ ini juga dilengkapi dengan keterangan arah bolak-balik, dan apakah termasuk rute utamanya atau bukan.</p>
+<pre class="r"><code>transjakarta_route &lt;- transjakarta_route %&gt;%
+  group_by(corridor_id, direction) %&gt;%
+  mutate(n = n()) %&gt;%
+  ungroup() %&gt;%
+  mutate(is_main = ifelse(corridor_name == route_name, TRUE, FALSE),
+         is_main_reverse = ifelse(corridor_name ==
+                                    paste0(str_extract(route_name, &quot;(?&lt;=- ).*$&quot;),
+                                           &quot; - &quot;,
+                                           str_extract(route_name, &quot;^.*(?= -)&quot;)),
+                                  TRUE, FALSE)) %&gt;%
+  mutate(is_main = ifelse(n == 1 &amp; direction == 1, TRUE, is_main),
+         is_main_reverse = ifelse(n == 1 &amp; direction == 2, TRUE, is_main_reverse))
+transjakarta_route[,c(3, 7:8, 12:14)]</code></pre>
+<pre><code>## Simple feature collection with 222 features and 6 fields
+## geometry type:  LINESTRING
+## dimension:      XY
+## bbox:           xmin: 106.7054 ymin: -6.3102 xmax: 106.9534 ymax: -6.10947
+## CRS:            EPSG:4326
+## # A tibble: 222 x 7
+##    corridor_id route_name direction     n is_main is_main_reverse
+##    &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;          
+##  1 1           Blok M - …         1    13 TRUE    FALSE          
+##  2 1           Kota - Bl…         2    12 FALSE   TRUE           
+##  3 1           Kota - Ha…         2    12 FALSE   FALSE          
+##  4 1           Kota - Bu…         2    12 FALSE   FALSE          
+##  5 1           Blok M - …         1    13 FALSE   FALSE          
+##  6 1           Kota - Mo…         2    12 FALSE   FALSE          
+##  7 1           Monas - K…         1    13 FALSE   FALSE          
+##  8 1           Kota - Du…         2    12 FALSE   FALSE          
+##  9 1           Blok M - …         1    13 FALSE   FALSE          
+## 10 1           Tosari - …         2    12 FALSE   FALSE          
+## # … with 212 more rows, and 1 more variable: geometry &lt;LINESTRING [°]&gt;</code></pre>
+<p>Koridor utama yang beroperasi pada hari data ini diambil:</p>
+<pre class="r"><code>(ua &lt;- filter(transjakarta_route, is_main == TRUE | is_main_reverse == TRUE)$corridor_id %&gt;% unique())</code></pre>
+<pre><code>##  [1] &quot;1&quot;   &quot;11&quot;  &quot;12&quot;  &quot;2&quot;   &quot;2A&quot;  &quot;3&quot;   &quot;4&quot;   &quot;4C&quot;  &quot;4D&quot;  &quot;5&quot;   &quot;5C&quot;  &quot;5D&quot; 
+## [13] &quot;6&quot;   &quot;7&quot;   &quot;8&quot;   &quot;8A&quot;  &quot;9&quot;   &quot;13&quot;  &quot;13A&quot;</code></pre>
+<p>Selain itu, koridor lainnya yang beroperasi adalah:</p>
+<pre class="r"><code>(ua_neg &lt;- setdiff(unique(transjakarta_route$corridor_id), ua))</code></pre>
+<pre><code>## [1] &quot;10&quot;  &quot;6A&quot;  &quot;13B&quot;</code></pre>
+<p>Jumlah rute yang beroperasi tapi bukan dari ujung ke ujung, atau tidak penuh satu koridor (<code>is_main == FALSE</code>):</p>
+<pre class="r"><code>n_distinct(transjakarta_route$corridor_id) - n_distinct(ua) </code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code># cek lagi dengan cara lain
+transjakarta_route %&gt;%
+  filter(corridor_id %in% ua_neg, is_hidden == FALSE) %&gt;%
+  .$corridor_id %&gt;%
+  n_distinct()</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p>Terakhir, mendefinisikan ulang rute-rute yang tidak penuh satu koridor tadi (<code>is_main == FALSE</code>) tetapi tetap ditampilkan (<code>is_hidden == FALSE</code>) menjadi bernilai <code>is_main == TRUE</code> (nilai <code>direction == 1</code>) atau <code>is_main_reverse == TRUE</code> (nilai <code>direction == 2</code>).</p>
+<pre class="r"><code>transjakarta_route &lt;- transjakarta_route %&gt;%
+  mutate(is_main = ifelse(corridor_id %in% ua_neg &amp;
+                            is_hidden == FALSE &amp;
+                            direction == 1, TRUE, is_main),
+         is_main_reverse = ifelse(corridor_id %in% ua_neg &amp;
+                                    is_hidden == FALSE &amp;
+                                    direction == 2, TRUE, is_main_reverse)) %&gt;%
+  select(-n, -is_hidden)
+glimpse(transjakarta_route)</code></pre>
+<pre><code>## Rows: 222
+## Columns: 12
+## $ transport_id    &lt;chr&gt; &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;idjkb_brt&quot;, &quot;…
+## $ schedule_id     &lt;chr&gt; &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;, &quot;idjkb_1&quot;…
+## $ corridor_id     &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;…
+## $ corridor_name   &lt;chr&gt; &quot;Blok M - Kota&quot;, &quot;Blok M - Kota&quot;, &quot;Blok M - Kota&quot;, &quot;B…
+## $ corridor_color  &lt;chr&gt; &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D02027&quot;, &quot;D0…
+## $ route_id        &lt;chr&gt; &quot;1.001&quot;, &quot;1.002&quot;, &quot;1.006&quot;, &quot;1.008&quot;, &quot;1.009&quot;, &quot;1.012&quot;,…
+## $ route_name      &lt;chr&gt; &quot;Blok M - Kota&quot;, &quot;Kota - Blok M&quot;, &quot;Kota - Harmoni&quot;, &quot;…
+## $ direction       &lt;int&gt; 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 1,…
+## $ validity        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ geometry        &lt;LINESTRING [°]&gt; LINESTRING (106.802 -6.2433..., LINESTRING…
+## $ is_main         &lt;lgl&gt; TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…
+## $ is_main_reverse &lt;lgl&gt; FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…</code></pre>
+<p>Kalau mau disimpan datanya, mari simpan…</p>
+<pre class="r"><code>saveRDS(transjakarta_route, &quot;data/tj_route.rds&quot;)</code></pre>
+</div>
+<div id="visualisasi" class="section level2">
+<h2>Visualisasi</h2>
+<pre class="r"><code>tj &lt;- transjakarta_route %&gt;% 
+  filter(direction == 1, is_main == TRUE)
+
+tj_col &lt;- paste0(&quot;#&quot;, tj$corridor_color)
+names(tj_col) &lt;- tj$corridor_id
+
+ggplot() +
+  geom_sf(data = tj, aes(color = corridor_id)) +
+  coord_sf(datum = NA) +
+  theme_minimal() +
+  guides(color = FALSE) +
+  scale_color_manual(values = tj_col) +
+  labs(title = &quot;Rute Pelayanan TransJakarta&quot;,
+       subtitle = &quot;Di tengah pandemi Covid-19&quot;,
+       caption = &quot;sumber: trafi.com\ntanggal: 6 April 2020&quot;)</code></pre>
+<p><img src="/post/2020-04-05-rute-transjakarta-dari-trafi_files/figure-html/visualisasi-1.png" width="672" /></p>
+<p>Untuk eksplorasi rute terpanjang dan terpendek dari pelayanan BRT TransJakarta, teman-teman bisa baca tulisan Mas Rasyid tentang eksplorasi rute TransJakarta menggunakan library <code>sf</code> di <a href="http://rasyidridha.com/datakepo/rute-transjakarta/">blognya</a>.</p>
+<p>Sekian, terima kasih.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.id" class="footer-links-kudos"><img src="/images/cc-by-sa-88x31.png" alt="Creative Commons Licenses" width="50%" height="50%"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
