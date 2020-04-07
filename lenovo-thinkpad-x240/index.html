@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">4 min read</span>
+    <span class="article-duration">5 min read</span>
     
 
     <h1 class="article-title">Lenovo ThinkPad X240 dengan Xubuntu</h1>
@@ -71,7 +71,7 @@
     
 
     <div class="article-content">
-      <p><img src="/post/2020-04-07-lenovo-thinkpad-x240_files/logo_thinkpad.jpg" alt="IBM ThinkPad"></p>
+      <p><img src="../post/2020-04-07-lenovo-thinkpad-x240_files/logo_thinkpad.jpg" alt="IBM ThinkPad"></p>
 <p>Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. <em>Secondhand</em>. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:</p>
 <ul>
 <li>Model prosesor Intel® Core™ i5-4300U CPU @ 1.90GHz (artinya multi CPU generasi 4)</li>
@@ -87,14 +87,14 @@
 </ul>
 <h2 id="kondisi-fisik">Kondisi fisik</h2>
 <p>Kondisinya secara fisik masih bagus. Cuma engsel kanan yang bunyi <em>krek-krek</em> saat dibuka-tutup. Juga baterainya agak sedikit longgar/goyang. Tapi jarang ada kelihatan lecet.</p>
-<p><img src="./post/2020-04-07-lenovo-thinkpad-x240_files/bagian-atas.jpg" alt="Bagian atas"></p>
+<p><img src="../post/2020-04-07-lenovo-thinkpad-x240_files/bagian-atas.jpg" alt="Bagian atas"></p>
 <h2 id="kelebihan">Kelebihan</h2>
 <ul>
 <li>Baterainya ada dua, yang tertanam dengan yang bisa dilepas dari luar. Jadi bisa tahan lama saat dibawa bepergian. Sehari-semalam dipakai biasanya cuma saya isi daya 1x.</li>
 <li><em>Gesture allowed</em> pada TrackPad, ketika dicoba di Windows 10 (OS bawaan toko) dan Xubuntu 18.04, tidak ada bedanya, sama-sama yahood!</li>
 <li>TrackPoint, entah ini kelebihan atau bukan karena sebenarnya jarang saya pakai, ini juga berfungsi dengan baik di Xubuntu 18.04.</li>
 </ul>
-<p><img src="%22post/2020-04-07-lenovo-thinkpad-x240_files/trackpoint.jpg%22" alt="TrackPoint"></p>
+<p><img src="../post/2020-04-07-lenovo-thinkpad-x240_files/trackpoint.jpg" alt="TrackPoint"></p>
 <h2 id="kebiasaan">Kebiasaan</h2>
 <p>Saya agak <em>kagok</em> dengan papan ketiknya karena belum terbiasa. Bukan ketika mengetik huruf dan angka, tapi ketika menggunakan tombol-tombol seperti:</p>
 <ul>
@@ -146,19 +146,43 @@
 </tr>
 </tbody>
 </table>
-<p><img src="%22post/2020-04-07-lenovo-thinkpad-x240_files/Fn+Ctrl.jpg%22" alt="Fn, Ctrl"></p>
+<p><img src="../post/2020-04-07-lenovo-thinkpad-x240_files/Fn+Ctrl.jpg" alt="Fn, Ctrl"></p>
 <p>Selain itu malah jadi sangat nyaman:</p>
 <ul>
-<li><code>PgUp</code> dan <code>PgDn</code> yang dekat dengan arrow, memudahkan saat membaca dan skrol halaman.</li>
-<li><code>Alt</code> kanan, <code>PrtSc</code>, dan <code>Ctrl</code> kanan yang berdekatan sehingga mudah untuk ambil tangkapan layar. Saya terbiasa dengan <code>shortcut</code> kombinasi tombol-tombol ini.</li>
+<li><code>PgUp</code> dan <code>PgDn</code> yang dekat dengan arrow, memudahkan saat membaca dan skrol halaman.
+<img src="../post/2020-04-07-lenovo-thinkpad-x240_files/arrow.jpg" alt="Arrow, PgUp, PgDn"></li>
+<li><code>Alt</code> kanan, <code>PrtSc</code>, dan <code>Ctrl</code> kanan yang berdekatan sehingga mudah untuk ambil tangkapan layar. Saya terbiasa dengan <code>shortcut</code> kombinasi tombol-tombol ini.
+<img src="../post/2020-04-07-lenovo-thinkpad-x240_files/ptscn.jpg" alt="Tombol-tombol shortcut tangkapan layar"></li>
 </ul>
-<p><img src="%22post/2020-04-07-lenovo-thinkpad-x240_files/arrow.jpg%22" alt="Arrow, PgUp, PgDn"></p>
-<p><img src="%22post/2020-04-07-lenovo-thinkpad-x240_files/ptscn.jpg%22" alt="Tombol-tombol shortcut tangkapan layar"></p>
 <h2 id="informasi-hardware">Informasi Hardware</h2>
-<h3 id="prosesor--memori">Prosesor &amp; memori</h3>
-<pre><code class="language-{bash}" data-lang="{bash}">~$ cat /proc/cpuinfo
-~$ lscpu
-</code></pre><h3 id="audio--monitor">Audio &amp; monitor</h3>
+<h3 id="prosesor">Prosesor</h3>
+<pre><code class="language-{bash}" data-lang="{bash}">~$ lscpu
+</code></pre><pre><code>Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  2
+Core(s) per socket:  2
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               69
+Model name:          Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+Stepping:            1
+CPU MHz:             936.269
+CPU max MHz:         2900,0000
+CPU min MHz:         800,0000
+BogoMIPS:            4988.62
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            3072K
+NUMA node0 CPU(s):   0-3
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+</code></pre><h3 id="monitor--audio">Monitor &amp; audio</h3>
 <pre><code class="language-{bash}" data-lang="{bash}">~$ xdpyinfo | grep &quot;dimensions:&quot;
 </code></pre><pre><code>dimensions:    1366x768 pixels (361x203 millimeters)
 </code></pre><pre><code class="language-{bash}" data-lang="{bash}">~$ lspci -v | grep &quot;VGA&quot; -A 12
