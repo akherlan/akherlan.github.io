@@ -6,10 +6,22 @@
     <description>Recent content in rstats on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contek Kode: Rute TransJakarta</title>
+      <link>/rute-transjakarta/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/rute-transjakarta/</guid>
+      <description>Mari kita plesiran ke blog para jagoan!
+Entah kenapa saya tiba-tiba ingat blognya Mas Rasyid Ridha yang masih saja belum aktif diisi lagi sampai sekarang. Mungkin masih sibuk dengan kegemaran lainnya. Atau jangan-jangan pindah web???
+Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo transjakarta. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis sebuah artikel bernuansa transportist. Data yang digunakan diperoleh dari Trafi.
+Supaya saya jadi nggak cuma repost doang di sini, tulisan ini akan mengupas dan mengulas cara-cara Mas Rasyid mengolah data rute TransJakarta.</description>
+    </item>
     
     <item>
       <title>Bermain dengan Data Google Maps</title>
