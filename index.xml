@@ -6,10 +6,22 @@
     <description>Recent content on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R di Visual Studio Code</title>
+      <link>/r-di-visual-studio-code/</link>
+      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/r-di-visual-studio-code/</guid>
+      <description>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
+Berangkat dari tweet di atas, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut&amp;hellip;
+1. Siapkan VS Code Saya unduh dan instal VS Code dulu tentunya. Instalasi di linux Ubuntu semudah mengerjakan skripsi: copas ini saja! (ups)
+Ganti bagian ~/Downloads/code_x.xx.x-xxxxxx_amd64.deb dengan direktori tempat teman-teman menyimpan berkas deb-nya VS Code.</description>
+    </item>
     
     <item>
       <title>Lenovo ThinkPad X240 dengan Xubuntu</title>
@@ -205,7 +217,7 @@ Instal Library R Hal pertama yang saya ingin lakukan setelah instal R adalah men
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Telegram: akherlan | Twitter: terusterang__ | Github: akherlan
+      <description>Telegram: akherlan | Twitter: terusterang__
 Cerita dari 2016 Saya memperkenalkan diri kepada khalayak sebagai seorang mahasiswa teknik. Saya punya cita-cita ingin membangun sebuah start-up (belakangan sudah tidak lagi). Ingin bekerja di daerah tempat saya dibesarkan sebagai apapun, atau memiliki pekerjaan yang bisa dibawa kemanapun saat saya ingin pindah atau pergi. Beberapa orang mungkin ingin seperti itu juga. Sebagiannya tidak. Saya ingin bisa menikah sesegera mungkin agar kelak semangat hidup selalu dapat diperbaharui.</description>
     </item>
     
