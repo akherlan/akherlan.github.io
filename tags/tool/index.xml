@@ -18,9 +18,10 @@
       
       <guid>/r-di-visual-studio-code/</guid>
       <description>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
-Berangkat dari tweet di atas, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut&amp;hellip;
-1. Siapkan VS Code Saya unduh dan instal VS Code dulu tentunya. Instalasi di linux Ubuntu semudah mengerjakan skripsi: copas ini saja! (ups)
-Ganti bagian ~/Downloads/code_x.xx.x-xxxxxx_amd64.deb dengan direktori tempat teman-teman menyimpan berkas deb-nya VS Code.</description>
+👏VS @code is now an amazing IDE for R
+The latest improvements to the language server protocol implementation for #rstats offer code completion, go to definitions, info on hover and more. I have not been this excited for new R developments in a while:
+🔗https://t.co/hWMoLwOzi1 pic.twitter.com/X8S5xGffPM
+&amp;mdash; Jozef Hajnala (@jozefhajnala) December 10, 2019  Berangkat dari tweet di atas, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini.</description>
     </item>
     
   </channel>
