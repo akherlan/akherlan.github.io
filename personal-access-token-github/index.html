@@ -88,9 +88,17 @@
 <p><strong>INI PENTING!</strong> Jangan lupa copas seluruh 40 karakter acak yang muncul.</p>
 <p>Berikutnya kita kembali ke jendela RStudio lagi, lalu gunakan perintah berikut untuk menampilkan berkas <code>.Renviron</code> yang tersimpan di komputer:</p>
 <pre class="r"><code>usethis::edit_r_environ()</code></pre>
+<div class="figure">
+<img src="/post/2020-04-16-personal-access-token-github-untuk-r_files/gh_pat_1.gif" alt="edit_r_environ" />
+<p class="caption">edit_r_environ</p>
+</div>
 <p>Akan terbuka berkas <code>.Renviron</code> yang berada di direktori home. Jika tidak punya, berarti <code>usethis</code> akan membuatkan berkas ini untukmu. Ketikkan teks berikut di editor skrip yang terbuka:</p>
 <pre class="r"><code>GITHUB_PAT=xxxxxxxxxxxxxx
 # ganti xxxxxxxxxxxxxx dengan token yang tadi di copas dari Github</code></pre>
+<div class="figure">
+<img src="/post/2020-04-16-personal-access-token-github-untuk-r_files/gh_pat_2.gif" alt="renviron file" />
+<p class="caption">renviron file</p>
+</div>
 <p>Tanpa tanda kutip ya…</p>
 <p>Pastikan satu baris terakhir tersisa kosong (mereka bilang ini <em>new line</em>). Jangan lupa di simpan. Kalau nggak, percuma tadi capek-capek bikin.</p>
 <p>Cek, apakah sudah ada?</p>
