@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>belajar</title>
+      <link>/categories/belajar/</link>
+      <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/belajar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>catatan</title>
       <link>/categories/catatan/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
@@ -26,15 +35,6 @@
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/tutorial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>belajar</title>
-      <link>/categories/belajar/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/belajar/</guid>
       <description></description>
     </item>
     
