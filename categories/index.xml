@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>catatan</title>
+      <link>/categories/catatan/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/catatan/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>belajar</title>
@@ -17,15 +26,6 @@
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/belajar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>catatan</title>
-      <link>/categories/catatan/</link>
-      <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/catatan/</guid>
       <description></description>
     </item>
     

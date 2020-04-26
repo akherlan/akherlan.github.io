@@ -6,10 +6,25 @@
     <description>Recent content in github on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Branch untuk GH-Pages Databoard</title>
+      <link>/branch-github-pages-databoard/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/branch-github-pages-databoard/</guid>
+      <description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
+Apakah cukup jelas?
+Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
+1. Clone repositori databoard, saya pakai tautan ssh karena nyaman dan aman.
+$ mkdir databoard &amp;amp;&amp;amp; cd databoard $ git clone git@github.com:akherlan/databoard.git master Tautatan itu copas dari repo di bagian ini.
+2. Gandakan repositori hasil clone ke lokal tadi menjadi direktori gh-pages.
+$ cp master gh-pages 3.</description>
+    </item>
     
     <item>
       <title>Personal Access Token Github</title>
