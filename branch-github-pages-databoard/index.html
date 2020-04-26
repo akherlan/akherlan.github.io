@@ -72,13 +72,13 @@
 
     <div class="article-content">
       <p>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:</p>
-<!-- raw HTML omitted -->
+<script async src="https://telegram.org/js/telegram-widget.js?8" data-telegram-post="GNURIndonesia/20654" data-width="100%"></script>
 <p>Apakah cukup jelas?</p>
 <p>Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:</p>
 <p><strong>1. Clone repositori <a href="https://github.com/akherlan/databoard">databoard</a></strong>, saya pakai tautan ssh karena nyaman dan aman.</p>
 <pre><code class="language-{bash}" data-lang="{bash}">$ mkdir databoard &amp;&amp; cd databoard
 $ git clone git@github.com:akherlan/databoard.git master
-</code></pre><p>Tautatan itu copas dari repo di bagian ini.</p>
+</code></pre><p>Tautan repo copas dari di bagian ini.</p>
 <p><img src="/post/2020-04-26-pakai-branch-untuk-github-pages_files/clone.png" alt=""></p>
 <p><strong>2. Gandakan repositori hasil clone</strong> ke lokal tadi menjadi direktori gh-pages.</p>
 <pre><code class="language-{bash}" data-lang="{bash}">$ cp master gh-pages
@@ -96,7 +96,7 @@ $ git checkout origin/gh-pages -b gh-pages
 <p><img src="/post/2020-04-26-pakai-branch-untuk-github-pages_files/dir.png" alt="Jadi ada tiga child dir dalam parent dir databoard"></p>
 <p><strong>7. Copas hasil rendernya ke direktori gh-pages</strong> yang tadi sudah kosong.</p>
 <p>Mengapa tidak membuat alamat render langsung ditujukan ke direktori gh-pages? Karena nanti rekaman git-nya hilang. Rmarkdown akan mengganti/menimpa direktori gh-pages yang ada dan mengisinya dengan berkas-berkas baru hasil render.</p>
-<p>Sebagai opsi, juga bisa gunakan version control pada direktori &ldquo;rproj&rdquo; ini, kalau diperlukan.</p>
+<p>Sebagai opsi, juga bisa gunakan version control pada direktori rproj ini, kalau diperlukan.</p>
 <p><strong>8. Lakukan commit dan push dari branch &ldquo;gh-pages&rdquo;</strong></p>
 <pre><code class="language-{bash}" data-lang="{bash}">$ git add .
 $ git commit -m &quot;commit pertama untuk gh-pages&quot;
