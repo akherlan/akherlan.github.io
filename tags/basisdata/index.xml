@@ -13,10 +13,10 @@
     
     <item>
       <title>PostgreSQL dan RStudio</title>
-      <link>/notes/postgresql-dan-rstudio/</link>
+      <link>/blog/postgresql-dan-rstudio/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/postgresql-dan-rstudio/</guid>
+      <guid>/blog/postgresql-dan-rstudio/</guid>
       <description>Saya sedang belajar mengelola data dalam sebuah basisdata. Sebab ketertarikan saya dengan bidang geospasial, saya coba untuk mempelajari DBMS terkenal untuk ini, yaitu PostgreSQL dengan ekstensi PostGIS.
 Singkat cerita, saya sudah melakukan instalasi dan pengaturan basis data postgres + postgis di komputer saya. Selanjutnya saya ingin coba membuat koneksi untuk akses basisdata melalui RStudio. Saya merasa agak sedikit sombong karena sebelumnya sudah sukses dengan koneksi PostgreSQL lewat QGIS.
 Ada dua cara membuat koneksi dari R untuk mengakses basis data:</description>

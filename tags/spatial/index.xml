@@ -13,10 +13,10 @@
     
     <item>
       <title>Menentukan Batas Plot Peta di R</title>
-      <link>/notes/batas-plot-peta-locator/</link>
+      <link>/blog/batas-plot-peta-locator/</link>
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/batas-plot-peta-locator/</guid>
+      <guid>/blog/batas-plot-peta-locator/</guid>
       <description>Kita akan menggunakan fungsi locator(1) dari paket graphics untuk memperoleh nilai koordinat pada kanvas plot. Kita akan menggunakan nilai-nilai ini sebagai batas plot peta Indonesia dan negara sekitarnya. Sehingga tidak perlu lagi menduga-duga berapa nilai yang tepat untuk batas peta tersebut.
 Beberapa library R yang akan kita gunakan kali ini diantaranya:
 library(&amp;quot;rnaturalearth&amp;quot;) # data peta dari Natural Earth library(&amp;quot;sf&amp;quot;) # mengelola data peta simple feature library(&amp;quot;ggplot2&amp;quot;) # untuk plot library(&amp;quot;dplyr&amp;quot;) # agar kita bisa melakukan piping (%&amp;gt;%) Katakanlah kita ingin menampilkan peta wilayah Asia Tenggara dan sedikit bagian Oceania dan Australia.</description>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Bermain dengan Data Google Maps</title>
-      <link>/notes/google-maps-data/</link>
+      <link>/blog/google-maps-data/</link>
       <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/google-maps-data/</guid>
+      <guid>/blog/google-maps-data/</guid>
       <description>Singkat dan langsung saja.
 Data yang saya gunakan adalah data hasil tracking GPS-nya Google di ponsel pintar saya. Ups… Menyebar nich saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.
 Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google.com. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai data punya saya.
@@ -25,10 +25,10 @@ Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google
     
     <item>
       <title>Regex: Belajar Merapikan Data</title>
-      <link>/notes/belajar-regex-merapikan-data/</link>
+      <link>/blog/belajar-regex-merapikan-data/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/belajar-regex-merapikan-data/</guid>
+      <guid>/blog/belajar-regex-merapikan-data/</guid>
       <description>Siang tadi saya coba untuk perlahan-lahan mengumpulkan data yang saya miliki di laptop untuk disimpan di satu tempat. Supaya terorganisir.
 Karena sebelumnya saya menonton video dari Youtube-nya Mas Aswan, jadi saya pakai bantuan library pins (baru dari RStudio) untuk mengelola koleksi dataset di github.
 Malam ini saya coba mengunggah data gempa yang sudah lama terbengkalai. Bulukan di direktori ~/Downloads.

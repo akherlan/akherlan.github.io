@@ -13,10 +13,10 @@
     
     <item>
       <title>Personal Access Token Github</title>
-      <link>/notes/personal-access-token-github/</link>
+      <link>/blog/personal-access-token-github/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/personal-access-token-github/</guid>
+      <guid>/blog/personal-access-token-github/</guid>
       <description>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui “pintu belakang yang disepakati”.
 Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).
 Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.</description>
@@ -24,10 +24,10 @@ Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hany
     
     <item>
       <title>Memindahkan Repo Git</title>
-      <link>/notes/memindahkan-repo-git/</link>
+      <link>/blog/memindahkan-repo-git/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/notes/memindahkan-repo-git/</guid>
+      <guid>/blog/memindahkan-repo-git/</guid>
       <description>Tempo hari saya memesan mesin baru. Secondhand. Masih bagus. Dan impian dari lama. Walau saya harus lakukan tweak, untuk pahami beberapa hal, demi optimasi kerja mesin. Tapi ini kita ceritakan nanti saja.
 Hal pertama yang saya pikirkan adalah memindahkan semua proyek kerja yang dilakukan dengan version control git.
 Pertama kali mencoba copas langsung, dari mesin komputer lama saya langsung berhadapan dengan galat (error). Direktori tempat menyimpan proyek dengan git gagal di-push ke awan setelah dilakukan commit.</description>
