@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<title>Memindahkan Repo Git - Engineer of words</title>
+<meta property="og:title" content="Memindahkan Repo Git - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Memindahkan Repo Git</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 5 Apr 2020
+      
+    </span>
+    
+
+    <div class="article-content">
+      <p>Tempo hari saya memesan mesin baru. <em>Secondhand</em>. Masih bagus. Dan impian dari lama. Walau saya harus lakukan <em>tweak</em>, untuk pahami beberapa hal, demi optimasi kerja mesin. Tapi ini kita ceritakan nanti saja.</p>
+<p>Hal pertama yang saya pikirkan adalah memindahkan semua proyek kerja yang dilakukan dengan version control git.</p>
+<p>Pertama kali mencoba copas langsung, dari mesin komputer lama saya langsung berhadapan dengan galat (<em>error</em>). Direktori tempat menyimpan proyek dengan git gagal di-<em>push</em> ke awan setelah dilakukan <em>commit</em>.</p>
+<p>Remote dilakukan melalui ssh untuk tampil <em>online</em>, bukan tautan Github https saja.</p>
+<p>Usul punya asal, galat terjadi karena kunci yang saya pakai di mesin baru tidak cocok dengan informasi yang disimpan dalam repositori ini, karena kunci di mesin lama tentu berbeda.</p>
+<p>Jadi bagaimana mengatasi masalah ini? Apakah haru <em>clone</em> repositori yang sudah <em>online</em> di Github? Tidak perlu kisanak. Itu besar sekali. Habis kuota tathering nanti.</p>
+<p>Cara yang saya gunakan untuk mengatasi masalah ini adalah begini:</p>
+<ol>
+<li>Copy folder/direktori repositori dari mesin lama.</li>
+<li>Paste ke tempat yang diinginkan di mesin yang baru.</li>
+<li>Sebelum mulai bekerja dengan repositori ini, lakukan hal berikut:</li>
+</ol>
+<pre><code class="language-{bash}" data-lang="{bash}">git remote update
+</code></pre><p>Ternyata sesimpel itu.</p>
+<p>Setelah ini saya bisa lagi pake ssh untuk remote git dari mesin komputer baru. Tentu setelah menambah konfigurasi ssh baru di pengaturan Github.</p>
+<p>Thanks.</p>
+<p>Kemarin hari yang melelahkan, sekarang saatnya bersantai sejenak. Sruput kopi, bos!</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//andikh.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            Dibuat dengan <a href="https://gohugo.io/" target="_blank">Hugo</a> dan <a href="https://bookdown.org/yihui/blogdown/" target="_blank">Blogdown</a>
+          </li>
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>

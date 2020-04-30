@@ -13,22 +13,22 @@
     
     <item>
       <title>Nasihat untuk Freelancer</title>
-      <link>/nasihat-untuk-freelancer/</link>
+      <link>/notes/nasihat-untuk-freelancer/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/nasihat-untuk-freelancer/</guid>
-      <description>Saya masih punya minat jadi freelancer alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.
+      <guid>/notes/nasihat-untuk-freelancer/</guid>
+      <description>Saya masih punya minat jadi freelancer alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja lepas maupun paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.
 Sebagai pemula atau orang bilang newbie, saya harus banyak belajar. Pada catatan ini barangkali saya ingin kumpulkan berbagai nasihat dari senior. Akan diperbarui secara berkala. Semoga berkenan.
 Nasihat dari Senior
- Baru satu. Nanti ada lagi. Silakan, boleh bookmark. Terima kasih.</description>
+ Baru satu. Nanti ada lagi. Silakan, boleh bookmark.</description>
     </item>
     
     <item>
       <title>Branch untuk GH-Pages Databoard</title>
-      <link>/branch-github-pages-databoard/</link>
+      <link>/notes/branch-github-pages-databoard/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/branch-github-pages-databoard/</guid>
+      <guid>/notes/branch-github-pages-databoard/</guid>
       <description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
  Apakah cukup jelas?
 Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
@@ -40,10 +40,10 @@ $ cp master gh-pages 3.</description>
     
     <item>
       <title>Personal Access Token Github</title>
-      <link>/personal-access-token-github/</link>
+      <link>/notes/personal-access-token-github/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/personal-access-token-github/</guid>
+      <guid>/notes/personal-access-token-github/</guid>
       <description>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui “pintu belakang yang disepakati”.
 Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).
 Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.</description>
@@ -51,10 +51,10 @@ Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hany
     
     <item>
       <title>R di Visual Studio Code</title>
-      <link>/r-di-visual-studio-code/</link>
+      <link>/notes/r-di-visual-studio-code/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/r-di-visual-studio-code/</guid>
+      <guid>/notes/r-di-visual-studio-code/</guid>
       <description>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
 👏VS @code is now an amazing IDE for R
 The latest improvements to the language server protocol implementation for #rstats offer code completion, go to definitions, info on hover and more. I have not been this excited for new R developments in a while:
@@ -64,20 +64,20 @@ The latest improvements to the language server protocol implementation for #rsta
     
     <item>
       <title>Lenovo ThinkPad X240 dengan Xubuntu</title>
-      <link>/lenovo-thinkpad-x240/</link>
+      <link>/notes/lenovo-thinkpad-x240/</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/lenovo-thinkpad-x240/</guid>
+      <guid>/notes/lenovo-thinkpad-x240/</guid>
       <description>Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. Secondhand. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:
  Model prosesor Intel® Core™ i5-4300U CPU @ 1.90GHz (artinya multi CPU generasi 4) Arsitektur prosesor x86_64 (artinya dari Intel) Memori HDD SATA 500GB (versi lain ada yang pakai SSD) Memori RAM 4GB (sebetulnya saya mau pesan yang 8GB) VGA Intel Haswell-ULT Integrated Graphics Controller Adaptor WiFi Adaptor Bluetooth Ukuran layar 361x203 mm (12 inci) dengan resolusi sampai 1366x768 pixel Beratnya nggak tau pasti karena belum ditimbang, tapi termasuk ringan dibanding laptop lama Port-nya banyak dan lengkap sampai ada yang saya belum tau fungsinya.</description>
     </item>
     
     <item>
       <title>Memindahkan Repo Git</title>
-      <link>/memindahkan-repo-git/</link>
+      <link>/notes/memindahkan-repo-git/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/memindahkan-repo-git/</guid>
+      <guid>/notes/memindahkan-repo-git/</guid>
       <description>Tempo hari saya memesan mesin baru. Secondhand. Masih bagus. Dan impian dari lama. Walau saya harus lakukan tweak, untuk pahami beberapa hal, demi optimasi kerja mesin. Tapi ini kita ceritakan nanti saja.
 Hal pertama yang saya pikirkan adalah memindahkan semua proyek kerja yang dilakukan dengan version control git.
 Pertama kali mencoba copas langsung, dari mesin komputer lama saya langsung berhadapan dengan galat (error). Direktori tempat menyimpan proyek dengan git gagal di-push ke awan setelah dilakukan commit.</description>

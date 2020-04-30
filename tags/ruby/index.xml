@@ -13,10 +13,10 @@
     
     <item>
       <title>Ruby: &#34;Hello World!&#34;</title>
-      <link>/ruby-hello-world/</link>
+      <link>/notes/ruby-hello-world/</link>
       <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ruby-hello-world/</guid>
+      <guid>/notes/ruby-hello-world/</guid>
       <description>Latar Belakang Saya dapat kerjaan bantu-bantu ngurusin web. Nggak ngoding-ngoding banget, sih. Enak jadinya, cenderung lebih santai. Tapi saya masih belum puas dengan metode yang saat ini sedang dipakai. Berbekal rasa penasaran saya cari tahu teknologi apa yang kiranya cocok digunakan seandainya ganti metode develop-nya.
 Ceritanya, ini adalah website yang diharapkan bisa punya fitur ruang kumpul komunitas dan proses pesan jasa. Saya cari tahu framework yang dipakai oleh kompetitor terbesar saat ini.</description>
     </item>

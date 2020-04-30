@@ -13,10 +13,10 @@
     
     <item>
       <title>Branch untuk GH-Pages Databoard</title>
-      <link>/branch-github-pages-databoard/</link>
+      <link>/notes/branch-github-pages-databoard/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/branch-github-pages-databoard/</guid>
+      <guid>/notes/branch-github-pages-databoard/</guid>
       <description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
  Apakah cukup jelas?
 Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
@@ -28,10 +28,10 @@ $ cp master gh-pages 3.</description>
     
     <item>
       <title>Personal Access Token Github</title>
-      <link>/personal-access-token-github/</link>
+      <link>/notes/personal-access-token-github/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/personal-access-token-github/</guid>
+      <guid>/notes/personal-access-token-github/</guid>
       <description>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui “pintu belakang yang disepakati”.
 Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).
 Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.</description>

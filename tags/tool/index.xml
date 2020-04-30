@@ -13,10 +13,10 @@
     
     <item>
       <title>R di Visual Studio Code</title>
-      <link>/r-di-visual-studio-code/</link>
+      <link>/notes/r-di-visual-studio-code/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/r-di-visual-studio-code/</guid>
+      <guid>/notes/r-di-visual-studio-code/</guid>
       <description>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
 👏VS @code is now an amazing IDE for R
 The latest improvements to the language server protocol implementation for #rstats offer code completion, go to definitions, info on hover and more. I have not been this excited for new R developments in a while:

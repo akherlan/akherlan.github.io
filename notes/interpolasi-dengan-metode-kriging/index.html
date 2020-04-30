@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<title>Interpolasi dengan Metode Kriging - Engineer of words</title>
+<meta property="og:title" content="Interpolasi dengan Metode Kriging - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">8 min read</span>
+    
+
+    <h1 class="article-title">Interpolasi dengan Metode Kriging</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 18 Aug 2019
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p><em>Belajar interpolasi spasial menggunakan R</em></p>
+<div id="latar-belakang-kasus-dan-tujuan" class="section level2">
+<h2>Latar Belakang, Kasus, dan Tujuan</h2>
+<p>Katakanlah kita ingin mengetahui bagaimana kualitas udara di atas suatu wilayah. Untuk mengetahuinya kita menggunakan alat pengukur tingkat polusi.</p>
+<p>Peralatan untuk mengukur kualitas udara ini ditempatkan di beberapa titik dalam wilayah tersebut. Ada di titik A, titik B, titik C, dan seterusnya.</p>
+<p>Tetapi yang ingin kita lihat adalah kualitas udara secara keseluruhan di atas wilayah ini, misalnya lewat peta karena akan lebih mudah melihatnya.</p>
+<p>Yang bisa kita lakukan adalah memplotkan nilai kualitas udara di masing-masing titik tersampel (menampilkan data diskrit) hanya di titik-titik teramati. Atau dengan cara yang lebih OK.</p>
+<p>Cara OK itu adalah dengan melakukan interpolasi antar titik-titik tersampel untuk mendapatkan peta dengan nilai kualitas udara yang kontinyu di seluruh wilayah yang diamati. Dengan kata lain, titik-titik yang tidak tersampel ikut diberi nilai pada peta dengan nilai prediksi.</p>
+<p>Kali ini kita akan mempraktikkan cara-cara yang sudah diberikan di web <a href="https://rspatial.org/analysis/4-interpolation.html">rspatial.org</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> tentang bagaimana caranya melakukan interpolasi dengan metode Kriging menggunakan beberapa <em>library</em> dari R.</p>
+<p>Namun sebelumnya, mari kenali dahulu apa yang dimaksud dengan metode interpolasi Kriging.</p>
+</div>
+<div id="metode-yang-digunakan-kriging" class="section level2">
+<h2>Metode yang digunakan: Kriging</h2>
+<p>Kriging merupakan metode prediksi spasial dengan pendekatan statistika. Namun pada tulisan ini saya hanya akan menjelaskan langkah-langkah melakukan interpolasinya saja. Jika teman-teman berminat ingin mempelajari teori Kriging lebih detail dan mendalam, sementara teman-teman bisa mengunjungi <a href="https://mgimond.github.io/Spatial/spatial-interpolation.html#ordinary-kriging">catatan Mr. Gimond</a> tentang interpolasi Kriging sebagai referensi atau <em>googling</em>.</p>
+</div>
+<div id="apa-yang-kita-butuhkan-peralatan" class="section level2">
+<h2>Apa yang Kita Butuhkan? (Peralatan)</h2>
+<p>Pada praktik ini, kita membutuhkan R dan RStudio terpasang di komputer atau laptop kita. Juga jangan ketinggalan: koneksi internet hehe… Untuk menguduh dan memasang paket-paket <em>library</em> berikut: <code>rspatial</code>, <code>sp</code>, <code>rgdal</code>, dan <code>gstat</code> (kalau belum punya).</p>
+<p>Memuat semua <em>library</em> yang dibutuhkan:</p>
+<pre class="r"><code>library(&quot;rspatial&quot;)    # menyediakan sampel data
+library(&quot;sp&quot;)          # untuk olah berkas polygonal/vector
+library(&quot;rgdal&quot;)       # untuk olah berkas raster/bitmap
+library(&quot;gstat&quot;)       # olah data metode Kriging</code></pre>
+</div>
+<div id="persiapan-data-bahan-bahan" class="section level2">
+<h2>Persiapan Data (Bahan-bahan)</h2>
+<p>Data yang kita gunakan adalah sampel <strong>data kualitas udara</strong> yang sudah disediakan dalam paket <code>rspatial</code><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Cara mengambil data itu adalah dengan perintah berikut:</p>
+<pre class="r"><code>x &lt;- sp_data(&quot;airqual&quot;)  # memuat sampel data polusi</code></pre>
+<p>Data kualitas udara <code>airqual</code> kita definisikan sebagai objek <code>x</code>. Kalau mau, teman-teman bisa mengganti <code>x</code> dengan “<code>kabutku</code>” atau “<code>aduh.asap</code>” tapi … OK, skip.</p>
+<p>Jika dilihat lebih lanjut, kelas datanya merupakan <code>data.frame</code> yang umum digunakan untuk data yang disimpan dalam bentuk tabel.</p>
+<pre class="r"><code># melihat kelas data
+class(x)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code># melihat 5 rekaman data teratas, hanya kolom 3-7
+tibble::as_tibble(head(x[, 3:7], 5))</code></pre>
+<pre><code>## # A tibble: 5 x 5
+##   SHORT_NAME   LATITUDE LONGITUDE CH4MAX1H CH4DLYAV
+## * &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Citrus_Hghts     38.7     -121.     1.92     1.70
+## 2 El_Capitan_B     34.5     -120.    NA       NA   
+## 3 Eureka-FtAve     40.8     -124.    NA       NA   
+## 4 Fresno-ClSt2     36.8     -120.    NA       NA   
+## 5 Fresno-Drmnd     36.7     -120.    NA       NA</code></pre>
+<p>Pada kolom 3 hingga 7 kita bisa lihat, ada data nama-nama lokasi (SHORT_NAME) berupa <em>character</em>, data koordinat (LATITUDE, LONGITUDE) berupa data <em>numeric</em> atau <em>double</em>, juga data sampel CH<sub>4</sub> maksimum per jam (CH4MAX1H) serta sampel CH<sub>4</sub> rata-rata harian (CH4DLYAV), keduanya juga <em>double</em>.</p>
+<p>Sebenarnya masih ada 32 kolom lainnya yang tidak kita munculkan, teman-teman bisa mencoba-coba sendiri untuk melihat datanya dengan perintah <code>View(x)</code> di bagian <em>console</em> RStudio atau klik-klik seperti ini.</p>
+<div class="figure">
+<img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/dataframe-view-rstudio.gif" alt="Melihat tabel di RStudio sebenarnya tinggal klik! haha" />
+<p class="caption">Melihat tabel di RStudio sebenarnya tinggal klik! haha</p>
+</div>
+<p>Kali ini kita tidak akan menggunakan data CH<sub>4</sub>. Kita akan gunakan data level ozon harian rata-rata <strong>OZDLYAV</strong>. Nilai data ini adalah <em>parts per billion</em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, sehingga untuk memudahkan dalam membacanya kita akan kalikan 1000.</p>
+<pre class="r"><code># lihat dulu datanya
+head(x$OZDLYAV)</code></pre>
+<pre><code>## [1] 0.02493750 0.03137524 0.01720210 0.03664366 0.02807397 0.02686707</code></pre>
+<pre class="r"><code># mengalikan nilai OZDLYAV dengan 1000
+x$OZDLYAV &lt;- x$OZDLYAV * 1000
+
+# lihat lagi, berbedakah?
+head(x$OZDLYAV)</code></pre>
+<pre><code>## [1] 24.93750 31.37524 17.20210 36.64366 28.07397 26.86707</code></pre>
+<p>Setelah ini kita akan memanipulasi format data agar nantinya bisa diolah dengan menggunakan paket <code>gstat</code>.</p>
+<div id="re-formatting-data" class="section level3">
+<h3>Re-formatting data</h3>
+<div id="data-titik-yang-memiliki-nilai-longitude-latitude-dan-ozdlyav" class="section level4">
+<h4>Data titik yang memiliki nilai LONGITUDE, LATITUDE, dan OZDLYAV</h4>
+<p>Membuat <code>x</code> jadi data titik spasial (<em>SpatialPoint</em>) dengan menambahkan koordinat padanya, nilainya diambil dari LONGITUDE dan LATITUDE.</p>
+<pre class="r"><code>coordinates(x) &lt;- ~LONGITUDE + LATITUDE</code></pre>
+<p>Menambahkan sistem referensi koordinat (<em>coordinate reference system</em> - CRS). Sebagai <em>template</em> saja, nanti akan diganti dengan CRS lain.</p>
+<pre class="r"><code>proj4string(x) &lt;- CRS(&#39;+proj=longlat +datum=NAD83&#39;)</code></pre>
+<p>Membuat nilai CRS baru dengan nama <code>TA</code>. Bagian <code>+units=km</code> akan berguna untuk membuat grid peta dan semivariance nanti.</p>
+<pre class="r"><code>TA &lt;- CRS(&quot;+proj=aea +lat_1=34 +lat_2=40.5
+          +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000
+          +datum=NAD83 +units=km +ellps=GRS80&quot;)</code></pre>
+<p>Membuat objek <code>aq</code> (akronim <em>air quality</em>) yang berisi data titik spasial <code>x</code> namun dengan CRS yang nilainya sudah kita simpan dalam <code>TA</code> tadi.</p>
+<pre class="r"><code>aq &lt;- spTransform(x, TA)
+plot(aq, pch=20, cex=1)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Belum kelihatan nilainya, ya? Masih seragam bentuknya. Karena memang yang diplot hanya nilai koordinat LONGITUDE, LATITUDE. Mari plotkan nilainya sekalian.</p>
+<pre class="r"><code># Membuat palet warnanya
+cuts &lt;- c(0, 25, 30, 50, 80, 100)
+blues &lt;- colorRampPalette(c(&#39;yellow&#39;, &#39;orange&#39;, &#39;blue&#39;, &#39;dark blue&#39;))
+
+# Plot dengan warna sebagai nilai
+spplot(aq, &#39;OZDLYAV&#39;, cuts=cuts, col.regions=blues(5), pch=20, cex=1)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="data-batas-administrasi-negara-bagian-californiaca" class="section level4">
+<h4>Data batas administrasi negara bagian (California/CA)</h4>
+<p>Mengambil sampel data peta negara bagian dari paket <code>rspatial</code>, peta polygon shp (<em>SpatialPolygon</em>).</p>
+<pre class="r"><code>cageo &lt;- sp_data(&#39;counties.rds&#39;)</code></pre>
+<p>Transformasikan CRS peta ke CRS yang juga diterapkan pada data ozon <em>SpatialPoint</em>. Beri nama objek peta <code>ca</code> (akronim dari California).</p>
+<pre class="r"><code>ca &lt;- spTransform(cageo, TA)
+plot(ca)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="membuat-template-raster-untuk-interpolasi" class="section level4">
+<h4>Membuat template raster untuk interpolasi</h4>
+<p>Konversi polygon ke raster sebagai <em>template</em> raster layer-nya.</p>
+<pre class="r"><code>r &lt;- raster(ca)</code></pre>
+<p>Coba kita cek bagian dimensions dan resolution.</p>
+<pre class="r"><code>r$layer</code></pre>
+<pre><code>## class       : RasterLayer 
+## dimensions  : 10, 10, 100  (nrow, ncol, ncell)
+## resolution  : 91.36957, 105.4535  (x, y)
+## extent      : -373.9761, 539.7196, -604.5126, 450.0225  (xmin, xmax, ymin, ymax)
+## coord. ref. : +proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=km +ellps=GRS80 +towgs84=0,0,0</code></pre>
+<p>Set resolusi ke 10 km (satuan sudah ditentukan dengan <code>+units=km</code> saat membuat CRS <code>TA</code>).</p>
+<pre class="r"><code>res(r) &lt;- 10
+
+# Melihat perbedaannya
+r$layer</code></pre>
+<pre><code>## class       : RasterLayer 
+## dimensions  : 105, 91, 9555  (nrow, ncol, ncell)
+## resolution  : 10, 10  (x, y)
+## extent      : -373.9761, 536.0239, -599.9775, 450.0225  (xmin, xmax, ymin, ymax)
+## coord. ref. : +proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=km +ellps=GRS80 +towgs84=0,0,0</code></pre>
+<p>Konversi <code>r</code> menjadi data spasial grid bernama <code>g</code>.</p>
+<pre class="r"><code>g &lt;- as(r, &#39;SpatialGrid&#39;)
+plot(g)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Sekarang, bahan-bahan sudah siap dengan formatnya masing-masing. Waktunya untuk mengolah data tersebut.</p>
+</div>
+</div>
+</div>
+<div id="pengolahan-data" class="section level2">
+<h2>Pengolahan Data</h2>
+<div id="menghitung-nilai-semivariance" class="section level3">
+<h3>Menghitung nilai semivariance</h3>
+<p>Bikin objek <code>gs</code> berisi formula regresi untuk “naturalisasi” atau “netralisasi”.</p>
+<pre class="r"><code>gs &lt;- gstat(formula=OZDLYAV~1, locations=aq)
+class(gs)</code></pre>
+<pre><code>## [1] &quot;gstat&quot; &quot;list&quot;</code></pre>
+<p>Hitung sampel variogram. Bagian ini masih harus saya pelajari lagi, bagaimana fungsi R ini bisa bekerja sesuai dengan teori Kriging. Barangkali kalau ada waktu akan saya perbarui tulisan ini.</p>
+<pre class="r"><code>v &lt;- variogram(gs, width=20) # generate variogram
+class(v)                     # data.frame sih, tapi...</code></pre>
+<pre><code>## [1] &quot;gstatVariogram&quot; &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>str(v)  # melihat struktur data</code></pre>
+<pre><code>## Classes &#39;gstatVariogram&#39; and &#39;data.frame&#39;:   23 obs. of  6 variables:
+##  $ np     : num  1010 1806 2355 2619 2967 ...
+##  $ dist   : num  11.4 30.6 50.6 70.1 90.1 ...
+##  $ gamma  : num  34.8 47.5 67.3 80.9 88.9 ...
+##  $ dir.hor: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ dir.ver: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ id     : Factor w/ 1 level &quot;var1&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  - attr(*, &quot;direct&quot;)=&#39;data.frame&#39;:   1 obs. of  2 variables:
+##   ..$ id       : Factor w/ 1 level &quot;var1&quot;: 1
+##   ..$ is.direct: logi TRUE
+##  - attr(*, &quot;boundaries&quot;)= num  0 20 40 60 80 100 120 140 160 180 ...
+##  - attr(*, &quot;pseudo&quot;)= num 0
+##  - attr(*, &quot;what&quot;)= chr &quot;semivariance&quot;</code></pre>
+<pre class="r"><code>head(v) # dilihat sekilas memang data.frame biasa</code></pre>
+<pre><code>##     np      dist    gamma dir.hor dir.ver   id
+## 1 1010  11.35040 34.80579       0       0 var1
+## 2 1806  30.63737 47.52591       0       0 var1
+## 3 2355  50.58656 67.26548       0       0 var1
+## 4 2619  70.10411 80.92707       0       0 var1
+## 5 2967  90.13917 88.93653       0       0 var1
+## 6 3437 110.42302 84.13589       0       0 var1</code></pre>
+<p>Komponen grafik semivariogram:</p>
+<ol style="list-style-type: decimal">
+<li><strong>dist</strong> merupakan singkatan <em>distances</em>, jarak. Sumbu x.</li>
+<li><strong>gamma</strong> adalah <em>semivariance</em> (<span class="math inline">\(\gamma\)</span>). Sumbu y.</li>
+</ol>
+<pre class="r"><code>plot(v) # plot nilai dist vs. gamma </code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="fitting-semivariogram-empiris-dengan-model" class="section level3">
+<h3>Fitting semivariogram empiris dengan model</h3>
+<p><em>Fitting</em>, bahasa lainnya “<em>ngepasin</em>”, yakni memilih model grafik semivarians teori yang mendekati bentuk semivariogram empiris, dari hasil data pengamatan.</p>
+<p>Bermacam istilah dan komponen pada grafik:</p>
+<ol style="list-style-type: decimal">
+<li><code>nug</code> adalah <em>nugget</em></li>
+<li><code>psill</code> adalah <em>sill</em></li>
+<li><code>range</code> adalah <em>range</em></li>
+</ol>
+<div class="figure">
+<img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/variogram-nugget-range-sill.png" alt="Nugget, range, dan sill (Sumber: gisgeography.com)" />
+<p class="caption">Nugget, range, dan sill (Sumber: <a href="https://gisgeography.com/wp-content/uploads/2016/10/Variogram-Nugget-Range-Sill.png">gisgeography.com</a>)</p>
+</div>
+<p>Nilai-nilai yang coba dimasukkan diantaranya <code>psill = 85</code>, <code>range = 75</code>, <code>nugget = 20</code>, serta menggunakan model exponensial (<code>&quot;Exp&quot;</code>).</p>
+<p>Nilai-nilai ini ditentukan dengan mengamati batas-batas pada saat memplot grafik <code>v</code> di atas.</p>
+<pre class="r"><code>fve &lt;- fit.variogram(v, vgm(85, &quot;Exp&quot;, 75, 20))
+str(fve)  # lihat struktur data</code></pre>
+<pre><code>## Classes &#39;variogramModel&#39; and &#39;data.frame&#39;:   2 obs. of  9 variables:
+##  $ model: Factor w/ 20 levels &quot;Nug&quot;,&quot;Exp&quot;,&quot;Sph&quot;,..: 1 2
+##  $ psill: num  22 85.5
+##  $ range: num  0 72.3
+##  $ kappa: num  0 0.5
+##  $ ang1 : num  0 0
+##  $ ang2 : num  0 0
+##  $ ang3 : num  0 0
+##  $ anis1: num  1 1
+##  $ anis2: num  1 1
+##  - attr(*, &quot;singular&quot;)= logi FALSE
+##  - attr(*, &quot;SSErr&quot;)= num 122
+##  - attr(*, &quot;call&quot;)= language fit.variogram(object = v, model = vgm(85, &quot;Exp&quot;, 75, 20))</code></pre>
+<pre class="r"><code>fve       # lihat hasil parameter modelnya</code></pre>
+<pre><code>##   model    psill    range
+## 1   Nug 21.96600  0.00000
+## 2   Exp 85.52957 72.31404</code></pre>
+<p>Plot semivariogram model (garis) bersama dengan semivariogram empiris (titik).</p>
+<pre class="r"><code>plot(variogramLine(fve, 400), type=&#39;l&#39;, ylim=c(0,120))
+points(v[,2:3], pch=20, col=&#39;red&#39;)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><em>Fitting</em> menggunakan model grafik lain yakni model spherical.</p>
+<pre class="r"><code># Parameternya sama, cuma ganti model
+fvs &lt;- fit.variogram(v, vgm(85, &quot;Sph&quot;, 75, 20))
+fvs</code></pre>
+<pre><code>##   model    psill    range
+## 1   Nug 25.57019   0.0000
+## 2   Sph 72.65881 135.7744</code></pre>
+<pre class="r"><code># Plot grafik
+plot(variogramLine(fvs, 400), type=&#39;l&#39;, ylim=c(0,120) ,col=&#39;blue&#39;, lwd=2)
+points(v[,2:3], pch=20, col=&#39;red&#39;)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Plot grafik bagusnya.</p>
+<pre class="r"><code>plot(v, fve)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Hhmmm…. Tadi kita baru bikin semivariance. Sekarang mari kita buat interpolasinya.</p>
+</div>
+<div id="plot-hasil-interpolasi" class="section level3">
+<h3>Plot hasil interpolasi</h3>
+<p>Kita akan menggunakan yang <code>fve</code> (model exponensial) untuk interpolasi.</p>
+<pre class="r"><code>k &lt;- gstat(formula=OZDLYAV~1, locations=aq, model=fve)</code></pre>
+<div id="nilai-prediksi" class="section level4">
+<h4>Nilai prediksi</h4>
+<pre class="r"><code>kp &lt;- predict(k, g) # ordinary kriging</code></pre>
+<pre><code>## [using ordinary kriging]</code></pre>
+<pre class="r"><code>spplot(kp)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="variance" class="section level4">
+<h4>Variance</h4>
+<p>PR untuk saya adalah menjelaskan lebih lanjut tentang apa itu variance dan prediksi.</p>
+<pre class="r"><code>ok &lt;- brick(kp)
+ok &lt;- mask(ok, ca)
+names(ok) &lt;- c(&#39;prediksi&#39;, &#39;variance&#39;)
+plot(ok)</code></pre>
+<p><img src="/post/2019-08-18-interpolasi-dengan-metode-kriging_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Sekian dulu, yah. Nanti dilanjut.</p>
+<p>Semoga bermanfaat!</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://rspatial.org">rspatial.org</a> merupakan web berisi materi belajar mengenai analisis data spasial dan pemodelannya menggunakan R.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Data <code>airqual</code> berasal dari <a href="https://ww2.arb.ca.gov/">California Air Resouces Board</a>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Kalau pembaca mengetahui maksud <em>parts per billion</em> dan bersedia untuk bantu mengoreksi, mohon <a href="https://t.me/akherlan">kontak</a> penulis.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//andikh.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            Dibuat dengan <a href="https://gohugo.io/" target="_blank">Hugo</a> dan <a href="https://bookdown.org/yihui/blogdown/" target="_blank">Blogdown</a>
+          </li>
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>

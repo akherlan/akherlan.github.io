@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<title>Personal Access Token Github - Engineer of words</title>
+<meta property="og:title" content="Personal Access Token Github - Engineer of words">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="kucing">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about</a></li>
+    
+    <li><a href="/tags/">tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Personal Access Token Github</h1>
+
+    
+    <span class="article-date">
+      
+      Terakhir diperbarui 16 Apr 2020
+      
+    </span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui “pintu belakang yang disepakati”.</p>
+<p>Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).</p>
+<p>Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.</p>
+<p>Ada beberapa cara untuk membuat dan menyimpan Github PAT ke komputer linux (saya pakai Xubuntu). Seharusnya, di Windows tidak akan jauh berbeda.</p>
+<div id="menggunakan-paket-usethis" class="section level2">
+<h2>1. Menggunakan paket usethis</h2>
+<p>Cara pertama ini adalah yang saya gunakan. Lebih mudah jika dilakukan lewat RStudio. Yang wajib disediakan adalah tentu saja paket <code>usethis</code>. Jika belum punya, bisa instal dulu dari konsol:</p>
+<pre class="r"><code>install.packages(&quot;usethis&quot;)</code></pre>
+<p>Log in dulu ke akun Github di browser default, agar nanti ketika direct dari RStudio langsung terbuka halaman yang tinggal OK-OK saja. Gunakan perintah ini untuk menuju laman pembuatan token.</p>
+<pre class="r"><code>usethis::browse_github_pat()</code></pre>
+<p>Kita akan diarahkan ke <a href="https://github.com/settings/tokens/new">laman pembuatan PAT</a> dan otomatis terisi default yang dibutuhkan. Ini bisa di <em>custom</em> dulu kalau kita perlukan. Kalau saya sementara biarkan yang sudah terpilih saja. Lalu tekan “Generate token” yang di paling bawah.</p>
+<p><strong>INI PENTING!</strong> Jangan lupa copas seluruh 40 karakter acak yang muncul.</p>
+<p>Berikutnya kita kembali ke jendela RStudio lagi, lalu gunakan perintah berikut untuk menampilkan berkas <code>.Renviron</code> yang tersimpan di komputer:</p>
+<pre class="r"><code>usethis::edit_r_environ()</code></pre>
+<div class="figure">
+<img src="/post/2020-04-16-personal-access-token-github-untuk-r_files/gh_pat_1.gif" alt="edit_r_environ" />
+<p class="caption">edit_r_environ</p>
+</div>
+<p>Akan terbuka berkas <code>.Renviron</code> yang berada di direktori home. Jika tidak punya, berarti <code>usethis</code> akan membuatkan berkas ini untukmu. Ketikkan teks berikut di editor skrip yang terbuka:</p>
+<pre class="r"><code>GITHUB_PAT=xxxxxxxxxxxxxx
+# ganti xxxxxxxxxxxxxx dengan token yang tadi di copas dari Github</code></pre>
+<div class="figure">
+<img src="/post/2020-04-16-personal-access-token-github-untuk-r_files/gh_pat_2.gif" alt="renviron file" />
+<p class="caption">renviron file</p>
+</div>
+<p>Tanpa tanda kutip ya…</p>
+<p>Pastikan satu baris terakhir tersisa kosong (mereka bilang ini <em>new line</em>). Jangan lupa di simpan. Kalau nggak, percuma tadi capek-capek bikin.</p>
+<p>Cek, apakah sudah ada?</p>
+<pre class="r"><code>nchar(Sys.getenv(&quot;GITHUB_PAT&quot;))</code></pre>
+<pre><code>## [1] 40</code></pre>
+<p>Betul, ada 40 karakter. Berikutnya, kita sudah bisa menggunakan berbagai fungsi dari paket R macam-macam yang membutuhkan akses token Github.</p>
+<p>Misalnya saya mau koneksikan RStudio dengan <a href="https://github.com/akherlan/dataset/">repositori dataset</a> yang saya punya.</p>
+<pre class="r"><code>library(&quot;pins&quot;)
+
+board_register(
+  board = &quot;github&quot;, 
+  name = &quot;databoard&quot;, 
+  repo = &quot;akherlan/dataset&quot;
+)
+
+gempa &lt;- pin_get(&quot;gempa&quot;, &quot;databoard&quot;)
+
+head(gempa)</code></pre>
+<pre><code>## # A tibble: 6 x 13
+##   tanggal    waktu   lat   lon kdlm.KM mag.SR typemag  smaj    smin    az
+##   &lt;date&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
+## 1 2009-01-01 01:2…  3.73  127.      67    4.6 MLv     10317 1.80e+3   147
+## 2 2009-01-01 03:4… -6.84  130.     103    5.2 mb      22841 2.78e+3    48
+## 3 2009-01-01 05:2…  1.45  121.      10    5.1 MLv     10432 1.54e+0   121
+## 4 2009-01-01 08:4…  1.52  122.      10    4.5 MLv      7557 1.04e+3   136
+## 5 2009-01-01 08:5… -8.44  116.      91    3.4 MLv      2699 1.93e-1   261
+## 6 2009-01-01 10:3…  1.41  122       34    5   Mw(mB)  84783 9.33e-1    46
+## # … with 3 more variables: rms &lt;dbl&gt;, cphase &lt;int&gt;, region &lt;chr&gt;</code></pre>
+</div>
+<div id="tanpa-menggunakan-usethis" class="section level2">
+<h2>2. Tanpa menggunakan usethis</h2>
+<p>Cara ini adalah cara manual. Mengapa saya bilang manual? Karena semua dilakukan sendiri langkah-langkahnya dan kita menentukan sendiri letak-letak berkasnya, juga akses halamannya cari sendiri. Kasian yah?</p>
+<p>Tapi dengan cara ini kita nggak perlu instal <code>usethis</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Login ke Github dengan akun sendiri</li>
+<li>Pergi ke laman Setting &gt; Developer settings &gt; Personal access tokens</li>
+<li>Atau kasian lah, saya titip aja <a href="https://github.com/settings/tokens/">link</a>-nya</li>
+<li>Klik tombol “Generate new token”</li>
+<li>Beri nama PAT-nya pada kolom “note”</li>
+<li>Ceklis akses apa saja yang dibutuhkan</li>
+<li>“Generate token” yang warna hijau</li>
+<li>Copy/copas token</li>
+<li>Buat berkas baru di direktori home di komputer dengan nama <code>.Renviron</code> (tanpa <em>extension</em>), kalau sudah ada, pakai yang ada</li>
+<li>Buka <code>.Renviron</code> menggunakan text editor</li>
+<li>unting/edit isinya dengan menambahkan baris <code>GITHUB_PAT=xxxxxxxxxxxxxx</code> seperti penjelasan sebelumnya</li>
+<li>Simpan</li>
+</ol>
+<p>Bahkan dengan cara ini, kita nggak perlu berinteraksi dengan konsol R atau buka-buka program RStudio!</p>
+<p>Sekian dulu.</p>
+<p><strong>ref:</strong> <a href="https://happygitwithr.com/github-pat.html" class="uri">https://happygitwithr.com/github-pat.html</a></p>
+</div>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//andikh.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            Dibuat dengan <a href="https://gohugo.io/" target="_blank">Hugo</a> dan <a href="https://bookdown.org/yihui/blogdown/" target="_blank">Blogdown</a>
+          </li>
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/py.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
