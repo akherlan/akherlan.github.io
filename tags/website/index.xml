@@ -13,10 +13,10 @@
     
     <item>
       <title>Branch untuk GH-Pages Databoard</title>
-      <link>/blog/branch-github-pages-databoard/</link>
+      <link>/notes/branch-github-pages-databoard/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/branch-github-pages-databoard/</guid>
+      <guid>/notes/branch-github-pages-databoard/</guid>
       <description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
  Apakah cukup jelas?
 Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
@@ -28,10 +28,10 @@ $ cp master gh-pages 3.</description>
     
     <item>
       <title>Tema Hugo Lithium Tidak Responsif</title>
-      <link>/blog/tema-hugo-lithium-tidak-responsif/</link>
+      <link>/notes/tema-hugo-lithium-tidak-responsif/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tema-hugo-lithium-tidak-responsif/</guid>
+      <guid>/notes/tema-hugo-lithium-tidak-responsif/</guid>
       <description>Ini merupakan tulisan dokumentasi saya untuk permasalahan tema Lithium yang tidak responsif (saat tulisan ini mulai ditulis). Ukuran gambar tidak menyesuaikan ukuran layar. Sangat fatal ketika dibuka dari ponsel. Padahal sebagian besar akses internet hari ini adalah melalui ponsel. Alamak!
 Awalnya saya tanya di grup GNU/R Indonesia, walaupun ini tidak ada kaitannya sama sekali dengan pemrograman R. Tapi karena saya ngeblog dari R menggunakan paket blogdown, jadi saya coba tanyakan saja.</description>
     </item>

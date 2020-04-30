@@ -13,10 +13,10 @@
     
     <item>
       <title>PostgreSQL dan RStudio</title>
-      <link>/blog/postgresql-dan-rstudio/</link>
+      <link>/notes/postgresql-dan-rstudio/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/postgresql-dan-rstudio/</guid>
+      <guid>/notes/postgresql-dan-rstudio/</guid>
       <description>Saya sedang belajar mengelola data dalam sebuah basisdata. Sebab ketertarikan saya dengan bidang geospasial, saya coba untuk mempelajari DBMS terkenal untuk ini, yaitu PostgreSQL dengan ekstensi PostGIS.
 Singkat cerita, saya sudah melakukan instalasi dan pengaturan basis data postgres + postgis di komputer saya. Selanjutnya saya ingin coba membuat koneksi untuk akses basisdata melalui RStudio. Saya merasa agak sedikit sombong karena sebelumnya sudah sukses dengan koneksi PostgreSQL lewat QGIS.
 Ada dua cara membuat koneksi dari R untuk mengakses basis data:</description>
@@ -24,10 +24,10 @@ Ada dua cara membuat koneksi dari R untuk mengakses basis data:</description>
     
     <item>
       <title>Contek Kode: Rute TransJakarta</title>
-      <link>/blog/rute-transjakarta/</link>
+      <link>/notes/rute-transjakarta/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/rute-transjakarta/</guid>
+      <guid>/notes/rute-transjakarta/</guid>
       <description>Mari kita plesiran ke blog para jagoan!
 Entah kenapa saya tiba-tiba ingat blognya Mas Rasyid Ridha yang masih saja belum aktif diisi lagi sampai sekarang. Mungkin masih sibuk dengan kegemaran lainnya. Atau jangan-jangan pindah web???
 Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo transjakarta. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis sebuah artikel bernuansa transportist. Data yang digunakan diperoleh dari Trafi.
@@ -36,10 +36,10 @@ Supaya saya jadi nggak cuma repost doang di sini, tulisan ini akan mengupas dan 
     
     <item>
       <title>Regex: Belajar Merapikan Data</title>
-      <link>/blog/belajar-regex-merapikan-data/</link>
+      <link>/notes/belajar-regex-merapikan-data/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/belajar-regex-merapikan-data/</guid>
+      <guid>/notes/belajar-regex-merapikan-data/</guid>
       <description>Siang tadi saya coba untuk perlahan-lahan mengumpulkan data yang saya miliki di laptop untuk disimpan di satu tempat. Supaya terorganisir.
 Karena sebelumnya saya menonton video dari Youtube-nya Mas Aswan, jadi saya pakai bantuan library pins (baru dari RStudio) untuk mengelola koleksi dataset di github.
 Malam ini saya coba mengunggah data gempa yang sudah lama terbengkalai. Bulukan di direktori ~/Downloads.
@@ -48,10 +48,10 @@ Datanya ada 9 files dengan format csv. Untuk bisa mengunggahnya saya harus ubah 
     
     <item>
       <title>Interpolasi dengan Metode Kriging</title>
-      <link>/blog/interpolasi-dengan-metode-kriging/</link>
+      <link>/notes/interpolasi-dengan-metode-kriging/</link>
       <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/interpolasi-dengan-metode-kriging/</guid>
+      <guid>/notes/interpolasi-dengan-metode-kriging/</guid>
       <description>Belajar interpolasi spasial menggunakan R
 Latar Belakang, Kasus, dan Tujuan Katakanlah kita ingin mengetahui bagaimana kualitas udara di atas suatu wilayah. Untuk mengetahuinya kita menggunakan alat pengukur tingkat polusi.
 Peralatan untuk mengukur kualitas udara ini ditempatkan di beberapa titik dalam wilayah tersebut. Ada di titik A, titik B, titik C, dan seterusnya.
@@ -60,10 +60,10 @@ Tetapi yang ingin kita lihat adalah kualitas udara secara keseluruhan di atas wi
     
     <item>
       <title>Sejarah Blogging Andi</title>
-      <link>/blog/sejarah-blogging/</link>
+      <link>/notes/sejarah-blogging/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/sejarah-blogging/</guid>
+      <guid>/notes/sejarah-blogging/</guid>
       <description>Wow! Jumpa lagi&amp;hellip; Hiya!
 Selayang pandang Hugo sangat powerfull. Blogging bersamanya sangat mengasyikkan! Jika Om Rane mengaku bukan buzzer Anchor tapi selalu mempromosikannya, maka saya sebagai pendengar Om Rane mengaku bukan buzzer bahasa pemrograman R tapi selalu rela mempromosikannya tanpa dibayar. Termasuk ketika ngeblog, sekarang saya melakukannya lewat RStudio.
 Platform blogging yang pernah digunakan Hugo adalah Content Management System (CMS) layaknya Wordpress. Tipikalnya static page generator^[Static page generator lainnya adalah Jekyll, Hexo, Pelican, masih ada lagi tapi lupa, nanti saja saya tambahkan.</description>
@@ -71,10 +71,10 @@ Platform blogging yang pernah digunakan Hugo adalah Content Management System (C
     
     <item>
       <title>Visualisasi Ketersediaan Data Hujan</title>
-      <link>/blog/visualisasi-ketersediaan-data-hujan/</link>
+      <link>/notes/visualisasi-ketersediaan-data-hujan/</link>
       <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/visualisasi-ketersediaan-data-hujan/</guid>
+      <guid>/notes/visualisasi-ketersediaan-data-hujan/</guid>
       <description>Pusing nggak, sih, nyari data? Huuft…
 Objective Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi “kekosongan” data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen sih kelengkapannya?
 Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.</description>
@@ -82,40 +82,40 @@ Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hu
     
     <item>
       <title>Ruby: &#34;Hello World!&#34;</title>
-      <link>/blog/ruby-hello-world/</link>
+      <link>/notes/ruby-hello-world/</link>
       <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/ruby-hello-world/</guid>
+      <guid>/notes/ruby-hello-world/</guid>
       <description>Latar Belakang Saya dapat kerjaan bantu-bantu ngurusin web. Nggak ngoding-ngoding banget, sih. Enak jadinya, cenderung lebih santai. Tapi saya masih belum puas dengan metode yang saat ini sedang dipakai. Berbekal rasa penasaran saya cari tahu teknologi apa yang kiranya cocok digunakan seandainya ganti metode develop-nya.
 Ceritanya, ini adalah website yang diharapkan bisa punya fitur ruang kumpul komunitas dan proses pesan jasa. Saya cari tahu framework yang dipakai oleh kompetitor terbesar saat ini.</description>
     </item>
     
     <item>
       <title>Tema Hugo Lithium Tidak Responsif</title>
-      <link>/blog/tema-hugo-lithium-tidak-responsif/</link>
+      <link>/notes/tema-hugo-lithium-tidak-responsif/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tema-hugo-lithium-tidak-responsif/</guid>
+      <guid>/notes/tema-hugo-lithium-tidak-responsif/</guid>
       <description>Ini merupakan tulisan dokumentasi saya untuk permasalahan tema Lithium yang tidak responsif (saat tulisan ini mulai ditulis). Ukuran gambar tidak menyesuaikan ukuran layar. Sangat fatal ketika dibuka dari ponsel. Padahal sebagian besar akses internet hari ini adalah melalui ponsel. Alamak!
 Awalnya saya tanya di grup GNU/R Indonesia, walaupun ini tidak ada kaitannya sama sekali dengan pemrograman R. Tapi karena saya ngeblog dari R menggunakan paket blogdown, jadi saya coba tanyakan saja.</description>
     </item>
     
     <item>
       <title>Menginstall R Studio Di Ubuntu</title>
-      <link>/blog/install-r-studio-ubuntu/</link>
+      <link>/notes/install-r-studio-ubuntu/</link>
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/install-r-studio-ubuntu/</guid>
+      <guid>/notes/install-r-studio-ubuntu/</guid>
       <description>Malam ini saya coba menginstall R Studio, yaitu IDE untuk pemrograman R. Ternyata R Studio di GNU/Linux lebih ringan (jauh) dibandingkan dengan R Studio di Windows. Atau mungkin itu cuma perasaan saya saja. Tapi tidak, kelihatannya itu benar. Nanti, kita bisa cari informasi tentang itu. Saat ini saya ingin menuliskan tata cara menginstall R Studio di Ubuntu Bionic saya.
 Pertama yang saya lakukan adalah mengunduh paket *.deb R Studio dari laman resminya.</description>
     </item>
     
     <item>
       <title>Belajar R Lagi</title>
-      <link>/blog/belajar-r-lagi/</link>
+      <link>/notes/belajar-r-lagi/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/belajar-r-lagi/</guid>
+      <guid>/notes/belajar-r-lagi/</guid>
       <description>Instal Program R Pagi ini saya coba belajar pemrograman R lagi, tapi tanpa bantuan R Studio, murni hanya dengan terminal di laptop Ubuntu saya. Saya memberanikan diri, karena &amp;ldquo;kenapa harus takut?&amp;quot;. Hal pertama yang saya lakukan tentu saya memasang paket program R melalui Synaptic Package Manager. Sebenarnya juga bisa dengan cara berikut:
  sudo apt install r-base
 Instal Library R Hal pertama yang saya ingin lakukan setelah instal R adalah mengolah data hujan.</description>

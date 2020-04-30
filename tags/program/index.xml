@@ -13,10 +13,10 @@
     
     <item>
       <title>Belajar R Lagi</title>
-      <link>/blog/belajar-r-lagi/</link>
+      <link>/notes/belajar-r-lagi/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/belajar-r-lagi/</guid>
+      <guid>/notes/belajar-r-lagi/</guid>
       <description>Instal Program R Pagi ini saya coba belajar pemrograman R lagi, tapi tanpa bantuan R Studio, murni hanya dengan terminal di laptop Ubuntu saya. Saya memberanikan diri, karena &amp;ldquo;kenapa harus takut?&amp;quot;. Hal pertama yang saya lakukan tentu saya memasang paket program R melalui Synaptic Package Manager. Sebenarnya juga bisa dengan cara berikut:
  sudo apt install r-base
 Instal Library R Hal pertama yang saya ingin lakukan setelah instal R adalah mengolah data hujan.</description>

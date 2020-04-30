@@ -13,10 +13,10 @@
     
     <item>
       <title>Nasihat untuk Freelancer</title>
-      <link>/blog/nasihat-untuk-freelancer/</link>
+      <link>/notes/nasihat-untuk-freelancer/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/nasihat-untuk-freelancer/</guid>
+      <guid>/notes/nasihat-untuk-freelancer/</guid>
       <description>Saya masih punya minat jadi freelancer alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja lepas maupun paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.
 Sebagai pemula atau orang bilang newbie, saya harus banyak belajar. Pada catatan ini barangkali saya ingin kumpulkan berbagai nasihat dari senior. Akan diperbarui secara berkala. Semoga berkenan.
 Nasihat dari Senior
@@ -25,10 +25,10 @@ Nasihat dari Senior
     
     <item>
       <title>Branch untuk GH-Pages Databoard</title>
-      <link>/blog/branch-github-pages-databoard/</link>
+      <link>/notes/branch-github-pages-databoard/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/branch-github-pages-databoard/</guid>
+      <guid>/notes/branch-github-pages-databoard/</guid>
       <description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
  Apakah cukup jelas?
 Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
@@ -40,20 +40,20 @@ $ cp master gh-pages 3.</description>
     
     <item>
       <title>Lenovo ThinkPad X240 dengan Xubuntu</title>
-      <link>/blog/lenovo-thinkpad-x240/</link>
+      <link>/notes/lenovo-thinkpad-x240/</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/lenovo-thinkpad-x240/</guid>
+      <guid>/notes/lenovo-thinkpad-x240/</guid>
       <description>Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. Secondhand. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:
  Model prosesor Intel® Core™ i5-4300U CPU @ 1.90GHz (artinya multi CPU generasi 4) Arsitektur prosesor x86_64 (artinya dari Intel) Memori HDD SATA 500GB (versi lain ada yang pakai SSD) Memori RAM 4GB (sebetulnya saya mau pesan yang 8GB) VGA Intel Haswell-ULT Integrated Graphics Controller Adaptor WiFi Adaptor Bluetooth Ukuran layar 361x203 mm (12 inci) dengan resolusi sampai 1366x768 pixel Beratnya nggak tau pasti karena belum ditimbang, tapi termasuk ringan dibanding laptop lama Port-nya banyak dan lengkap sampai ada yang saya belum tau fungsinya.</description>
     </item>
     
     <item>
       <title>Sejarah Blogging Andi</title>
-      <link>/blog/sejarah-blogging/</link>
+      <link>/notes/sejarah-blogging/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/sejarah-blogging/</guid>
+      <guid>/notes/sejarah-blogging/</guid>
       <description>Wow! Jumpa lagi&amp;hellip; Hiya!
 Selayang pandang Hugo sangat powerfull. Blogging bersamanya sangat mengasyikkan! Jika Om Rane mengaku bukan buzzer Anchor tapi selalu mempromosikannya, maka saya sebagai pendengar Om Rane mengaku bukan buzzer bahasa pemrograman R tapi selalu rela mempromosikannya tanpa dibayar. Termasuk ketika ngeblog, sekarang saya melakukannya lewat RStudio.
 Platform blogging yang pernah digunakan Hugo adalah Content Management System (CMS) layaknya Wordpress. Tipikalnya static page generator^[Static page generator lainnya adalah Jekyll, Hexo, Pelican, masih ada lagi tapi lupa, nanti saja saya tambahkan.</description>

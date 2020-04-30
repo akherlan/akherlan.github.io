@@ -13,10 +13,10 @@
     
     <item>
       <title>Personal Access Token Github</title>
-      <link>/blog/personal-access-token-github/</link>
+      <link>/notes/personal-access-token-github/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/personal-access-token-github/</guid>
+      <guid>/notes/personal-access-token-github/</guid>
       <description>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui “pintu belakang yang disepakati”.
 Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).
 Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.</description>
@@ -24,10 +24,10 @@ Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hany
     
     <item>
       <title>PostgreSQL dan RStudio</title>
-      <link>/blog/postgresql-dan-rstudio/</link>
+      <link>/notes/postgresql-dan-rstudio/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/postgresql-dan-rstudio/</guid>
+      <guid>/notes/postgresql-dan-rstudio/</guid>
       <description>Saya sedang belajar mengelola data dalam sebuah basisdata. Sebab ketertarikan saya dengan bidang geospasial, saya coba untuk mempelajari DBMS terkenal untuk ini, yaitu PostgreSQL dengan ekstensi PostGIS.
 Singkat cerita, saya sudah melakukan instalasi dan pengaturan basis data postgres + postgis di komputer saya. Selanjutnya saya ingin coba membuat koneksi untuk akses basisdata melalui RStudio. Saya merasa agak sedikit sombong karena sebelumnya sudah sukses dengan koneksi PostgreSQL lewat QGIS.
 Ada dua cara membuat koneksi dari R untuk mengakses basis data:</description>
@@ -35,10 +35,10 @@ Ada dua cara membuat koneksi dari R untuk mengakses basis data:</description>
     
     <item>
       <title>R di Visual Studio Code</title>
-      <link>/blog/r-di-visual-studio-code/</link>
+      <link>/notes/r-di-visual-studio-code/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/r-di-visual-studio-code/</guid>
+      <guid>/notes/r-di-visual-studio-code/</guid>
       <description>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
 👏VS @code is now an amazing IDE for R
 The latest improvements to the language server protocol implementation for #rstats offer code completion, go to definitions, info on hover and more. I have not been this excited for new R developments in a while:
@@ -48,10 +48,10 @@ The latest improvements to the language server protocol implementation for #rsta
     
     <item>
       <title>Contek Kode: Rute TransJakarta</title>
-      <link>/blog/rute-transjakarta/</link>
+      <link>/notes/rute-transjakarta/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/rute-transjakarta/</guid>
+      <guid>/notes/rute-transjakarta/</guid>
       <description>Mari kita plesiran ke blog para jagoan!
 Entah kenapa saya tiba-tiba ingat blognya Mas Rasyid Ridha yang masih saja belum aktif diisi lagi sampai sekarang. Mungkin masih sibuk dengan kegemaran lainnya. Atau jangan-jangan pindah web???
 Melalui eksplorasi sekadarnya, weezz…. langsung ketemu dengan repo transjakarta. Repo ini menyimpan kode-kode untuk eksplorasi data dalam menulis sebuah artikel bernuansa transportist. Data yang digunakan diperoleh dari Trafi.
@@ -60,10 +60,10 @@ Supaya saya jadi nggak cuma repost doang di sini, tulisan ini akan mengupas dan 
     
     <item>
       <title>Bermain dengan Data Google Maps</title>
-      <link>/blog/google-maps-data/</link>
+      <link>/notes/google-maps-data/</link>
       <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/google-maps-data/</guid>
+      <guid>/notes/google-maps-data/</guid>
       <description>Singkat dan langsung saja.
 Data yang saya gunakan adalah data hasil tracking GPS-nya Google di ponsel pintar saya. Ups… Menyebar nich saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.
 Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google.com. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai data punya saya.
@@ -72,10 +72,10 @@ Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google
     
     <item>
       <title>Menentukan Batas Plot Peta di R</title>
-      <link>/blog/batas-plot-peta-locator/</link>
+      <link>/notes/batas-plot-peta-locator/</link>
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/batas-plot-peta-locator/</guid>
+      <guid>/notes/batas-plot-peta-locator/</guid>
       <description>Kita akan menggunakan fungsi locator(1) dari paket graphics untuk memperoleh nilai koordinat pada kanvas plot. Kita akan menggunakan nilai-nilai ini sebagai batas plot peta Indonesia dan negara sekitarnya. Sehingga tidak perlu lagi menduga-duga berapa nilai yang tepat untuk batas peta tersebut.
 Beberapa library R yang akan kita gunakan kali ini diantaranya:
 library(&amp;quot;rnaturalearth&amp;quot;) # data peta dari Natural Earth library(&amp;quot;sf&amp;quot;) # mengelola data peta simple feature library(&amp;quot;ggplot2&amp;quot;) # untuk plot library(&amp;quot;dplyr&amp;quot;) # agar kita bisa melakukan piping (%&amp;gt;%) Katakanlah kita ingin menampilkan peta wilayah Asia Tenggara dan sedikit bagian Oceania dan Australia.</description>
@@ -83,10 +83,10 @@ library(&amp;quot;rnaturalearth&amp;quot;) # data peta dari Natural Earth librar
     
     <item>
       <title>Uji Chi Kuadrat pada Data Hujan</title>
-      <link>/blog/uji-chi-kuadrat-pada-data-hujan/</link>
+      <link>/notes/uji-chi-kuadrat-pada-data-hujan/</link>
       <pubDate>Sat, 31 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/uji-chi-kuadrat-pada-data-hujan/</guid>
+      <guid>/notes/uji-chi-kuadrat-pada-data-hujan/</guid>
       <description>Saya harus belajar statistika lagi…
 TL;DR Mau ngasih tau langkah-langkah pengujian Chi-Square pakai R untuk analisis data curah hujan.
  Maksud dan Tujuan Kali ini saya akan melakukan pengujian Chi-Square atau Khi-Kuadrat (kata Wikipedia) pada data curah hujan Samarinda. Bacanya khay bukan chiy!
@@ -95,10 +95,10 @@ Pengujian ini termasuk analisis uji kecocokan sebaran, yaitu goodness of fit tes
     
     <item>
       <title>Interpolasi dengan Metode Kriging</title>
-      <link>/blog/interpolasi-dengan-metode-kriging/</link>
+      <link>/notes/interpolasi-dengan-metode-kriging/</link>
       <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/interpolasi-dengan-metode-kriging/</guid>
+      <guid>/notes/interpolasi-dengan-metode-kriging/</guid>
       <description>Belajar interpolasi spasial menggunakan R
 Latar Belakang, Kasus, dan Tujuan Katakanlah kita ingin mengetahui bagaimana kualitas udara di atas suatu wilayah. Untuk mengetahuinya kita menggunakan alat pengukur tingkat polusi.
 Peralatan untuk mengukur kualitas udara ini ditempatkan di beberapa titik dalam wilayah tersebut. Ada di titik A, titik B, titik C, dan seterusnya.
@@ -107,10 +107,10 @@ Tetapi yang ingin kita lihat adalah kualitas udara secara keseluruhan di atas wi
     
     <item>
       <title>Visualisasi Ketersediaan Data Hujan</title>
-      <link>/blog/visualisasi-ketersediaan-data-hujan/</link>
+      <link>/notes/visualisasi-ketersediaan-data-hujan/</link>
       <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/visualisasi-ketersediaan-data-hujan/</guid>
+      <guid>/notes/visualisasi-ketersediaan-data-hujan/</guid>
       <description>Pusing nggak, sih, nyari data? Huuft…
 Objective Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi “kekosongan” data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen sih kelengkapannya?
 Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.</description>
@@ -118,20 +118,20 @@ Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hu
     
     <item>
       <title>Menginstall R Studio Di Ubuntu</title>
-      <link>/blog/install-r-studio-ubuntu/</link>
+      <link>/notes/install-r-studio-ubuntu/</link>
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/install-r-studio-ubuntu/</guid>
+      <guid>/notes/install-r-studio-ubuntu/</guid>
       <description>Malam ini saya coba menginstall R Studio, yaitu IDE untuk pemrograman R. Ternyata R Studio di GNU/Linux lebih ringan (jauh) dibandingkan dengan R Studio di Windows. Atau mungkin itu cuma perasaan saya saja. Tapi tidak, kelihatannya itu benar. Nanti, kita bisa cari informasi tentang itu. Saat ini saya ingin menuliskan tata cara menginstall R Studio di Ubuntu Bionic saya.
 Pertama yang saya lakukan adalah mengunduh paket *.deb R Studio dari laman resminya.</description>
     </item>
     
     <item>
       <title>Belajar R Lagi</title>
-      <link>/blog/belajar-r-lagi/</link>
+      <link>/notes/belajar-r-lagi/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/belajar-r-lagi/</guid>
+      <guid>/notes/belajar-r-lagi/</guid>
       <description>Instal Program R Pagi ini saya coba belajar pemrograman R lagi, tapi tanpa bantuan R Studio, murni hanya dengan terminal di laptop Ubuntu saya. Saya memberanikan diri, karena &amp;ldquo;kenapa harus takut?&amp;quot;. Hal pertama yang saya lakukan tentu saya memasang paket program R melalui Synaptic Package Manager. Sebenarnya juga bisa dengan cara berikut:
  sudo apt install r-base
 Instal Library R Hal pertama yang saya ingin lakukan setelah instal R adalah mengolah data hujan.</description>

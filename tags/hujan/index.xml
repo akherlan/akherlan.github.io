@@ -13,10 +13,10 @@
     
     <item>
       <title>Uji Chi Kuadrat pada Data Hujan</title>
-      <link>/blog/uji-chi-kuadrat-pada-data-hujan/</link>
+      <link>/notes/uji-chi-kuadrat-pada-data-hujan/</link>
       <pubDate>Sat, 31 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/uji-chi-kuadrat-pada-data-hujan/</guid>
+      <guid>/notes/uji-chi-kuadrat-pada-data-hujan/</guid>
       <description>Saya harus belajar statistika lagi…
 TL;DR Mau ngasih tau langkah-langkah pengujian Chi-Square pakai R untuk analisis data curah hujan.
  Maksud dan Tujuan Kali ini saya akan melakukan pengujian Chi-Square atau Khi-Kuadrat (kata Wikipedia) pada data curah hujan Samarinda. Bacanya khay bukan chiy!
@@ -25,10 +25,10 @@ Pengujian ini termasuk analisis uji kecocokan sebaran, yaitu goodness of fit tes
     
     <item>
       <title>Visualisasi Ketersediaan Data Hujan</title>
-      <link>/blog/visualisasi-ketersediaan-data-hujan/</link>
+      <link>/notes/visualisasi-ketersediaan-data-hujan/</link>
       <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/visualisasi-ketersediaan-data-hujan/</guid>
+      <guid>/notes/visualisasi-ketersediaan-data-hujan/</guid>
       <description>Pusing nggak, sih, nyari data? Huuft…
 Objective Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi “kekosongan” data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen sih kelengkapannya?
 Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.</description>

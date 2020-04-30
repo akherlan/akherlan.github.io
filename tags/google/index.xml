@@ -13,10 +13,10 @@
     
     <item>
       <title>Bermain dengan Data Google Maps</title>
-      <link>/blog/google-maps-data/</link>
+      <link>/notes/google-maps-data/</link>
       <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/google-maps-data/</guid>
+      <guid>/notes/google-maps-data/</guid>
       <description>Singkat dan langsung saja.
 Data yang saya gunakan adalah data hasil tracking GPS-nya Google di ponsel pintar saya. Ups… Menyebar nich saya punya data. Saya memposisikan GPS ponsel pada mode ON selama tahun 2019.
 Teman-teman bisa pakai data punya sendiri dengan unduh dari laman takeout.google.com. Nanti perlu sedikit merapikannya. Tapi kalau tidak sempat, ikuti saja langkah-langkah di bawah pakai data punya saya.
