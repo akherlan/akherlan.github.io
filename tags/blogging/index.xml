@@ -6,10 +6,22 @@
     <description>Recent content in blogging on Engineer of words</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nasihat untuk Freelancer</title>
+      <link>/nasihat-untuk-freelancer/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/nasihat-untuk-freelancer/</guid>
+      <description>Saya masih punya minat jadi freelancer alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.
+Sebagai pemula atau orang bilang newbie, saya harus banyak belajar. Pada catatan ini barangkali saya ingin kumpulkan berbagai nasihat dari senior. Akan diperbarui secara berkala. Semoga berkenan.
+Nasihat dari Senior
+ Baru satu. Nanti ada lagi. Silakan, boleh bookmark. Terima kasih.</description>
+    </item>
     
     <item>
       <title>Branch untuk GH-Pages Databoard</title>
@@ -21,8 +33,8 @@
  Apakah cukup jelas?
 Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
 1. Clone repositori databoard, saya pakai tautan ssh karena nyaman dan aman.
-$ mkdir databoard &amp;amp;&amp;amp; cd databoard $ git clone git@github.com:akherlan/databoard.git master Tautan repo copas dari di bagian ini.
-2. Gandakan repositori hasil clone ke lokal tadi menjadi direktori gh-pages.
+$ mkdir databoard &amp;amp;&amp;amp; cd databoard $ git clone git@github.com:akherlan/databoard.git master Tautan repo copas dari bagian ini.
+2. Gandakan hasil clone ke lokal tadi menjadi direktori gh-pages.
 $ cp master gh-pages 3.</description>
     </item>
     
