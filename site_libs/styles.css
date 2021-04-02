@@ -1,6 +1,6 @@
 h1, h1.title {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 24px;
     color: rgb(61, 61, 61);
 }
 
@@ -46,9 +46,9 @@ a {
 }
 
 img {
-    max-height: 250px;
-    margin: 15px 20px 0 0;
-    border-radius: 4px;
+    max-height: 150px;
+    margin: 10px 20px 0 10px;
+    border-radius: 50%;
     position: relative;
 }
 
