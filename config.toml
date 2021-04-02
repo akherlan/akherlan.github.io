@@ -4,7 +4,7 @@ theme = "etch"
 title = "Notebook"
 [params]
 	description = "Catatan kecil Andi."
-	copyright = "Diberdayakan dengan Hugo dan Github Page."
+	copyright = "Free. Empowered with Hugo and Github Page."
 	dark = "auto"
 
 [menu]
