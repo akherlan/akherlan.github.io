@@ -1,0 +1,23 @@
+baseURL = "https://akherlan.github.io/"
+languageCode = "en-us"
+theme = "etch"
+title = "Notebook"
+[params]
+	description = "Catatan kecil Andi."
+	copyright = "Diberdayakan dengan Hugo dan Github Page."
+	dark = "auto"
+
+[menu]
+	[[menu.main]]
+		identifier = "about"
+		name = "about"
+		title = "about"
+		url = "/about/"
+		weight = 20
+
+[permalinks]
+	posts = "/:title/"
+
+[markup.goldmark.renderer]
+	# Allows HTML in Markdown
+	unsage = true
