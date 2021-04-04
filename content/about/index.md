@@ -9,11 +9,11 @@ Ini adalah blog pribadi, buah pikiran pribadi. Cuma saya yang menulis. Tidak mew
 
 ### Privacy
 
-Blog ini tidak menggunakan analitik sehingga kalian sebagai pengunjung tidak pernah saya lacak jejaknya. Kecuali kalau mungkin ada video dan/atau media lain yang tersemat dalam artikel, misalnya dari Youtube, itu di luar kemampuan saya untuk mengontrol hilir-mudik data kalian.
+Blog ini tidak menggunakan analitik sehingga pembaca tidak pernah saya lacak jejaknya. Kecuali kalau mungkin ada video dan/atau media lain yang tersemat dalam artikel, misalnya dari Youtube, itu di luar kemampuan saya untuk mengontrol hilir-mudik data pengunjung.
 
 ### Contact
 
-Kalian bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [twitter](https://twitter.com/terusterang__). Kalau mau kepo [foto](https://instagram.com/rakyatsipilbiasa) jepretan saya yang amatiran ini juga boleh.
+Bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [Twitter](https://twitter.com/terusterang__). Kalau mau kepo foto jepretan saya yang amatiran ini juga boleh, ada di [Instagram](https://instagram.com/rakyatsipilbiasa).
 
 ### Credit
 

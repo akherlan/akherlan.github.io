@@ -1,4 +1,4 @@
 ---
-title: "Home"
+title: "Notebook"
 ---
 Catatan kecil Andi
