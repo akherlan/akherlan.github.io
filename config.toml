@@ -2,10 +2,14 @@ baseURL = "https://akherlan.github.io/"
 languageCode = "en-us"
 theme = "etch"
 title = "Notebook"
+pygmentsUseClasses = true  # use class names instead of directly inserting color codes
+pygmentsCodeFences = true  # enable GitHub style code snippets
+
 [params]
 	description = "Catatan kecil Andi."
-	copyright = "Free. Empowered with Hugo and Github Page."
+	copyright = "Empowered with Hugo and Github Page."
 	dark = "auto"
+	highlight = true
 
 [menu]
 	[[menu.main]]
@@ -20,4 +24,4 @@ title = "Notebook"
 
 [markup.goldmark.renderer]
 	# Allows HTML in Markdown
-	unsage = true
+	unsafe = true
