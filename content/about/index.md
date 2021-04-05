@@ -5,15 +5,17 @@ Sebenarnya saya sudah gonta-ganti tempat menulis sangat sering sampai kebingunan
 
 ### Disclaimer
 
-Ini adalah blog pribadi, buah pikiran pribadi. Cuma saya yang menulis. Tidak mewakili pikiran siapapun, instansi manapun, juga tidak dibayar untuk iklan. Atau belum (kalau mau, boleh).
+Ini adalah blog pribadi, buah pikiran pribadi. Cuma saya yang menulis. Tidak mewakili pendapat siapapun, instansi manapun, juga tidak dibayar untuk iklan. Atau belum (kalau mau, boleh).
 
 ### Privacy
 
-Blog ini tidak menggunakan analitik sehingga pembaca tidak pernah saya lacak jejaknya. Kecuali kalau mungkin ada video dan/atau media lain yang tersemat dalam artikel, misalnya dari Youtube, itu di luar kemampuan saya untuk mengontrol hilir-mudik data pengunjung.
+Blog ini tidak menggunakan analitik dengan sengaja sehingga pembaca tidak pernah dengan niat saya lacak jejaknya. Namun begitu, mungkin ada video dan/atau media dari pihak ketiga yang tersemat dalam artikel, misalnya dari Youtube dan Spotify.
+
+Jika pembaca cukup serius memperhatikannya, bisa mempelajari ketentuan privasi dari masing-masing penyedia layanan pihak ketiga tersebut.
 
 ### Contact
 
-Bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [Twitter](https://twitter.com/terusterang__). Kalau mau kepo foto jepretan saya yang amatiran ini juga boleh, ada di [Instagram](https://instagram.com/rakyatsipilbiasa).
+Bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [Twitter](https://twitter.com/terusterang__) atau lewat [Telegram](https://t.me/akherlan).
 
 ### Credit
 

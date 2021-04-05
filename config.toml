@@ -19,6 +19,13 @@ pygmentsCodeFences = true  # enable GitHub style code snippets
 		url = "/about/"
 		weight = 20
 
+	[[menu.main]]
+		identifier = "read"
+		name = "read"
+		title = "read"
+		url = "/read/"
+		weight = 30
+
 [permalinks]
 	posts = "/:title/"
 
