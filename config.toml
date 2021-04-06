@@ -1,5 +1,5 @@
 baseURL = "https://akherlan.github.io/"
-languageCode = "en-us"
+languageCode = "id-id"
 theme = "etch"
 title = "Notebook"
 pygmentsUseClasses = true  # use class names instead of directly inserting color codes
@@ -7,7 +7,7 @@ pygmentsCodeFences = true  # enable GitHub style code snippets
 
 [params]
 	description = "Catatan kecil Andi."
-	copyright = "Empowered with Hugo and Github Page."
+	copyright = "Powered by Hugo and Github Page."
 	dark = "auto"
 	highlight = true
 
@@ -20,11 +20,18 @@ pygmentsCodeFences = true  # enable GitHub style code snippets
 		weight = 20
 
 	[[menu.main]]
+		identifier = "now"
+		name = "now"
+		title = "now"
+		url = "/now/"
+		weight = 30
+
+	[[menu.main]]
 		identifier = "read"
 		name = "read"
 		title = "read"
 		url = "/read/"
-		weight = 30
+		weight = 40
 
 [permalinks]
 	posts = "/:title/"
