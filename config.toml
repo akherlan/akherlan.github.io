@@ -33,6 +33,13 @@ pygmentsCodeFences = true  # enable GitHub style code snippets
 		url = "/read/"
 		weight = 40
 
+	[[menu.main]]
+		identifier = "rss"
+		name = "rss"
+		title = "rss"
+		url = "/index.xml"
+		weight = 50
+
 [permalinks]
 	posts = "/:title/"
 

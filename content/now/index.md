@@ -18,7 +18,7 @@ Dari penjelasan panjang lebar itu, intinya saya sedang menganggur, menghabiskan 
 
 ----
 
-**Pembaruan terakhir: 2021-04-06**
+<span style='color:#d0021b'>**Pembaruan terakhir: 2021-04-06**</span>
 
 *Saya menggunakan laman ini untuk selalu ingat dan fokus pada hal yang sedang saya kerjakan. Juga untuk penyemangat agar selalu memperbaiki hidup. Sekaligus untuk menjawab pertanyaan teman-teman di chat. Mungkin kamu juga sering dapat pertanyaan seperti:* **"Lagi sibuk apa sekarang?"**
 
