@@ -98,7 +98,7 @@ Taraaaaa, jadi.
 
 <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-post="teknologimasagitu/11" data-width="100%" data-userpic="false"></script>
 
-## Conclution
+## Conclusion
 
 Hhmmm... Data paling lengkap sepertinya pada 2009. Sepakat? Atau kita eliminasi saja stasiun hujannya. Hahaha... Pada 2013 terjadi ke-ompong-an. Kita pakai 2004-2009 saja, bagaimana?
 
