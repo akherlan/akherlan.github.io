@@ -2,8 +2,11 @@ baseURL = "https://akherlan.github.io/"
 languageCode = "id-id"
 theme = "etch"
 title = "Notebook"
-pygmentsUseClasses = true  # use class names instead of directly inserting color codes
-pygmentsCodeFences = true  # enable GitHub style code snippets
+# enableInlineShortcodes = true
+# use class names instead of directly inserting color codes
+pygmentsUseClasses = true
+# enable GitHub style code snippets
+pygmentsCodeFences = true
 
 [params]
 	description = "Catatan kecil Andi."
@@ -17,28 +20,28 @@ pygmentsCodeFences = true  # enable GitHub style code snippets
 		name = "about"
 		title = "about"
 		url = "/about/"
-		weight = 20
+		weight = 10
 
 	[[menu.main]]
 		identifier = "now"
 		name = "now"
 		title = "now"
 		url = "/now/"
-		weight = 30
+		weight = 11
 
 	[[menu.main]]
 		identifier = "read"
 		name = "read"
 		title = "read"
 		url = "/read/"
-		weight = 40
+		weight = 12
 
 	[[menu.main]]
 		identifier = "rss"
 		name = "rss"
 		title = "rss"
 		url = "/index.xml"
-		weight = 50
+		weight = 13
 
 [permalinks]
 	posts = "/:title/"
