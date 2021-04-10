@@ -1,5 +1,5 @@
 ---
-title: "Lenovo ThinkPad X240 dengan Xubuntu"
+title: "Lenovo ThinkPad X240 & Xubuntu"
 date: '2020-04-07'
 ---
 

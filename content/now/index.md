@@ -12,13 +12,13 @@ title: "Apa yang sedang saya kerjakan?"
 
 5. Saya juga sedang merencanakan ingin pindah tempat tinggal dari kos-kosan ini untuk kembali ke rumah orangtua saya. Hanya saja terkendala angkut barang-barang. 260 km adalah jarak yang lumayan. Kamu benar. Saya bisa sewa kendaraan.
 
-6. Tesis yang sedang saya tunda masih belum juga naik level ke jenjang prioritas tingkat dewa.
+6. Tesis yang sedang saya tunda mulai naik level ke jenjang yang diprioritaskan. Terima kasih Iqbal yang sudah ajak-ajak dan Kak Dedi yang juga dukung. Orang tua saya pasti selalu berdoa.
 
 Dari penjelasan panjang lebar itu, intinya saya sedang menganggur, menghabiskan tabungan saya, dan menikmati hidup untuk sementara waktu sambil menyiapkan kondisi psikis saya. *This pandemic...*
 
 ----
 
-<span style='color:#d0021b'>**Pembaruan terakhir: 2021-04-06**</span>
+<span style='color:#d0021b'>**Pembaruan terakhir: 2021-04-10**</span>
 
 *Saya menggunakan laman ini untuk selalu ingat dan fokus pada hal yang sedang saya kerjakan. Juga untuk penyemangat agar selalu memperbaiki hidup. Sekaligus untuk menjawab pertanyaan teman-teman di chat. Mungkin kamu juga sering dapat pertanyaan seperti:* **"Lagi sibuk apa sekarang?"**
 
