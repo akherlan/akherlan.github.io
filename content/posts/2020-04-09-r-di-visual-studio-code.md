@@ -6,11 +6,9 @@ tags: [rstats, tool]
 ---
 {{< toc >}}
 
-OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
+OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, [di twitter](https://twitter.com/jozefhajnala/status/1204496900461912068).
 
-{{< tweet 1204496900461912068 >}}
-
-Berangkat dari tweet di atas, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut...
+Berangkat dari tweet tersebut, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut...
 
 ## 1. Siapkan VS Code
 

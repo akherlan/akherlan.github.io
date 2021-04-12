@@ -1,5 +1,5 @@
 ---
-title: "Apa yang sedang saya kerjakan?"
+title: "FAQ: Lagi sibuk apa sekarang?"
 ---
 
 1. Saya tidak sedang terlalu sibuk. Tapi masih sering sensitif untuk tidak ingin diganggu karena sedang mengerjakan proyek pribadi tak berduit: kesenangan. Salah satunya membangun tempat menulis ini. Saya juga sedang berusaha melakukan [sosial media detox](https://duckduckgo.com/?t=canonical&q=social+media+detox).
