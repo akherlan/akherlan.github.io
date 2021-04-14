@@ -1,5 +1,5 @@
 ---
-title: "Kita Punya Waktu"
+title: "Kita Punya Pilihan"
 date: 2021-03-21T18:39:43+07:00
 ---
 Saya bilang pada seseorang kalau tahun ini saya punya resolusi untuk bisa curhat. Satu-satunya resolusi tahunan yang saya inginkan di tahun 2021 dan saya cukup *newbie* untuk hal itu: memiliki resolusi tahunan.
