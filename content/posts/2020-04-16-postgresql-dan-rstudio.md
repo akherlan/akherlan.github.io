@@ -17,7 +17,7 @@ Ada [dua cara](https://db.rstudio.com/databases/postgresql/) membuat koneksi dar
 
 Untuk saat ini saya menggunakan cara yang pertama. Langkah yang saya lakukan adalah:
 
-### 1. Instal odbc drivers di komputer linux
+## 1. Instal odbc drivers di komputer linux
 
 Memasang odbc di Ubuntu dengan mengetikkan perintah berikut:
 
@@ -28,7 +28,7 @@ $ sudo apt install unixodbc unixodbc-dev odbc-postgresql
 
 Setelah itu ...
 
-### 2. Periksa hasil instalasi kita
+## 2. Periksa hasil instalasi kita
 
 Beberapa berkas yang perlu kita tahu dan butuhkan untuk menunjang pengaturan dan kerja paket `odbc` di R diantaranya berkas `odbcinst.ini` dan `odbc.ini`. Di mana mereka?
 
@@ -57,7 +57,7 @@ Kemudian coba kita cek apa isi dari berkas `odbcinst.ini`. Berikut isinya:
 
 Sedangkan untuk berkas `.odbc.ini`, sepengalaman saya saat _fresh-install_ tidak ada isinya alias masih kosong. Berikutnya kita perlu isi itu.
 
-### 3. Konfigurasi / sunting berkas odbc.ini
+## 3. Konfigurasi / sunting berkas odbc.ini
 
 Berkas ini ada di dua tempat, seperti sudah kita periksa sebelumnya.
 
@@ -87,7 +87,7 @@ Port                = 5432
 
 Ganti nilai pada bagian `Database` dan `UserName`, juga pada bagian `Password`, sesuai dengan pengaturan basis data PostgreSQL milik teman-teman.
 
-### 4. Menginstal paket odbc dan DBI di R
+## 4. Menginstal paket odbc dan DBI di R
 
 ```r
 install.packages("odbc")

@@ -3,7 +3,7 @@ title: "Lenovo ThinkPad X240 & Xubuntu"
 date: '2020-04-07'
 ---
 
-{{< figure src="https://telegra.ph/file/800992a81592fc3081224.png" caption="Logo Lenovo Thinkpad" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/881cdbef185018d82af0b.jpg" caption="Logo Lenovo Thinkpad" alt="Lenovo ThinkPad" >}}
 
 Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. _Secondhand_. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:
 
@@ -22,7 +22,7 @@ Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. _Secondhand_. Harganya
 
 Kondisinya secara fisik masih bagus. Cuma engsel kanan yang bunyi _krek-krek_ saat dibuka-tutup. Juga baterainya agak sedikit longgar/goyang. Tapi jarang ada kelihatan lecet.
 
-{{< figure src="https://telegra.ph/file/9f4175b0997d39cd40df3.png" caption="Fisik bagian atas" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/e68377430a720b9e2c8be.jpg" caption="Fisik bagian atas" alt="Lenovo ThinkPad" >}}
 
 ## Kelebihan
 
@@ -30,9 +30,9 @@ Kondisinya secara fisik masih bagus. Cuma engsel kanan yang bunyi _krek-krek_ sa
 - _Gesture allowed_ pada TrackPad, ketika dicoba di Windows 10 (OS bawaan toko) dan Xubuntu 18.04, tidak ada bedanya, sama-sama yahood!
 - TrackPoint, entah ini kelebihan atau bukan karena sebenarnya jarang saya pakai, ini juga berfungsi dengan baik di Xubuntu 18.04.
 
-{{< figure src="https://akherlan.github.io/blog/post/2020-04-07-lenovo-thinkpad-x240_files/trackpoint.jpg" caption="TrackPoint" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/d761461664a7165c1d309.jpg" caption="TrackPoint" alt="Lenovo ThinkPad" >}}
 
-{{< figure src="https://telegra.ph/file/bc98d92c8370d20dcb6dd.png" caption="Baterai ganda" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/b246b5ee83f1e712aa9a5.jpg" caption="Baterai ganda" alt="Lenovo ThinkPad" >}}
 
 ## Kebiasaan
 
@@ -55,14 +55,14 @@ Saya agak _kagok_ dengan papan ketiknya karena belum terbiasa. Bukan ketika meng
 |    ~   	|    #   	|    \   	|   \|   	| di samping `Enter` (`Return`) 	|
 |        	|        	|        	|        	|                               	|
 
-{{< figure src="https://telegra.ph/file/7625018745418685863ca.png" caption="Tombol Fn dengan LED, dekat Ctrl" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/ad129b387588bd9def192.jpg" caption="Tombol Fn dengan LED, dekat Ctrl" alt="Lenovo ThinkPad" >}}
 
 Selain itu malah jadi sangat nyaman:
 
 - `PgUp` dan `PgDn` yang dekat dengan arrow, memudahkan saat membaca dan skrol halaman.
-{{< figure src="https://telegra.ph/file/447e608ed95f5b2060bce.png" caption="Arrow, PgUp, PgDn" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/bc025e637165a1cda3f5c.jpg" caption="Arrow, PgUp, PgDn" alt="Lenovo ThinkPad" >}}
 - `Alt` kanan, `PrtSc`, dan `Ctrl` kanan yang berdekatan sehingga mudah untuk ambil tangkapan layar. Saya terbiasa dengan `shortcut` kombinasi tombol-tombol ini.
-{{< figure src="https://telegra.ph/file/87b65ae01a70162541733.png" caption="Tombol-tombol shortcut tangkapan layar" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/bac94f6f9df7dc8291009.jpg" caption="Tombol-tombol shortcut tangkapan layar" alt="Lenovo ThinkPad" >}}
 
 ## Informasi Hardware
 
@@ -159,7 +159,7 @@ $ lspci
 
 Meskipun tertulis di _casing_ bahwa mesin laptop Lenovo ini dilengkapi dengan Windows 7 sebagai sistem operasi original, tetapi penjual mendistribusikan mesin second ini dengan sistem operasi Windows 10.
 
-{{< figure src="https://telegra.ph/file/d264bf026a0f9265f6ce2.png" caption="Casing dengan logo sistem operasi bawaan Windows7" alt="Lenovo ThinkPad" >}}
+{{< figure src="https://telegra.ph/file/68051e814a79300dd9c54.jpg" caption="Casing dengan logo sistem operasi bawaan Windows7" alt="Lenovo ThinkPad" >}}
 
 Tetap saja. Satu hari setelah cek keadaan *hardware* sebisanya, untuk memastikan kondisi benar-benar baik dan tidak cacat, saya langsung instal sistem operasi [Xubuntu 18.04](https://xubuntu.org/).
 
