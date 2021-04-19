@@ -3,7 +3,7 @@ title: "Konversi HTML Ke Markdown"
 date: 2021-04-19T10:27:32+07:00
 ---
 
-{{ toc }}
+{{< toc >}}
 
 >  **TL;DR** : untuk konversi HTML ke markdown, saya menggunakan pandoc tapi lewat R, bukan langsung dengan bash, karena saya terlalu cupu.
 
