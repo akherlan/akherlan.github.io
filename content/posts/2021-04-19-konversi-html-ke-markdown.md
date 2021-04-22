@@ -7,7 +7,7 @@ date: 2021-04-19T10:27:32+07:00
 
 >  **TL;DR** : untuk konversi HTML ke markdown, saya menggunakan pandoc tapi lewat R, bukan langsung dengan bash, karena saya terlalu cupu.
 
-Saya sekarang sedang menggunakan aplikasi ketik yang sedang naik daun (juga), yaitu [Obsidian](https://obsidian.md/). Dengannya saya bisa sekaligus memanajemen pikiran saya dan juga (mudah-mudahan) hidup saya dengan menggunakannya untuk mengetik kegiatan sehari-hari.
+Beberapa tahun belakangan ini saya tidak pernah menyimpan catatan-catatan yang saya buat dengan baik dan rapi, sehingga berserakan di mana-mana. Tapi sekarang mudah-mudahan tidak lagi. Saya sedang menggunakan aplikasi ketik yang sedang naik daun (juga), yaitu [Obsidian](https://obsidian.md/). Dengannya saya bisa sekaligus memanajemen pikiran saya dan juga (mudah-mudahan) hidup saya dengan menggunakannya untuk mengetik kegiatan sehari-hari.
 
 Obsidian memungkinkan saya untuk membuat semacam Wikipedia atau dokumentasi tentang kehidupan saya dan arsip pikirkan juga perasaan saya dalam bentuk tulisan. Sebetulnya saya malas sekali mengakui bahwa saya termasuk orang yang suka *journaling*, sedikit, maksudnya tidak terlalu rutin. Tapi nggak apa-apa. Kita coba saja.
 
@@ -19,9 +19,11 @@ Sebetulnya saya suka dengan Notion karena fiturnya yang disebut "database". Kere
 
 ## Evernote ke Obsidian
 
-Nah, ceritanya, saya sedang memindahkan berbagai macam catatan yang dulu pernah saya buat untuk bisa saya sunting lagi dan rapikan ulang menggunakan format markdown dari dalam Obsidian. Obsidian juga menggunakan metode *formatting* ini untuk mengetik. Beberapa tahun belakangan saya tidak pernah menyimpan catatan-catatan saya dengan baik dan rapi, sehingga berserakan di mana-mana.
+Nah, ceritanya, saya sedang memindahkan berbagai macam catatan yang dulu pernah saya buat untuk bisa saya sunting lagi dan rapikan ulang menggunakan format markdown dari dalam Obsidian. Obsidian juga menggunakan metode *formatting* ini untuk mengetik.
 
-Saya menemukan tulisan lamaaa sekali yang merupakan hasil konversi dari [Evernote](https://evernote.com/). Mungkin, tulisan itu saya buat ketika saya masih menggunakan sistem operasi Windows dulu, saya juga tidak yakin. Sudah lupa karena sudah lama. Dulu memang saya sempat pakai Evernote sebentar. Berkas yang terekspor dari Evernote ini menggunakan format HTML. Maka saya harus konversi agar bisa disunting kembali menggunakan Obsidian.
+Saya menemukan tulisan lamaaa sekali yang merupakan hasil konversi dari [Evernote](https://evernote.com/). Mungkin, tulisan itu saya buat ketika saya masih menggunakan sistem operasi Windows dulu, saya juga tidak yakin. Sudah lupa karena sudah lama.
+
+Dulu memang saya sempat pakai Evernote sebentar. Berkas yang terekspor dari Evernote ini menggunakan format HTML. Maka saya harus konversi agar bisa disunting kembali menggunakan Obsidian.
 
 ## HTML ke Markdown
 
