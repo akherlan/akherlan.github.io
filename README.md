@@ -1,3 +1,3 @@
 [![CI](https://github.com/akherlan/akherlan.github.io/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/akherlan/akherlan.github.io/actions/workflows/main.yml)
 
-Andi's notebook page on [https://akherlan.github.io](https://akherlan.github.io)
+This is a cast where I placed my [little note](https://akherlan.github.io/) on the edge internet. For any discussions please see [this column](https://github.com/akherlan/akherlan.github.io/discussions).

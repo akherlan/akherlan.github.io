@@ -15,11 +15,11 @@ $ conda update -c conda-forge qgis
 
 Muncul detail semua dependensi yang akan terunduh, yang baru akan diinstal, yang akan dihapus, dst. Lalu saya tekan `y` dan `Enter`. Tanda setuju melakukan update.
 
-Mengapa saya menggunakan QGIS keluaran Anaconda dan tidak menggunakan versi official dengan pasang repository QGIS resmi di komputer saya? Jawabannya, karena dependensi QGIS yang saya instal pernah konflik dengan dependensi [#Rspatial](https://twitter.com/hashtag/rspatial). 
+Mengapa saya menggunakan QGIS keluaran Anaconda dan tidak menggunakan versi official dengan pasang repository QGIS resmi di komputer saya? Jawabannya, karena dependensi QGIS yang saya instal [pernah konflik](https://twitter.com/terusterang__/status/1248900312150106113) dengan dependensi R untuk analisis spasial, juga dengan aplikasi GIS lainnya.
 
 Malaaaaas sekali kalau sudah kacau begitu. Lebih baik saya pisahkan lingkungan kerjanya saja. Mana QGIS ini banyak versinya pula, ada yang nightly lah, ada yang stable, ada yang cuma versi LTR, dan lain-lain. Dan versi dependensinya tentu saja berbeda-beda juga. Nanti beda lagi dengan yang dipakai di R.
 
-Sebetulnya saya ingin pasang dan perbarui setiap ada versi LTR rilis saja. Tapi sistem yang terisolasi lebih penting sekarang ketimbang masalah up to date. Sekarang, tinggal jalankan aplikasi QGIS lewat terminal.
+Sebetulnya saya ingin pasang dan perbarui setiap ada rilis versi LTR saja. Tapi sistem yang terisolasi lebih penting sekarang ketimbang masalah up to date. Sekarang, tinggal jalankan aplikasi QGIS lewat terminal.
 
 ```bash
 $ qgis # dalam environment conda yang terinstal QGIS
