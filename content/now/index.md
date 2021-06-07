@@ -2,23 +2,27 @@
 title: "FAQ: Lagi sibuk apa sekarang?"
 ---
 
-1. Saya tidak sedang terlalu sibuk. Tapi masih sering sensitif untuk tidak ingin diganggu karena sedang mengerjakan proyek pribadi tak berduit: kesenangan. Salah satunya membangun tempat menulis ini. Saya juga sedang berusaha melakukan [sosial media detox](https://duckduckgo.com/?t=canonical&q=social+media+detox).
+1. Saya tidak sedang terlalu sibuk.
 
-2. Saya masih [baca buku](../read) walau intensitasnya menurun. Lebih banyak baca artikel di internet tentang bagaimana tetap bertahan jadi manusia sederhana di era informasi yang sangat rumit ini.
+2. Saya masih tetap mengurangi konsumsi penggunaan [sosial media](https://duckduckgo.com/?t=canonical&q=social+media+detox) terutama Instagram, Twitter, dan WhatsApp. Facebook sudah lebih dulu pensiun, tapi akunnya masih aktif.
 
-3. Saya sedang punya program penggemukan diri dan olahraga mandiri. Saya banyak menghabiskan uang untuk ini.
+3. Sayangnya saya mulai jarang [baca buku](../read). Kadang masih baca artikel di internet tentang bagaimana tetap bertahan menjadi manusia sederhana yang baik. Langganan Pocket jadi terasa mubazir. Saya harus lebih sering membaca lagi.
 
-4. Selain itu saya tertarik untuk membangun karir sebagai pekerja remote. Pilihan ini saya ambil karena ingin mendukung salah satu anjuran pemerintah untuk menerapkan protokol kesehatan. Menerapkan apa? Protokol kesehatan di masa pandemi Covid-19. Tapi sayangnya itu cuma alasan saya saja meskipun sebagian faktanya benar juga.
+4. Sekarang lebih ingin memperbaiki diri agar tidak menyakiti orang lain, terutama orang-orang yang saya sayangi.
 
-5. Saya juga sedang merencanakan ingin pindah tempat tinggal dari kos-kosan ini untuk kembali ke rumah orangtua saya. Hanya saja terkendala angkut barang-barang. 260 km adalah jarak yang lumayan. Kamu benar. Saya bisa sewa kendaraan.
+5. Saya sedang punya program penggemukan diri dan olahraga mandiri. Tapi kurang berjalan lancar dari sisi asupan. Malah puasa tahun ini saya terkendala sakit. Tiba-tiba langsung maag parah. Ini berkaitan dengan resolusi tengah tahun saya. Saya bersyukur punya alat pengingat di waktu yang tepat.
 
-6. Tesis yang sedang saya tunda mulai naik level ke jenjang yang diprioritaskan.
+6. Selain itu saya tertarik untuk membangun karir sebagai pekerja remote. Pilihan ini saya ambil karena ingin punya waktu lebih fleksibel untuk makan. Tapi kerja di kantor juga tidak terlalu buruk.
 
-Dari penjelasan panjang lebar itu, intinya saya sedang menganggur, menghabiskan tabungan saya, dan menikmati hidup untuk sementara waktu sambil menyiapkan kondisi psikis saya. *This pandemic...*
+7. Saya berencana ingin punya tempat tinggal lebih layak. Bukan untuk saya.
+
+8. Tesis yang sedang saya tunda sudah naik level ke jenjang yang diprioritaskan.
+
+Intinya, saya sedang berusaha menikmati hidup dan memperbaiki diri.
 
 ----
 
-<span style='color:#d0021b'>**Pembaruan terakhir: 2021-04-10**</span>
+<span style='color:#d0021b'>**Pembaruan terakhir: 2021-06-07**</span>
 
 *Saya menggunakan laman ini untuk selalu ingat dan fokus pada hal yang sedang saya kerjakan. Juga untuk penyemangat agar selalu memperbaiki hidup. Sekaligus untuk menjawab pertanyaan teman-teman di chat. Mungkin kamu juga sering dapat pertanyaan seperti:* **"Lagi sibuk apa sekarang?"**
 
