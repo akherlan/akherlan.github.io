@@ -3,6 +3,7 @@ languageCode = "id-id"
 theme = "etch"
 title = "Notebook"
 # enableInlineShortcodes = true
+enableEmoji = true
 # use class names instead of directly inserting color codes
 pygmentsUseClasses = true
 # enable GitHub style code snippets
@@ -49,3 +50,4 @@ pygmentsCodeFences = true
 [markup.goldmark.renderer]
 	# Allows HTML in Markdown
 	unsafe = true
+
