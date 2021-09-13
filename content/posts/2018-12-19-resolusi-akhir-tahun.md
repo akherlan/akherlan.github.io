@@ -1,6 +1,6 @@
 ---
-title: Resolusi Akhir Tahun?
-date: '2018-12-19'
+title: "Resolusi Akhir Tahun?"
+date: 2018-12-19
 ---
 
 Di mana-mana tuh, ya, orang yang visioner akan menyatakan komitmennya dalam bentuk tulisan atau ucapan yang diulang-ulang. Tiap bulan terakhir, yang tentunya Desember, akan dilakukan evaluasi tahunan mengenai apa yang sudah tercapai, apa yang belum bisa dilakukan, mengapa tidak tercapai, dan ada kendala apa. Kemudian, dilanjutkan dengan mencatat *goals* untuk tahun depan.

@@ -72,7 +72,7 @@ Sampai di sini, selamat menggunakan R di Android.
 
 ### Video demo
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/kDrc8-2K2DI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Bisa saksikan di laman [Youtube Channel](https://youtu.be/kDrc8-2K2DI "youtube") saya (kalau saya sertakan videonya di sini, *tracker*-nya ada empat).
 
 ### Tips
 

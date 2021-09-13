@@ -2,6 +2,7 @@
 title: "Travel with Gojek"
 date: 2021-08-28T01:12:29+07:00
 lastmod: 2021-08-29T04:28:00+07:00
+tags: [data, rstats, gojek]
 ---
 
 Data yang saya gunakan merupakan hasil mengumpulkan invoice dari Gojek yang dikirimkan melalui surel setiap kali selesai melakukan pemesanan jasa transportasi lewat aplikasi. Data diimpor dari Gmail ke Google Sheets melalui Google Apps Script, kemudian diekspor ke format csv untuk diolah menggunakan R. Referensi lebih lanjut tentang kode yang saya gunakan silakan mengunjungi [repositori gojek](https://github.com/akherlan/gojek) di Github saya.

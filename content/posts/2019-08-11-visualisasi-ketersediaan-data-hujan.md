@@ -1,6 +1,6 @@
 ---
 title: "Visualisasi Ketersediaan Data Hujan"
-date: '2019-08-11'
+date: 2019-08-11
 tags: rstats
 categories: belajar
 ---

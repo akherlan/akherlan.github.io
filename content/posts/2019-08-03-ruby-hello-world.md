@@ -1,6 +1,6 @@
 ---
 title: 'Ruby: "Hello World!"'
-date: '2019-08-03'
+date: 2019-08-03
 tags: ruby
 categories: belajar
 ---

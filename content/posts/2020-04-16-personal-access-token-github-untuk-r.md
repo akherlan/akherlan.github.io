@@ -116,6 +116,4 @@ Bahkan dengan cara ini, kita nggak perlu berinteraksi dengan konsol R atau buka-
 
 Sekian dulu.
 
------
-
 **Referensi:** https://happygitwithr.com/github-pat.html

@@ -12,6 +12,7 @@ Buku-buku yang sedang saya baca:
 - **Filosofi Teras** oleh Henry Manampiring | [Goodreads](https://www.goodreads.com/book/show/42861019-filosofi-teras)
 - **Telegram** oleh Putu Wijaya | [Goodreads](https://www.goodreads.com/book/show/2310646.Telegram)
 - **Money the Millenial Ways** oleh Astrid Savitri | [store](https://mizanstore.com/money_the_millenial_ways_68437)
+- Paper dan jurnal ilmiah :mask:
 
 Saya punya niatan untuk menjual kembali buku-buku yang sudah saya selesaikan. Tapi masih bingung bagaimana cara menjualnya. Kalau kalian berminat membeli buku dengan harga *cincay*, boleh kontak saya di [email](mailto:andiherlan@pm.me) atau [Telegram](https://t.me/akherlan).
 

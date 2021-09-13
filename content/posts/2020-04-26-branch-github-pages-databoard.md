@@ -1,6 +1,6 @@
 ---
 title: "Branch untuk GH-Pages Databoard"
-date: '2020-04-26'
+date: 2020-04-26
 categories: [catatan]
 tags: [blogging, github, website]
 ---

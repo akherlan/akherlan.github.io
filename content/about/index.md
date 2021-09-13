@@ -1,7 +1,7 @@
 ---
 title: "Saya Andi, dan ini adalah Notebook"
 ---
-Sebenarnya saya sudah gonta-ganti tempat menulis sangat sering sampai kebingunan harus menulis di mana. Akhirnya per tanggal 2 April 2021, saya bermaksud untuk mengumpulkan semua catatan kecil saya yang berceceran ke satu tempat saja, yaitu di sini. Tidak peduli panjang atau pendek, bagus atau jelek. Jangan pernah kita pedulikan. Yang penting menulisnya tetap satu tempat saja. Dimana? Di sini.
+Sebenarnya saya sudah gonta-ganti tempat menulis sangat sering sampai kebingunan harus menulis di mana. Akhirnya per tanggal 2 April 2021, saya bermaksud untuk mengumpulkan semua catatan kecil saya yang berceceran ke satu tempat saja, yaitu di sini. Tidak peduli panjang atau pendek, bagus atau jelek. Saya tidak ingin pedulikan. Yang penting menulis saja.
 
 ### Disclaimer
 
@@ -9,9 +9,9 @@ Ini adalah blog pribadi, buah pikiran pribadi. Cuma saya yang menulis. Tidak mew
 
 ### Privacy
 
-Blog ini tidak menggunakan analitik dengan sengaja sehingga pembaca tidak pernah dengan niat saya lacak jejaknya. Namun begitu, mungkin ada video dan/atau media dari pihak ketiga yang tersemat dalam artikel, misalnya dari Youtube dan Spotify.
+Blog ini tidak menggunakan analitik dengan sengaja sehingga pembaca tidak pernah dengan niat saya lacak jejaknya. Saya juga menghilangkan video dan/atau media sematan dari pihak ketiga pada artikel tertentu, karena berpotensi membawa *tracker* misalnya dari Youtube.
 
-Jika pembaca cukup serius memperhatikannya, bisa mempelajari ketentuan privasi dari masing-masing penyedia layanan pihak ketiga tersebut.
+Namun begitu saya masih menyematkan satu episode podcast dari Spotify. Jika pembaca cukup serius memperhatikan hal ini, bisa mempelajari ketentuan privasi dari Spotify.
 
 ### Contact
 
@@ -19,4 +19,4 @@ Bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [Twitter](https:/
 
 ### Credit
 
-Kode sumber blog ini tersimpan di [Github](https://github.com/akherlan/akherlan.github.io). Dibangun menggunakan [Hugo](https://gohugo.io/) dengan tema [Etch](https://github.com/LukasJoswiak/etch/). Gambar saya hosting di [Telegra.ph](https://telegra.ph/) atau [Telegram](https://telegram.org/).
+Kode sumber blog ini tersimpan di [Github](https://github.com/akherlan/akherlan.github.io). Dibangun menggunakan [Hugo](https://gohugo.io/) dengan tema [Etch](https://github.com/LukasJoswiak/etch/). Gambar saya hosting di [Telegra.ph](https://telegra.ph/) atau [Telegram](https://telegram.org/), juga Github.

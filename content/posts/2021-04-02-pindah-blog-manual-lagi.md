@@ -7,7 +7,7 @@ draft: false
 
 Ini adalah posting pertama dengan konfigurasi *pure* dari Hugo. Tidak melalui RStudio dengan bantuan `blogdown` karena katanya *package* itu sedang diperbaiki untuk terintegrasi dengan versi Hugo yang baru. 
 
-**Update 2021-04-08:**
+**Update:**
 
 Saya sudah menemukan *workflow* ngeblog pakai format Rmarkdown pakai `blogdown` versi `>1.0`. Yang penting jangan *update* Hugo-nya dulu. Ternyata orang lain juga pada *struggle*.
 

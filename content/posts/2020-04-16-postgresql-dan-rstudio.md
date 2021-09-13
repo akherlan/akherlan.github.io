@@ -96,12 +96,8 @@ install.packages("DBI")
 
 Kemudian restart R session.
 
-Koneksi sudah bisa digunakan...
-
-{{< youtube z5tZ1C9SVyo >}}
+Koneksi sudah bisa digunakan... :smiley: Jika ingin simak video demonstrasinya silakan di [youtube](https://youtube.com/watch?v=z5tZ1C9SVyo "postgresql in rstudio").
 
 Sekian.
-
------
 
 **Referensi:** https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu

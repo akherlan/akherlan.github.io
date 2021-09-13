@@ -1,6 +1,6 @@
 ---
-title: Pemeliharaan Sungai
-date: '2019-05-10'
+title: "Pemeliharaan Sungai"
+date: 2019-05-10
 ---
 
 *Merupakan topik basi, secara politis, yang diambil jadi bahan diskusi dalam kelas yang menyita waktu.*
@@ -37,9 +37,8 @@ Pada Sungai Ciliwung sendiri salah satunya pernah dilakukan upaya restorasi oleh
 
 Maka, melakukan restorasi sungai adalah suatu keniscayaan dan diinginkan oleh semua pihak kecuali perusak lingkungan.
 
-----
-
 ### Berita
+
 - Begini Cara Restorasi Sungai ala Agus Maryono | [artikel](https://www.mongabay.co.id/2015/12/14/begini-cara-restorasi-sungai-ala-agus-maryono)
 - Normalisasi dan Naturalisasi Sungai, Apa Bedanya? | [artikel](https://megapolitan.kompas.com/read/2018/02/08/20130481/normalisasi-dan-naturalisasi-sungai-apa-bedanya)
 - Jangan Bandingkan Normalisasi dan Naturalisasi! | [artikel](https://megapolitan.kompas.com/read/2019/04/11/07013861/jangan-bandingkan-normalisasi-dan-naturalisasi)
