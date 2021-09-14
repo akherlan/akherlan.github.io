@@ -104,7 +104,5 @@ Hhmmm... Data paling lengkap sepertinya pada 2009. Sepakat? Atau kita eliminasi 
 
 Terima kasih. Semoga bermanfaat.
 
------
-
 ## Reference
 - Manuel Gimond's note [here](https://mgimond.github.io/meteo_waterville/)

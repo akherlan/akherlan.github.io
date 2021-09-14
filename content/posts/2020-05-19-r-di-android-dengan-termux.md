@@ -14,7 +14,7 @@ Termux merupakan terminal emulator di Android. Berjalan tanpa harus dalam mode r
 
 Karena saya kadang-kadang pakai R dan sedang belajar juga, jadi saya ingin instal R di Android.
 
-### Paket manajemen termux
+## Paket manajemen termux
 
 Tidak semua paket di simpan dalam satu repositori termux, melainkan dibagi menjadi repo default (lebih stabil), dan selainnya ada repo untuk aplikasi root, unstable (dalam pengembangan), dan X11 (antarmuka grafis).
 
@@ -24,7 +24,7 @@ Akhir tahun 2019 sampai awal-awal 2020 lalu akses ke repositori ini sempat hilan
 
 Oh ya, termux ini pakai basis Debian/Ubuntu, jadi pakai manajemen paket APT dan DPKG. Tapi punya perintah bawaan sendiri, sih: `pkg <command>`. Bisa dilihat dengan `pkg help`. Gak tau deh, untuk hal itu [baca wiki](https://wiki.termux.com/wiki/Main_Page)-nya saja ya...
 
-### Menambah repositori its-pointless
+## Menambah repositori its-pointless
 
 Pertama, kita perlu `curl` untuk unduh skrip bash yang sudah dibuatkan untuk kita. Jadi kita bisa menambah repo ini dengan mudah. Enak sekali jadi kita ini.
 
@@ -50,7 +50,7 @@ $ rm setup-pointless-repo.sh
 
 Repositori its-pointless selesai ditambahkan.
 
-### Instal R di Android
+## Instal R di Android
 
 Biasanya setelah menambahkan alamat repo baru, kita harus update daftar paketnya. Tapi tadi sudah dilakukan ketika menjalankan skrip. Jadi, daftar paket sudah diperbarui. Berikutnya tinggal instal R.
 
@@ -70,11 +70,11 @@ Selain `r-base`, its-pointless juga menyediakan `gcc-7`, `gfortran`, `octave`, `
 
 Sampai di sini, selamat menggunakan R di Android.
 
-### Video demo
+## Video demo
 
-Bisa saksikan di laman [Youtube Channel](https://youtu.be/kDrc8-2K2DI "youtube") saya (kalau saya sertakan videonya di sini, *tracker*-nya ada empat).
+Bisa saksikan di laman [Youtube Channel](https://youtu.be/kDrc8-2K2DI "youtube") saya.
 
-### Tips
+## Tips
 
 Izinkan termux mengakses penyimpanan: 
 
