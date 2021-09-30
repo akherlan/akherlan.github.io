@@ -20,7 +20,6 @@ lapply(
   c(
     "httr",
     "jsonlite",
-    "stringr",
     "dplyr",
     "tidyr",
     "janitor",
@@ -219,8 +218,7 @@ v1 <- function(job){
   vacancy <- lapply(job, function(x){
     v <- unlist(x)
     v <- data.frame(name = names(v), value = v)
-    v <- as_tibble(v)
-    v <- v %>% 
+    v <- as_tibble(v) %>% 
       group_by(name) %>% 
       summarise_all(~toString(value)) %>% 
       ungroup()
@@ -258,13 +256,13 @@ Setelah itu, dilanjutkan dengan menggunakan fungsi-fungsi dari pustaka **dplyr**
 v2 <- function(job){
   
   for (i in seq_along(job)) {
-    s <- unlist(job[[i]])
-    s <- cbind(name = names(s), value = s)
-    s <- as_tibble(s) %>% mutate(num = i)
+    v <- unlist(job[[i]])
+    v <- data.frame(name = names(v), value = v)
+    v <- as_tibble(v) %>% mutate(num = i)
     if(i == 1){
-      vacancy <- s
+      vacancy <- v
     } else {
-      vacancy <- bind_rows(vacancy, s)
+      vacancy <- bind_rows(vacancy, v)
     }
   }
   
@@ -391,20 +389,18 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] jsonlite_1.7.2 janitor_2.1.0  tidyr_1.1.3    dplyr_1.0.7    stringr_1.4.0 
-[6] httr_1.4.2    
+[1] microbenchmark_1.4-7 waldo_0.3.0          janitor_2.1.0       
+[4] tidyr_1.1.3          dplyr_1.0.7          jsonlite_1.7.2      
+[7] httr_1.4.2          
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7           rstudioapi_0.13      magrittr_2.0.1      
- [4] tidyselect_1.1.1     R6_2.5.0             rlang_0.4.11        
- [7] fansi_0.5.0          tools_4.0.4          waldo_0.3.0         
-[10] utf8_1.2.1           cli_3.0.1            DBI_1.1.1           
-[13] ellipsis_0.3.2       assertthat_0.2.1     tibble_3.1.4        
-[16] lifecycle_1.0.0      crayon_1.4.1         purrr_0.3.4         
-[19] microbenchmark_1.4-7 vctrs_0.3.8          curl_4.3.2          
-[22] snakecase_0.11.0     glue_1.4.2           stringi_1.7.3       
-[25] compiler_4.0.4       pillar_1.6.2         generics_0.1.0      
-[28] lubridate_1.7.10     pkgconfig_2.0.3
+ [1] Rcpp_1.0.7       rstudioapi_0.13  magrittr_2.0.1   tidyselect_1.1.1
+ [5] R6_2.5.0         rlang_0.4.11     fansi_0.5.0      stringr_1.4.0   
+ [9] tools_4.0.4      utf8_1.2.1       cli_3.0.1        DBI_1.1.1       
+[13] ellipsis_0.3.2   assertthat_0.2.1 tibble_3.1.4     lifecycle_1.0.0 
+[17] crayon_1.4.1     purrr_0.3.4      vctrs_0.3.8      curl_4.3.2      
+[21] glue_1.4.2       snakecase_0.11.0 stringi_1.7.3    compiler_4.0.4  
+[25] pillar_1.6.2     generics_0.1.0   lubridate_1.7.10 pkgconfig_2.0.3
 ```
 
 Sekian dan terima kasih.
