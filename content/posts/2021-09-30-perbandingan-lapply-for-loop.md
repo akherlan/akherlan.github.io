@@ -1,6 +1,7 @@
 ---
 title: "For Loop Vs lapply"
 date: 2021-09-30T17:06:05+07:00
+lastmod: 2021-11-27T17:37:00+07:00
 categories: [tutorial]
 tags: [rstats]
 ---
@@ -29,7 +30,7 @@ lapply(
 )
 ```
 
-Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang [ada di sini](https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019). Fungsi tersebut memanfaatkan pustaka **httr** dan **jsonlite** untuk berinteraksi dengan data menggunakan API untuk basisdata GraphQL. Saya simpan sebagai berkas skrip R dengan nama "function_graphql.R" dan memanggilnya dengan `source()` dari konsol R. 
+Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang [ada di sini](https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019). Fungsi tersebut memanfaatkan pustaka **httr** dan **jsonlite** untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama "function_graphql.R" dan memanggilnya dengan `source()` dari konsol R. 
 
 ```R
 source("function_graphql.R")
@@ -37,7 +38,7 @@ source("function_graphql.R")
 
 ## Parameter dan Query
 
-Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke API-nya yang pada kasus ini saya simpan dalam variabel `url`. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada `key` untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel `page` juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.
+Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke servis API-nya yang pada kasus ini saya simpan dalam variabel `url`. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada `key` untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel `page` juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.
 
 ```R
 url <- "https://xapi.supercharge-srp.co/job-search/graphql?country=id&isSmartSearch=true"
@@ -45,7 +46,7 @@ key <- "data analyst"
 page <- 1
 ```
 
-Selain itu untuk mengakses basis data GraphQL khususnya akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasil dan tentu saya query-nya. Untuk variabel pencarian saya simpan pada objek atau variabel `var` seperti berikut:
+Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel `var` seperti berikut:
 
 ```R
 var <- sprintf(
@@ -136,7 +137,7 @@ fragment LegacyCompat_SearchResult on SearchResult {
 }'
 ```
 
-Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu *graph database* ini. Untuk query yang panjang ini saya copas dari hasil *inspect element* di peramban yang saya gunakan. Penjelasan tentang URL-based query untuk GraphQL mungkin bisa dipelajari pada [laman berikut](https://blog.logrocket.com/designing-url-based-query-syntax-graphql/).
+Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil *inspect element* di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada [laman berikut](https://blog.logrocket.com/designing-url-based-query-syntax-graphql/).
 
 ## Mengambil Data
 
