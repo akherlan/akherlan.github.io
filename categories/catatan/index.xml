@@ -1,52 +1,1117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>catatan on Notebook</title><link>https://akherlan.github.io/categories/catatan/</link><description>Recent content in catatan on Notebook</description><generator>Hugo -- gohugo.io</generator><language>id-id</language><lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://akherlan.github.io/categories/catatan/index.xml" rel="self" type="application/rss+xml"/><item><title>Youtube dan Uang</title><link>https://akherlan.github.io/youtube-dan-uang/</link><pubDate>Sat, 27 Nov 2021 18:05:45 +0700</pubDate><guid>https://akherlan.github.io/youtube-dan-uang/</guid><description>Belakangan ini, saya sedang sering menonton kanal Youtube-nya Dr. Indrawan dan Bang Rianto Astono. Renyah aja gitu, mana lagi pusing sama duit, kan.
-Edit:
-Ditambah kanal Saham dari Nol dan Mang Amsi.</description></item><item><title>For Loop Vs lapply</title><link>https://akherlan.github.io/for-loop-vs-lapply/</link><pubDate>Thu, 30 Sep 2021 17:06:05 +0700</pubDate><guid>https://akherlan.github.io/for-loop-vs-lapply/</guid><description>TL;DR
-Saya ingin membandingkan dua kode dalam bahasa R yang saya susun sedemikian rupa sehingga menghasilkan objek yang sama. Kasus: data lowongan kerja.
-Table of Contents Pustaka R Parameter dan Query Mengambil Data Perbandingan Skrip Kode pertama dengan lapply() Kode kedua dengan for loop Perbandingan Merapikan Data Session Info Pustaka R Pada tes ini, dibutuhkan beberapa package di antaranya:
-lapply( c( &amp;#34;httr&amp;#34;, &amp;#34;jsonlite&amp;#34;, &amp;#34;dplyr&amp;#34;, &amp;#34;tidyr&amp;#34;, &amp;#34;janitor&amp;#34;, &amp;#34;waldo&amp;#34;, &amp;#34;microbenchmark&amp;#34; ), function(x) if(!</description></item><item><title>Zero Tracker</title><link>https://akherlan.github.io/zero-tracker/</link><pubDate>Tue, 14 Sep 2021 01:07:24 +0700</pubDate><guid>https://akherlan.github.io/zero-tracker/</guid><description>Saya ingin membuat blog ini bebas dari tracker. Jadi mulai saat ini saya ingin memastikan untuk tidak ada yang memata-matai kalian ketika membaca di sini.
-Untuk setiap rekaman visual demonstrasi yang saya lakukan, kalau ada, saya simpan di Youtube. Pembaca diminta untuk pindah nonton ke laman Youtube saja, tidak apa-apa laah&amp;hellip; Toh kemungkinan besar juga akses dari ponsel. Justru akan terbuka di aplikasi ponsel masing-masing. Lebih nyaman, kan? Youtube setidaknya punya empat pengintai dalam satu video yang disematkan dalam satu laman artikel.</description></item><item><title>Travel with Gojek</title><link>https://akherlan.github.io/travel-with-gojek/</link><pubDate>Sat, 28 Aug 2021 01:12:29 +0700</pubDate><guid>https://akherlan.github.io/travel-with-gojek/</guid><description>Data yang saya gunakan merupakan hasil mengumpulkan invoice dari Gojek yang dikirimkan melalui surel setiap kali selesai melakukan pemesanan jasa transportasi lewat aplikasi. Data diimpor dari Gmail ke Google Sheets melalui Google Apps Script, kemudian diekspor ke format csv untuk diolah menggunakan R. Referensi lebih lanjut tentang kode yang saya gunakan silakan mengunjungi repositori gojek di Github saya.
-Waktu Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total lama waktu perjalanan saya sudah hampir dua harian terhitung sejak 2018 hingga saat tulisan ini ditulis.</description></item><item><title>Habit Tracking</title><link>https://akherlan.github.io/habit-tracking/</link><pubDate>Sat, 14 Aug 2021 07:00:29 +0700</pubDate><guid>https://akherlan.github.io/habit-tracking/</guid><description>Membuat habit tracking ternyata melelahkan dan tidak efisien. Tetap tidak dikerjakan. Atau mungkin itu hanya untuk saya saja. Lebih baik pakai alarm rutin berulang saja sebagai pengingat. Lebih mudah juga. Lalu buat mindset HARUS mengerjakan apa yang sudah dijadikan jadwal.
-Kuncinya ada di niat, komitmen, dan konsistensi. Ya, sama siih&amp;hellip; habit tracking juga. Tapi saya tidak suka itu. Gak suka aja. Pakai saja alarm pengingat.
-Saya membuat alarm pengingat untuk makan pagi, makan siang, makan malam, sholat dhuha, kadang untuk jam tidur.</description></item><item><title>Resolusi Tengah Tahun 2021</title><link>https://akherlan.github.io/resolusi-tengah-tahun-2021/</link><pubDate>Mon, 07 Jun 2021 08:35:00 +0700</pubDate><guid>https://akherlan.github.io/resolusi-tengah-tahun-2021/</guid><description>Resolusi akhir tahun 2020 saya untuk tahun 2021 sudah tuntas. Bahkan hanya dalam sekitar tiga bulanan saja. Saya ingin punya resolusi tengah tahun: bisa puasa dengan nyaman. Semoga.
-Update:
-Apakah saya sudah boleh bilang kalau target saya yang satu ini juga berhasil setelah saya puasa 2x tanpa keluhan perut? 😸 (alhamdulillah) Nantilah, ya, satu kali lagi pekan ini.</description></item><item><title>QGIS Zürich versi Anaconda</title><link>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</link><pubDate>Thu, 22 Apr 2021 15:54:19 +0700</pubDate><guid>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</guid><description>Sore ini saya iseng-iseng cek laman QGIS di channel conda-forge. Lama sudah tidak cek update aplikasi ini karena sekarang juga malah sudah jarang pakai. Saat tulisan ini diketik, bertepatan dengan 3 hari (2 hari 21 jam) QGIS versi 3.18.2 Zürich (non-LTR) rilis versi conda. Masih sangat segar. Tapi sudah ada total unduh sebanyak 341.369 kali waktu saya mulai ikutan unduh juga.
-Karena saya sudah punya environment conda (Miniconda) dengan nama qgis3 yang khusus saya peruntukkan bagi QGIS agar berjalan lancar tanpa gangguan, maka saya tinggal mutakhirkan saja yang lama ke versi terbaru 3.</description></item><item><title>Konversi HTML Ke Markdown</title><link>https://akherlan.github.io/konversi-html-ke-markdown/</link><pubDate>Mon, 19 Apr 2021 10:27:32 +0700</pubDate><guid>https://akherlan.github.io/konversi-html-ke-markdown/</guid><description>Table of Contents Bukan Notion Evernote ke Obsidian HTML ke Markdown TL;DR : untuk konversi HTML ke markdown, saya menggunakan pandoc tapi lewat R, bukan langsung dengan bash, karena saya terlalu cupu.
-Beberapa tahun belakangan ini saya tidak pernah menyimpan catatan-catatan yang saya buat dengan baik dan rapi, sehingga berserakan di mana-mana. Tapi sekarang mudah-mudahan tidak lagi. Saya sedang menggunakan aplikasi ketik yang sedang naik daun (juga), yaitu Obsidian.</description></item><item><title>Lagu Favorit</title><link>https://akherlan.github.io/lagu-favorit/</link><pubDate>Tue, 06 Apr 2021 02:27:24 +0700</pubDate><guid>https://akherlan.github.io/lagu-favorit/</guid><description>Entah bagaimana Marigold (マリーゴールド / Marigorudo) dari Aimyon jadi lagu yang saya gemari. Baru kenal awal tahun ini. Tentu bukan satu-satunya. Tapi lagu ini salah satu yang suka diulang-ulang. Easy listening.
-Versi originalnya gampang dicari. Versi gitar (cover) yang menurut saya bagus ada di Youtube.</description></item><item><title>Podcast Buku Langganan</title><link>https://akherlan.github.io/podcast-buku-langganan/</link><pubDate>Mon, 05 Apr 2021 08:20:47 +0700</pubDate><guid>https://akherlan.github.io/podcast-buku-langganan/</guid><description>Kalau dibandingkan dengan para pembaca buku lain, saya masih termasuk jarang baca buku. Kalau dibandingkan dengan para pendengar podcast, saya termasuk jarang dengar macam-macam podcast. Tapi saya suka dengar orang yang bercerita tentang buku.
-Podcast favorit saya adalah tentang buku: Kepo Buku.
-Tidak melulu tentang buku-buku yang bahasannya berat, atau buku-buku yang sesuai selera empunya, beragam genre buku dibahas dalam podcast ini. Sering juga ada tantangan untuk membahas buku yang tidak sesuai selera.</description></item><item><title>Pindah Blog 'Manual' Lagi</title><link>https://akherlan.github.io/pindah-blog-manual-lagi/</link><pubDate>Fri, 02 Apr 2021 21:59:26 +0700</pubDate><guid>https://akherlan.github.io/pindah-blog-manual-lagi/</guid><description>Ini adalah posting pertama dengan konfigurasi pure dari Hugo. Tidak melalui RStudio dengan bantuan blogdown karena katanya package itu sedang diperbaiki untuk terintegrasi dengan versi Hugo yang baru.
-Update:
-Saya sudah menemukan workflow ngeblog pakai format Rmarkdown pakai blogdown versi &amp;gt;1.0. Yang penting jangan update Hugo-nya dulu. Ternyata orang lain juga pada struggle.
-Cerita ke-struggle-an dengan blogdown:
-Changing your blogdown workflow oleh Athanasia Mowinckel Up &amp;amp; running with blogdown in 2021 oleh Alison Hill</description></item><item><title>Bertaruh Dengan Waktu</title><link>https://akherlan.github.io/bertaruh-dengan-waktu/</link><pubDate>Tue, 30 Mar 2021 18:41:20 +0700</pubDate><guid>https://akherlan.github.io/bertaruh-dengan-waktu/</guid><description>Saya masih belum paham apakah saya termasuk kategori orang yang mempersiapkan segala sesuatunya dulu sebelum melakukan apa-apa. Sepertinya iya. Tapi kadang, muncul juga pikiran untuk memikirkannya nanti saja, kalau sedang dijalankan. Spontanitas, saya pikir, mungkin akan meningkatkan kreativitas. Kelihatannya akan lebih seru begitu, dan setiap rencana juga pasti toh akan berubah menyesuaikan kondisi.
-Sebagai orang yang, seharusnya, sudah bisa bersikap dewasa pasti saya juga melakukan apapun dengan pertimbangan kalau memang perlu, sesuai porsi.</description></item><item><title>Kita Punya Pilihan</title><link>https://akherlan.github.io/kita-punya-pilihan/</link><pubDate>Sun, 21 Mar 2021 18:39:43 +0700</pubDate><guid>https://akherlan.github.io/kita-punya-pilihan/</guid><description>Saya bilang pada seseorang kalau tahun ini saya punya resolusi untuk bisa curhat. Satu-satunya resolusi tahunan yang saya inginkan di tahun 2021 dan saya cukup newbie untuk hal itu: memiliki resolusi tahunan.
-Pastinya, untuk melakukan hal yang sebelumnya terasa sulit kita harus lakukan secara bertahap dan perlahan-lahan. Supaya efeknya tidak terasa keras dan nantinya perubahan yang diinginkan bisa konsisten dan sesuai harapan. Sampai tidak mungkin kembali lagi. Ini berbeda dengan orang-orang yang dapat pencerahan sampai-sampai menohok kehidupnya.</description></item><item><title>Write It Up at the Time When You Feel</title><link>https://akherlan.github.io/write-it-up-at-the-time-when-you-feel/</link><pubDate>Sun, 21 Mar 2021 04:09:12 +0700</pubDate><guid>https://akherlan.github.io/write-it-up-at-the-time-when-you-feel/</guid><description>Yesterday was like a closing day for me. When you write in a book, and find the last sentence, the last word, the last paragraph you want to write is at the end of the line and you really don&amp;rsquo;t want to add any more writing. That&amp;rsquo;s enough, done. Then the next day you write something new on a new sheet behind the previous pages.
-Actually, I wanted to write this down last night.</description></item><item><title>Reorganisasi Aplikasi Ponsel</title><link>https://akherlan.github.io/reorganisasi-aplikasi-ponsel/</link><pubDate>Thu, 18 Mar 2021 04:06:12 +0700</pubDate><guid>https://akherlan.github.io/reorganisasi-aplikasi-ponsel/</guid><description>Apa yang saya lakukan hari ini harapannya bisa lebih membentuk otak saya jadi lebih cepat bekerja dan fokus. Fenomena sosial media dengan konten-singkatnya sering membuat kita kecanduan. Fast food itu enak, tapi tidak sehat.
-Lalu apa yang saya lakukan?
-Saya menata ulang aplikasi apa saja yang akan tersedia atau terpasang di dalam ponsel saya:
-Menghapus Instagram, well memang akunnya masih aktif, tapi saya nggak bakal scroll-scroll terus! Menginstal Pocket, rencana berikutnya saya ingin menghapus Medium.</description></item><item><title>R di Android dengan Termux</title><link>https://akherlan.github.io/r-di-android-dengan-termux/</link><pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-android-dengan-termux/</guid><description>Table of Contents Paket manajemen termux Menambah repositori its-pointless Instal R di Android Video demo Tips Apakah mungkin menjalankan R di ponsel pintar Android? Bisa.
-Kita bisa menginstal dan menjalankan beberapa aplikasi yang tersedia di linux melalui termux. Salah satunya bahasa R.
-Termux merupakan terminal emulator di Android. Berjalan tanpa harus dalam mode root. Tersedia di PlayStore dan juga F-Droid.
-Karena saya kadang-kadang pakai R dan sedang belajar juga, jadi saya ingin instal R di Android.</description></item><item><title>Nasihat untuk Freelancer</title><link>https://akherlan.github.io/nasihat-untuk-freelancer/</link><pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/nasihat-untuk-freelancer/</guid><description>Saya masih punya minat jadi freelancer alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja lepas maupun paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.
-Sebagai pemula atau orang bilang newbie, saya harus banyak belajar. Pada catatan ini barangkali saya ingin kumpulkan berbagai nasihat dari senior. Akan diperbarui secara berkala. Semoga berkenan.
-Nasihat dari Senior
-Baru satu. Nanti ada lagi. Silakan, boleh bookmark.</description></item><item><title>Branch untuk GH-Pages Databoard</title><link>https://akherlan.github.io/branch-untuk-gh-pages-databoard/</link><pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/branch-untuk-gh-pages-databoard/</guid><description>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:
-Apakah cukup jelas?
-Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:
-1. Clone repositori databoard, saya pakai tautan ssh karena nyaman dan aman.
-$ mkdir databoard &amp;amp;&amp;amp; cd databoard $ git clone git@github.com:akherlan/databoard.git master Tautan repo copas dari bagian ini.
-Gambar 1Clone repositori
-2. Gandakan hasil clone ke lokal tadi menjadi direktori gh-pages.</description></item><item><title>Personal Access Token Github</title><link>https://akherlan.github.io/personal-access-token-github/</link><pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/personal-access-token-github/</guid><description>Table of Contents 1. Menggunakan paket usethis 2. Tanpa menggunakan usethis Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui &amp;ldquo;pintu belakang yang disepakati&amp;rdquo;.
-Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).
-Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token.</description></item><item><title>PostgreSQL dan RStudio</title><link>https://akherlan.github.io/postgresql-dan-rstudio/</link><pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/postgresql-dan-rstudio/</guid><description>Table of Contents 1. Instal odbc drivers di komputer linux 2. Periksa hasil instalasi kita 3. Konfigurasi / sunting berkas odbc.ini 4. Menginstal paket odbc dan DBI di R Saya sedang belajar mengelola data dalam sebuah basisdata. Sebab ketertarikan saya dengan bidang geospasial, saya coba untuk mempelajari DBMS terkenal untuk ini, yaitu PostgreSQL dengan ekstensi PostGIS.
-Singkat cerita, saya sudah melakukan instalasi dan pengaturan basis data postgres + postgis di komputer saya.</description></item><item><title>R Di Visual Studio Code</title><link>https://akherlan.github.io/r-di-visual-studio-code/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-visual-studio-code/</guid><description>Table of Contents 1. Siapkan VS Code 2. Instal Ekstensi R LSP Client 3. Instal library languageserver 4. Taraaa&amp;hellip;. OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, di twitter.
-Berangkat dari tweet tersebut, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut&amp;hellip;
-1. Siapkan VS Code Saya unduh dan instal VS Code dulu tentunya.</description></item><item><title>Lenovo ThinkPad X240 &amp; Xubuntu</title><link>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</link><pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</guid><description>Logo Lenovo Thinkpad
-Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. Secondhand. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:
-Model prosesor Intel® Core™ i5-4300U CPU @ 1.90GHz (artinya multi CPU generasi 4) Arsitektur prosesor x86_64 (artinya dari Intel) Memori HDD SATA 500GB (versi lain ada yang pakai SSD) Memori RAM 4GB (sebetulnya saya mau pesan yang 8GB) VGA Intel Haswell-ULT Integrated Graphics Controller Adaptor WiFi Adaptor Bluetooth Ukuran layar 361x203 mm (12 inci) dengan resolusi sampai 1366x768 pixel Beratnya nggak tau pasti karena belum ditimbang, tapi termasuk ringan dibanding laptop lama Port-nya banyak dan lengkap sampai ada yang saya belum tau fungsinya.</description></item><item><title>Visualisasi Ketersediaan Data Hujan</title><link>https://akherlan.github.io/visualisasi-ketersediaan-data-hujan/</link><pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/visualisasi-ketersediaan-data-hujan/</guid><description>Objective Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi &amp;ldquo;kekosongan&amp;rdquo; data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen sih kelengkapannya?
-Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.
-Preparation Yang kita butuhkan untuk melakukan ini semua tentu saja data hujan.</description></item><item><title>Ruby: "Hello World!"</title><link>https://akherlan.github.io/ruby-hello-world/</link><pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/ruby-hello-world/</guid><description>Latar Belakang Saya dapat kerjaan bantu-bantu ngurusin web. Nggak ngoding-ngoding banget, sih. Enak jadinya, cenderung lebih santai. Tapi saya masih belum puas dengan metode yang saat ini sedang dipakai. Berbekal rasa penasaran saya cari tahu teknologi apa yang kiranya cocok digunakan seandainya ganti metode develop-nya.
-Ceritanya, ini adalah website yang diharapkan bisa punya fitur ruang kumpul komunitas dan proses pesan jasa. Saya cari tahu framework yang dipakai oleh kompetitor terbesar saat ini.</description></item><item><title>Pemeliharaan Sungai</title><link>https://akherlan.github.io/pemeliharaan-sungai/</link><pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/pemeliharaan-sungai/</guid><description>Merupakan topik basi, secara politis, yang diambil jadi bahan diskusi dalam kelas yang menyita waktu.
-Judul sebelumnya: Naturalisasi, Normalisasi, Restorasi dalam Bingkai Pemeliharaan Sungai
-Istilah naturalisasi sungai diperkenalkan kepada khalayak oleh Gubernur DKI Jakarta aktif saat ini, Anies Baswedan, sebagai salah satu program dalam masa jabatannya. Program tersebut dicanangkan guna mengurangi risiko kemungkinan banjir terjadi berulang kali di ibu kota. Namun dari kacamata politik dinilai sebagai sesuatu yang kontroversi dan dipermasalahkan.</description></item><item><title>Resolusi Akhir Tahun?</title><link>https://akherlan.github.io/resolusi-akhir-tahun/</link><pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/resolusi-akhir-tahun/</guid><description>Di mana-mana tuh, ya, orang yang visioner akan menyatakan komitmennya dalam bentuk tulisan atau ucapan yang diulang-ulang. Tiap bulan terakhir, yang tentunya Desember, akan dilakukan evaluasi tahunan mengenai apa yang sudah tercapai, apa yang belum bisa dilakukan, mengapa tidak tercapai, dan ada kendala apa. Kemudian, dilanjutkan dengan mencatat goals untuk tahun depan.
-Kalau komitmen dengan pencatatan seperti ini sambil berusaha menjalaninya, keren! Sudah pasti orang yang melakukannya punya satu visi hidup, karena misi-misi tiap tahun ini tentu bukan tanpa tujuan.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>catatan on Notebook</title><link>https://akherlan.github.io/categories/catatan/</link><description>Recent content in catatan on Notebook</description><generator>Hugo -- gohugo.io</generator><language>id-id</language><lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://akherlan.github.io/categories/catatan/index.xml" rel="self" type="application/rss+xml"/><item><title>Youtube dan Uang</title><link>https://akherlan.github.io/youtube-dan-uang/</link><pubDate>Sat, 27 Nov 2021 18:05:45 +0700</pubDate><guid>https://akherlan.github.io/youtube-dan-uang/</guid><description>&lt;p>Belakangan ini, saya sedang sering menonton kanal Youtube-nya Dr. Indrawan dan Bang Rianto Astono. Renyah aja gitu, mana lagi pusing sama duit, kan.&lt;/p>
+&lt;p>&lt;strong>Edit:&lt;/strong>&lt;/p>
+&lt;p>Ditambah kanal Saham dari Nol dan Mang Amsi.&lt;/p></description></item><item><title>For Loop Vs lapply</title><link>https://akherlan.github.io/for-loop-vs-lapply/</link><pubDate>Thu, 30 Sep 2021 17:06:05 +0700</pubDate><guid>https://akherlan.github.io/for-loop-vs-lapply/</guid><description>&lt;p>&lt;strong>TL;DR&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>Saya ingin membandingkan dua kode dalam bahasa R yang saya susun sedemikian rupa sehingga menghasilkan objek yang sama. Kasus: data lowongan kerja.&lt;/p>
+&lt;/blockquote>
+&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#pustaka-r">Pustaka R&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#parameter-dan-query">Parameter dan Query&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mengambil-data">Mengambil Data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#perbandingan-skrip">Perbandingan Skrip&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#kode-pertama-dengan-lapply">Kode pertama dengan &lt;code>lapply()&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#kode-kedua-dengan-for-loop">Kode kedua dengan &lt;code>for&lt;/code> loop&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#perbandingan">Perbandingan&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#merapikan-data">Merapikan Data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#session-info">Session Info&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;h2 id="pustaka-r">Pustaka R&lt;/h2>
+&lt;p>Pada tes ini, dibutuhkan beberapa package di antaranya:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s">&amp;#34;httr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;jsonlite&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;dplyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;tidyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;janitor&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;waldo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="s">&amp;#34;microbenchmark&amp;#34;&lt;/span>
+&lt;span class="p">),&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">character.only&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang &lt;a href="https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019">ada di sini&lt;/a>. Fungsi tersebut memanfaatkan pustaka &lt;strong>httr&lt;/strong> dan &lt;strong>jsonlite&lt;/strong> untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama &amp;ldquo;function_graphql.R&amp;rdquo; dan memanggilnya dengan &lt;code>source()&lt;/code> dari konsol R.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">source&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;function_graphql.R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="parameter-dan-query">Parameter dan Query&lt;/h2>
+&lt;p>Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke servis API-nya yang pada kasus ini saya simpan dalam variabel &lt;code>url&lt;/code>. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada &lt;code>key&lt;/code> untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel &lt;code>page&lt;/code> juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">url&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;https://xapi.supercharge-srp.co/job-search/graphql?country=id&amp;amp;isSmartSearch=true&amp;#34;&lt;/span>
+&lt;span class="n">key&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;data analyst&amp;#34;&lt;/span>
+&lt;span class="n">page&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel &lt;code>var&lt;/code> seperti berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">var&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">sprintf&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="s">&amp;#39;{
+&lt;/span>&lt;span class="s"> &amp;#34;keyword&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;jobFunctions&amp;#34;: [
+&lt;/span>&lt;span class="s"> 501,
+&lt;/span>&lt;span class="s"> 503,
+&lt;/span>&lt;span class="s"> 508,
+&lt;/span>&lt;span class="s"> 512
+&lt;/span>&lt;span class="s"> ],
+&lt;/span>&lt;span class="s"> &amp;#34;locations&amp;#34;: [],
+&lt;/span>&lt;span class="s"> &amp;#34;salaryType&amp;#34;: 1,
+&lt;/span>&lt;span class="s"> &amp;#34;jobTypes&amp;#34;: [],
+&lt;/span>&lt;span class="s"> &amp;#34;createdAt&amp;#34;: null,
+&lt;/span>&lt;span class="s"> &amp;#34;careerLevels&amp;#34;: [],
+&lt;/span>&lt;span class="s"> &amp;#34;page&amp;#34;: %s,
+&lt;/span>&lt;span class="s"> &amp;#34;country&amp;#34;: &amp;#34;id&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;sVi&amp;#34;: &amp;#34;&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;categories&amp;#34;: [
+&lt;/span>&lt;span class="s"> &amp;#34;501&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;503&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;508&amp;#34;,
+&lt;/span>&lt;span class="s"> &amp;#34;512&amp;#34;
+&lt;/span>&lt;span class="s"> ],
+&lt;/span>&lt;span class="s"> &amp;#34;workTypes&amp;#34;: [],
+&lt;/span>&lt;span class="s"> &amp;#34;industries&amp;#34;: [],
+&lt;/span>&lt;span class="s"> &amp;#34;locale&amp;#34;: &amp;#34;id&amp;#34;
+&lt;/span>&lt;span class="s"> }&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">page&lt;/span>
+&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sementara itu query yang digunakan lumayan panjang juga, seperti berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">query&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>
+&lt;span class="s">&amp;#39;query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
+&lt;/span>&lt;span class="s"> jobs(country: $country, locale: $locale, keyword: $keyword, createdAt: $createdAt, jobFunctions: $jobFunctions, categories: $categories, locations: $locations, careerLevels: $careerLevels, minSalary: $minSalary, maxSalary: $maxSalary, salaryType: $salaryType, candidateSalary: $candidateSalary, candidateSalaryCurrency: $candidateSalaryCurrency, datePosted: $datePosted, jobTypes: $jobTypes, workTypes: $workTypes, industries: $industries, page: $page, pageSize: $pageSize, companyId: $companyId, advertiserId: $advertiserId, userAgent: $userAgent, accNums: $accNums, subAccount: $subAccount, minEdu: $minEdu, edus: $edus, maxEdu: $maxEdu, minExp: $minExp, maxExp: $maxExp, seo: $seo, searchFields: $searchFields, candidateId: $candidateId, isDesktop: $isDesktop, isCompanySearch: $isCompanySearch, sort: $sort, sVi: $sVi, duplicates: $duplicates, flight: $flight, solVisitorId: $solVisitorId) {
+&lt;/span>&lt;span class="s"> ...LegacyCompat_SearchResult
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s">}
+&lt;/span>&lt;span class="s">
+&lt;/span>&lt;span class="s">fragment LegacyCompat_SearchResult on SearchResult {
+&lt;/span>&lt;span class="s"> solMetadata
+&lt;/span>&lt;span class="s"> jobs {
+&lt;/span>&lt;span class="s"> id
+&lt;/span>&lt;span class="s"> sourceCountryCode
+&lt;/span>&lt;span class="s"> isStandout
+&lt;/span>&lt;span class="s"> companyMeta {
+&lt;/span>&lt;span class="s"> id
+&lt;/span>&lt;span class="s"> isPrivate
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> jobTitle
+&lt;/span>&lt;span class="s"> jobUrl
+&lt;/span>&lt;span class="s"> jobTitleSlug
+&lt;/span>&lt;span class="s"> description
+&lt;/span>&lt;span class="s"> employmentTypes {
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> sellingPoints
+&lt;/span>&lt;span class="s"> locations {
+&lt;/span>&lt;span class="s"> code
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> children {
+&lt;/span>&lt;span class="s"> code
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> categories {
+&lt;/span>&lt;span class="s"> code
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> children {
+&lt;/span>&lt;span class="s"> code
+&lt;/span>&lt;span class="s"> name
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> postedAt
+&lt;/span>&lt;span class="s"> salaryRange {
+&lt;/span>&lt;span class="s"> currency
+&lt;/span>&lt;span class="s"> max
+&lt;/span>&lt;span class="s"> min
+&lt;/span>&lt;span class="s"> period
+&lt;/span>&lt;span class="s"> term
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s"> isClassified
+&lt;/span>&lt;span class="s"> }
+&lt;/span>&lt;span class="s">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil &lt;em>inspect element&lt;/em> di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada &lt;a href="https://blog.logrocket.com/designing-url-based-query-syntax-graphql/">laman berikut&lt;/a>.&lt;/p>
+&lt;h2 id="mengambil-data">Mengambil Data&lt;/h2>
+&lt;p>Tiba saatnya untuk coba menarik (&lt;em>pulling&lt;/em>) data. Tidak berjalan lama karena hanya sekitar 30 rekaman di halaman pertama saja. Di sinilah fungsi &lt;code>GQL()&lt;/code> dari Abang rentrop menjadi sangat bermanfaat.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">jobs&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">GQL&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="n">query&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">query&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">.variables&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">var&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">.url&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">url&lt;/span>
+&lt;span class="p">)&lt;/span>
+&lt;span class="n">job&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>
+&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[1]]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Akan dihasilkan objek dengan struktur list. Saya definisikan dalam &lt;code>job&lt;/code> saja. Setelah subset konten yang dibutuhkan saja menjadi objek &lt;code>job&lt;/code>, kita bisa amati strukturnya menjadi seperti berikut ini (hanya item pertama dari 30 sebagai sampel, karena tentu saja strukturnya akan berulang):&lt;/p>
+&lt;pre>&lt;code>List of 15
+$ id : chr &amp;quot;3641190&amp;quot;
+$ sourceCountryCode: chr &amp;quot;id&amp;quot;
+$ isStandout : logi TRUE
+$ companyMeta :List of 3
+..$ id : chr &amp;quot;433563&amp;quot;
+..$ isPrivate: logi FALSE
+..$ name : chr &amp;quot;PT Indoglobal Nusa Persada&amp;quot;
+$ jobTitle : chr &amp;quot;SYSTEM ANALYST&amp;quot;
+$ jobUrl : chr &amp;quot;https://www.jobstreet.co.id/id/job/system-analyst-3641190?token=0~1daa0355-a242-4f92-87a9-90dbbca3a275&amp;amp;sectionR&amp;quot;| __truncated__
+$ jobTitleSlug : chr &amp;quot;system-analyst&amp;quot;
+$ description : chr &amp;quot;Design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements i&amp;quot;| __truncated__
+$ employmentTypes :List of 1
+..$ :List of 1
+.. ..$ name: chr &amp;quot;Penuh Waktu&amp;quot;
+$ sellingPoints :List of 3
+..$ : chr &amp;quot;Good reputation company at the national level as edutech platform&amp;quot;
+..$ : chr &amp;quot;Incentive / Rewards Project&amp;quot;
+..$ : chr &amp;quot;A great environment, culture and partner&amp;quot;
+$ locations :List of 1
+..$ :List of 3
+.. ..$ code : chr &amp;quot;30500&amp;quot;
+.. ..$ name : chr &amp;quot;Jakarta Raya&amp;quot;
+.. ..$ children: NULL
+$ categories :List of 2
+..$ :List of 3
+.. ..$ code : chr &amp;quot;508&amp;quot;
+.. ..$ name : chr &amp;quot;Komputer/Teknologi Informasi&amp;quot;
+.. ..$ children: NULL
+..$ :List of 3
+.. ..$ code : chr &amp;quot;191&amp;quot;
+.. ..$ name : chr &amp;quot;IT-Perangkat Lunak&amp;quot;
+.. ..$ children: NULL
+$ postedAt : chr &amp;quot;2021-09-28T05:34:48Z&amp;quot;
+$ salaryRange :List of 5
+..$ currency: NULL
+..$ max : NULL
+..$ min : NULL
+..$ period : chr &amp;quot;monthly&amp;quot;
+..$ term : NULL
+$ isClassified : logi FALSE
+&lt;/code>&lt;/pre>&lt;p>Selain menghasilkan kumpulan data lowongan, fungsi &lt;code>GQL()&lt;/code> dengan query dan parameter lain di atas juga menyimpan keterangan mengenai sesi yang terjadi ketika pengambilan data berlangsung, terdapat pada:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="p">(&lt;/span>&lt;span class="n">query_meta&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">solMetadata&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="perbandingan-skrip">Perbandingan Skrip&lt;/h2>
+&lt;h3 id="kode-pertama-dengan-lapply">Kode pertama dengan &lt;code>lapply()&lt;/code>&lt;/h3>
+&lt;p>Untuk skrip pertama saya memanfaatkan fungsi &lt;code>lapply()&lt;/code> yang disediakan oleh pustaka bawaan R yakni base. Agar dapat dibandingkan dengan mudah nantinya saya buat jadi fungsi &lt;code>v1()&lt;/code> saja.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="c1"># method 1&lt;/span>
+&lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">})&lt;/span>
+&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
+&lt;span class="p">)&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">})&lt;/span>
+&lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">do.call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;bind_rows&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">vacancy1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Konten datanya dibahas di akhir saja, ya&amp;hellip; Kali ini fokus pada perbandingan dua skrip yang saya susun dulu.&lt;/p>
+&lt;h3 id="kode-kedua-dengan-for-loop">Kode kedua dengan &lt;code>for&lt;/code> loop&lt;/h3>
+&lt;p>Untuk skrip kedua, saya gunakan &lt;code>for&lt;/code> loop, yakni salah satu metode dasar pada tiap bahasa pemrograman untuk mengiterasi proses pada sequencial vector atau list.&lt;/p>
+&lt;p>Setelah itu, dilanjutkan dengan menggunakan fungsi-fungsi dari pustaka &lt;strong>dplyr&lt;/strong> dan &lt;strong>tidyr&lt;/strong>, juga meminjam fungsi &lt;code>clean_names()&lt;/code> dari &lt;strong>janitor&lt;/strong> untuk hidup lebih mudah. Skrip ini hanya mereplikasi fungsi-fungsi yang berjalan dengan skrip sebelumnya, tentunya dengan penyesuaian karena struktur objek yang diproses jadi berbeda.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="c1"># method 2&lt;/span>
+&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="nf">seq_along&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[i]]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span> &lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">v&lt;/span>
+&lt;span class="p">}&lt;/span> &lt;span class="n">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">bind_rows&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="n">id_cols&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;num&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
+&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="n">vacancy2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="perbandingan">Perbandingan&lt;/h3>
+&lt;p>Kedua skrip atau fungsi di atas dibuat agar hasil keluarannya pun menjadi identik. Untuk memeriksanya saya menggunakan fungsi &lt;code>waldo::compare()&lt;/code> seperti berikut.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">waldo&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">compare&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v2&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keterangan bahwa kedua objek &lt;code>v1&lt;/code> dan &lt;code>v2&lt;/code> tidak memiliki perbedaan: ✓ No differences&lt;/p>
+&lt;p>Kemudian tiba saatnya pada bagian inti, yaitu perbandingan kedua metode di atas, saya menggunakan bantuan dari pustaka &lt;strong>microbenchmark&lt;/strong> dan menyimpan hasilnya dalam variabel &lt;code>b&lt;/code> agar mudah dieksplorasi nantinya.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">b&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keluaran seperti berikut:&lt;/p>
+&lt;pre>&lt;code>Unit: milliseconds
+expr min lq mean median uq max neval
+v1(job) 940.4223 999.8946 1068.7362 1025.7667 1123.6142 1444.3575 100
+v2(job) 162.2252 171.1944 186.4427 178.5282 189.2315 343.9679 100
+&lt;/code>&lt;/pre>&lt;p>Terjadi 100 kali pengulangan &lt;code>neval&lt;/code> untuk masing-masing expression (&lt;code>expr&lt;/code>), n-evaluation, katakanlah begitu. Parameter default fungsi tersebut memang mengulang operasi sebanyak 100 kali. Untuk jumlah lainnya bisa menggunakan argumen &lt;code>times&lt;/code>. Dapat pula membandingkan hasil dengan boxplot. Berikut statistik untuk 300 kali pengulangan.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">b2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">times&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">300L&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">boxplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">b2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">log&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">FALSE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">horizontal&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ylab&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;Time (millisecond)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://telegra.ph/file/663ca9a54fc2f589f27b4.png" alt="benchmark">&lt;/p>
+&lt;p>Dengan for loop sekali di awal dan diikuti dengan &lt;strong>dplyr&lt;/strong> + &lt;strong>tidyr&lt;/strong> tampak lebih konsisten kecepatannya dan lebih baik performanya.&lt;/p>
+&lt;h2 id="merapikan-data">Merapikan Data&lt;/h2>
+&lt;p>Setelah mengetahui baris kode mana yang baik, itulah yang saya simpan sebagai fungsi yang nantinya akan memudahkan jika ingin mengambil data lowongan kerja dari Jobstreet lewat R. Mari kita rapikan sedikit data yang sudah kita kumpulkan.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy2&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="n">id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;job&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">posted_at&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;categories&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">description&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;company&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;employ&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;is_&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;location&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;country&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;salary&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;selling&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">job_title_slug&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">vacancy&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya kurang lebih seperti ini dalam format data.frame kelas &lt;strong>tibble&lt;/strong>:&lt;/p>
+&lt;pre>&lt;code># A tibble: 30 × 23
+id job_title job_url posted_at categories_code categories_name description
+&amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt;
+1 3641190 SYSTEM A… https:… 2021-09-… 508, 191 Komputer/Tekno… Design new…
+2 3643310 IT Progr… https:… 2021-09-… 508, 191 Komputer/Tekno… RESPONSIBI…
+3 3644140 Data Ana… https:… 2021-09-… 512, 103 Sains, Aktuari… Requiremen…
+4 3643734 Data Ana… https:… 2021-09-… 503, 203 Penjualan / Pe… Requiremen…
+5 3644293 Sales Da… https:… 2021-09-… 508, 193 Komputer/Tekno… Tanggung J…
+6 3644446 Sales Da… https:… 2021-09-… 512, 103 Sains, Aktuari… Responsibi…
+7 3644353 Digital … https:… 2021-09-… 503, 203 Penjualan / Pe… Job Descri…
+8 3632503 Data Sci… https:… 2021-09-… 508, 191 Komputer/Tekno… You will b…
+9 3644514 Data Sci… https:… 2021-09-… 508, 191 Komputer/Tekno… Requiremen…
+10 3642934 Speciali… https:… 2021-09-… 508, 193 Komputer/Tekno… Responsibi…
+# … with 20 more rows, and 16 more variables: company_meta_id &amp;lt;chr&amp;gt;,
+# company_meta_is_private &amp;lt;chr&amp;gt;, company_meta_name &amp;lt;chr&amp;gt;,
+# employment_types_name &amp;lt;chr&amp;gt;, is_classified &amp;lt;chr&amp;gt;, is_standout &amp;lt;chr&amp;gt;,
+# locations_code &amp;lt;chr&amp;gt;, locations_name &amp;lt;chr&amp;gt;, source_country_code &amp;lt;chr&amp;gt;,
+# salary_range_period &amp;lt;chr&amp;gt;, salary_range_currency &amp;lt;chr&amp;gt;,
+# salary_range_max &amp;lt;chr&amp;gt;, salary_range_min &amp;lt;chr&amp;gt;, selling_points1 &amp;lt;chr&amp;gt;,
+# selling_points2 &amp;lt;chr&amp;gt;, selling_points3 &amp;lt;chr&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="session-info">Session Info&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">sessionInfo&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>R version 4.0.4 (2021-02-15)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.3 LTS
+Matrix products: default
+BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+locale:
+[1] LC_CTYPE=en_US.UTF-8 LC_NUMERIC=C
+[3] LC_TIME=id_ID.UTF-8 LC_COLLATE=en_US.UTF-8
+[5] LC_MONETARY=id_ID.UTF-8 LC_MESSAGES=en_US.UTF-8
+[7] LC_PAPER=id_ID.UTF-8 LC_NAME=C
+[9] LC_ADDRESS=C LC_TELEPHONE=C
+[11] LC_MEASUREMENT=id_ID.UTF-8 LC_IDENTIFICATION=C
+attached base packages:
+[1] stats graphics grDevices utils datasets methods base
+other attached packages:
+[1] microbenchmark_1.4-7 waldo_0.3.0 janitor_2.1.0
+[4] tidyr_1.1.3 dplyr_1.0.7 jsonlite_1.7.2
+[7] httr_1.4.2
+loaded via a namespace (and not attached):
+[1] Rcpp_1.0.7 rstudioapi_0.13 magrittr_2.0.1 tidyselect_1.1.1
+[5] R6_2.5.0 rlang_0.4.11 fansi_0.5.0 stringr_1.4.0
+[9] tools_4.0.4 utf8_1.2.1 cli_3.0.1 DBI_1.1.1
+[13] ellipsis_0.3.2 assertthat_0.2.1 tibble_3.1.4 lifecycle_1.0.0
+[17] crayon_1.4.1 purrr_0.3.4 vctrs_0.3.8 curl_4.3.2
+[21] glue_1.4.2 snakecase_0.11.0 stringi_1.7.3 compiler_4.0.4
+[25] pillar_1.6.2 generics_0.1.0 lubridate_1.7.10 pkgconfig_2.0.3
+&lt;/code>&lt;/pre>&lt;p>Sekian dan terima kasih.&lt;/p></description></item><item><title>Zero Tracker</title><link>https://akherlan.github.io/zero-tracker/</link><pubDate>Tue, 14 Sep 2021 01:07:24 +0700</pubDate><guid>https://akherlan.github.io/zero-tracker/</guid><description>&lt;p>Saya ingin membuat blog ini bebas dari &lt;em>tracker&lt;/em>. Jadi mulai saat ini saya &lt;strong>ingin&lt;/strong> memastikan untuk tidak ada yang memata-matai kalian ketika membaca di sini.&lt;/p>
+&lt;p>Untuk setiap rekaman visual demonstrasi yang saya lakukan, kalau ada, saya simpan di Youtube. Pembaca diminta untuk pindah nonton ke laman Youtube saja, tidak apa-apa laah&amp;hellip; Toh kemungkinan besar juga akses dari ponsel. Justru akan terbuka di aplikasi ponsel masing-masing. Lebih nyaman, kan? Youtube setidaknya punya empat pengintai dalam satu video yang disematkan dalam satu laman artikel.&lt;/p>
+&lt;p>Saya sehari-hari menggunakan Telegram. Kadang ada obrolan yang saya sukai. Sama seperti kalau kalian menyukai sebuah utas di Twitter. Disinyalir bahwa Telegram tidak menyertakan &lt;em>tracker&lt;/em> saat saya menyematkan potongan obrolannya. Jadi saya masih bisa mengutip obrolan dari grup Telegram.&lt;/p>
+&lt;p>Cuma ada satu dilema. Saya masih ingin menyematkan sebuah episode podcast. Masih ada &lt;em>tracker&lt;/em> di artikel tentang &lt;a href="../podcast-buku-langganan">podcast buku&lt;/a> yakni dari Spotify, meskipun tidak semasif punya Youtube. Biarkan dulu lah yang satu itu. 😆&lt;/p>
+&lt;p>Ya, kesimpulannya, masih ada &lt;em>tracker&lt;/em> di blog ini, tapi minim. Mudah-mudahan cuma satu saja dari Spotify.&lt;/p>
+&lt;p>Salam.&lt;/p></description></item><item><title>Travel with Gojek</title><link>https://akherlan.github.io/travel-with-gojek/</link><pubDate>Sat, 28 Aug 2021 01:12:29 +0700</pubDate><guid>https://akherlan.github.io/travel-with-gojek/</guid><description>&lt;p>Data yang saya gunakan merupakan hasil mengumpulkan invoice dari Gojek yang dikirimkan melalui surel setiap kali selesai melakukan pemesanan jasa transportasi lewat aplikasi. Data diimpor dari Gmail ke Google Sheets melalui Google Apps Script, kemudian diekspor ke format csv untuk diolah menggunakan R. Referensi lebih lanjut tentang kode yang saya gunakan silakan mengunjungi &lt;a href="https://github.com/akherlan/gojek">repositori gojek&lt;/a> di Github saya.&lt;/p>
+&lt;h3 id="waktu">Waktu&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/clock.png" alt="time with gojek">&lt;/p>
+&lt;p>Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total lama waktu perjalanan saya sudah hampir dua harian terhitung sejak 2018 hingga saat tulisan ini ditulis.&lt;/p>
+&lt;p>Waktu perjalanan paling sering adalah ketika malam hari antara pukul sembilanan hingga pukul sepuluhan, juga saat pagi menjelang siang.&lt;/p>
+&lt;h3 id="jarak">Jarak&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/distance_map.png" alt="movement with gojek">&lt;/p>
+&lt;p>Dengan Gojek saya sudah melaju seolah-olah mulai dari ujung Barat pulau Jawa hingga ke ujung Timurnya. Saya paling sering melakukan perjalanan dengan jarak yang bisa dicapai dalam 5-10 menitan.&lt;/p>
+&lt;p>Ada saatnya beberapa kali saya menempuh perjalanan yang cukup jauh yaitu ketika terlambat mengejar jadwal kereta terakhir dari Sudirman menuju Depok, juga ketika pindah kosan dari Srengseng Jakarta Barat kembali ke Depok.&lt;/p>
+&lt;p>Namun ada beberapa data yang &amp;ldquo;aneh&amp;rdquo; dan tidak masuk akal karena durasi perjalanan hanya dalam 3-6 detik saja dalam jarak antara 3-5 kilometer.&lt;/p>
+&lt;h3 id="kebutuhan">Kebutuhan&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/needs.png" alt="effort with gojek">&lt;/p>
+&lt;p>Perjalanan terbanyak ketika ng-Gojek adalah dari stasiun (atau halte) untuk pulang, disusul oleh perjalanan pulang selepas beraktivitas di luar selain kerja.&lt;/p>
+&lt;p>Ada hubungan yang erat antara kantor dengan aktivitas transit, dihubungkan dengan aktivitas ng-Gojek.&lt;/p>
+&lt;p>Jika saya harus menggunakan uang tunai kemungkinan karena saya kehabisan GoPay saat berada di luar rumah.&lt;/p>
+&lt;p>Pertanyaan berikutnya adalah kenapa ada perjalanan dari rumah ke rumah? Punya rumah lebih dari satu! Hahahaha&amp;hellip; Saya pindah-pindah kost sebetulnya.&lt;/p>
+&lt;h3 id="biaya">Biaya&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/cost.png" alt="expenses with gojek">&lt;/p>
+&lt;p>Biaya dalam tapmilan grafik ini belum termasuk dengan penggunaan GoBills untuk BPJS, pulsa, dll. apalagi dengan GoFood. Belum. Jika saya harus menggunakan uang tunai saat bepergian kemungkinan karena saya kehabisan GoPay saat berada di luar rumah, bisa diperhatikan melalui grafik sebelumnya.&lt;/p>
+&lt;p>Setelah ini apalagi yang bisa dieksplorasi?&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Proyek personal ini terinspirasi dari Mas &lt;a href="http://rasyidridha.com/datague/data-gojek/">Rasyid Ridha&lt;/a> yang pernah mengolah data Gojek miliknya pribadi.&lt;/em>&lt;/p></description></item><item><title>Habit Tracking</title><link>https://akherlan.github.io/habit-tracking/</link><pubDate>Sat, 14 Aug 2021 07:00:29 +0700</pubDate><guid>https://akherlan.github.io/habit-tracking/</guid><description>&lt;p>Membuat habit tracking ternyata melelahkan dan tidak efisien. Tetap tidak dikerjakan. Atau mungkin itu hanya untuk saya saja. Lebih baik pakai alarm rutin berulang saja sebagai pengingat. Lebih mudah juga. Lalu buat mindset HARUS mengerjakan apa yang sudah dijadikan jadwal.&lt;/p>
+&lt;p>Kuncinya ada di niat, komitmen, dan konsistensi. Ya, sama siih&amp;hellip; habit tracking juga. Tapi saya tidak suka itu. Gak suka aja. Pakai saja alarm pengingat.&lt;/p>
+&lt;p>Saya membuat alarm pengingat untuk makan pagi, makan siang, makan malam, sholat dhuha, kadang untuk jam tidur. Untuk pengingat di ponsel, saya gunakan fitur layar ponsel berubah warna hitam-putih pada tengah malam.&lt;/p>
+&lt;p>Saya pernah mentranformasikan pengingat-pengingat itu menjadi checklist ciri khas habit tracking (ini lagi, nampaknya saya memang punya hubungan kurang baik dengan checklist). Saya juga pernah membuat checklist untuk olahraga dan mengisi ulang air putih supaya tetap teratur minum.&lt;/p>
+&lt;p>Namun dengan cara itu, ketika sudah tidak mencatat dan merasa percaya diri sudah melakukan dengan rutin, pede sudah menjadi kebiasaan baru, tanpa disadari lama-lama saya kembali tidak rajin olahraga, kadang saya tetap melewatkan makan. Jadi apanya yang habit? Atau cara saya yang salah? Atau mungkin juga kurang lama melakukannya? Tapi tetap, saya tidak suka habit tracking.&lt;/p>
+&lt;p>Mungkin saya termasuk generasi yang sudah dimanjakan oleh teknologi. Diingatkan oleh alarm salah satunya. Tapi itulah gunanya teknologi, mempermudah kita melakukan sesuatu. Mungkin saya baru akan berpikir bahwa mencatat kebiasaan kita itu bagus kalau dikerjakan secara otomatis. Bukan kita manusianya yang pusing-pusing aktif berinteraksi dengan alat rekamnya (baca: catatan).&lt;/p>
+&lt;p>Kalau kita memang niat punya kebiasaan baru yang baik, pasti akan dilakukan. Walaupun masih perlu tetap diingatkan. Namanya juga baru.&lt;/p>
+&lt;p>Terima kasih sudah membaca.&lt;/p></description></item><item><title>Resolusi Tengah Tahun 2021</title><link>https://akherlan.github.io/resolusi-tengah-tahun-2021/</link><pubDate>Mon, 07 Jun 2021 08:35:00 +0700</pubDate><guid>https://akherlan.github.io/resolusi-tengah-tahun-2021/</guid><description>&lt;p>Resolusi akhir tahun 2020 saya untuk tahun 2021 sudah tuntas. Bahkan hanya dalam sekitar tiga bulanan saja. Saya ingin punya resolusi tengah tahun: bisa puasa dengan nyaman. Semoga.&lt;/p>
+&lt;p>&lt;strong>Update:&lt;/strong>&lt;/p>
+&lt;p>Apakah saya sudah boleh bilang kalau target saya yang satu ini juga berhasil setelah saya puasa 2x tanpa keluhan perut? 😸 (alhamdulillah) Nantilah, ya, satu kali lagi pekan ini.&lt;/p></description></item><item><title>QGIS Zürich versi Anaconda</title><link>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</link><pubDate>Thu, 22 Apr 2021 15:54:19 +0700</pubDate><guid>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</guid><description>&lt;p>Sore ini saya iseng-iseng cek laman QGIS di channel &lt;a href="https://anaconda.org/conda-forge/qgis">conda-forge&lt;/a>. Lama sudah tidak cek update aplikasi ini karena sekarang juga malah sudah jarang pakai. Saat tulisan ini diketik, bertepatan dengan 3 hari (2 hari 21 jam) QGIS versi 3.18.2 Zürich (non-LTR) rilis versi conda. Masih sangat segar. Tapi sudah ada total unduh sebanyak 341.369 kali waktu saya mulai ikutan unduh juga.&lt;/p>
+&lt;p>Karena saya sudah punya environment conda (Miniconda) dengan nama &lt;code>qgis3&lt;/code> yang khusus saya peruntukkan bagi QGIS agar berjalan lancar tanpa gangguan, maka saya tinggal mutakhirkan saja yang lama ke versi terbaru 3.18.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ conda activate qgis3
+$ conda update -c conda-forge qgis
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Muncul detail semua dependensi yang akan terunduh, yang baru akan diinstal, yang akan dihapus, dst. Lalu saya tekan &lt;code>y&lt;/code> dan &lt;code>Enter&lt;/code>. Tanda setuju melakukan update.&lt;/p>
+&lt;p>Mengapa saya menggunakan QGIS keluaran Anaconda dan tidak menggunakan versi official dengan pasang repository QGIS resmi di komputer saya? Jawabannya, karena dependensi QGIS yang saya instal &lt;a href="https://twitter.com/terusterang__/status/1248900312150106113">pernah konflik&lt;/a> dengan dependensi R untuk analisis spasial, juga dengan aplikasi GIS lainnya.&lt;/p>
+&lt;p>Malaaaaas sekali kalau sudah kacau begitu. Lebih baik saya pisahkan lingkungan kerjanya saja. Mana QGIS ini banyak versinya pula, ada yang nightly lah, ada yang stable, ada yang cuma versi LTR, dan lain-lain. Dan versi dependensinya tentu saja berbeda-beda juga. Nanti beda lagi dengan yang dipakai di R.&lt;/p>
+&lt;p>Sebetulnya saya ingin pasang dan perbarui setiap ada rilis versi LTR saja. Tapi sistem yang terisolasi lebih penting sekarang ketimbang masalah up to date. Sekarang, tinggal jalankan aplikasi QGIS lewat terminal.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ qgis &lt;span class="c1"># dalam environment conda yang terinstal QGIS&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tampilan splash QGIS 3.18 di destop saya:&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/b49f3914333fffce6fc7b.png"
+alt="Running QGIS 3.18 Zürich on Ubuntu"/> &lt;figcaption>
+&lt;p>QGIS 3.18 Zürich di Xubuntu&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Sekian curhatan saya.&lt;/p></description></item><item><title>Konversi HTML Ke Markdown</title><link>https://akherlan.github.io/konversi-html-ke-markdown/</link><pubDate>Mon, 19 Apr 2021 10:27:32 +0700</pubDate><guid>https://akherlan.github.io/konversi-html-ke-markdown/</guid><description>&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#bukan-notion">Bukan Notion&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#evernote-ke-obsidian">Evernote ke Obsidian&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#html-ke-markdown">HTML ke Markdown&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;blockquote>
+&lt;p>&lt;strong>TL;DR&lt;/strong> : untuk konversi HTML ke markdown, saya menggunakan pandoc tapi lewat R, bukan langsung dengan bash, karena saya terlalu cupu.&lt;/p>
+&lt;/blockquote>
+&lt;p>Beberapa tahun belakangan ini saya tidak pernah menyimpan catatan-catatan yang saya buat dengan baik dan rapi, sehingga berserakan di mana-mana. Tapi sekarang mudah-mudahan tidak lagi. Saya sedang menggunakan aplikasi ketik yang sedang naik daun (juga), yaitu &lt;a href="https://obsidian.md/">Obsidian&lt;/a>. Dengannya saya bisa sekaligus memanajemen pikiran saya dan juga (mudah-mudahan) hidup saya dengan menggunakannya untuk mengetik kegiatan sehari-hari.&lt;/p>
+&lt;p>Obsidian memungkinkan saya untuk membuat semacam Wikipedia atau dokumentasi tentang kehidupan saya dan arsip pikirkan juga perasaan saya dalam bentuk tulisan. Sebetulnya saya malas sekali mengakui bahwa saya termasuk orang yang suka &lt;em>journaling&lt;/em>, sedikit, maksudnya tidak terlalu rutin. Tapi nggak apa-apa. Kita coba saja.&lt;/p>
+&lt;p>Sistem yang digunakan Obsidian sama dengan beberapa aplikasi &lt;em>note-taking&lt;/em> lain (selain &lt;a href="https://notion.so">Notion&lt;/a>) yang disebut &lt;a href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten&lt;/a> (bahasa Jerman untuk &lt;em>card index box&lt;/em>). Biasa orang-orang membandingkannya dengan &lt;a href="https://roamresearch.com/">Roam Research&lt;/a> atau Notion.&lt;/p>
+&lt;h2 id="bukan-notion">Bukan Notion&lt;/h2>
+&lt;p>Sebetulnya saya suka dengan Notion karena fiturnya yang disebut &amp;ldquo;database&amp;rdquo;. Keren. Karena memungkinkan saya untuk bisa membuat kanban yang langsung terintegrasi dengan daftar pengarsipan tulisan. Namun karena Notion tidak menggunakan &lt;a href="https://protonmail.com/blog/wp-content/uploads/2015/05/bob-alice.jpg">enkripsi e2e&lt;/a>, rasanya tulisan-tulisan yang bersifat pribadi jadi &lt;em>gimanaa gitu&lt;/em> kalau disimpan di situ. Jadi, saya ingin coba pakai alternatif lain. Kebetulan Obsidian.&lt;/p>
+&lt;h2 id="evernote-ke-obsidian">Evernote ke Obsidian&lt;/h2>
+&lt;p>Nah, ceritanya, saya sedang memindahkan berbagai macam catatan yang dulu pernah saya buat untuk bisa saya sunting lagi dan rapikan ulang menggunakan format markdown dari dalam Obsidian. Obsidian juga menggunakan metode &lt;em>formatting&lt;/em> ini untuk mengetik.&lt;/p>
+&lt;p>Saya menemukan tulisan lamaaa sekali yang merupakan hasil konversi dari &lt;a href="https://evernote.com/">Evernote&lt;/a>. Mungkin, tulisan itu saya buat ketika saya masih menggunakan sistem operasi Windows dulu, saya juga tidak yakin. Sudah lupa karena sudah lama.&lt;/p>
+&lt;p>Dulu memang saya sempat pakai Evernote sebentar. Berkas yang terekspor dari Evernote ini menggunakan format HTML. Maka saya harus konversi agar bisa disunting kembali menggunakan Obsidian.&lt;/p>
+&lt;h2 id="html-ke-markdown">HTML ke Markdown&lt;/h2>
+&lt;p>Sebetulnya saya sudah menginstal &lt;strong>pandoc&lt;/strong> di sistem komputer saya, bisa diakses menggunakan perintah bash dari terminal. Namun karena saya sangat cupu dalam menggunakan bash, makan saya pakai R saja. Saya sudah punya paket &lt;strong>rmarkdown&lt;/strong> di R yang juga merupakan &amp;ldquo;kepanjangan tangan&amp;rdquo; dari pandoc.&lt;/p>
+&lt;p>Kode yang saya gunakan seperti berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;rmarkdown&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;/home/andi/Documents/Notes/Evernote/&amp;#34;&lt;/span>
+&lt;span class="n">files&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">dir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pattern&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">paste0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">files&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">out&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">gsub&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;md&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">pandoc_convert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;markdown_strict&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">output&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">out&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Variabel &lt;code>path&lt;/code> merupakan path ke berkas-berkas tulisan saya dalam format HTML, yang kemudian dikonversi menggunakan fungsi &lt;code>pandoc_convert()&lt;/code>. Iya, saya pakai for loop karena berkasnya banyak, tapi tidak terlalu banyak. Variabel &lt;code>out&lt;/code> digunakan untuk mengubah nama yang semula berakhiran &lt;code>*.html&lt;/code> menjadi &lt;code>*.md&lt;/code>.&lt;/p>
+&lt;p>Tapi hasilnya masih sedikit &amp;ldquo;cacat&amp;rdquo; karena ada masalah pada encoding berkas. Entahlah. Saya juga nggak ngerti. Setidaknya ini meringankan pekerjaan saya agar tidak copas-copas dari HTML ke markdown bolak-balik secara manual. Nanti kita coba akalin lagi mulai dari sini.&lt;/p></description></item><item><title>Lagu Favorit</title><link>https://akherlan.github.io/lagu-favorit/</link><pubDate>Tue, 06 Apr 2021 02:27:24 +0700</pubDate><guid>https://akherlan.github.io/lagu-favorit/</guid><description>&lt;p>Entah bagaimana Marigold (マリーゴールド / Marigorudo) dari Aimyon jadi lagu yang saya gemari. Baru kenal awal tahun ini. Tentu bukan satu-satunya. Tapi lagu ini salah satu yang suka diulang-ulang. &lt;em>Easy listening&lt;/em>.&lt;/p>
+&lt;p>Versi originalnya gampang dicari. Versi gitar (cover) yang menurut saya bagus ada &lt;a href="https://www.youtube.com/watch?v=yADSqAy80dg">di Youtube&lt;/a>.&lt;/p></description></item><item><title>Podcast Buku Langganan</title><link>https://akherlan.github.io/podcast-buku-langganan/</link><pubDate>Mon, 05 Apr 2021 08:20:47 +0700</pubDate><guid>https://akherlan.github.io/podcast-buku-langganan/</guid><description>&lt;p>Kalau dibandingkan dengan para pembaca buku lain, saya masih termasuk jarang baca buku. Kalau dibandingkan dengan para pendengar podcast, saya termasuk jarang dengar macam-macam podcast. Tapi saya suka dengar orang yang bercerita tentang buku.&lt;/p>
+&lt;p>Podcast favorit saya adalah tentang buku: &lt;a href="https://kepobuku.com">Kepo Buku&lt;/a>.&lt;/p>
+&lt;p>Tidak melulu tentang buku-buku yang bahasannya berat, atau buku-buku yang sesuai selera empunya, beragam genre buku dibahas dalam podcast ini. Sering juga ada tantangan untuk membahas buku yang tidak sesuai selera. Dalam satu episode biasanya minimal ada tiga sampai empat buku yang dibahas.&lt;/p>
+&lt;p>Yang mungkin juga menyenangkan bagi para pembaca buku, para host dan co-host Kepo Buku tidak melulu cuma review bukunya, tapi juga dibumbui cerita pengalaman membaca masing-masing host/ co-host. Kadang diselingi pengalaman membaca dari para pendengar.&lt;/p>
+&lt;p>Karena penceritanya ada banyak, sudut pandangnya juga jadi beragam. Ini jadi memperkaya konten. Kadang ada saatnya para host/ co-host tidak saling setuju dan mereka juga &lt;del>mempertontonkan&lt;/del> memperdengarkan itu.&lt;/p>
+&lt;p>Satu lagi hal menarik yang saya suka dari Kepo Buku, mereka sangat terbuka bahkan sampai dapurnya pun dibagikan di &lt;a href="https://t.me/kepobuku">channel Telegram mereka&lt;/a> agar para pendengarnya bisa sekalian ikut berkontribusi. Sejalan dengan semangat berkomunitas.&lt;/p>
+&lt;p>Episode terakhir dari Kepo Buku:&lt;/p>
+&lt;iframe src="https://open.spotify.com/embed-podcast/show/6bSSiPcmnGXOjcr8XzNu1w" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media">&lt;/iframe>
+&lt;p>&lt;strong>Dengan menekan &lt;em>play button&lt;/em> artinya kalian setuju dengan ketentuan penggunaan &lt;em>cookies&lt;/em> dari pihak &lt;a href="https://www.spotify.com/us/legal/cookies-policy/">Spotify&lt;/a>.&lt;/strong>&lt;/p>
+&lt;p>Pencetus Kepo Buku jugalah yang mengenalkan saya pada &lt;em>podcasting&lt;/em> pada 2018 lalu.&lt;/p></description></item><item><title>Pindah Blog 'Manual' Lagi</title><link>https://akherlan.github.io/pindah-blog-manual-lagi/</link><pubDate>Fri, 02 Apr 2021 21:59:26 +0700</pubDate><guid>https://akherlan.github.io/pindah-blog-manual-lagi/</guid><description>&lt;p>Ini adalah posting pertama dengan konfigurasi &lt;em>pure&lt;/em> dari Hugo. Tidak melalui RStudio dengan bantuan &lt;code>blogdown&lt;/code> karena katanya &lt;em>package&lt;/em> itu sedang diperbaiki untuk terintegrasi dengan versi Hugo yang baru.&lt;/p>
+&lt;p>&lt;strong>Update:&lt;/strong>&lt;/p>
+&lt;p>Saya sudah menemukan &lt;em>workflow&lt;/em> ngeblog pakai format Rmarkdown pakai &lt;code>blogdown&lt;/code> versi &lt;code>&amp;gt;1.0&lt;/code>. Yang penting jangan &lt;em>update&lt;/em> Hugo-nya dulu. Ternyata orang lain juga pada &lt;em>struggle&lt;/em>.&lt;/p>
+&lt;p>Cerita ke-&lt;em>struggle&lt;/em>-an dengan blogdown:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://drmowinckels.io/blog/2020-05-25-changing-you-blogdown-workflow/">Changing your blogdown workflow&lt;/a> oleh Athanasia Mowinckel&lt;/li>
+&lt;li>&lt;a href="https://alison.rbind.io/post/new-year-new-blogdown/">Up &amp;amp; running with blogdown in 2021&lt;/a> oleh Alison Hill&lt;/li>
+&lt;/ul></description></item><item><title>Bertaruh Dengan Waktu</title><link>https://akherlan.github.io/bertaruh-dengan-waktu/</link><pubDate>Tue, 30 Mar 2021 18:41:20 +0700</pubDate><guid>https://akherlan.github.io/bertaruh-dengan-waktu/</guid><description>&lt;p>Saya masih belum paham apakah saya termasuk kategori orang yang mempersiapkan segala sesuatunya dulu sebelum melakukan apa-apa. Sepertinya iya. Tapi kadang, muncul juga pikiran untuk memikirkannya nanti saja, kalau sedang dijalankan. Spontanitas, saya pikir, mungkin akan meningkatkan kreativitas. Kelihatannya akan lebih seru begitu, dan setiap rencana juga pasti toh akan berubah menyesuaikan kondisi.&lt;/p>
+&lt;p>Sebagai orang yang, seharusnya, sudah bisa bersikap dewasa pasti saya juga melakukan apapun dengan pertimbangan kalau memang perlu, sesuai porsi. Jadi saya memang akan merencanakan segala skenarionya di awal. Seringkali berubah hampir total ketika saya ingin menjalankan rencana saya. Jadinya tetap spontan. Setidaknya dengan begitu saya tidak akan dipandang gegabah.&lt;/p>
+&lt;p>Entah kenapa saya jadi kurang suka dengan tulisan ini. Sangat tidak mengalir. Saya sebetulnya ingin cerita tentang studi saya yang banyak kejutan. Sebetulnya tidak terlalu. Maksudnya, semua berjalan seperti yang saya bayangkan, hanya &lt;em>timing&lt;/em>-nya selalu mengacaukan semua hal. Saya selalu seperti tidak siap untuk berhadapan dengan apapun yang berhubungan dengan studi saya.&lt;/p>
+&lt;p>Kata orang, waktu itu seperti mata pisau. Eh, orang mana yang bilang begitu? Mungkin saya mengarang. Tapi memang bisa, kalau kita tidak pandai menggunakan pisau, jangan bermain-main dengannya. Saya mungkin sudah gegabah bermain-main dengan waktu. Entahlah. Saya tidak punya kemampuan untuk memutuskan sendiri apa tindakan yang harus saya lakukan. Saya seperti tidak pernah punya pilihan untuk studi saya.&lt;/p>
+&lt;p>Mungkin mulai hari ini saya akan memutuskan untuk tidak akan pernah malu untuk mengakui bahwa saya termasuk mahasiswa yang bermasalah. Bahkan pada orang-orang terdekat. Sebaiknya memang begitu. Bersikap apa adanya. Tidak perlu menutup-nutupi celah yang bisa terlihat kalau disorot cahaya hanya karena ingin terlihat rapat dan mulus.&lt;/p>
+&lt;p>Saya jadi emosi menulis ini.&lt;/p>
+&lt;p>Tapi akhirnya pada titik ini saya menyadari satu hal, bahwa memang cara saya menghadapi masalah adalah dengan &lt;em>fit-in&lt;/em> solusi yang mungkin diterapkan dan harus selalu ada alternatif, lalu saya pilih solusi yang saya sukai. Saya sepertinya tidak menemukan itu untuk kasus kuliah saya kali ini.&lt;/p>
+&lt;p>Selama ini saya berpikir tentang diri saya yang selalu mengikuti arus. &lt;em>Why?&lt;/em> Kenapa saya harus jadi orang seperti itu? Tapi pada praktiknya saya selalu merasa menjumpai rintangan-rintangan yang pada akhirnya membuat saya harus memegang kendali secara penuh untuk bisa tetap menjalani hidup dan tidak &lt;em>stuck&lt;/em> dalam satu keadaan. Saya menyukai petualangan dan kapal tidak akan berlayar ke tempat tujuan kalau hanya ikut arus. Tapi kalian pasti akan kesusahan dan butuh tenaga lebih kalau tidak ikut arus.&lt;/p>
+&lt;p>Jadi, ikutilah arus agar hidup kita lebih &lt;em>santuy&lt;/em>. Kita bisa mengubah destinasi hidup kita nanti di tengah perjalanan. Kalau punya pilihan. Saya sedang tidak punya pilihan, dan kondisinya saya dipaksa harus lawan arus sedangkan keinginan saya sudah berubah dan saya kesulitan mencari alternatif solusi. Inikah yang dilakukan negosiator? Kata tes-tes tetekbengek itu saya pantas menjadi seorang diplomat. Tapi kali ini saya gagal. Saya seperti tidak punya kesempatan dan kondisi yang menguntungkan untuk tawar-menawar.&lt;/p>
+&lt;p>&lt;strong>Don&amp;rsquo;t bargaining with time if you have no choice.&lt;/strong>&lt;/p></description></item><item><title>Kita Punya Pilihan</title><link>https://akherlan.github.io/kita-punya-pilihan/</link><pubDate>Sun, 21 Mar 2021 18:39:43 +0700</pubDate><guid>https://akherlan.github.io/kita-punya-pilihan/</guid><description>&lt;p>Saya bilang pada seseorang kalau tahun ini saya punya resolusi untuk bisa curhat. Satu-satunya resolusi tahunan yang saya inginkan di tahun 2021 dan saya cukup &lt;em>newbie&lt;/em> untuk hal itu: memiliki resolusi tahunan.&lt;/p>
+&lt;p>Pastinya, untuk melakukan hal yang sebelumnya terasa sulit kita harus lakukan secara bertahap dan perlahan-lahan. Supaya efeknya tidak terasa keras dan nantinya perubahan yang diinginkan bisa konsisten dan sesuai harapan. Sampai tidak mungkin kembali lagi. Ini berbeda dengan orang-orang yang dapat pencerahan sampai-sampai menohok kehidupnya. Membuatnya mengubah cara pandangnya terhadap hidup. Yang saya lakukan mungkin berbeda. Ini adalah sesuatu yang direncanakan.&lt;/p>
+&lt;p>Setidaknya, sejauh ini saya melakukan beberapa progres. Sebetulnya sudah dari sebelum 2021. Saya mulai membuka diri untuk melakukan percakapan-percakapan tentang segala sesuatu yang saya sukai atau yang saya ingin orang lain juga mengetahuinya kalau saya merasa bahagia.&lt;/p>
+&lt;p>Saya harus menyeting diri untuk tidak khawatir akan pendapatnya, tentang apakah orang ini akan mengubah pandangannya terhadap saya. Saya mulai ini dari orang-orang yang sama sekali tidak saya kenal. Walaupun pada saat itu saya tidak menyadarinya dan terasa tetap belum berdampak apa-apa. Karena pada nyatanya orang yang tidak mengenal kita tidak akan pernah paham apa spesifikasi masalah yang kita hadapi.&lt;/p>
+&lt;p>Namun, progres tetaplah berarti walau secara umum tidak tampak. Seiring waktu kami saling mengenal dan lama-kelamaan semua pada akhirnya akan sama seperti semula. Sama seperti saat saya sudah mengenal orang-orang dan memilih untuk tidak mau membuka diri pada mereka.&lt;/p>
+&lt;p>Saya sadar bahwa orang lain sebetulnya mampu membuat saya menyelesaikan masalah pribadi yang saya hadapi kalau saya sendiri mau dibantu, mau menjelaskan kondisi saya, mau menjelaskan apa yang saya rasakan, tanpa perlu takut mengubah hubungan kami.&lt;/p>
+&lt;p>Teman tetaplah teman. Anak tetaplah anak. Orangtua tetaplah orangtua. Kekasih tetaplah kekasih. Kalau mereka mengubah cara pandang mereka pada saya, biarlah. Apakah mereka ingin mengubah status hubungan menjadi musuh atau membenci, mereka tetap berhak melakukannya karena mereka punya pilihan itu. Kecuali orangtua yang tidak punya pilihan untuk tidak punya anak lagi. Juga sebaliknya. Karena itu hanya akan terjadi kalau saya meninggal atau mereka memilih untuk mendustakan saya, seolah-olah mengabaikan padahal tidak akan pernah bisa.&lt;/p>
+&lt;p>Saya seharusnya tidak pernah pusing dengan hal seperti itu karena saya sudah berhak punya predikat orang dewasa. Orang dewasa selalu punya pilihan dan harus memilih. Terlepas dari pilihan yang tepat atau salah. Jika tidak, selamanya akan menjadi pengikut.&lt;/p>
+&lt;p>Kita diturunkan ke muka bumi ditakdirkan sebagai pemimpin. Minimal memimpin diri sediri. Seorang pemimpin akan selalu dihadapkan pada pilihan. Eksekutif adalah pengambil keputusan. Setiap manusia berhak memilih. Terlepas dari apakah kita sudah memiliki pilihan yang tepat atau tidak.&lt;/p></description></item><item><title>Write It Up at the Time When You Feel</title><link>https://akherlan.github.io/write-it-up-at-the-time-when-you-feel/</link><pubDate>Sun, 21 Mar 2021 04:09:12 +0700</pubDate><guid>https://akherlan.github.io/write-it-up-at-the-time-when-you-feel/</guid><description>&lt;p>Yesterday was like a closing day for me. When you write in a book, and find the last sentence, the last word, the last paragraph you want to write is at the end of the line and you really don&amp;rsquo;t want to add any more writing. That&amp;rsquo;s enough, done. Then the next day you write something new on a new sheet behind the previous pages.&lt;/p>
+&lt;p>Actually, I wanted to write this down last night. If so, maybe it would be a better and longer writing. Eventually, keep writing now. The euphoria is over. Today feels different from yesterday. But all is well. Time passed as usual. The weather is not much different from yesterday. And the neighbors still play the same genre of songs.&lt;/p></description></item><item><title>Reorganisasi Aplikasi Ponsel</title><link>https://akherlan.github.io/reorganisasi-aplikasi-ponsel/</link><pubDate>Thu, 18 Mar 2021 04:06:12 +0700</pubDate><guid>https://akherlan.github.io/reorganisasi-aplikasi-ponsel/</guid><description>&lt;p>Apa yang saya lakukan hari ini harapannya bisa lebih membentuk otak saya jadi lebih cepat bekerja dan fokus. Fenomena sosial media dengan konten-singkatnya sering membuat kita kecanduan. &lt;em>Fast food&lt;/em> itu enak, tapi tidak sehat.&lt;/p>
+&lt;p>Lalu apa yang saya lakukan?&lt;/p>
+&lt;p>Saya menata ulang aplikasi apa saja yang akan tersedia atau terpasang di dalam ponsel saya:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Menghapus Instagram&lt;/strong>, &lt;em>well&lt;/em> memang akunnya masih aktif, tapi saya nggak bakal &lt;em>scroll-scroll&lt;/em> terus!&lt;/li>
+&lt;li>&lt;strong>Menginstal Pocket&lt;/strong>, rencana berikutnya saya ingin menghapus Medium. Radikal memang.&lt;/li>
+&lt;li>&lt;strong>Mengganti English&lt;/strong> dengan aplikasi kamus bawaan dari Samsung.&lt;/li>
+&lt;/ul>
+&lt;p>Instagram sudah jelas aplikasi terlarang, seharusnya, sejak dulu. Karena banyak waktu habis dan sulit untuk ngerem kalau sudah &lt;em>scrolling&lt;/em> mode penjelajahannya. Walaupun sudah pasang &lt;em>timer&lt;/em> untuk pengingat dan pembatas waktu maksimum.&lt;/p>
+&lt;p>Saya masih sering baca di Medium dan menulis juga di situ. Tapi seringkali saya menulis lewat laptop. Lagipula saya punya rencana untuk pindah menulis rutin di bear.blog ini. Mungkin beberapa artikel yang bisa dipamerkan dan ingin dapat audiens lebih luas baru ditulis di Medium. Hahahaha&amp;hellip;&lt;/p>
+&lt;p>Kalau untuk membaca, di Medium seringkali bentrok dengan &lt;em>paywall&lt;/em> artikel berbintang karena saya tidak berlangganan. Jadi lebih baik baca lewat incognito mode dari peramban Chrome saja. OK? Chrome adalah peramban bawaan Samsung yang tidak bisa saya hapus. Sedih memang. Harusnya saya ingin pakai Firefox saja.&lt;/p>
+&lt;blockquote>
+&lt;p>Judulnya: memanfaatkan fasilitas bawaan.&lt;/p>
+&lt;/blockquote>
+&lt;p>Cara lain membaca artikel &lt;em>paywall&lt;/em> Medium adalah dari instant view lewat Telegram for Android. Kalau tulisan bagus, simpan di Pocket. Supaya bisa dibuat &lt;em>highlight&lt;/em>. Begitu rencananya. Memang fasilitas Medium yang saya sangat sukai adalah &lt;em>highlight&lt;/em> kalimat! Dengan Pocket jadi sudah tergantikan. Apalagi bisa untuk semua artikel, bukan cuma dari Medium.&lt;/p>
+&lt;p>Saya sudah riset dulu sebelum memutuskan untuk menggunakan Pocket ketimbang Instapaper. Salah satunya karena Pocket bisa mendobrak &lt;em>paywall&lt;/em> Medium, Instapaper tidak.&lt;/p>
+&lt;p>Oh ya, dan lagi, untuk langganan Medium per bulan atau per tahun itu masih jauh lebih mahal daripada langganan premium Pocket. Apalagi penawaran dari Pocket untuk setahun itu terbilang murah. Sepertinya harga khusus untuk region Indonesia. Dapat bocoran dari Bang Reza soalnya. Buahahaha&amp;hellip;&lt;/p>
+&lt;p>Tentang aplikasi &lt;a href="https://play.google.com/store/apps/details?id=livio.pack.lang.en_US">English&lt;/a> dari Livio ini sebetulnya sudah lama selalu ada di ponsel saya sejak dulu walau sudah ganti-ganti ponsel. Kamus penerjemah dari bahasa Inggris ke definisi bahasa Inggris. Untuk mengasah kosakata saya juga tujuannya.&lt;/p>
+&lt;p>Saya juga nyaman ganti ke aplikasi penerjemah bawaan Samsung yang nggak bisa di &lt;em>unsinstall&lt;/em>, cuma bisa di-&lt;em>disable&lt;/em>, dan perlu pasang basisdata tambahan lagi, tapi &lt;em>worth&lt;/em> karena lebih kecil ukuran totalnya ketimbang kalau saya mempertahankan English. So, ya, begitulah. Penuh perhitungan. Dan ternyata, definisi bahasa Inggrisnya lebih mudah dipahami daripada punya English. Hahahaha&amp;hellip;&lt;/p>
+&lt;p>Apa lagi ya? Itu aja sih&amp;hellip;&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Tulisan ini diimpor dari bearblog.dev&lt;/em>&lt;/p></description></item><item><title>R di Android dengan Termux</title><link>https://akherlan.github.io/r-di-android-dengan-termux/</link><pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-android-dengan-termux/</guid><description>&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#paket-manajemen-termux">Paket manajemen termux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#menambah-repositori-its-pointless">Menambah repositori its-pointless&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#instal-r-di-android">Instal R di Android&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#video-demo">Video demo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#tips">Tips&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;p>Apakah mungkin menjalankan R di ponsel pintar Android? Bisa.&lt;/p>
+&lt;p>Kita bisa menginstal dan menjalankan beberapa aplikasi yang tersedia di linux melalui termux. Salah satunya bahasa R.&lt;/p>
+&lt;p>Termux merupakan terminal emulator di Android. Berjalan tanpa harus dalam mode root. Tersedia di &lt;a href="https://play.google.com/store/apps/details?id=com.termux">PlayStore&lt;/a> dan juga &lt;a href="https://f-droid.org/repository/browse/?fdid=com.termux">F-Droid&lt;/a>.&lt;/p>
+&lt;p>Karena saya kadang-kadang pakai R dan sedang belajar juga, jadi saya ingin instal R di Android.&lt;/p>
+&lt;h2 id="paket-manajemen-termux">Paket manajemen termux&lt;/h2>
+&lt;p>Tidak semua paket di simpan dalam satu repositori termux, melainkan dibagi menjadi repo default (lebih stabil), dan selainnya ada repo untuk aplikasi root, unstable (dalam pengembangan), dan X11 (antarmuka grafis).&lt;/p>
+&lt;p>Repositori termux yang menyimpan aplikasi R ada &amp;ldquo;di luar&amp;rdquo; atau mereka menyebutnya dengan &amp;ldquo;repositori komunitas&amp;rdquo;, bernama &lt;code>its-pointless&lt;/code>. Cara menambahkannya ke daftar agak berbeda dengan repo termux yang &lt;em>official&lt;/em>.&lt;/p>
+&lt;p>Akhir tahun 2019 sampai awal-awal 2020 lalu akses ke repositori ini sempat hilang atau dicabut atau entahlah. Sedang dikembangkan mungkin? Namun sesaat sebelum saya menulis ini, repo itu sudah aktif kembali.&lt;/p>
+&lt;p>Oh ya, termux ini pakai basis Debian/Ubuntu, jadi pakai manajemen paket APT dan DPKG. Tapi punya perintah bawaan sendiri, sih: &lt;code>pkg &amp;lt;command&amp;gt;&lt;/code>. Bisa dilihat dengan &lt;code>pkg help&lt;/code>. Gak tau deh, untuk hal itu &lt;a href="https://wiki.termux.com/wiki/Main_Page">baca wiki&lt;/a>-nya saja ya&amp;hellip;&lt;/p>
+&lt;h2 id="menambah-repositori-its-pointless">Menambah repositori its-pointless&lt;/h2>
+&lt;p>Pertama, kita perlu &lt;code>curl&lt;/code> untuk unduh skrip bash yang sudah dibuatkan untuk kita. Jadi kita bisa menambah repo ini dengan mudah. Enak sekali jadi kita ini.&lt;/p>
+&lt;p>Periksa apakah &lt;code>curl&lt;/code> sudah terinstal.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ dpkg -l &lt;span class="p">|&lt;/span> grep curl
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah didahului &lt;strong>ii&lt;/strong> berarti sudah. Kalau belum, instal dengan cara berikut (kita tidak usah pakai mode root di termux):&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install curl
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah punya, kita akan unduh skrip dan menjalankannya dengan perintah:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
+$ bash setup-pointless-repo.sh
+$ rm setup-pointless-repo.sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Repositori its-pointless selesai ditambahkan.&lt;/p>
+&lt;h2 id="instal-r-di-android">Instal R di Android&lt;/h2>
+&lt;p>Biasanya setelah menambahkan alamat repo baru, kita harus update daftar paketnya. Tapi tadi sudah dilakukan ketika menjalankan skrip. Jadi, daftar paket sudah diperbarui. Berikutnya tinggal instal R.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install r-base
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai. Kemudian tes, apakah sudah berhasil.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ R
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita juga bisa menginstal pustaka &lt;code>tidyverse&lt;/code> di Android. Tapi saya belum tes untuk yang itu. Karena sayang ruang penyimpanannya. Bahkan mungkin di ponsel saya tidak cukup, karena termux menggunakan ruang penyimpanan internal untuk aplikasi.&lt;/p>
+&lt;p>Selain &lt;code>r-base&lt;/code>, its-pointless juga menyediakan &lt;code>gcc-7&lt;/code>, &lt;code>gfortran&lt;/code>, &lt;code>octave&lt;/code>, &lt;code>rustc&lt;/code>, &lt;code>scipy&lt;/code>, dan beberapa &lt;em>games&lt;/em>!&lt;/p>
+&lt;p>Sampai di sini, selamat menggunakan R di Android.&lt;/p>
+&lt;h2 id="video-demo">Video demo&lt;/h2>
+&lt;p>Bisa saksikan di laman &lt;a href="https://youtu.be/kDrc8-2K2DI" title="youtube">Youtube Channel&lt;/a> saya.&lt;/p>
+&lt;h2 id="tips">Tips&lt;/h2>
+&lt;p>Izinkan termux mengakses penyimpanan:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ termux-setup-storage
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.termux.com/wiki/Termux-setup-storage">lebih lanjut&amp;hellip;&lt;/a>&lt;/p>
+&lt;p>Tampilkan tombol-tombol keyboard yang biasanya ada di komputer, tapi di ponsel tidak ada:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install nano
+$ nano ~/.termux/termux.properties
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copas teks berikut:&lt;/p>
+&lt;pre>&lt;code>extra-keys = [ \
+['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
+['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+]
+&lt;/code>&lt;/pre>&lt;p>Kemudian &lt;code>Ctrl + S&lt;/code> dan &lt;code>Ctrl + X&lt;/code> lalu restart sesi termux-nya.&lt;/p>
+&lt;p>&lt;a href="https://wiki.termux.com/wiki/Touch_Keyboard">lebih lanjut&amp;hellip;&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://wiki.termux.com/wiki/Package_Management">Manajemen Paket Termux&lt;/a>&lt;/p></description></item><item><title>Nasihat untuk Freelancer</title><link>https://akherlan.github.io/nasihat-untuk-freelancer/</link><pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/nasihat-untuk-freelancer/</guid><description>&lt;p>Saya masih punya minat jadi &lt;em>freelancer&lt;/em> alias pekerja serabutan. Tentu setiap pekerjaan punya porsi sendiri-sendiri atas tanggung jawab kerja, begitu pula pekerja lepas maupun paruh waktu, tetap bukan kerja seenaknya. Saya sadar itu.&lt;/p>
+&lt;p>Sebagai pemula atau orang bilang &lt;em>newbie&lt;/em>, saya harus banyak belajar. Pada catatan ini barangkali saya ingin kumpulkan berbagai nasihat dari senior. Akan diperbarui secara berkala. Semoga berkenan.&lt;/p>
+&lt;p>&lt;strong>Nasihat dari Senior&lt;/strong>&lt;/p>
+&lt;script async src="https://telegram.org/js/telegram-widget.js?8" data-telegram-post="freelancerID/77503" data-width="100%">&lt;/script>
+&lt;p>Baru satu. Nanti ada lagi. Silakan, boleh &lt;em>bookmark&lt;/em>. Terima kasih.&lt;/p></description></item><item><title>Branch untuk GH-Pages Databoard</title><link>https://akherlan.github.io/branch-untuk-gh-pages-databoard/</link><pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/branch-untuk-gh-pages-databoard/</guid><description>&lt;p>Ini ditulis supaya kemudian hari kalau lupa bisa saya buka lagi. Singkat cerita, seperti ini:&lt;/p>
+&lt;script async src="https://telegram.org/js/telegram-widget.js?8" data-telegram-post="GNURIndonesia/20654" data-width="100%">&lt;/script>
+&lt;p>Apakah cukup jelas?&lt;/p>
+&lt;p>Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:&lt;/p>
+&lt;p>&lt;strong>1. Clone repositori &lt;a href="https://github.com/akherlan/databoard">databoard&lt;/a>&lt;/strong>, saya pakai tautan ssh karena nyaman dan aman.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ mkdir databoard &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">cd&lt;/span> databoard
+$ git clone git@github.com:akherlan/databoard.git master
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tautan repo copas dari bagian ini.&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/163c081da6ad09bece7a8.png"
+alt="clone github repository"/> &lt;figcaption>
+&lt;h4>Gambar 1&lt;/h4>&lt;p>Clone repositori&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>&lt;strong>2. Gandakan hasil clone ke lokal tadi&lt;/strong> menjadi direktori gh-pages.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ cp master gh-pages
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3. Buat branch baru dengan nama &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong> dari repo di direktori gh-pages yang nanti akan diunggah ke upstream &amp;ldquo;origin/gh-pages&amp;rdquo;.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ &lt;span class="nb">cd&lt;/span> gh-pages
+$ git checkout origin/gh-pages -b gh-pages
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ini akan membuat pekerjaan yang dilakukan berpindah dan direkam ke branch &amp;ldquo;gh-pages&amp;rdquo; (bukan &amp;ldquo;master&amp;rdquo; lagi). Periksa dengan:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git branch
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tanda bintang ada di branch &amp;ldquo;gh-pages&amp;rdquo;.&lt;/p>
+&lt;p>&lt;strong>4. Hapus branch &amp;ldquo;master&amp;rdquo; pada direktori gh-pages&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git branch -d master
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>5. Hapus semua isi direktori gh-pages yang ada&lt;/strong> KECUALI direktori &lt;strong>.git&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>6. Buat proyek laman web statis di direktori lain&lt;/strong>&lt;/p>
+&lt;p>Saya membuat direktori rproj (sebagai &lt;em>child&lt;/em> dari direktori databoard) untuk membangun laman statis ini karena saya membuatnya menggunakan Rmarkdown.&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/90a89fea71e8319069267.png"
+alt="direktori"/> &lt;figcaption>
+&lt;h4>Gambar 2&lt;/h4>&lt;p>Jadi ada tiga child dir dalam parent dir databoard&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>&lt;strong>7. Copas hasil rendernya ke direktori gh-pages&lt;/strong> yang tadi sudah kosong.&lt;/p>
+&lt;p>Mengapa tidak membuat alamat render langsung ditujukan ke direktori gh-pages? Karena nanti rekaman git-nya hilang. Rmarkdown akan mengganti/menimpa direktori gh-pages yang ada dan mengisinya dengan berkas-berkas baru hasil render.&lt;/p>
+&lt;p>Sebagai opsi, juga bisa gunakan version control pada direktori rproj ini, kalau diperlukan.&lt;/p>
+&lt;p>&lt;strong>8. Lakukan commit dan push dari branch &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git add .
+$ git commit -m &lt;span class="s2">&amp;#34;commit pertama untuk gh-pages&amp;#34;&lt;/span>
+$ git push origin gh-pages
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Awas itu setelah &lt;code>add&lt;/code> ada titiknya.&lt;/p>
+&lt;p>&lt;strong>9. Atur agar Github Pages dijalankan dari branch &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/55170682f9bf97507e8e7.png"
+alt="github pages"/> &lt;figcaption>
+&lt;h4>Gambar 3&lt;/h4>&lt;p>Pengaturan Github Pages&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Sampai di sini, laman sudah online &lt;a href="https://akherlan.github.io/databoard">di sini&lt;/a>.&lt;/p>
+&lt;p>Berikutnya, direktori master bisa saya hapus/buang saja karena selanjutnya repositori databoard branch &amp;ldquo;master&amp;rdquo; langsung terhubung dan dikelola melalui paket &lt;code>pins&lt;/code> di R.&lt;/p>
+&lt;p>Saya melakukan ini setelah membaca dua panduan &lt;a href="https://gist.github.com/chrisjacob/833223">ini(1)&lt;/a> dan &lt;a href="https://gist.github.com/cobyism/4730490">ini(2)&lt;/a>. Mana tau juga bisa bermanfaat buat teman-teman.&lt;/p>
+&lt;p>Terima kasih.&lt;/p></description></item><item><title>Personal Access Token Github</title><link>https://akherlan.github.io/personal-access-token-github/</link><pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/personal-access-token-github/</guid><description>&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#1-menggunakan-paket-usethis">1. Menggunakan paket usethis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-tanpa-menggunakan-usethis">2. Tanpa menggunakan usethis&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;p>Personal access token (PAT) berguna untuk interaksi antara suatu program dengan akun Github milik kita melalui &amp;ldquo;pintu belakang yang disepakati&amp;rdquo;.&lt;/p>
+&lt;p>Pada kasus ini, saya ingin agar saya bisa berinteraksi dengan kumpulan dataset saya yang tersimpan di repositori Github melalui RStudio (maupun konsol R melalui terminal).&lt;/p>
+&lt;p>Repositori ini tentu tidak boleh diotak-atik sembarangan oleh siapapun, dan hanya pemilik akun (atau komunitas/grup) yang berwenang menyuntingnya, maka dibutuhkan token. Pemilik token-lah yang memegang kendali.&lt;/p>
+&lt;p>Ada beberapa cara untuk membuat dan menyimpan Github PAT ke komputer linux (saya pakai Xubuntu). Seharusnya, di Windows tidak akan jauh berbeda.&lt;/p>
+&lt;h2 id="1-menggunakan-paket-usethis">1. Menggunakan paket usethis&lt;/h2>
+&lt;p>Cara pertama ini adalah yang saya gunakan. Lebih mudah jika dilakukan lewat RStudio. Yang wajib disediakan adalah tentu saja paket &lt;code>usethis&lt;/code>. Jika belum punya, bisa instal dulu dari konsol:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;usethis&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Log in dulu ke akun Github di browser default, agar nanti ketika direct dari RStudio langsung terbuka halaman yang tinggal OK-OK saja. Gunakan perintah ini untuk menuju laman pembuatan token.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">browse_github_pat&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita akan diarahkan ke &lt;a href="https://github.com/settings/tokens/new">laman pembuatan PAT&lt;/a> dan otomatis terisi default yang dibutuhkan. Ini bisa di &lt;em>custom&lt;/em> dulu kalau kita perlukan. Kalau saya sementara biarkan yang sudah terpilih saja. Lalu tekan &amp;ldquo;Generate token&amp;rdquo; yang di paling bawah.&lt;/p>
+&lt;p>&lt;strong>INI PENTING!&lt;/strong> Jangan lupa copas seluruh 40 karakter acak yang muncul.&lt;/p>
+&lt;p>Berikutnya kita kembali ke jendela RStudio lagi, lalu gunakan perintah berikut untuk menampilkan berkas &lt;code>.Renviron&lt;/code> yang tersimpan di komputer:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">edit_r_environ&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
+&lt;img src="https://telegra.ph/file/2ff4dbf4ba62c842cf3e6.gif"
+alt="R environment"/> &lt;figcaption>
+&lt;p>Membuka berkas .Renviron&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Akan terbuka berkas &lt;code>.Renviron&lt;/code> yang berada di direktori home. Jika tidak punya, berarti &lt;code>usethis&lt;/code> akan membuatkan berkas ini untukmu. Ketikkan teks berikut di editor skrip yang terbuka:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">GITHUB_PAT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">xxxxxxxxxxxxxx&lt;/span>
+&lt;span class="c1"># ganti xxxxxxxxxxxxxx dengan token yang tadi di copas dari Github&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
+&lt;img src="https://telegra.ph/file/51c0b4e6546f51392d9ff.gif"
+alt="Personal Access Token Github"/> &lt;figcaption>
+&lt;p>Memasukkan token&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Tanpa tanda kutip ya&amp;hellip;&lt;/p>
+&lt;p>Pastikan satu baris terakhir tersisa kosong (mereka bilang ini &lt;em>new line&lt;/em>). Jangan lupa di simpan. Kalau nggak, percuma tadi capek-capek bikin.&lt;/p>
+&lt;p>Cek, apakah sudah ada?&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">nchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">Sys.getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GITHUB_PAT&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;span class="c1">## [1] 40&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Betul, ada 40 karakter. Berikutnya, kita sudah bisa menggunakan berbagai fungsi dari paket R macam-macam yang membutuhkan akses token Github.&lt;/p>
+&lt;p>Misalnya saya mau koneksikan RStudio dengan &lt;a href="https://github.com/akherlan/dataset/">repositori dataset&lt;/a> yang saya punya.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;pins&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">board_register&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;span class="n">board&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;github&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">repo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;akherlan/dataset&amp;#34;&lt;/span>
+&lt;span class="p">)&lt;/span>
+&lt;span class="n">gempa&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pin_get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;gempa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gempa&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keluaran:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="c1">## # A tibble: 6 x 13&lt;/span>
+&lt;span class="c1">## tanggal waktu lat lon kdlm.KM mag.SR typemag smaj smin az&lt;/span>
+&lt;span class="c1">## &amp;lt;date&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;&lt;/span>
+&lt;span class="c1">## 1 2009-01-01 01:2… 3.73 127. 67 4.6 MLv 10317 1.80e+3 147&lt;/span>
+&lt;span class="c1">## 2 2009-01-01 03:4… -6.84 130. 103 5.2 mb 22841 2.78e+3 48&lt;/span>
+&lt;span class="c1">## 3 2009-01-01 05:2… 1.45 121. 10 5.1 MLv 10432 1.54e+0 121&lt;/span>
+&lt;span class="c1">## 4 2009-01-01 08:4… 1.52 122. 10 4.5 MLv 7557 1.04e+3 136&lt;/span>
+&lt;span class="c1">## 5 2009-01-01 08:5… -8.44 116. 91 3.4 MLv 2699 1.93e-1 261&lt;/span>
+&lt;span class="c1">## 6 2009-01-01 10:3… 1.41 122 34 5 Mw(mB) 84783 9.33e-1 46&lt;/span>
+&lt;span class="c1">## # … with 3 more variables: rms &amp;lt;dbl&amp;gt;, cphase &amp;lt;int&amp;gt;, region &amp;lt;chr&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-tanpa-menggunakan-usethis">2. Tanpa menggunakan usethis&lt;/h2>
+&lt;p>Cara ini adalah cara manual. Mengapa saya bilang manual? Karena semua dilakukan sendiri langkah-langkahnya dan kita menentukan sendiri letak-letak berkasnya, juga akses halamannya cari sendiri. Kasian yah?&lt;/p>
+&lt;p>Tapi dengan cara ini kita nggak perlu instal &lt;code>usethis&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>Login ke Github dengan akun sendiri&lt;/li>
+&lt;li>Pergi ke laman Setting &amp;gt; Developer settings &amp;gt; Personal access tokens&lt;/li>
+&lt;li>Atau kasian lah, saya titip aja &lt;a href="https://github.com/settings/tokens/">link&lt;/a>-nya&lt;/li>
+&lt;li>Klik tombol &amp;ldquo;Generate new token&amp;rdquo;&lt;/li>
+&lt;li>Beri nama PAT-nya pada kolom &amp;ldquo;note&amp;rdquo;&lt;/li>
+&lt;li>Ceklis akses apa saja yang dibutuhkan&lt;/li>
+&lt;li>&amp;ldquo;Generate token&amp;rdquo; yang warna hijau&lt;/li>
+&lt;li>Copy/copas token&lt;/li>
+&lt;li>Buat berkas baru di direktori home di komputer dengan nama &lt;code>.Renviron&lt;/code> (tanpa &lt;em>extension&lt;/em>), kalau sudah ada, pakai yang ada&lt;/li>
+&lt;li>Buka &lt;code>.Renviron&lt;/code> menggunakan text editor&lt;/li>
+&lt;li>unting/edit isinya dengan menambahkan baris &lt;code>GITHUB_PAT=xxxxxxxxxxxxxx&lt;/code> seperti penjelasan sebelumnya&lt;/li>
+&lt;li>Simpan&lt;/li>
+&lt;/ol>
+&lt;p>Bahkan dengan cara ini, kita nggak perlu berinteraksi dengan konsol R atau buka-buka program RStudio!&lt;/p>
+&lt;p>Sekian dulu.&lt;/p>
+&lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://happygitwithr.com/github-pat.html">https://happygitwithr.com/github-pat.html&lt;/a>&lt;/p></description></item><item><title>PostgreSQL dan RStudio</title><link>https://akherlan.github.io/postgresql-dan-rstudio/</link><pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/postgresql-dan-rstudio/</guid><description>&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#1-instal-odbc-drivers-di-komputer-linux">1. Instal odbc drivers di komputer linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-periksa-hasil-instalasi-kita">2. Periksa hasil instalasi kita&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-konfigurasi--sunting-berkas-odbcini">3. Konfigurasi / sunting berkas odbc.ini&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#4-menginstal-paket-odbc-dan-dbi-di-r">4. Menginstal paket odbc dan DBI di R&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;p>Saya sedang belajar mengelola data dalam sebuah basisdata. Sebab ketertarikan saya dengan bidang geospasial, saya coba untuk mempelajari DBMS terkenal untuk ini, yaitu PostgreSQL dengan ekstensi PostGIS.&lt;/p>
+&lt;p>Singkat cerita, saya sudah melakukan instalasi dan pengaturan basis data postgres + postgis di komputer saya. Selanjutnya saya ingin coba membuat koneksi untuk akses basisdata melalui RStudio. Saya merasa agak sedikit sombong karena sebelumnya sudah sukses dengan koneksi PostgreSQL lewat QGIS.&lt;/p>
+&lt;p>Ada &lt;a href="https://db.rstudio.com/databases/postgresql/">dua cara&lt;/a> membuat koneksi dari R untuk mengakses basis data:&lt;/p>
+&lt;ul>
+&lt;li>menggunakan paket &lt;code>odbc&lt;/code> dengan &lt;code>DBI&lt;/code>&lt;/li>
+&lt;li>menggunakan paket &lt;code>RPostgres&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Untuk saat ini saya menggunakan cara yang pertama. Langkah yang saya lakukan adalah:&lt;/p>
+&lt;h2 id="1-instal-odbc-drivers-di-komputer-linux">1. Instal odbc drivers di komputer linux&lt;/h2>
+&lt;p>Memasang odbc di Ubuntu dengan mengetikkan perintah berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo apt update
+$ sudo apt install unixodbc unixodbc-dev odbc-postgresql
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setelah itu &amp;hellip;&lt;/p>
+&lt;h2 id="2-periksa-hasil-instalasi-kita">2. Periksa hasil instalasi kita&lt;/h2>
+&lt;p>Beberapa berkas yang perlu kita tahu dan butuhkan untuk menunjang pengaturan dan kerja paket &lt;code>odbc&lt;/code> di R diantaranya berkas &lt;code>odbcinst.ini&lt;/code> dan &lt;code>odbc.ini&lt;/code>. Di mana mereka?&lt;/p>
+&lt;p>Kita bisa gunakan perintah berikut di terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ odbcinst -j
+&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
+&lt;img src="https://telegra.ph/file/74d5055f0bc6505dec8e1.png"
+alt="terminal command output"/> &lt;figcaption>
+&lt;h4>Gambar 1&lt;/h4>&lt;p>Keluaran perintah &lt;code>odbcinst_j&lt;/code>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Atau dengan cara lain, misalnya:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ locate odbcinst.ini
+$ locate odbc.ini
+&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
+&lt;img src="https://telegra.ph/file/ab7612fe9f5b20325647e.png"
+alt="terminal command output"/> &lt;figcaption>
+&lt;h4>Gambar 2&lt;/h4>&lt;p>Lokasi berkas konfigurasi odbc&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Akan ditampilkan tempat berkas-berkas itu tersimpan.&lt;/p>
+&lt;p>Kemudian coba kita cek apa isi dari berkas &lt;code>odbcinst.ini&lt;/code>. Berikut isinya:&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/a57cc39e019779844a954.png"
+alt="terminal command output"/> &lt;figcaption>
+&lt;h4>Gambar 3&lt;/h4>&lt;p>Print odbcinst.ini&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Sedangkan untuk berkas &lt;code>.odbc.ini&lt;/code>, sepengalaman saya saat &lt;em>fresh-install&lt;/em> tidak ada isinya alias masih kosong. Berikutnya kita perlu isi itu.&lt;/p>
+&lt;h2 id="3-konfigurasi--sunting-berkas-odbcini">3. Konfigurasi / sunting berkas odbc.ini&lt;/h2>
+&lt;p>Berkas ini ada di dua tempat, seperti sudah kita periksa sebelumnya.&lt;/p>
+&lt;p>&lt;code>/etc/odbc.ini&lt;/code> menyimpan pengaturan yang bisa digunakan secara global. Artinya bisa diakses oleh semua user di komputer terinstal, tetapi untuk pengaturannya kita membutuhkan akses root.&lt;/p>
+&lt;p>Sedangkan &lt;code>~/.odbc.ini&lt;/code> hanya untuk user tertentu (sesuai lokasi home punya user mana). Kita tidak perlu root untuk ini. Berkasnya disembunyikan di direktori home.&lt;/p>
+&lt;p>Sunting berkas &lt;code>.odbc.ini&lt;/code> milik user menggunakan text editor &lt;code>nano&lt;/code> dengan perintah di terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ nano ~/.odbc.ini
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Isikan detail seperti berikut:&lt;/p>
+&lt;pre>&lt;code>[PostgreSQL]
+Driver = PostgreSQL Driver
+Database = namaDbKamu
+Servername = localhost
+UserName = usernamekamu
+Password = passwordSayaKamuGabolehTau
+Port = 5432
+&lt;/code>&lt;/pre>&lt;figure>
+&lt;img src="https://telegra.ph/file/6dcbc3daf6344722708d3.png"
+alt="terminal text nano"/> &lt;figcaption>
+&lt;h4>Gambar 4&lt;/h4>&lt;p>Isi konfigurasi&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Ganti nilai pada bagian &lt;code>Database&lt;/code> dan &lt;code>UserName&lt;/code>, juga pada bagian &lt;code>Password&lt;/code>, sesuai dengan pengaturan basis data PostgreSQL milik teman-teman.&lt;/p>
+&lt;h2 id="4-menginstal-paket-odbc-dan-dbi-di-r">4. Menginstal paket odbc dan DBI di R&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;odbc&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;DBI&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kemudian restart R session.&lt;/p>
+&lt;p>Koneksi sudah bisa digunakan&amp;hellip; 😃 Jika ingin simak video demonstrasinya silakan di &lt;a href="https://youtube.com/watch?v=z5tZ1C9SVyo" title="postgresql in rstudio">youtube&lt;/a>.&lt;/p>
+&lt;p>Sekian.&lt;/p>
+&lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu">https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu&lt;/a>&lt;/p></description></item><item><title>R Di Visual Studio Code</title><link>https://akherlan.github.io/r-di-visual-studio-code/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-visual-studio-code/</guid><description>&lt;aside id="toc">
+&lt;h4>Table of Contents&lt;/h4>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#1-siapkan-vs-code">1. Siapkan VS Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-instal-ekstensi-r-lsp-client">2. Instal Ekstensi R LSP Client&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-instal-library-languageserver">3. Instal library languageserver&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#4-taraaa">4. Taraaa&amp;hellip;.&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/aside>
+&lt;p>OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, &lt;a href="https://twitter.com/jozefhajnala/status/1204496900461912068">di twitter&lt;/a>.&lt;/p>
+&lt;p>Berangkat dari tweet tersebut, saya melakukan beberapa langkah instalasi di mesin linux saya untuk bisa ikutan dalam keseruan ini. Berikut&amp;hellip;&lt;/p>
+&lt;h2 id="1-siapkan-vs-code">1. Siapkan VS Code&lt;/h2>
+&lt;p>Saya &lt;a href="https://code.visualstudio.com/Download">unduh&lt;/a> dan instal VS Code dulu tentunya. Instalasi di linux Ubuntu semudah mengerjakan skripsi: &lt;em>copas ini saja!&lt;/em> (ups)&lt;/p>
+&lt;p>Ganti bagian &lt;code>~/Downloads/code_x.xx.x-xxxxxx_amd64.deb&lt;/code> dengan direktori tempat teman-teman menyimpan berkas &lt;code>deb&lt;/code>-nya VS Code.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo dpkg -i ~/Downloads/code_x.xx.x-xxxxxx_amd64.deb
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lalu, pergi ke menu, cari Visual Studio Code. Atau di terminal ketikkan &lt;code>code&lt;/code>, enter.&lt;/p>
+&lt;h2 id="2-instal-ekstensi-r-lsp-client">2. Instal Ekstensi R LSP Client&lt;/h2>
+&lt;p>Cara instal:&lt;/p>
+&lt;ul>
+&lt;li>pergi ke bagian extension (nomor 1),&lt;/li>
+&lt;li>ketik &amp;ldquo;r lsp&amp;rdquo; di pencarian,&lt;/li>
+&lt;li>pilih &lt;strong>R LSP Client&lt;/strong> yang dari REditorSupport (nomor 2),&lt;/li>
+&lt;li>lalu klik &amp;ldquo;Install&amp;rdquo;.&lt;/li>
+&lt;/ul>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/e95a671d8754cf7a1049a.png"
+alt="R in visual studio code"/> &lt;figcaption>
+&lt;p>Instal ekstensi R LSP&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Ketika menginstal ternyata ada pesan error yang muncul:&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/8cf9f5a5ebaaf7bbdd9b2.png"
+alt="R in visual studio code"/> &lt;figcaption>
+&lt;p>Galat terjadi karena harus terinstal languageserver di R&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Ini terjadi karena saya belum instal library &lt;code>languageserver&lt;/code> untuk R. Itulah mengapa saya juga harus melakukan&amp;hellip;&lt;/p>
+&lt;h2 id="3-instal-library-languageserver">3. Instal library languageserver&lt;/h2>
+&lt;p>Instalasinya bisa dari terminal linux, console R di terminal, console R di RStudio, atau terminal yang masuk ke console R dari VS Code.&lt;/p>
+&lt;p>Pilihan terakhir adalah yang saya pilih, biar gak kemana-mana lagi.&lt;/p>
+&lt;p>Di bagian bawah, ada TERMINAL, ketik R (tentu saja R sudah terinstal), kemudian ketikkan:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;languageserver&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai instal, ada beberapa dependensinya juga yang diperlukan. Cas-cis-cus&amp;hellip;&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/fce2613a545270b736a7e.png"
+alt="R in visual studio code"/> &lt;figcaption>
+&lt;p>Instal paket languageserver&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Terakhir, tutup dan buka kembali (restart) VS Code, biar afdhol.&lt;/p>
+&lt;h2 id="4-taraaa">4. Taraaa&amp;hellip;.&lt;/h2>
+&lt;p>&lt;em>Autocompletion&lt;/em> di VS Code untuk bahasa R.&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/1027c969895e737d1ec6d.gif"
+alt="R autocompletion in visual studio code"/> &lt;figcaption>
+&lt;p>Berhasil. Autocompletion bahasa R di VS Code&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Sekian dulu.&lt;/p></description></item><item><title>Lenovo ThinkPad X240 &amp; Xubuntu</title><link>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</link><pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</guid><description>&lt;figure>
+&lt;img src="https://telegra.ph/file/881cdbef185018d82af0b.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Logo Lenovo Thinkpad&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Pekan lalu saya memesan mesin baru, Lenovo ThinkPad X240. &lt;em>Secondhand&lt;/em>. Harganya lumayan miring juga dengan spesifikasi nggak jelek-jelek amat:&lt;/p>
+&lt;ul>
+&lt;li>Model prosesor Intel® Core™ i5-4300U CPU @ 1.90GHz (artinya multi CPU generasi 4)&lt;/li>
+&lt;li>Arsitektur prosesor &lt;code>x86_64&lt;/code> (artinya dari Intel)&lt;/li>
+&lt;li>Memori HDD SATA 500GB (versi lain ada yang pakai SSD)&lt;/li>
+&lt;li>Memori RAM 4GB (sebetulnya saya mau pesan yang 8GB)&lt;/li>
+&lt;li>VGA Intel Haswell-ULT Integrated Graphics Controller&lt;/li>
+&lt;li>Adaptor WiFi&lt;/li>
+&lt;li>Adaptor Bluetooth&lt;/li>
+&lt;li>Ukuran layar &lt;code>361x203 mm&lt;/code> (12 inci) dengan resolusi sampai &lt;code>1366x768 pixel&lt;/code>&lt;/li>
+&lt;li>Beratnya nggak tau pasti karena belum ditimbang, tapi termasuk ringan dibanding laptop lama&lt;/li>
+&lt;li>Port-nya banyak dan lengkap sampai ada yang saya belum tau fungsinya.&lt;/li>
+&lt;/ul>
+&lt;h2 id="kondisi-fisik">Kondisi fisik&lt;/h2>
+&lt;p>Kondisinya secara fisik masih bagus. Cuma engsel kanan yang bunyi &lt;em>krek-krek&lt;/em> saat dibuka-tutup. Juga baterainya agak sedikit longgar/goyang. Tapi jarang ada kelihatan lecet.&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/e68377430a720b9e2c8be.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Fisik bagian atas&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="kelebihan">Kelebihan&lt;/h2>
+&lt;ul>
+&lt;li>Baterainya ada dua, yang tertanam dengan yang bisa dilepas dari luar. Jadi bisa tahan lama saat dibawa bepergian. Sehari-semalam dipakai biasanya cuma saya isi daya 1x.&lt;/li>
+&lt;li>&lt;em>Gesture allowed&lt;/em> pada TrackPad, ketika dicoba di Windows 10 (OS bawaan toko) dan Xubuntu 18.04, tidak ada bedanya, sama-sama yahood!&lt;/li>
+&lt;li>TrackPoint, entah ini kelebihan atau bukan karena sebenarnya jarang saya pakai, ini juga berfungsi dengan baik di Xubuntu 18.04.&lt;/li>
+&lt;/ul>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/d761461664a7165c1d309.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>TrackPoint&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/b246b5ee83f1e712aa9a5.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Baterai ganda&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="kebiasaan">Kebiasaan&lt;/h2>
+&lt;p>Saya agak &lt;em>kagok&lt;/em> dengan papan ketiknya karena belum terbiasa. Bukan ketika mengetik huruf dan angka, tapi ketika menggunakan tombol-tombol seperti:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Ctrl&lt;/code> kiri, karena letaknya di posisi kedua dari pojok kiri bawah. Biasanya di laptop lama letak tombol &lt;code>Ctrl&lt;/code> kiri berada di paling pojok kiri. Jadi sangat mudah ditemukan pakai kelingking kiri. Sekarang saya harus biasakan pakai jari manis.&lt;/li>
+&lt;li>&lt;code>Shift&lt;/code> kiri, lagi-lagi kiri. ThinkPad X240 punya &lt;code>Shift&lt;/code> kiri yang sangat pendek karena ada tombol karakter tambahan di sebelahnya, antara &lt;code>Shift&lt;/code> dan &lt;code>Z&lt;/code>, yaitu tombol &lt;code>&amp;lt;&lt;/code> / &lt;code>&amp;gt;&lt;/code> (&lt;code>Shft + &amp;lt;&lt;/code>). Ddefault keyboard US. Padahal pada tombol ini tertulis &lt;code>\&lt;/code> atau &lt;code>|&lt;/code> (default mana ini?).&lt;/li>
+&lt;li>Sebaliknya, &lt;code>Shift&lt;/code> kanan sangat panjang. Mungkin saya harus mulai biasakan diri pakai &lt;code>Shift&lt;/code> kanan saja.&lt;/li>
+&lt;li>&lt;code>Home&lt;/code> jadi di atas dekat &lt;code>delete&lt;/code>, bukan di tepi bawah sekitar arrow.&lt;/li>
+&lt;li>Apalagi &lt;code>End&lt;/code>, menggunakannya jadi agak susah karena gabung dengan &lt;code>Insert&lt;/code> (menekan &lt;code>End&lt;/code> harus dengan &lt;code>Fn + Insert&lt;/code>).&lt;/li>
+&lt;li>&lt;code>Enter&lt;/code> (&lt;code>return&lt;/code>) yang sedikit berbeda bentuknya, walaupun tetap masih lebar, tapi ramping.&lt;/li>
+&lt;li>Dan tombol lain yang tertulis berbeda antara teks di stiker dengan yang muncul setelah ditekan (default US). Saya kurang tahu ini stiker default negara mana.
+&lt;ul>
+&lt;li>&lt;code>@&lt;/code> tertulis &lt;code>&amp;quot;&lt;/code> pada tombol numerik &lt;code>2 + Shift&lt;/code>&lt;/li>
+&lt;li>&lt;code>#&lt;/code> tertulis &lt;code>£&lt;/code> pada tombol numerik &lt;code>3 + Shift&lt;/code>&lt;/li>
+&lt;li>&lt;code>&amp;quot;&lt;/code> tertulis &lt;code>@&lt;/code> pata tombol &lt;code>' + Shift&lt;/code>, sekitar &lt;code>Enter&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Tekan&lt;/th>
+&lt;th style="text-align:center">+Shft&lt;/th>
+&lt;th style="text-align:center">Muncul&lt;/th>
+&lt;th style="text-align:center">+Shft&lt;/th>
+&lt;th style="text-align:center">Letak&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">\&lt;/td>
+&lt;td style="text-align:center">|&lt;/td>
+&lt;td style="text-align:center">&amp;lt;&lt;/td>
+&lt;td style="text-align:center">&amp;gt;&lt;/td>
+&lt;td style="text-align:center">di antara &lt;code>Shift&lt;/code> dan &lt;code>Z&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">~&lt;/td>
+&lt;td style="text-align:center">#&lt;/td>
+&lt;td style="text-align:center">\&lt;/td>
+&lt;td style="text-align:center">|&lt;/td>
+&lt;td style="text-align:center">di samping &lt;code>Enter&lt;/code> (&lt;code>Return&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/ad129b387588bd9def192.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Tombol Fn dengan LED, dekat Ctrl&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Selain itu malah jadi sangat nyaman:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>PgUp&lt;/code> dan &lt;code>PgDn&lt;/code> yang dekat dengan arrow, memudahkan saat membaca dan skrol halaman.
+&lt;figure>
+&lt;img src="https://telegra.ph/file/bc025e637165a1cda3f5c.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Arrow, PgUp, PgDn&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/li>
+&lt;li>&lt;code>Alt&lt;/code> kanan, &lt;code>PrtSc&lt;/code>, dan &lt;code>Ctrl&lt;/code> kanan yang berdekatan sehingga mudah untuk ambil tangkapan layar. Saya terbiasa dengan &lt;code>shortcut&lt;/code> kombinasi tombol-tombol ini.
+&lt;figure>
+&lt;img src="https://telegra.ph/file/bac94f6f9df7dc8291009.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Tombol-tombol shortcut tangkapan layar&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="informasi-hardware">Informasi Hardware&lt;/h2>
+&lt;h3 id="prosesor">Prosesor&lt;/h3>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lscpu
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>Architecture: x86_64
+CPU op-mode(s): 32-bit, 64-bit
+Byte Order: Little Endian
+CPU(s): 4
+On-line CPU(s) list: 0-3
+Thread(s) per core: 2
+Core(s) per socket: 2
+Socket(s): 1
+NUMA node(s): 1
+Vendor ID: GenuineIntel
+CPU family: 6
+Model: 69
+Model name: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+Stepping: 1
+CPU MHz: 936.269
+CPU max MHz: 2900,0000
+CPU min MHz: 800,0000
+BogoMIPS: 4988.62
+Virtualization: VT-x
+L1d cache: 32K
+L1i cache: 32K
+L2 cache: 256K
+L3 cache: 3072K
+NUMA node0 CPU(s): 0-3
+Flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+&lt;/code>&lt;/pre>&lt;h3 id="monitor--audio">Monitor &amp;amp; audio&lt;/h3>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ xdpyinfo &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;dimensions:&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>dimensions: 1366x768 pixels (361x203 millimeters)
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lspci -v &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;VGA&amp;#34;&lt;/span> -A &lt;span class="m">12&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b) (prog-if 00 [VGA controller])
+Subsystem: Lenovo ThinkPad X240
+Flags: bus master, fast devsel, latency 0, IRQ 48
+Memory at f0000000 (64-bit, non-prefetchable) [size=4M]
+Memory at e0000000 (64-bit, prefetchable) [size=256M]
+I/O ports at 3000 [size=64]
+[virtual] Expansion ROM at 000c0000 [disabled] [size=128K]
+Capabilities: &amp;lt;access denied&amp;gt;
+Kernel driver in use: i915
+Kernel modules: i915
+00:03.0 Audio device: Intel Corporation Haswell-ULT HD Audio Controller (rev 0b)
+Subsystem: Lenovo ThinkPad X240
+&lt;/code>&lt;/pre>&lt;p>Perangkat lainnya&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lspci
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 0b)
+00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b)
+00:03.0 Audio device: Intel Corporation Haswell-ULT HD Audio Controller (rev 0b)
+00:14.0 USB controller: Intel Corporation 8 Series USB xHCI HC (rev 04)
+00:16.0 Communication controller: Intel Corporation 8 Series HECI #0 (rev 04)
+00:16.3 Serial controller: Intel Corporation 8 Series HECI KT (rev 04)
+00:19.0 Ethernet controller: Intel Corporation Ethernet Connection I218-LM (rev 04)
+00:1b.0 Audio device: Intel Corporation 8 Series HD Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 8 Series PCI Express Root Port 6 (rev e4)
+00:1c.1 PCI bridge: Intel Corporation 8 Series PCI Express Root Port 3 (rev e4)
+00:1d.0 USB controller: Intel Corporation 8 Series USB EHCI #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation 8 Series LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 8 Series SATA Controller 1 [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation 8 Series SMBus Controller (rev 04)
+02:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)
+03:00.0 Network controller: Intel Corporation Wireless 7260 (rev 83)
+&lt;/code>&lt;/pre>&lt;h2 id="sistem-operasi">Sistem operasi&lt;/h2>
+&lt;p>Meskipun tertulis di &lt;em>casing&lt;/em> bahwa mesin laptop Lenovo ini dilengkapi dengan Windows 7 sebagai sistem operasi original, tetapi penjual mendistribusikan mesin second ini dengan sistem operasi Windows 10.&lt;/p>
+&lt;figure>
+&lt;img src="https://telegra.ph/file/68051e814a79300dd9c54.jpg"
+alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Casing dengan logo sistem operasi bawaan Windows7&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Tetap saja. Satu hari setelah cek keadaan &lt;em>hardware&lt;/em> sebisanya, untuk memastikan kondisi benar-benar baik dan tidak cacat, saya langsung instal sistem operasi &lt;a href="https://xubuntu.org/">Xubuntu 18.04&lt;/a>.&lt;/p>
+&lt;p>Yaa&amp;hellip; Begitulah&amp;hellip;&lt;/p></description></item><item><title>Visualisasi Ketersediaan Data Hujan</title><link>https://akherlan.github.io/visualisasi-ketersediaan-data-hujan/</link><pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/visualisasi-ketersediaan-data-hujan/</guid><description>&lt;h2 id="objective">Objective&lt;/h2>
+&lt;p>Tutorial ini merupakan catatan pengingat bagi saya. Kan, syukur kalau bisa dibagi ke teman-teman semua. Tujuan tutorialnya adalah untuk membuat visualisasi &amp;ldquo;kekosongan&amp;rdquo; data hujan yang saya miliki. Atau dengan kata lain untuk mengetahui berapa persen &lt;em>sih&lt;/em> kelengkapannya?&lt;/p>
+&lt;p>Harapannya: agar tahu mana yang masih harus dilegkapi. Juga bisa memilih data hujan mana, serta data hujan kapan yang bisa saya gunakan untuk tahap analisis berikutnya.&lt;/p>
+&lt;h2 id="preparation">Preparation&lt;/h2>
+&lt;p>Yang kita butuhkan untuk melakukan ini semua tentu saja &lt;strong>data&lt;/strong> hujan. Saya menyimpannya dalam format &lt;code>.Rda&lt;/code>. Sebenarnya juga bisa dari &lt;code>.csv&lt;/code> atau &lt;code>.xls&lt;/code>, tapi kalau dalam format data R tentu lebih rapi. Jadi saya pakai itu. Data hujan yang saya gunakan ini juga sudah bisa teman-teman akses &lt;a href="#">dari tadi&lt;/a> sebenarnya. Resolusi datanya hujan harian.&lt;/p>
+&lt;p>Selain data, kita juga butuh beberapa paket &lt;em>library&lt;/em> untuk manipulasi. Makna manipulasi di sini bukan &amp;ldquo;memalsukan&amp;rdquo;, tetapi &amp;ldquo;ngotak-ngatik&amp;rdquo;.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="c1"># library yang dibutuhkan&lt;/span>
+&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dplyr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi data&lt;/span>
+&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">lubridate&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi tanggal&lt;/span>
+&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ggplot2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># plot grafik&lt;/span>
+&lt;span class="c1"># memuat data, sesuaikan lokasi file&lt;/span>
+&lt;span class="nf">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;~/R/repo/hujan/data/prc/Raingauge/Precip.Rda&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="c1"># menghilangkan hari yang kosong (aneh, ya?)&lt;/span>
+&lt;span class="n">Precip&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip[&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">]&lt;/span>
+&lt;span class="c1"># kategorisasi nama stasiun&lt;/span>
+&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as.factor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nf">summary&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Data ini sudah saya rapikan sebelumnya. Agar teman-teman bisa mengakses data ini dari RStudio di komputer masing-masing, silakan sesuaikan nilai &lt;code>&amp;quot;~/R/repo/hujan/data/precip.Rda&amp;quot;&lt;/code> dengan direktori yang tepat sesuai lokasi teman-teman menyimpannya.&lt;/p>
+&lt;p>Simpan dalam hati? Oh, jangan.&lt;/p>
+&lt;p>Kembali ke laptop!&lt;/p>
+&lt;p>Kalau diperhatikan dari hasil &lt;code>summary&lt;/code> data, kolom tanggal (&lt;strong>tgl&lt;/strong>) dan kolom curah hujan (&lt;strong>prc&lt;/strong>) sudah tidak ada data kosong (&lt;em>NA&lt;/em>) seperti pada &lt;strong>(LONx, LATy)&lt;/strong>. Tetapi, sebenarnya ada beberapa tanggal yang data hujannya memang kosong. Hanya saja saya hilangkan.&lt;/p>
+&lt;p>Maka berikutnya, kita akan menghitung jumlah stasiun yang punya rekaman data pada hari X. &lt;em>Check it out!&lt;/em>&lt;/p>
+&lt;h2 id="counting-data">Counting Data&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">summarise&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">as.numeric&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">ifelse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">prc&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">yes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">no&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">))))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">persen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nf">nlevels&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="m">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baris kode di atas akan membuat tabel baru bernama &lt;strong>p.mod&lt;/strong>, yang merupakan ringkasan dari tabel &lt;strong>Precip&lt;/strong> dengan nilai-nilai yang kita butuhkan untuk membuat visualisasi.&lt;/p>
+&lt;ol>
+&lt;li>Bagian &lt;code>count = ...&lt;/code> bertujuan untuk membuat kolom baru yang berisi hasil hitungan jumlah data. Jika pada hari X stasiun hujan Q memiliki rekaman data, maka dihitung satu. Termasuk data nol (0 bukan NA).&lt;/li>
+&lt;li>Bagian &lt;code>persen = ...&lt;/code> adalah untuk membuat kolom baru yang berisi perhitungan persentase data hujan harian yang tersedia dari ke-19 stasiun hujan yang digunakan datanya. Jumlah stasiun yang punya data harian (nilai dalam masing-masing cell pada kolom &lt;strong>count&lt;/strong>) dibagi dengan jumlah stasiun (&lt;code>nlevels(Precip$NamaStasiun)&lt;/code>) kemudian dikali 100 persen.&lt;/li>
+&lt;/ol>
+&lt;p>Kalau kita lihat struktur tabel &lt;strong>p.mod&lt;/strong> itu seperti berikut.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># struktur data&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau dilihat dalam bentuk tabel, seperti di bawah ini.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># menampilkan 6 rekaman data teratas&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="plotting">Plotting&lt;/h2>
+&lt;p>Tiba saatnya untuk &lt;em>plotting&lt;/em> grafik. Waktu yang ditunggu-tunggu. Berikut baris data yang digunakan.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">month&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">label&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">abbr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">tahun&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">year&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">hari&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">wday&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">label&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">pekan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">ceiling&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">day&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="m">7&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tahun&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">fill&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">persen&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;span class="nf">geom_tile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">colour&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;white&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;span class="nf">facet_grid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tahun&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;span class="nf">scale_fill_gradient2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">low&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">mid&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;yellow&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;red&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">na.value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;grey70&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">midpoint&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">50&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;span class="nf">theme&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">axis.title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;span class="n">axis.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;span class="n">axis.ticks&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;span class="n">strip.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">strip.text.y&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="n">panel.spacing&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">unit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;lines&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Taraaaaa, jadi.&lt;/p>
+&lt;script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-post="teknologimasagitu/11" data-width="100%" data-userpic="false">&lt;/script>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>Hhmmm&amp;hellip; Data paling lengkap sepertinya pada 2009. Sepakat? Atau kita eliminasi saja stasiun hujannya. Hahaha&amp;hellip; Pada 2013 terjadi ke-ompong-an. Kita pakai 2004-2009 saja, bagaimana?&lt;/p>
+&lt;p>Terima kasih. Semoga bermanfaat.&lt;/p>
+&lt;h2 id="reference">Reference&lt;/h2>
+&lt;ul>
+&lt;li>Manuel Gimond&amp;rsquo;s note &lt;a href="https://mgimond.github.io/meteo_waterville/">here&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Ruby: "Hello World!"</title><link>https://akherlan.github.io/ruby-hello-world/</link><pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/ruby-hello-world/</guid><description>&lt;h2 id="latar-belakang">Latar Belakang&lt;/h2>
+&lt;p>Saya dapat kerjaan bantu-bantu ngurusin web. Nggak ngoding-ngoding banget, sih. Enak jadinya, cenderung lebih santai. Tapi saya masih belum puas dengan metode yang saat ini sedang dipakai. Berbekal rasa penasaran saya cari tahu teknologi apa yang kiranya cocok digunakan seandainya ganti metode &lt;em>develop&lt;/em>-nya.&lt;/p>
+&lt;p>Ceritanya, ini adalah website yang diharapkan bisa punya fitur ruang kumpul komunitas dan proses pesan jasa. Saya cari tahu &lt;em>framework&lt;/em> yang dipakai oleh kompetitor terbesar saat ini. Wah, &lt;strong>Ruby on Rails&lt;/strong>. Kecurigaan saya terjawab. Sejak awal saya selalu berpikir tentang kerangka kerja yang satu ini.&lt;/p>
+&lt;p>Konon, bahasa Ruby dipakai untuk membangun website Bukalapak. Juga AirBnB, GitHub, Shopify, itu memang yang terkenal. Saya tertarik dengan Ruby ketika mengetahui Bukalapak dan Shopify menggunakannya. Saya pikir, kayaknya web yang sekarang lagi dibangun ini tipe-tipenya cocok, nih, dibikin pakai ginian. Tapi, tentu saja nggak akan keburu. Sebentar lagi target peluncurannya. Apalagi yang sekarang memang sudah cukup matang. Senggaknya untuk tahap awal. Kata saya.&lt;/p>
+&lt;p>Ketika beberapa kali main-main ke artikel orang yang membicarakan tentang Ruby, memang bahasa ini banyak digunakan oleh perusahaan rintisan (nggak semuanya tentunya). Alasannya, karena lebih murah untuk kegiatan membangun, seperti pada umumnya sumber terbuka (&lt;em>open source&lt;/em>) memang murah bahkan gratis. Juga karena, katanya, mudah dipelajari. Ah, ini banyak katanya-katanya.&lt;/p>
+&lt;p>Tapi saya jadi pingin belajar, lho!&lt;/p>
+&lt;h2 id="antarmuka-ruby-irb">Antarmuka Ruby: irb&lt;/h2>
+&lt;p>Ruby di Ubuntu saya menggunakan &lt;strong>irb&lt;/strong> atau katakanlah &lt;em>&amp;ldquo;Interface Ruby&amp;rdquo;&lt;/em> lewat terminal emulator. Tandanya sudah jalan, begini:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Cara masuk ke antarmuka ini tinggal ketikkan &lt;code>irb&lt;/code> di terminal kesayanganmu.&lt;/p>
+&lt;h2 id="hello-world">Hello World!&lt;/h2>
+&lt;p>Yang pertama saya pelajari tentu saja &lt;code>&amp;quot;Hello world!&amp;quot;&lt;/code>. Bagaimana?&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya?&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
+&lt;span class="no">Hello&lt;/span> &lt;span class="n">world!&lt;/span>
+&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tentu saja saya langsung lanjut ke materi berikutnya karena langsung bisa. Selanjutnya belajar aritmatika sederhana.&lt;/p>
+&lt;h2 id="operasi-aritmatika">Operasi Aritmatika&lt;/h2>
+&lt;p>Operasi yang mirip dengan bahasa pemrograman lainnya seperti &lt;code>+&lt;/code>, &lt;code>-&lt;/code>, &lt;code>*&lt;/code>, &lt;code>/&lt;/code>, &lt;code>**&lt;/code>, &lt;code>%&lt;/code>, tapi untuk akar dipakai &lt;code>Math.sqrt()&lt;/code>. Kenapa begitu? Nanti saya belajar lagi. Dijelaskan oleh tutorial. Tapi saya kurang perhatikan. Hehe&amp;hellip; Nanti saja di-&lt;em>update&lt;/em> artikel ini.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">002&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nah, lo! Tadi ada &lt;code>==&amp;gt; nil&lt;/code> begitu. Sekarang nggak. Coba lagi:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya seperti ini:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">003&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Coba kita balik lagi ke yang string tadi.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">004&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
+&lt;span class="n">saya&lt;/span> &lt;span class="n">siapa&lt;/span>
+&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baiklah, tapi kalau begini:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maka hasilnya menjadi:&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">005&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
+&lt;span class="n">saya&lt;/span> &lt;span class="n">andi&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Oke. Lanjut nulis nanti lagi. Sudah malam dan lelah.&lt;/p>
+&lt;p>Bye!&lt;/p></description></item><item><title>Pemeliharaan Sungai</title><link>https://akherlan.github.io/pemeliharaan-sungai/</link><pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/pemeliharaan-sungai/</guid><description>&lt;p>&lt;em>Merupakan topik basi, secara politis, yang diambil jadi bahan diskusi dalam kelas yang menyita waktu.&lt;/em>&lt;/p>
+&lt;p>&lt;em>Judul sebelumnya: Naturalisasi, Normalisasi, Restorasi dalam Bingkai Pemeliharaan Sungai&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>Istilah naturalisasi sungai diperkenalkan kepada khalayak oleh Gubernur DKI Jakarta aktif saat ini, Anies Baswedan, sebagai salah satu program dalam masa jabatannya. Program tersebut dicanangkan guna mengurangi risiko kemungkinan banjir terjadi berulang kali di ibu kota. Namun dari kacamata politik dinilai sebagai sesuatu yang kontroversi dan dipermasalahkan.&lt;/p>
+&lt;p>Menurut &lt;a href="http://ugmpress.ugm.ac.id/id/writer/detail/agus-maryono">Agus Maryono&lt;/a>, seorang dosen Jurusan Teknik Sipil Universitas Gadjah Mada serta peraih penghargaan dari Menteri Lingkungan Hidup dan Kehutanan sebagai pelopor restorasi sungai 2015, konsep restorasi dibangun guna mengembalikan sungai seperti sediakala.&lt;/p>
+&lt;p>Agus menawarkan, lima konsep restorasi sungai dalam meningkatkan eksistensi dan mengembalikan esensi sungai, yakni:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>restorasi hidrologi&lt;/strong>, dengan pemantauan kuantitas dan kualitas air&lt;/li>
+&lt;li>&lt;strong>restorasi ekologi&lt;/strong>, dengan pemantauan terhadap flora-fauna&lt;/li>
+&lt;li>&lt;strong>restorasi morfologi&lt;/strong>, dengan meninjau bentuk keaslian sungai&lt;/li>
+&lt;li>&lt;strong>restorasi sosial ekonomi&lt;/strong>, untuk melihat manfaat sungai secara ekonomis serta mengajak masyarakat ikut memperoleh pengetahuan, serta&lt;/li>
+&lt;li>&lt;strong>restorasi kelembagaan&lt;/strong>, fokus membuat peraturan-peraturan yang menjaga kelestarian sungai&lt;/li>
+&lt;/ol>
+&lt;p>Jika diperhatikan, dalam konsep tersebut disebutkan bahwa kelembagaan dan peraturan juga merupakan koponen yang mendukung restorasi sehingga sah-sah saja apabila Anies membuat suatu peraturan berkaitan dengan restorasi sungai dengan nama baru: naturalisasi sungai, untuk membedakannya dari kegiatan pembetonan yang notabene hal yang berlawanan dari konsep restorasi.&lt;/p>
+&lt;p>Normalisasi sungai juga sebetulnya merupakan hal yang sama, yakni upaya restorasi sungai. Definisi ini bisa ditemukan di Peraturan Daerah Khusus Ibu Kota Jakarta Nomor 6 Tahun 1999 tentang Rencana Tata Ruang Wilayah Daerah Khusus Ibukota Jakarta. Penjelasan Pasal 21 tentang normalisasi yakni: &lt;em>&amp;ldquo;Normalisasi sungai adalah upaya yang dilakukan terhadap badan sungai sehingga kapasitas badan sungai sesuai dengan debit air yang diinginkan dengan masih mempertahankan pola alamiah sungainya.&amp;quot;&lt;/em>&lt;/p>
+&lt;p>Naturalisasi, normalisasi, atau restorasi sungai ini berangkat dari keinginan untuk meningkatkan nilai kelestarian sungai agar berfungsi sebagaimana mestinya. Proses ini sangat baik dilakukan sejak dini, bahkan harus. Pada sungai-sungai di wilayah Eropa sudah &lt;a href="http://www.ecrr.org/RiverRestoration/Whatisriverrestoration/tabid/2614/Default.aspx">dilakukan restorasi&lt;/a> setelah sebelumnya sempat dilakukan rekayasa. Kasus tersebut dapat dijadikan contoh. Beberapa penelitian tentang restorasi sungai di Eropa dapat dibaca &lt;a href="http://ec.europa.eu/environment/life/project/Projects/index.cfm?fuseaction=home.showFile&amp;amp;rep=file&amp;amp;fil=ECRR_conference_river_restoration_2000.pdf">di sini&lt;/a>.&lt;/p>
+&lt;p>Perlu diingat bahwa restorasi sungai tentu saja butuh proses yang tidak instan. Tidak jarang–untuk tidak mengatakan pasti–akan diperlukan tindakan lain pada sungai dengan rekayasa infrastruktur, misalnya pada segmen-segmen tertentu yang memang tidak mungkin dilakukan restorasi dalam waktu singkat, serta pembebasan lahan di titik-titik tertentu bantaran sungai. Karena pada kasus Ciliwung fokus utama yang tidak dapat disingkirkan adalah menyelesaikan perkara banjir.&lt;/p>
+&lt;p>Yang juga perlu dipikirkan adalah bagaimana kesadaran masyarakat di sekitar bantaran sungai dapat meningkat dan mendukung terjadinya restorasi, seperti salah satu item pada konsep yang diutarakan Agus.&lt;/p>
+&lt;p>Menurut Agus, ada banyak sungai besar seperti Barito, Kapuas, Mahakam, Musi, Batanghari, Kampar, Brantas, Solo maupun Ajkwa (pembuangan &lt;em>tailing&lt;/em> tambang emas Freeport di Papua) mengalami permasalahan baik tata kelola maupun ekosistem. Begitu juga masalah Sungai Citarum, Sungai Ciliwung, Kali Semarang dan Kali Surabaya (Kali Mas) menunjuk betapa parah dan rumit masalah ekosistem sungai di Indonesia.&lt;/p>
+&lt;p>Pada Sungai Ciliwung sendiri salah satunya pernah dilakukan upaya restorasi oleh Kementerian Lingkungan Hidup &lt;a href="http://www.menlh.go.id/groundbreaking-demonstrasi-proyek-restorasi-sungai-ciliwung/">pada akhir 2013&lt;/a> dengan menggaet pemerintah Korea Selatan.&lt;/p>
+&lt;p>Maka, melakukan restorasi sungai adalah suatu keniscayaan dan diinginkan oleh semua pihak kecuali perusak lingkungan.&lt;/p>
+&lt;h3 id="berita">Berita&lt;/h3>
+&lt;ul>
+&lt;li>Begini Cara Restorasi Sungai ala Agus Maryono | &lt;a href="https://www.mongabay.co.id/2015/12/14/begini-cara-restorasi-sungai-ala-agus-maryono">artikel&lt;/a>&lt;/li>
+&lt;li>Normalisasi dan Naturalisasi Sungai, Apa Bedanya? | &lt;a href="https://megapolitan.kompas.com/read/2018/02/08/20130481/normalisasi-dan-naturalisasi-sungai-apa-bedanya">artikel&lt;/a>&lt;/li>
+&lt;li>Jangan Bandingkan Normalisasi dan Naturalisasi! | &lt;a href="https://megapolitan.kompas.com/read/2019/04/11/07013861/jangan-bandingkan-normalisasi-dan-naturalisasi">artikel&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Resolusi Akhir Tahun?</title><link>https://akherlan.github.io/resolusi-akhir-tahun/</link><pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/resolusi-akhir-tahun/</guid><description>&lt;p>Di mana-mana tuh, ya, orang yang visioner akan menyatakan komitmennya dalam bentuk tulisan atau ucapan yang diulang-ulang. Tiap bulan terakhir, yang tentunya Desember, akan dilakukan evaluasi tahunan mengenai apa yang sudah tercapai, apa yang belum bisa dilakukan, mengapa tidak tercapai, dan ada kendala apa. Kemudian, dilanjutkan dengan mencatat &lt;em>goals&lt;/em> untuk tahun depan.&lt;/p>
+&lt;p>Kalau komitmen dengan pencatatan seperti ini sambil berusaha menjalaninya, keren! Sudah pasti orang yang melakukannya punya satu visi hidup, karena misi-misi tiap tahun ini tentu bukan tanpa tujuan. Pasti ada &lt;em>guideline&lt;/em>-nya. Betul, kan? Ini keren.&lt;/p>
+&lt;p>Dengan begitu, diharapkan bisa jelas progresnya. &lt;em>Little by litte&lt;/em> tapi dikerjakan. Melihatnya jadi seperti kerja produktif pakai metode Pomodoro gitu. Daripada tidak tercatat kemudian lupa? Memang metode yang bagus lah untuk bisa mencapai target. Tanpa menghiraukan faktor-faktor buruk dari dalam diri sendiri. Misalnya: malas, &lt;em>entar-entaran&lt;/em>, dan memilih lupa. Itu urusan lain.&lt;/p>
+&lt;p>Biasanya, orang-orang menyebut kegiatan ini sebagai resolusi akhir tahun. Saya sudah sejak beberapa tahun lalu tahu dan mengerti istilah ini. Tapi sampai sekarang belum juga mengimplementasikannya dalam hidup saya.&lt;/p>
+&lt;p>Apakah saya terlalu takut?&lt;/p></description></item></channel></rss>
