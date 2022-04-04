@@ -727,7 +727,9 @@ alt="terminal text nano"/> &lt;figcaption>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Kemudian restart R session.&lt;/p>
 &lt;p>Koneksi sudah bisa digunakan&amp;hellip; 😃 Jika ingin simak video demonstrasinya silakan di &lt;a href="https://youtube.com/watch?v=z5tZ1C9SVyo" title="postgresql in rstudio">youtube&lt;/a>.&lt;/p>
 &lt;p>Sekian.&lt;/p>
-&lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu">https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu&lt;/a>&lt;/p></description></item><item><title>R Di Visual Studio Code</title><link>https://akherlan.github.io/r-di-visual-studio-code/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-visual-studio-code/</guid><description>&lt;aside id="toc">
+&lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu">https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu&lt;/a>&lt;/p></description></item><item><title>R Di Visual Studio Code</title><link>https://akherlan.github.io/r-di-visual-studio-code/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0700</pubDate><guid>https://akherlan.github.io/r-di-visual-studio-code/</guid><description>&lt;p>&lt;strong>Update&lt;/strong>&lt;/p>
+&lt;p>Ini merupakan cara lama. Visual Studio Code telah merilis &lt;a href="https://code.visualstudio.com/docs/languages/r">dokumentasi&lt;/a> cara bekerja dalam lingkungan kerja yang sesuai untuk R dalam VS Code.&lt;/p>
+&lt;aside id="toc">
 &lt;h4>Table of Contents&lt;/h4>
 &lt;nav id="TableOfContents">
 &lt;ul>
