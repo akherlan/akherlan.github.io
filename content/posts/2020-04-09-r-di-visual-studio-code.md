@@ -1,9 +1,14 @@
 ---
 title: "R Di Visual Studio Code"
-date: '2020-04-09'
+date: 2020-04-09T00:00:00+07:00
+lastmod: 2022-04-04T18:30:00+07:00
 categories: [tutorial]
 tags: [rstats, tool]
 ---
+**Update**
+
+Ini merupakan cara lama. Visual Studio Code telah merilis [dokumentasi](https://code.visualstudio.com/docs/languages/r) cara bekerja dalam lingkungan kerja yang sesuai untuk R dalam VS Code.
+
 {{< toc >}}
 
 OK! Saya akui saya terlena dengan perbincangan tentang menggunakan editor VS Code dari Microsoft untuk bekerja dengan R, [di twitter](https://twitter.com/jozefhajnala/status/1204496900461912068).
