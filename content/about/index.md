@@ -15,7 +15,7 @@ Namun begitu saya masih menyematkan satu episode podcast dari Spotify. Jika pemb
 
 ### Contact
 
-Bisa kontak saya melalui [email](mailto:andiherlan@pm.me) atau [Twitter](https://twitter.com/terusterang__) atau lewat [Telegram](https://t.me/akherlan).
+Bisa kontak saya melalui [email](mailto:getdata@duck.com).
 
 ### Credit
 
