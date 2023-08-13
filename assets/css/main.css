@@ -9,12 +9,13 @@ html {
 body {
     font-size: 16px;
     font-size: 1.6rem;
-    font-family: -apple-system, BlinkMacSystemFont,  "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #121212;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
     line-height: 1.6;
+    overflow-wrap: break-word;
 }
 
 header#banner {
@@ -58,7 +59,6 @@ header#banner nav ul li a {
     color: #454545;
 }
 
-/* general content link */
 main#content a {
     color: #3636FF;
     text-decoration: none;
@@ -267,7 +267,7 @@ main#content pre code {
     padding: 0;
 }
 
-main#content section.footnotes {
+main#content .footnotes {
     font-size: 0.9em;
 }
 
