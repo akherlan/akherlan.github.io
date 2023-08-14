@@ -334,22 +334,54 @@ loaded via a namespace (and not attached):
 &lt;p>Salam.&lt;/p></description></item><item><title>Travel with Gojek</title><link>https://akherlan.github.io/travel-with-gojek/</link><pubDate>Sat, 28 Aug 2021 01:12:29 +0700</pubDate><guid>https://akherlan.github.io/travel-with-gojek/</guid><description>&lt;p>Data yang saya gunakan merupakan hasil mengumpulkan invoice dari Gojek yang dikirimkan melalui surel setiap kali selesai melakukan pemesanan jasa transportasi lewat aplikasi. Data diimpor dari Gmail ke Google Sheets melalui Google Apps Script, kemudian diekspor ke format csv untuk diolah menggunakan R. Referensi lebih lanjut tentang kode yang saya gunakan silakan mengunjungi &lt;a href="https://github.com/akherlan/gojek">repositori gojek&lt;/a> di Github saya.&lt;/p>
 &lt;h3 id="waktu">Waktu&lt;/h3>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/clock.png" alt="time with gojek">&lt;/p>
-&lt;p>Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total lama waktu perjalanan saya sudah hampir dua harian terhitung sejak 2018 hingga saat tulisan ini ditulis.&lt;/p>
-&lt;p>Waktu perjalanan paling sering adalah ketika malam hari antara pukul sembilanan hingga pukul sepuluhan, juga saat pagi menjelang siang.&lt;/p>
+&lt;p>Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total
+&lt;span class="underline">
+lama waktu perjalanan
+&lt;/span>
+saya sudah hampir
+&lt;span class="underline">
+dua harian
+&lt;/span>
+terhitung sejak 2018 hingga saat tulisan ini ditulis.&lt;/p>
+&lt;p>Waktu perjalanan
+&lt;span class="underline">
+paling sering
+&lt;/span>
+adalah ketika
+&lt;span class="underline">
+malam hari
+&lt;/span>
+antara pukul sembilanan hingga pukul sepuluhan, juga saat
+&lt;span class="underline">
+pagi menjelang siang
+&lt;/span>
+.&lt;/p>
 &lt;h3 id="jarak">Jarak&lt;/h3>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/distance_map.png" alt="movement with gojek">&lt;/p>
-&lt;p>Dengan Gojek saya sudah melaju seolah-olah mulai dari ujung Barat pulau Jawa hingga ke ujung Timurnya. Saya paling sering melakukan perjalanan dengan jarak yang bisa dicapai dalam 5-10 menitan.&lt;/p>
+&lt;p>Dengan Gojek saya sudah melaju seolah-olah mulai dari ujung Barat pulau Jawa hingga ke ujung Timurnya. Saya paling sering melakukan
+&lt;span class="underline">
+perjalanan dengan jarak yang bisa dicapai dalam 5-10 menitan
+&lt;/span>
+.&lt;/p>
 &lt;p>Ada saatnya beberapa kali saya menempuh perjalanan yang cukup jauh yaitu ketika terlambat mengejar jadwal kereta terakhir dari Sudirman menuju Depok, juga ketika pindah kosan dari Srengseng Jakarta Barat kembali ke Depok.&lt;/p>
 &lt;p>Namun ada beberapa data yang &amp;ldquo;aneh&amp;rdquo; dan tidak masuk akal karena durasi perjalanan hanya dalam 3-6 detik saja dalam jarak antara 3-5 kilometer.&lt;/p>
 &lt;h3 id="kebutuhan">Kebutuhan&lt;/h3>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/needs.png" alt="effort with gojek">&lt;/p>
-&lt;p>Perjalanan terbanyak ketika ng-Gojek adalah dari stasiun (atau halte) untuk pulang, disusul oleh perjalanan pulang selepas beraktivitas di luar selain kerja.&lt;/p>
+&lt;p>Perjalanan terbanyak ketika ng-Gojek adalah
+&lt;span class="underline">
+dari stasiun (atau halte) untuk pulang,
+&lt;/span>
+disusul oleh perjalanan pulang selepas beraktivitas di luar selain kerja.&lt;/p>
 &lt;p>Ada hubungan yang erat antara kantor dengan aktivitas transit, dihubungkan dengan aktivitas ng-Gojek.&lt;/p>
 &lt;p>Jika saya harus menggunakan uang tunai kemungkinan karena saya kehabisan GoPay saat berada di luar rumah.&lt;/p>
 &lt;p>Pertanyaan berikutnya adalah kenapa ada perjalanan dari rumah ke rumah? Punya rumah lebih dari satu! Hahahaha&amp;hellip; Saya pindah-pindah kost sebetulnya.&lt;/p>
 &lt;h3 id="biaya">Biaya&lt;/h3>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/akherlan/gojek/main/figs/cost.png" alt="expenses with gojek">&lt;/p>
-&lt;p>Biaya dalam tapmilan grafik ini belum termasuk dengan penggunaan GoBills untuk BPJS, pulsa, dll. apalagi dengan GoFood. Belum. Jika saya harus menggunakan uang tunai saat bepergian kemungkinan karena saya kehabisan GoPay saat berada di luar rumah, bisa diperhatikan melalui grafik sebelumnya.&lt;/p>
+&lt;p>Biaya dalam tampilan grafik ini
+&lt;span class="underline">
+belum termasuk dengan penggunaan GoBills
+&lt;/span>
+untuk BPJS, pulsa, dll. apalagi dengan GoFood. Belum. Jika saya harus menggunakan uang tunai saat bepergian kemungkinan karena saya kehabisan GoPay saat berada di luar rumah, bisa diperhatikan melalui grafik sebelumnya.&lt;/p>
 &lt;p>Setelah ini apalagi yang bisa dieksplorasi?&lt;/p>
 &lt;hr>
 &lt;p>&lt;em>Proyek personal ini terinspirasi dari Mas &lt;a href="http://rasyidridha.com/datague/data-gojek/">Rasyid Ridha&lt;/a> yang pernah mengolah data Gojek miliknya pribadi.&lt;/em>&lt;/p></description></item><item><title>Habit Tracking</title><link>https://akherlan.github.io/habit-tracking/</link><pubDate>Sat, 14 Aug 2021 07:00:29 +0700</pubDate><guid>https://akherlan.github.io/habit-tracking/</guid><description>&lt;p>Membuat habit tracking ternyata melelahkan dan tidak efisien. Tetap tidak dikerjakan. Atau mungkin itu hanya untuk saya saja. Lebih baik pakai alarm rutin berulang saja sebagai pengingat. Lebih mudah juga. Lalu buat mindset HARUS mengerjakan apa yang sudah dijadikan jadwal.&lt;/p>
@@ -456,18 +488,17 @@ alt="Running QGIS 3.18 Zürich on Ubuntu"/>&lt;figcaption>
 &lt;/ul>
 &lt;p>Instagram sudah jelas aplikasi terlarang, seharusnya, sejak dulu. Karena banyak waktu habis dan sulit untuk ngerem kalau sudah &lt;em>scrolling&lt;/em> mode penjelajahannya. Walaupun sudah pasang &lt;em>timer&lt;/em> untuk pengingat dan pembatas waktu maksimum.&lt;/p>
 &lt;p>Saya masih sering baca di Medium dan menulis juga di situ. Tapi seringkali saya menulis lewat laptop. Lagipula saya punya rencana untuk pindah menulis rutin di bear.blog ini. Mungkin beberapa artikel yang bisa dipamerkan dan ingin dapat audiens lebih luas baru ditulis di Medium. Hahahaha&amp;hellip;&lt;/p>
-&lt;p>Kalau untuk membaca, di Medium seringkali bentrok dengan &lt;em>paywall&lt;/em> artikel berbintang karena saya tidak berlangganan. Jadi lebih baik baca lewat incognito mode dari peramban Chrome saja. OK? Chrome adalah peramban bawaan Samsung yang tidak bisa saya hapus. Sedih memang. Harusnya saya ingin pakai Firefox saja.&lt;/p>
-&lt;blockquote>
-&lt;p>Judulnya: memanfaatkan fasilitas bawaan.&lt;/p>
-&lt;/blockquote>
+&lt;p>Kalau untuk membaca, di Medium seringkali bentrok dengan &lt;em>paywall&lt;/em> artikel berbintang karena saya tidak berlangganan. Jadi lebih baik baca lewat incognito mode dari peramban Chrome saja. OK? Chrome adalah peramban bawaan Samsung yang tidak bisa saya hapus. Sedih memang. Harusnya saya ingin pakai Firefox saja. Judulnya:
+&lt;span class="highlight">
+memanfaatkan fasilitas bawaan.
+&lt;/span>
+&lt;/p>
 &lt;p>Cara lain membaca artikel &lt;em>paywall&lt;/em> Medium adalah dari instant view lewat Telegram for Android. Kalau tulisan bagus, simpan di Pocket. Supaya bisa dibuat &lt;em>highlight&lt;/em>. Begitu rencananya. Memang fasilitas Medium yang saya sangat sukai adalah &lt;em>highlight&lt;/em> kalimat! Dengan Pocket jadi sudah tergantikan. Apalagi bisa untuk semua artikel, bukan cuma dari Medium.&lt;/p>
 &lt;p>Saya sudah riset dulu sebelum memutuskan untuk menggunakan Pocket ketimbang Instapaper. Salah satunya karena Pocket bisa mendobrak &lt;em>paywall&lt;/em> Medium, Instapaper tidak.&lt;/p>
 &lt;p>Oh ya, dan lagi, untuk langganan Medium per bulan atau per tahun itu masih jauh lebih mahal daripada langganan premium Pocket. Apalagi penawaran dari Pocket untuk setahun itu terbilang murah. Sepertinya harga khusus untuk region Indonesia. Dapat bocoran dari Bang Reza soalnya. Buahahaha&amp;hellip;&lt;/p>
 &lt;p>Tentang aplikasi &lt;a href="https://play.google.com/store/apps/details?id=livio.pack.lang.en_US">English&lt;/a> dari Livio ini sebetulnya sudah lama selalu ada di ponsel saya sejak dulu walau sudah ganti-ganti ponsel. Kamus penerjemah dari bahasa Inggris ke definisi bahasa Inggris. Untuk mengasah kosakata saya juga tujuannya.&lt;/p>
 &lt;p>Saya juga nyaman ganti ke aplikasi penerjemah bawaan Samsung yang nggak bisa di &lt;em>unsinstall&lt;/em>, cuma bisa di-&lt;em>disable&lt;/em>, dan perlu pasang basisdata tambahan lagi, tapi &lt;em>worth&lt;/em> karena lebih kecil ukuran totalnya ketimbang kalau saya mempertahankan English. So, ya, begitulah. Penuh perhitungan. Dan ternyata, definisi bahasa Inggrisnya lebih mudah dipahami daripada punya English. Hahahaha&amp;hellip;&lt;/p>
-&lt;p>Apa lagi ya? Itu aja sih&amp;hellip;&lt;/p>
-&lt;hr>
-&lt;p>&lt;em>Tulisan ini diimpor dari bearblog.dev&lt;/em>&lt;/p></description></item><item><title>R di Android dengan Termux</title><link>https://akherlan.github.io/r-di-android-dengan-termux/</link><pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-android-dengan-termux/</guid><description>&lt;aside id="toc">
+&lt;p>Apa lagi ya? Itu aja sih&amp;hellip;&lt;/p></description></item><item><title>R di Android dengan Termux</title><link>https://akherlan.github.io/r-di-android-dengan-termux/</link><pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/r-di-android-dengan-termux/</guid><description>&lt;aside id="toc">
 &lt;h4>Table of Contents&lt;/h4>
 &lt;nav id="TableOfContents">
 &lt;ul>
