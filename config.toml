@@ -12,7 +12,7 @@ pygmentsCodeFences = true
 [params]
 	description = "Catatan kecil Andi."
 	copyright = "Powered by Hugo and Github Page."
-	dark = "auto"
+	dark = "off"
 	highlight = true
 
 [menu]
