@@ -1,0 +1,3 @@
+[submodule "themes/etch-notation"]
+	path = themes/etch-notation
+	url = https://github.com/akherlan/etch-notation.git
