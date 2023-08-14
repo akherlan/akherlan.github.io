@@ -1,227 +1,227 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Catatan kecil Andi."><link rel="shortcut icon" href=https://akherlan.github.io/favicon.ico><link rel=stylesheet href=/css/style.min.css><title>For Loop Vs lapply</title></head><body><header id=banner><h2><a href=https://akherlan.github.io/>Notebook</a></h2><nav><ul><li><a href=/about/ title=about>about</a></li><li><a href=/now/ title=now>now</a></li><li><a href=/read/ title=read>read</a></li><li><a href=/index.xml title=rss>rss</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>For Loop Vs lapply</h1><div><time>Updated November 27, 2021</time></div></header><p><strong>TL;DR</strong></p><blockquote><p>Saya ingin membandingkan dua kode dalam bahasa R yang saya susun sedemikian rupa sehingga menghasilkan objek yang sama. Kasus: data lowongan kerja.</p></blockquote><aside id=toc><h4>Table of Contents</h4><nav id=TableOfContents><ul><li><a href=#pustaka-r>Pustaka R</a></li><li><a href=#parameter-dan-query>Parameter dan Query</a></li><li><a href=#mengambil-data>Mengambil Data</a></li><li><a href=#perbandingan-skrip>Perbandingan Skrip</a><ul><li><a href=#kode-pertama-dengan-lapply>Kode pertama dengan <code>lapply()</code></a></li><li><a href=#kode-kedua-dengan-for-loop>Kode kedua dengan <code>for</code> loop</a></li><li><a href=#perbandingan>Perbandingan</a></li></ul></li><li><a href=#merapikan-data>Merapikan Data</a></li><li><a href=#session-info>Session Info</a></li></ul></nav></aside><h2 id=pustaka-r>Pustaka R</h2><p>Pada tes ini, dibutuhkan beberapa package di antaranya:</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=nf>lapply</span><span class=p>(</span>
-  <span class=nf>c</span><span class=p>(</span>
-    <span class=s>&#34;httr&#34;</span><span class=p>,</span>
-    <span class=s>&#34;jsonlite&#34;</span><span class=p>,</span>
-    <span class=s>&#34;dplyr&#34;</span><span class=p>,</span>
-    <span class=s>&#34;tidyr&#34;</span><span class=p>,</span>
-    <span class=s>&#34;janitor&#34;</span><span class=p>,</span>
-    <span class=s>&#34;waldo&#34;</span><span class=p>,</span>
-    <span class=s>&#34;microbenchmark&#34;</span>
-  <span class=p>),</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=nf>if</span><span class=p>(</span><span class=o>!</span><span class=nf>require</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>character.only</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>))</span> <span class=nf>install.packages</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
-<span class=p>)</span>
-</code></pre></div><p>Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang <a href=https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019>ada di sini</a>. Fungsi tersebut memanfaatkan pustaka <strong>httr</strong> dan <strong>jsonlite</strong> untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama &ldquo;function_graphql.R&rdquo; dan memanggilnya dengan <code>source()</code> dari konsol R.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=nf>source</span><span class=p>(</span><span class=s>&#34;function_graphql.R&#34;</span><span class=p>)</span>
-</code></pre></div><h2 id=parameter-dan-query>Parameter dan Query</h2><p>Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke servis API-nya yang pada kasus ini saya simpan dalam variabel <code>url</code>. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada <code>key</code> untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel <code>page</code> juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>url</span> <span class=o>&lt;-</span> <span class=s>&#34;https://xapi.supercharge-srp.co/job-search/graphql?country=id&amp;isSmartSearch=true&#34;</span>
-<span class=n>key</span> <span class=o>&lt;-</span> <span class=s>&#34;data analyst&#34;</span>
-<span class=n>page</span> <span class=o>&lt;-</span> <span class=m>1</span>
-</code></pre></div><p>Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel <code>var</code> seperti berikut:</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>var</span> <span class=o>&lt;-</span> <span class=nf>sprintf</span><span class=p>(</span>
-  <span class=s>&#39;{
-</span><span class=s>    &#34;keyword&#34;: &#34;%s&#34;,
-</span><span class=s>    &#34;jobFunctions&#34;: [
-</span><span class=s>      501,
-</span><span class=s>      503,
-</span><span class=s>      508,
-</span><span class=s>      512
-</span><span class=s>    ],
-</span><span class=s>    &#34;locations&#34;: [],
-</span><span class=s>    &#34;salaryType&#34;: 1,
-</span><span class=s>    &#34;jobTypes&#34;: [],
-</span><span class=s>    &#34;createdAt&#34;: null,
-</span><span class=s>    &#34;careerLevels&#34;: [],
-</span><span class=s>    &#34;page&#34;: %s,
-</span><span class=s>    &#34;country&#34;: &#34;id&#34;,
-</span><span class=s>    &#34;sVi&#34;: &#34;&#34;,
-</span><span class=s>    &#34;categories&#34;: [
-</span><span class=s>      &#34;501&#34;,
-</span><span class=s>      &#34;503&#34;,
-</span><span class=s>      &#34;508&#34;,
-</span><span class=s>      &#34;512&#34;
-</span><span class=s>    ],
-</span><span class=s>    &#34;workTypes&#34;: [],
-</span><span class=s>    &#34;industries&#34;: [],
-</span><span class=s>    &#34;locale&#34;: &#34;id&#34;
-</span><span class=s>  }&#39;</span><span class=p>,</span> <span class=n>key</span><span class=p>,</span> <span class=n>page</span>
-<span class=p>)</span>
-</code></pre></div><p>Sementara itu query yang digunakan lumayan panjang juga, seperti berikut:</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>query</span> <span class=o>&lt;-</span> 
-  <span class=s>&#39;query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
-</span><span class=s>  jobs(country: $country, locale: $locale, keyword: $keyword, createdAt: $createdAt, jobFunctions: $jobFunctions, categories: $categories, locations: $locations, careerLevels: $careerLevels, minSalary: $minSalary, maxSalary: $maxSalary, salaryType: $salaryType, candidateSalary: $candidateSalary, candidateSalaryCurrency: $candidateSalaryCurrency, datePosted: $datePosted, jobTypes: $jobTypes, workTypes: $workTypes, industries: $industries, page: $page, pageSize: $pageSize, companyId: $companyId, advertiserId: $advertiserId, userAgent: $userAgent, accNums: $accNums, subAccount: $subAccount, minEdu: $minEdu, edus: $edus, maxEdu: $maxEdu, minExp: $minExp, maxExp: $maxExp, seo: $seo, searchFields: $searchFields, candidateId: $candidateId, isDesktop: $isDesktop, isCompanySearch: $isCompanySearch, sort: $sort, sVi: $sVi, duplicates: $duplicates, flight: $flight, solVisitorId: $solVisitorId) {
-</span><span class=s>    ...LegacyCompat_SearchResult
-</span><span class=s>  }
-</span><span class=s>}
-</span><span class=s>
-</span><span class=s>fragment LegacyCompat_SearchResult on SearchResult {
-</span><span class=s>  solMetadata
-</span><span class=s>  jobs {
-</span><span class=s>    id
-</span><span class=s>    sourceCountryCode
-</span><span class=s>    isStandout
-</span><span class=s>    companyMeta {
-</span><span class=s>      id
-</span><span class=s>      isPrivate
-</span><span class=s>      name
-</span><span class=s>    }
-</span><span class=s>    jobTitle
-</span><span class=s>    jobUrl
-</span><span class=s>    jobTitleSlug
-</span><span class=s>    description
-</span><span class=s>    employmentTypes {
-</span><span class=s>      name
-</span><span class=s>    }
-</span><span class=s>    sellingPoints
-</span><span class=s>    locations {
-</span><span class=s>      code
-</span><span class=s>      name
-</span><span class=s>      children {
-</span><span class=s>        code
-</span><span class=s>        name
-</span><span class=s>      }
-</span><span class=s>    }
-</span><span class=s>    categories {
-</span><span class=s>      code
-</span><span class=s>      name
-</span><span class=s>      children {
-</span><span class=s>        code
-</span><span class=s>        name
-</span><span class=s>      }
-</span><span class=s>    }
-</span><span class=s>    postedAt
-</span><span class=s>    salaryRange {
-</span><span class=s>      currency
-</span><span class=s>      max
-</span><span class=s>      min
-</span><span class=s>      period
-</span><span class=s>      term
-</span><span class=s>    }
-</span><span class=s>    isClassified
-</span><span class=s>  }
-</span><span class=s>}&#39;</span>
-</code></pre></div><p>Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil <em>inspect element</em> di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada <a href=https://blog.logrocket.com/designing-url-based-query-syntax-graphql/>laman berikut</a>.</p><h2 id=mengambil-data>Mengambil Data</h2><p>Tiba saatnya untuk coba menarik (<em>pulling</em>) data. Tidak berjalan lama karena hanya sekitar 30 rekaman di halaman pertama saja. Di sinilah fungsi <code>GQL()</code> dari Abang rentrop menjadi sangat bermanfaat.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>jobs</span> <span class=o>&lt;-</span> <span class=nf>GQL</span><span class=p>(</span>
-  <span class=n>query</span> <span class=o>=</span> <span class=n>query</span><span class=p>,</span>
-  <span class=n>.variables</span> <span class=o>=</span> <span class=n>var</span><span class=p>,</span>
-  <span class=n>.url</span> <span class=o>=</span> <span class=n>url</span>
-<span class=p>)</span>
-
-<span class=n>job</span> <span class=o>&lt;-</span> <span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span>
-<span class=nf>str</span><span class=p>(</span><span class=n>job[[1]]</span><span class=p>)</span>
-</code></pre></div><p>Akan dihasilkan objek dengan struktur list. Saya definisikan dalam <code>job</code> saja. Setelah subset konten yang dibutuhkan saja menjadi objek <code>job</code>, kita bisa amati strukturnya menjadi seperti berikut ini (hanya item pertama dari 30 sebagai sampel, karena tentu saja strukturnya akan berulang):</p><pre><code>List of 15
- $ id               : chr &quot;3641190&quot;
- $ sourceCountryCode: chr &quot;id&quot;
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Catatan kecil Andi."><link rel="shortcut icon" href=https://akherlan.github.io/favicon.ico><link rel=stylesheet href=/css/style.min.css><link rel=canonical href=https://akherlan.github.io/for-loop-vs-lapply/><title>For Loop Vs lapply</title></head><body><header id=banner><h2><a href=https://akherlan.github.io/>Notebook</a></h2><nav><ul><li><a href=/about/ title=about>about</a></li><li><a href=/now/ title=now>now</a></li><li><a href=/read/ title=read>read</a></li><li><a href=/index.xml title=rss>rss</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>For Loop Vs lapply</h1><div><time>Updated November 27, 2021</time></div></header><p><strong>TL;DR</strong></p><blockquote><p>Saya ingin membandingkan dua kode dalam bahasa R yang saya susun sedemikian rupa sehingga menghasilkan objek yang sama. Kasus: data lowongan kerja.</p></blockquote><aside id=toc><h4>Table of Contents</h4><nav id=TableOfContents><ul><li><a href=#pustaka-r>Pustaka R</a></li><li><a href=#parameter-dan-query>Parameter dan Query</a></li><li><a href=#mengambil-data>Mengambil Data</a></li><li><a href=#perbandingan-skrip>Perbandingan Skrip</a><ul><li><a href=#kode-pertama-dengan-lapply>Kode pertama dengan <code>lapply()</code></a></li><li><a href=#kode-kedua-dengan-for-loop>Kode kedua dengan <code>for</code> loop</a></li><li><a href=#perbandingan>Perbandingan</a></li></ul></li><li><a href=#merapikan-data>Merapikan Data</a></li><li><a href=#session-info>Session Info</a></li></ul></nav></aside><h2 id=pustaka-r>Pustaka R</h2><p>Pada tes ini, dibutuhkan beberapa package di antaranya:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>lapply</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nf>c</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;httr&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;jsonlite&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;dplyr&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;tidyr&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;janitor&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;waldo&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;microbenchmark&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>),</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=nf>if</span><span class=p>(</span><span class=o>!</span><span class=nf>require</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>character.only</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>))</span> <span class=nf>install.packages</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span></code></pre></div><p>Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang <a href=https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019>ada di sini</a>. Fungsi tersebut memanfaatkan pustaka <strong>httr</strong> dan <strong>jsonlite</strong> untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama &ldquo;function_graphql.R&rdquo; dan memanggilnya dengan <code>source()</code> dari konsol R.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>source</span><span class=p>(</span><span class=s>&#34;function_graphql.R&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><h2 id=parameter-dan-query>Parameter dan Query</h2><p>Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke servis API-nya yang pada kasus ini saya simpan dalam variabel <code>url</code>. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada <code>key</code> untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel <code>page</code> juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>url</span> <span class=o>&lt;-</span> <span class=s>&#34;https://xapi.supercharge-srp.co/job-search/graphql?country=id&amp;isSmartSearch=true&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>key</span> <span class=o>&lt;-</span> <span class=s>&#34;data analyst&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>page</span> <span class=o>&lt;-</span> <span class=m>1</span>
+</span></span></code></pre></div><p>Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel <code>var</code> seperti berikut:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>var</span> <span class=o>&lt;-</span> <span class=nf>sprintf</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=s>&#39;{
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;keyword&#34;: &#34;%s&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;jobFunctions&#34;: [
+</span></span></span><span class=line><span class=cl><span class=s>      501,
+</span></span></span><span class=line><span class=cl><span class=s>      503,
+</span></span></span><span class=line><span class=cl><span class=s>      508,
+</span></span></span><span class=line><span class=cl><span class=s>      512
+</span></span></span><span class=line><span class=cl><span class=s>    ],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;locations&#34;: [],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;salaryType&#34;: 1,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;jobTypes&#34;: [],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;createdAt&#34;: null,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;careerLevels&#34;: [],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;page&#34;: %s,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;country&#34;: &#34;id&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;sVi&#34;: &#34;&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;categories&#34;: [
+</span></span></span><span class=line><span class=cl><span class=s>      &#34;501&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>      &#34;503&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>      &#34;508&#34;,
+</span></span></span><span class=line><span class=cl><span class=s>      &#34;512&#34;
+</span></span></span><span class=line><span class=cl><span class=s>    ],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;workTypes&#34;: [],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;industries&#34;: [],
+</span></span></span><span class=line><span class=cl><span class=s>    &#34;locale&#34;: &#34;id&#34;
+</span></span></span><span class=line><span class=cl><span class=s>  }&#39;</span><span class=p>,</span> <span class=n>key</span><span class=p>,</span> <span class=n>page</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span></code></pre></div><p>Sementara itu query yang digunakan lumayan panjang juga, seperti berikut:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>query</span> <span class=o>&lt;-</span> 
+</span></span><span class=line><span class=cl>  <span class=s>&#39;query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
+</span></span></span><span class=line><span class=cl><span class=s>  jobs(country: $country, locale: $locale, keyword: $keyword, createdAt: $createdAt, jobFunctions: $jobFunctions, categories: $categories, locations: $locations, careerLevels: $careerLevels, minSalary: $minSalary, maxSalary: $maxSalary, salaryType: $salaryType, candidateSalary: $candidateSalary, candidateSalaryCurrency: $candidateSalaryCurrency, datePosted: $datePosted, jobTypes: $jobTypes, workTypes: $workTypes, industries: $industries, page: $page, pageSize: $pageSize, companyId: $companyId, advertiserId: $advertiserId, userAgent: $userAgent, accNums: $accNums, subAccount: $subAccount, minEdu: $minEdu, edus: $edus, maxEdu: $maxEdu, minExp: $minExp, maxExp: $maxExp, seo: $seo, searchFields: $searchFields, candidateId: $candidateId, isDesktop: $isDesktop, isCompanySearch: $isCompanySearch, sort: $sort, sVi: $sVi, duplicates: $duplicates, flight: $flight, solVisitorId: $solVisitorId) {
+</span></span></span><span class=line><span class=cl><span class=s>    ...LegacyCompat_SearchResult
+</span></span></span><span class=line><span class=cl><span class=s>  }
+</span></span></span><span class=line><span class=cl><span class=s>}
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s>fragment LegacyCompat_SearchResult on SearchResult {
+</span></span></span><span class=line><span class=cl><span class=s>  solMetadata
+</span></span></span><span class=line><span class=cl><span class=s>  jobs {
+</span></span></span><span class=line><span class=cl><span class=s>    id
+</span></span></span><span class=line><span class=cl><span class=s>    sourceCountryCode
+</span></span></span><span class=line><span class=cl><span class=s>    isStandout
+</span></span></span><span class=line><span class=cl><span class=s>    companyMeta {
+</span></span></span><span class=line><span class=cl><span class=s>      id
+</span></span></span><span class=line><span class=cl><span class=s>      isPrivate
+</span></span></span><span class=line><span class=cl><span class=s>      name
+</span></span></span><span class=line><span class=cl><span class=s>    }
+</span></span></span><span class=line><span class=cl><span class=s>    jobTitle
+</span></span></span><span class=line><span class=cl><span class=s>    jobUrl
+</span></span></span><span class=line><span class=cl><span class=s>    jobTitleSlug
+</span></span></span><span class=line><span class=cl><span class=s>    description
+</span></span></span><span class=line><span class=cl><span class=s>    employmentTypes {
+</span></span></span><span class=line><span class=cl><span class=s>      name
+</span></span></span><span class=line><span class=cl><span class=s>    }
+</span></span></span><span class=line><span class=cl><span class=s>    sellingPoints
+</span></span></span><span class=line><span class=cl><span class=s>    locations {
+</span></span></span><span class=line><span class=cl><span class=s>      code
+</span></span></span><span class=line><span class=cl><span class=s>      name
+</span></span></span><span class=line><span class=cl><span class=s>      children {
+</span></span></span><span class=line><span class=cl><span class=s>        code
+</span></span></span><span class=line><span class=cl><span class=s>        name
+</span></span></span><span class=line><span class=cl><span class=s>      }
+</span></span></span><span class=line><span class=cl><span class=s>    }
+</span></span></span><span class=line><span class=cl><span class=s>    categories {
+</span></span></span><span class=line><span class=cl><span class=s>      code
+</span></span></span><span class=line><span class=cl><span class=s>      name
+</span></span></span><span class=line><span class=cl><span class=s>      children {
+</span></span></span><span class=line><span class=cl><span class=s>        code
+</span></span></span><span class=line><span class=cl><span class=s>        name
+</span></span></span><span class=line><span class=cl><span class=s>      }
+</span></span></span><span class=line><span class=cl><span class=s>    }
+</span></span></span><span class=line><span class=cl><span class=s>    postedAt
+</span></span></span><span class=line><span class=cl><span class=s>    salaryRange {
+</span></span></span><span class=line><span class=cl><span class=s>      currency
+</span></span></span><span class=line><span class=cl><span class=s>      max
+</span></span></span><span class=line><span class=cl><span class=s>      min
+</span></span></span><span class=line><span class=cl><span class=s>      period
+</span></span></span><span class=line><span class=cl><span class=s>      term
+</span></span></span><span class=line><span class=cl><span class=s>    }
+</span></span></span><span class=line><span class=cl><span class=s>    isClassified
+</span></span></span><span class=line><span class=cl><span class=s>  }
+</span></span></span><span class=line><span class=cl><span class=s>}&#39;</span>
+</span></span></code></pre></div><p>Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil <em>inspect element</em> di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada <a href=https://blog.logrocket.com/designing-url-based-query-syntax-graphql/>laman berikut</a>.</p><h2 id=mengambil-data>Mengambil Data</h2><p>Tiba saatnya untuk coba menarik (<em>pulling</em>) data. Tidak berjalan lama karena hanya sekitar 30 rekaman di halaman pertama saja. Di sinilah fungsi <code>GQL()</code> dari Abang rentrop menjadi sangat bermanfaat.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>jobs</span> <span class=o>&lt;-</span> <span class=nf>GQL</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=n>query</span> <span class=o>=</span> <span class=n>query</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=n>.variables</span> <span class=o>=</span> <span class=n>var</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=n>.url</span> <span class=o>=</span> <span class=n>url</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>job</span> <span class=o>&lt;-</span> <span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span>
+</span></span><span class=line><span class=cl><span class=nf>str</span><span class=p>(</span><span class=n>job[[1]]</span><span class=p>)</span>
+</span></span></code></pre></div><p>Akan dihasilkan objek dengan struktur list. Saya definisikan dalam <code>job</code> saja. Setelah subset konten yang dibutuhkan saja menjadi objek <code>job</code>, kita bisa amati strukturnya menjadi seperti berikut ini (hanya item pertama dari 30 sebagai sampel, karena tentu saja strukturnya akan berulang):</p><pre tabindex=0><code>List of 15
+ $ id               : chr &#34;3641190&#34;
+ $ sourceCountryCode: chr &#34;id&#34;
  $ isStandout       : logi TRUE
  $ companyMeta      :List of 3
-  ..$ id       : chr &quot;433563&quot;
+  ..$ id       : chr &#34;433563&#34;
   ..$ isPrivate: logi FALSE
-  ..$ name     : chr &quot;PT Indoglobal Nusa Persada&quot;
- $ jobTitle         : chr &quot;SYSTEM ANALYST&quot;
- $ jobUrl           : chr &quot;https://www.jobstreet.co.id/id/job/system-analyst-3641190?token=0~1daa0355-a242-4f92-87a9-90dbbca3a275&amp;sectionR&quot;| __truncated__
- $ jobTitleSlug     : chr &quot;system-analyst&quot;
- $ description      : chr &quot;Design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements i&quot;| __truncated__
+  ..$ name     : chr &#34;PT Indoglobal Nusa Persada&#34;
+ $ jobTitle         : chr &#34;SYSTEM ANALYST&#34;
+ $ jobUrl           : chr &#34;https://www.jobstreet.co.id/id/job/system-analyst-3641190?token=0~1daa0355-a242-4f92-87a9-90dbbca3a275&amp;sectionR&#34;| __truncated__
+ $ jobTitleSlug     : chr &#34;system-analyst&#34;
+ $ description      : chr &#34;Design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements i&#34;| __truncated__
  $ employmentTypes  :List of 1
   ..$ :List of 1
-  .. ..$ name: chr &quot;Penuh Waktu&quot;
+  .. ..$ name: chr &#34;Penuh Waktu&#34;
  $ sellingPoints    :List of 3
-  ..$ : chr &quot;Good reputation company at the national level as edutech platform&quot;
-  ..$ : chr &quot;Incentive / Rewards Project&quot;
-  ..$ : chr &quot;A great environment, culture and partner&quot;
+  ..$ : chr &#34;Good reputation company at the national level as edutech platform&#34;
+  ..$ : chr &#34;Incentive / Rewards Project&#34;
+  ..$ : chr &#34;A great environment, culture and partner&#34;
  $ locations        :List of 1
   ..$ :List of 3
-  .. ..$ code    : chr &quot;30500&quot;
-  .. ..$ name    : chr &quot;Jakarta Raya&quot;
+  .. ..$ code    : chr &#34;30500&#34;
+  .. ..$ name    : chr &#34;Jakarta Raya&#34;
   .. ..$ children: NULL
  $ categories       :List of 2
   ..$ :List of 3
-  .. ..$ code    : chr &quot;508&quot;
-  .. ..$ name    : chr &quot;Komputer/Teknologi Informasi&quot;
+  .. ..$ code    : chr &#34;508&#34;
+  .. ..$ name    : chr &#34;Komputer/Teknologi Informasi&#34;
   .. ..$ children: NULL
   ..$ :List of 3
-  .. ..$ code    : chr &quot;191&quot;
-  .. ..$ name    : chr &quot;IT-Perangkat Lunak&quot;
+  .. ..$ code    : chr &#34;191&#34;
+  .. ..$ name    : chr &#34;IT-Perangkat Lunak&#34;
   .. ..$ children: NULL
- $ postedAt         : chr &quot;2021-09-28T05:34:48Z&quot;
+ $ postedAt         : chr &#34;2021-09-28T05:34:48Z&#34;
  $ salaryRange      :List of 5
   ..$ currency: NULL
   ..$ max     : NULL
   ..$ min     : NULL
-  ..$ period  : chr &quot;monthly&quot;
+  ..$ period  : chr &#34;monthly&#34;
   ..$ term    : NULL
  $ isClassified     : logi FALSE
-</code></pre><p>Selain menghasilkan kumpulan data lowongan, fungsi <code>GQL()</code> dengan query dan parameter lain di atas juga menyimpan keterangan mengenai sesi yang terjadi ketika pengambilan data berlangsung, terdapat pada:</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=p>(</span><span class=n>query_meta</span> <span class=o>&lt;-</span> <span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span><span class=o>$</span><span class=n>solMetadata</span><span class=p>)</span>
-</code></pre></div><h2 id=perbandingan-skrip>Perbandingan Skrip</h2><h3 id=kode-pertama-dengan-lapply>Kode pertama dengan <code>lapply()</code></h3><p>Untuk skrip pertama saya memanfaatkan fungsi <code>lapply()</code> yang disediakan oleh pustaka bawaan R yakni base. Agar dapat dibandingkan dengan mudah nantinya saya buat jadi fungsi <code>v1()</code> saja.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># method 1</span>
-<span class=n>v1</span> <span class=o>&lt;-</span> <span class=nf>function</span><span class=p>(</span><span class=n>job</span><span class=p>){</span>
-  
-  <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>lapply</span><span class=p>(</span><span class=n>job</span><span class=p>,</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>){</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>unlist</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>name</span> <span class=o>=</span> <span class=nf>names</span><span class=p>(</span><span class=n>v</span><span class=p>),</span> <span class=n>value</span> <span class=o>=</span> <span class=n>v</span><span class=p>)</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>as_tibble</span><span class=p>(</span><span class=n>v</span><span class=p>)</span> <span class=o>%&gt;%</span> 
-      <span class=nf>group_by</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=o>%&gt;%</span> 
-      <span class=nf>summarise_all</span><span class=p>(</span><span class=o>~</span><span class=nf>toString</span><span class=p>(</span><span class=n>value</span><span class=p>))</span> <span class=o>%&gt;%</span> 
-      <span class=nf>ungroup</span><span class=p>()</span>
-    <span class=nf>return</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
-  <span class=p>})</span>
-  
-  <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>lapply</span><span class=p>(</span><span class=n>vacancy</span><span class=p>,</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>){</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=n>x</span> <span class=o>%&gt;%</span> 
-      <span class=nf>pivot_wider</span><span class=p>(</span>
-        <span class=n>names_from</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=p>,</span>
-        <span class=n>values_from</span> <span class=o>=</span> <span class=s>&#34;value&#34;</span>
-      <span class=p>)</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=n>janitor</span><span class=o>::</span><span class=nf>clean_names</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
-    <span class=nf>return</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
-  <span class=p>})</span>
-  
-  <span class=n>v1</span> <span class=o>&lt;-</span> <span class=nf>do.call</span><span class=p>(</span><span class=s>&#34;bind_rows&#34;</span><span class=p>,</span> <span class=n>vacancy</span><span class=p>)</span>
-  <span class=nf>return</span><span class=p>(</span><span class=n>v1</span><span class=p>)</span>
-  
-<span class=p>}</span>
-
-<span class=n>vacancy1</span> <span class=o>&lt;-</span> <span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>)</span>
-</code></pre></div><p>Konten datanya dibahas di akhir saja, ya&mldr; Kali ini fokus pada perbandingan dua skrip yang saya susun dulu.</p><h3 id=kode-kedua-dengan-for-loop>Kode kedua dengan <code>for</code> loop</h3><p>Untuk skrip kedua, saya gunakan <code>for</code> loop, yakni salah satu metode dasar pada tiap bahasa pemrograman untuk mengiterasi proses pada sequencial vector atau list.</p><p>Setelah itu, dilanjutkan dengan menggunakan fungsi-fungsi dari pustaka <strong>dplyr</strong> dan <strong>tidyr</strong>, juga meminjam fungsi <code>clean_names()</code> dari <strong>janitor</strong> untuk hidup lebih mudah. Skrip ini hanya mereplikasi fungsi-fungsi yang berjalan dengan skrip sebelumnya, tentunya dengan penyesuaian karena struktur objek yang diproses jadi berbeda.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># method 2</span>
-<span class=n>v2</span> <span class=o>&lt;-</span> <span class=nf>function</span><span class=p>(</span><span class=n>job</span><span class=p>){</span>
-  
-  <span class=nf>for </span><span class=p>(</span><span class=n>i</span> <span class=n>in</span> <span class=nf>seq_along</span><span class=p>(</span><span class=n>job</span><span class=p>))</span> <span class=p>{</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>unlist</span><span class=p>(</span><span class=n>job[[i]]</span><span class=p>)</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>name</span> <span class=o>=</span> <span class=nf>names</span><span class=p>(</span><span class=n>v</span><span class=p>),</span> <span class=n>value</span> <span class=o>=</span> <span class=n>v</span><span class=p>)</span>
-    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>as_tibble</span><span class=p>(</span><span class=n>v</span><span class=p>)</span> <span class=o>%&gt;%</span> <span class=nf>mutate</span><span class=p>(</span><span class=n>num</span> <span class=o>=</span> <span class=n>i</span><span class=p>)</span>
-    <span class=nf>if</span><span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=m>1</span><span class=p>){</span>
-      <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=n>v</span>
-    <span class=p>}</span> <span class=n>else</span> <span class=p>{</span>
-      <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>bind_rows</span><span class=p>(</span><span class=n>vacancy</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
-    <span class=p>}</span>
-  <span class=p>}</span>
-  
-  <span class=n>v2</span> <span class=o>&lt;-</span> <span class=n>vacancy</span> <span class=o>%&gt;%</span> 
-    <span class=nf>group_by</span><span class=p>(</span><span class=n>num</span><span class=p>,</span> <span class=n>name</span><span class=p>)</span> <span class=o>%&gt;%</span>
-    <span class=nf>summarise_all</span><span class=p>(</span><span class=o>~</span><span class=nf>toString</span><span class=p>(</span><span class=n>value</span><span class=p>))</span> <span class=o>%&gt;%</span> 
-    <span class=nf>ungroup</span><span class=p>()</span> <span class=o>%&gt;%</span> 
-    <span class=nf>pivot_wider</span><span class=p>(</span>
-      <span class=n>id_cols</span> <span class=o>=</span> <span class=s>&#34;num&#34;</span><span class=p>,</span> 
-      <span class=n>names_from</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=p>,</span>
-      <span class=n>values_from</span> <span class=o>=</span> <span class=s>&#34;value&#34;</span>
-    <span class=p>)</span> <span class=o>%&gt;%</span> 
-    <span class=nf>select</span><span class=p>(</span><span class=o>-</span><span class=n>num</span><span class=p>)</span>
-  
-  <span class=n>v2</span> <span class=o>&lt;-</span> <span class=n>janitor</span><span class=o>::</span><span class=nf>clean_names</span><span class=p>(</span><span class=n>v2</span><span class=p>)</span>
-  <span class=nf>return</span><span class=p>(</span><span class=n>v2</span><span class=p>)</span>
-  
-<span class=p>}</span>
-
-<span class=n>vacancy2</span> <span class=o>&lt;-</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>)</span>
-</code></pre></div><h3 id=perbandingan>Perbandingan</h3><p>Kedua skrip atau fungsi di atas dibuat agar hasil keluarannya pun menjadi identik. Untuk memeriksanya saya menggunakan fungsi <code>waldo::compare()</code> seperti berikut.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>waldo</span><span class=o>::</span><span class=nf>compare</span><span class=p>(</span><span class=n>vacancy1</span><span class=p>,</span> <span class=n>vacancy2</span><span class=p>,</span> <span class=n>x_arg</span> <span class=o>=</span> <span class=s>&#34;v1&#34;</span><span class=p>,</span> <span class=n>y_arg</span> <span class=o>=</span> <span class=s>&#34;v2&#34;</span><span class=p>)</span>
-</code></pre></div><p>Menghasilkan keterangan bahwa kedua objek <code>v1</code> dan <code>v2</code> tidak memiliki perbedaan: ✓ No differences</p><p>Kemudian tiba saatnya pada bagian inti, yaitu perbandingan kedua metode di atas, saya menggunakan bantuan dari pustaka <strong>microbenchmark</strong> dan menyimpan hasilnya dalam variabel <code>b</code> agar mudah dieksplorasi nantinya.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>b</span> <span class=o>&lt;-</span> <span class=n>microbenchmark</span><span class=o>::</span><span class=nf>microbenchmark</span><span class=p>(</span><span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>))</span>
-</code></pre></div><p>Menghasilkan keluaran seperti berikut:</p><pre><code>Unit: milliseconds
+</code></pre><p>Selain menghasilkan kumpulan data lowongan, fungsi <code>GQL()</code> dengan query dan parameter lain di atas juga menyimpan keterangan mengenai sesi yang terjadi ketika pengambilan data berlangsung, terdapat pada:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=p>(</span><span class=n>query_meta</span> <span class=o>&lt;-</span> <span class=n>jobs</span><span class=o>$</span><span class=n>jobs</span><span class=o>$</span><span class=n>solMetadata</span><span class=p>)</span>
+</span></span></code></pre></div><h2 id=perbandingan-skrip>Perbandingan Skrip</h2><h3 id=kode-pertama-dengan-lapply>Kode pertama dengan <code>lapply()</code></h3><p>Untuk skrip pertama saya memanfaatkan fungsi <code>lapply()</code> yang disediakan oleh pustaka bawaan R yakni base. Agar dapat dibandingkan dengan mudah nantinya saya buat jadi fungsi <code>v1()</code> saja.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=c1># method 1</span>
+</span></span><span class=line><span class=cl><span class=n>v1</span> <span class=o>&lt;-</span> <span class=nf>function</span><span class=p>(</span><span class=n>job</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>lapply</span><span class=p>(</span><span class=n>job</span><span class=p>,</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>unlist</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>name</span> <span class=o>=</span> <span class=nf>names</span><span class=p>(</span><span class=n>v</span><span class=p>),</span> <span class=n>value</span> <span class=o>=</span> <span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>as_tibble</span><span class=p>(</span><span class=n>v</span><span class=p>)</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>      <span class=nf>group_by</span><span class=p>(</span><span class=n>name</span><span class=p>)</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>      <span class=nf>summarise_all</span><span class=p>(</span><span class=o>~</span><span class=nf>toString</span><span class=p>(</span><span class=n>value</span><span class=p>))</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>      <span class=nf>ungroup</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nf>return</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>lapply</span><span class=p>(</span><span class=n>vacancy</span><span class=p>,</span> <span class=nf>function</span><span class=p>(</span><span class=n>x</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=n>x</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>      <span class=nf>pivot_wider</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>names_from</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>values_from</span> <span class=o>=</span> <span class=s>&#34;value&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=n>janitor</span><span class=o>::</span><span class=nf>clean_names</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nf>return</span><span class=p>(</span><span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=n>v1</span> <span class=o>&lt;-</span> <span class=nf>do.call</span><span class=p>(</span><span class=s>&#34;bind_rows&#34;</span><span class=p>,</span> <span class=n>vacancy</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nf>return</span><span class=p>(</span><span class=n>v1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>vacancy1</span> <span class=o>&lt;-</span> <span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>)</span>
+</span></span></code></pre></div><p>Konten datanya dibahas di akhir saja, ya&mldr; Kali ini fokus pada perbandingan dua skrip yang saya susun dulu.</p><h3 id=kode-kedua-dengan-for-loop>Kode kedua dengan <code>for</code> loop</h3><p>Untuk skrip kedua, saya gunakan <code>for</code> loop, yakni salah satu metode dasar pada tiap bahasa pemrograman untuk mengiterasi proses pada sequencial vector atau list.</p><p>Setelah itu, dilanjutkan dengan menggunakan fungsi-fungsi dari pustaka <strong>dplyr</strong> dan <strong>tidyr</strong>, juga meminjam fungsi <code>clean_names()</code> dari <strong>janitor</strong> untuk hidup lebih mudah. Skrip ini hanya mereplikasi fungsi-fungsi yang berjalan dengan skrip sebelumnya, tentunya dengan penyesuaian karena struktur objek yang diproses jadi berbeda.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=c1># method 2</span>
+</span></span><span class=line><span class=cl><span class=n>v2</span> <span class=o>&lt;-</span> <span class=nf>function</span><span class=p>(</span><span class=n>job</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=nf>for </span><span class=p>(</span><span class=n>i</span> <span class=n>in</span> <span class=nf>seq_along</span><span class=p>(</span><span class=n>job</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>unlist</span><span class=p>(</span><span class=n>job[[i]]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>name</span> <span class=o>=</span> <span class=nf>names</span><span class=p>(</span><span class=n>v</span><span class=p>),</span> <span class=n>value</span> <span class=o>=</span> <span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>v</span> <span class=o>&lt;-</span> <span class=nf>as_tibble</span><span class=p>(</span><span class=n>v</span><span class=p>)</span> <span class=o>%&gt;%</span> <span class=nf>mutate</span><span class=p>(</span><span class=n>num</span> <span class=o>=</span> <span class=n>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nf>if</span><span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=m>1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>      <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=n>v</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=n>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=nf>bind_rows</span><span class=p>(</span><span class=n>vacancy</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=n>v2</span> <span class=o>&lt;-</span> <span class=n>vacancy</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>    <span class=nf>group_by</span><span class=p>(</span><span class=n>num</span><span class=p>,</span> <span class=n>name</span><span class=p>)</span> <span class=o>%&gt;%</span>
+</span></span><span class=line><span class=cl>    <span class=nf>summarise_all</span><span class=p>(</span><span class=o>~</span><span class=nf>toString</span><span class=p>(</span><span class=n>value</span><span class=p>))</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>    <span class=nf>ungroup</span><span class=p>()</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>    <span class=nf>pivot_wider</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=n>id_cols</span> <span class=o>=</span> <span class=s>&#34;num&#34;</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>      <span class=n>names_from</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=n>values_from</span> <span class=o>=</span> <span class=s>&#34;value&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>    <span class=nf>select</span><span class=p>(</span><span class=o>-</span><span class=n>num</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=n>v2</span> <span class=o>&lt;-</span> <span class=n>janitor</span><span class=o>::</span><span class=nf>clean_names</span><span class=p>(</span><span class=n>v2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nf>return</span><span class=p>(</span><span class=n>v2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>vacancy2</span> <span class=o>&lt;-</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>)</span>
+</span></span></code></pre></div><h3 id=perbandingan>Perbandingan</h3><p>Kedua skrip atau fungsi di atas dibuat agar hasil keluarannya pun menjadi identik. Untuk memeriksanya saya menggunakan fungsi <code>waldo::compare()</code> seperti berikut.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>waldo</span><span class=o>::</span><span class=nf>compare</span><span class=p>(</span><span class=n>vacancy1</span><span class=p>,</span> <span class=n>vacancy2</span><span class=p>,</span> <span class=n>x_arg</span> <span class=o>=</span> <span class=s>&#34;v1&#34;</span><span class=p>,</span> <span class=n>y_arg</span> <span class=o>=</span> <span class=s>&#34;v2&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><p>Menghasilkan keterangan bahwa kedua objek <code>v1</code> dan <code>v2</code> tidak memiliki perbedaan: ✓ No differences</p><p>Kemudian tiba saatnya pada bagian inti, yaitu perbandingan kedua metode di atas, saya menggunakan bantuan dari pustaka <strong>microbenchmark</strong> dan menyimpan hasilnya dalam variabel <code>b</code> agar mudah dieksplorasi nantinya.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>b</span> <span class=o>&lt;-</span> <span class=n>microbenchmark</span><span class=o>::</span><span class=nf>microbenchmark</span><span class=p>(</span><span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>))</span>
+</span></span></code></pre></div><p>Menghasilkan keluaran seperti berikut:</p><pre tabindex=0><code>Unit: milliseconds
     expr      min       lq      mean    median        uq       max neval
  v1(job) 940.4223 999.8946 1068.7362 1025.7667 1123.6142 1444.3575   100
  v2(job) 162.2252 171.1944  186.4427  178.5282  189.2315  343.9679   100
-</code></pre><p>Terjadi 100 kali pengulangan <code>neval</code> untuk masing-masing expression (<code>expr</code>), n-evaluation, katakanlah begitu. Parameter default fungsi tersebut memang mengulang operasi sebanyak 100 kali. Untuk jumlah lainnya bisa menggunakan argumen <code>times</code>. Dapat pula membandingkan hasil dengan boxplot. Berikut statistik untuk 300 kali pengulangan.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>b2</span> <span class=o>&lt;-</span> <span class=n>microbenchmark</span><span class=o>::</span><span class=nf>microbenchmark</span><span class=p>(</span><span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=n>times</span> <span class=o>=</span> <span class=m>300L</span><span class=p>)</span>
-<span class=nf>boxplot</span><span class=p>(</span><span class=n>b2</span><span class=p>,</span> <span class=n>log</span> <span class=o>=</span> <span class=kc>FALSE</span><span class=p>,</span> <span class=n>horizontal</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>,</span> <span class=n>ylab</span> <span class=o>=</span> <span class=s>&#34;Time (millisecond)&#34;</span><span class=p>)</span>
-</code></pre></div><p><img src=https://telegra.ph/file/663ca9a54fc2f589f27b4.png alt=benchmark></p><p>Dengan for loop sekali di awal dan diikuti dengan <strong>dplyr</strong> + <strong>tidyr</strong> tampak lebih konsisten kecepatannya dan lebih baik performanya.</p><h2 id=merapikan-data>Merapikan Data</h2><p>Setelah mengetahui baris kode mana yang baik, itulah yang saya simpan sebagai fungsi yang nantinya akan memudahkan jika ingin mengambil data lowongan kerja dari Jobstreet lewat R. Mari kita rapikan sedikit data yang sudah kita kumpulkan.</p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=n>vacancy2</span> <span class=o>%&gt;%</span> 
-  <span class=nf>select</span><span class=p>(</span>
-    <span class=n>id</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;job&#34;</span><span class=p>),</span> <span class=n>posted_at</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;categories&#34;</span><span class=p>),</span>
-    <span class=n>description</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;company&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;employ&#34;</span><span class=p>),</span>
-    <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;is_&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;location&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;country&#34;</span><span class=p>),</span> 
-    <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;salary&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;selling&#34;</span><span class=p>)</span>
-  <span class=p>)</span> <span class=o>%&gt;%</span> 
-  <span class=nf>select</span><span class=p>(</span><span class=o>-</span><span class=n>job_title_slug</span><span class=p>)</span>
-<span class=n>vacancy</span>
-</code></pre></div><p>Hasilnya kurang lebih seperti ini dalam format data.frame kelas <strong>tibble</strong>:</p><pre><code># A tibble: 30 × 23
+</code></pre><p>Terjadi 100 kali pengulangan <code>neval</code> untuk masing-masing expression (<code>expr</code>), n-evaluation, katakanlah begitu. Parameter default fungsi tersebut memang mengulang operasi sebanyak 100 kali. Untuk jumlah lainnya bisa menggunakan argumen <code>times</code>. Dapat pula membandingkan hasil dengan boxplot. Berikut statistik untuk 300 kali pengulangan.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>b2</span> <span class=o>&lt;-</span> <span class=n>microbenchmark</span><span class=o>::</span><span class=nf>microbenchmark</span><span class=p>(</span><span class=nf>v1</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=nf>v2</span><span class=p>(</span><span class=n>job</span><span class=p>),</span> <span class=n>times</span> <span class=o>=</span> <span class=m>300L</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>boxplot</span><span class=p>(</span><span class=n>b2</span><span class=p>,</span> <span class=n>log</span> <span class=o>=</span> <span class=kc>FALSE</span><span class=p>,</span> <span class=n>horizontal</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>,</span> <span class=n>ylab</span> <span class=o>=</span> <span class=s>&#34;Time (millisecond)&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><p><img src=https://telegra.ph/file/663ca9a54fc2f589f27b4.png alt=benchmark></p><p>Dengan for loop sekali di awal dan diikuti dengan <strong>dplyr</strong> + <strong>tidyr</strong> tampak lebih konsisten kecepatannya dan lebih baik performanya.</p><h2 id=merapikan-data>Merapikan Data</h2><p>Setelah mengetahui baris kode mana yang baik, itulah yang saya simpan sebagai fungsi yang nantinya akan memudahkan jika ingin mengambil data lowongan kerja dari Jobstreet lewat R. Mari kita rapikan sedikit data yang sudah kita kumpulkan.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>vacancy</span> <span class=o>&lt;-</span> <span class=n>vacancy2</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>  <span class=nf>select</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>id</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;job&#34;</span><span class=p>),</span> <span class=n>posted_at</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;categories&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>description</span><span class=p>,</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;company&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;employ&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;is_&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;location&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;country&#34;</span><span class=p>),</span> 
+</span></span><span class=line><span class=cl>    <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;salary&#34;</span><span class=p>),</span> <span class=nf>matches</span><span class=p>(</span><span class=s>&#34;selling&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span> <span class=o>%&gt;%</span> 
+</span></span><span class=line><span class=cl>  <span class=nf>select</span><span class=p>(</span><span class=o>-</span><span class=n>job_title_slug</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>vacancy</span>
+</span></span></code></pre></div><p>Hasilnya kurang lebih seperti ini dalam format data.frame kelas <strong>tibble</strong>:</p><pre tabindex=0><code># A tibble: 30 × 23
    id      job_title job_url posted_at categories_code categories_name description
    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;      
  1 3641190 SYSTEM A… https:… 2021-09-… 508, 191        Komputer/Tekno… Design new…
@@ -241,8 +241,8 @@
 #   salary_range_period &lt;chr&gt;, salary_range_currency &lt;chr&gt;,
 #   salary_range_max &lt;chr&gt;, salary_range_min &lt;chr&gt;, selling_points1 &lt;chr&gt;,
 #   selling_points2 &lt;chr&gt;, selling_points3 &lt;chr&gt;
-</code></pre><h2 id=session-info>Session Info</h2><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=nf>sessionInfo</span><span class=p>()</span>
-</code></pre></div><pre><code>R version 4.0.4 (2021-02-15)
+</code></pre><h2 id=session-info>Session Info</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>sessionInfo</span><span class=p>()</span>
+</span></span></code></pre></div><pre tabindex=0><code>R version 4.0.4 (2021-02-15)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 20.04.3 LTS
 
@@ -274,4 +274,4 @@ loaded via a namespace (and not attached):
 [17] crayon_1.4.1     purrr_0.3.4      vctrs_0.3.8      curl_4.3.2      
 [21] glue_1.4.2       snakecase_0.11.0 stringi_1.7.3    compiler_4.0.4  
 [25] pillar_1.6.2     generics_0.1.0   lubridate_1.7.10 pkgconfig_2.0.3
-</code></pre><p>Sekian dan terima kasih.</p></article></main><footer id=footer>Powered by Hugo and Github Page.</footer></body></html>
+</code></pre><p>Sekian dan terima kasih.</p></article></main><footer id=footer>Powered by Hugo and Github Page.</footer><script type=text/javascript src=https://akherlan.github.io/js/annotate.min.5b4a25824103cc64465094e19cc2320c441bfb502095d340b33f9b9b252657f00a1f08fdbb369fa15ca73ce0db9fb60e5f78935a6954e5d2371ef3e7b0a4b281.js integrity="sha512-W0olgkEDzGRGUJThnMIyDEQb+1AgldNAsz+bmyUmV/AKHwj9uzafoVynPODbn7YOX3iTWmlU5dI3HvPnsKSygQ=="></script></body></html>

@@ -26,247 +26,258 @@
 &lt;/aside>
 &lt;h2 id="pustaka-r">Pustaka R&lt;/h2>
 &lt;p>Pada tes ini, dibutuhkan beberapa package di antaranya:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="s">&amp;#34;httr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;jsonlite&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;dplyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;tidyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;janitor&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;waldo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="s">&amp;#34;microbenchmark&amp;#34;&lt;/span>
-&lt;span class="p">),&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">character.only&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang &lt;a href="https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019">ada di sini&lt;/a>. Fungsi tersebut memanfaatkan pustaka &lt;strong>httr&lt;/strong> dan &lt;strong>jsonlite&lt;/strong> untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama &amp;ldquo;function_graphql.R&amp;rdquo; dan memanggilnya dengan &lt;code>source()&lt;/code> dari konsol R.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">source&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;function_graphql.R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="parameter-dan-query">Parameter dan Query&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;httr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;jsonlite&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;dplyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;tidyr&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;janitor&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;waldo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;microbenchmark&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">),&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">character.only&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Juga sebuah fungsi yang ditulis oleh abang-abang Jerman bernama-akun rentrop seperti yang &lt;a href="https://gist.github.com/rentrop/83cb1d8fc8593726a808032e55314019">ada di sini&lt;/a>. Fungsi tersebut memanfaatkan pustaka &lt;strong>httr&lt;/strong> dan &lt;strong>jsonlite&lt;/strong> untuk berinteraksi dengan data menggunakan servis API berbasis query bernama GraphQL. Saya simpan sebagai berkas skrip R dengan nama &amp;ldquo;function_graphql.R&amp;rdquo; dan memanggilnya dengan &lt;code>source()&lt;/code> dari konsol R.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">source&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;function_graphql.R&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="parameter-dan-query">Parameter dan Query&lt;/h2>
 &lt;p>Contoh data yang digunakan merupakan data lowongan pekerjaan dari Jobstreet. Ada beberapa parameter yang dibutuhkan, di antaranya tentu saja ada URL ke servis API-nya yang pada kasus ini saya simpan dalam variabel &lt;code>url&lt;/code>. Kemudian karena yang saya lakukan sama seperti ketika kita mencari lowongan melalui antar muka web menggunakan suatu kata kunci, maka perlu ada &lt;code>key&lt;/code> untuk menyaring lowongan pekerjaan yang sesuai. Berikutnya variabel &lt;code>page&lt;/code> juga diperlukan karena ini sama dengan kita mencari lowongan kerja di web, ada halaman-halaman yang perlu dilalui.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">url&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;https://xapi.supercharge-srp.co/job-search/graphql?country=id&amp;amp;isSmartSearch=true&amp;#34;&lt;/span>
-&lt;span class="n">key&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;data analyst&amp;#34;&lt;/span>
-&lt;span class="n">page&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel &lt;code>var&lt;/code> seperti berikut:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">var&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">sprintf&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="s">&amp;#39;{
-&lt;/span>&lt;span class="s"> &amp;#34;keyword&amp;#34;: &amp;#34;%s&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;jobFunctions&amp;#34;: [
-&lt;/span>&lt;span class="s"> 501,
-&lt;/span>&lt;span class="s"> 503,
-&lt;/span>&lt;span class="s"> 508,
-&lt;/span>&lt;span class="s"> 512
-&lt;/span>&lt;span class="s"> ],
-&lt;/span>&lt;span class="s"> &amp;#34;locations&amp;#34;: [],
-&lt;/span>&lt;span class="s"> &amp;#34;salaryType&amp;#34;: 1,
-&lt;/span>&lt;span class="s"> &amp;#34;jobTypes&amp;#34;: [],
-&lt;/span>&lt;span class="s"> &amp;#34;createdAt&amp;#34;: null,
-&lt;/span>&lt;span class="s"> &amp;#34;careerLevels&amp;#34;: [],
-&lt;/span>&lt;span class="s"> &amp;#34;page&amp;#34;: %s,
-&lt;/span>&lt;span class="s"> &amp;#34;country&amp;#34;: &amp;#34;id&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;sVi&amp;#34;: &amp;#34;&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;categories&amp;#34;: [
-&lt;/span>&lt;span class="s"> &amp;#34;501&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;503&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;508&amp;#34;,
-&lt;/span>&lt;span class="s"> &amp;#34;512&amp;#34;
-&lt;/span>&lt;span class="s"> ],
-&lt;/span>&lt;span class="s"> &amp;#34;workTypes&amp;#34;: [],
-&lt;/span>&lt;span class="s"> &amp;#34;industries&amp;#34;: [],
-&lt;/span>&lt;span class="s"> &amp;#34;locale&amp;#34;: &amp;#34;id&amp;#34;
-&lt;/span>&lt;span class="s"> }&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">page&lt;/span>
-&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sementara itu query yang digunakan lumayan panjang juga, seperti berikut:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">query&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>
-&lt;span class="s">&amp;#39;query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
-&lt;/span>&lt;span class="s"> jobs(country: $country, locale: $locale, keyword: $keyword, createdAt: $createdAt, jobFunctions: $jobFunctions, categories: $categories, locations: $locations, careerLevels: $careerLevels, minSalary: $minSalary, maxSalary: $maxSalary, salaryType: $salaryType, candidateSalary: $candidateSalary, candidateSalaryCurrency: $candidateSalaryCurrency, datePosted: $datePosted, jobTypes: $jobTypes, workTypes: $workTypes, industries: $industries, page: $page, pageSize: $pageSize, companyId: $companyId, advertiserId: $advertiserId, userAgent: $userAgent, accNums: $accNums, subAccount: $subAccount, minEdu: $minEdu, edus: $edus, maxEdu: $maxEdu, minExp: $minExp, maxExp: $maxExp, seo: $seo, searchFields: $searchFields, candidateId: $candidateId, isDesktop: $isDesktop, isCompanySearch: $isCompanySearch, sort: $sort, sVi: $sVi, duplicates: $duplicates, flight: $flight, solVisitorId: $solVisitorId) {
-&lt;/span>&lt;span class="s"> ...LegacyCompat_SearchResult
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s">}
-&lt;/span>&lt;span class="s">
-&lt;/span>&lt;span class="s">fragment LegacyCompat_SearchResult on SearchResult {
-&lt;/span>&lt;span class="s"> solMetadata
-&lt;/span>&lt;span class="s"> jobs {
-&lt;/span>&lt;span class="s"> id
-&lt;/span>&lt;span class="s"> sourceCountryCode
-&lt;/span>&lt;span class="s"> isStandout
-&lt;/span>&lt;span class="s"> companyMeta {
-&lt;/span>&lt;span class="s"> id
-&lt;/span>&lt;span class="s"> isPrivate
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> jobTitle
-&lt;/span>&lt;span class="s"> jobUrl
-&lt;/span>&lt;span class="s"> jobTitleSlug
-&lt;/span>&lt;span class="s"> description
-&lt;/span>&lt;span class="s"> employmentTypes {
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> sellingPoints
-&lt;/span>&lt;span class="s"> locations {
-&lt;/span>&lt;span class="s"> code
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> children {
-&lt;/span>&lt;span class="s"> code
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> categories {
-&lt;/span>&lt;span class="s"> code
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> children {
-&lt;/span>&lt;span class="s"> code
-&lt;/span>&lt;span class="s"> name
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> postedAt
-&lt;/span>&lt;span class="s"> salaryRange {
-&lt;/span>&lt;span class="s"> currency
-&lt;/span>&lt;span class="s"> max
-&lt;/span>&lt;span class="s"> min
-&lt;/span>&lt;span class="s"> period
-&lt;/span>&lt;span class="s"> term
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s"> isClassified
-&lt;/span>&lt;span class="s"> }
-&lt;/span>&lt;span class="s">}&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil &lt;em>inspect element&lt;/em> di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada &lt;a href="https://blog.logrocket.com/designing-url-based-query-syntax-graphql/">laman berikut&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">url&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;https://xapi.supercharge-srp.co/job-search/graphql?country=id&amp;amp;isSmartSearch=true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">key&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;data analyst&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">page&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Selain query untuk akses basis data milik Jobstreet di URL tersebut, dibutuhkan beberapa parameter lain yakni variabel pencarian guna memfilter hasilnya, ditulis dalam format json. Untuk variabel pencarian saya simpan pada objek atau variabel &lt;code>var&lt;/code> seperti berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">var&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">sprintf&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;keyword&amp;#34;: &amp;#34;%s&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;jobFunctions&amp;#34;: [
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> 501,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> 503,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> 508,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> 512
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;locations&amp;#34;: [],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;salaryType&amp;#34;: 1,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;jobTypes&amp;#34;: [],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;createdAt&amp;#34;: null,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;careerLevels&amp;#34;: [],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;page&amp;#34;: %s,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;country&amp;#34;: &amp;#34;id&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;sVi&amp;#34;: &amp;#34;&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;categories&amp;#34;: [
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;501&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;503&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;508&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;512&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;workTypes&amp;#34;: [],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;industries&amp;#34;: [],
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;locale&amp;#34;: &amp;#34;id&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">page&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sementara itu query yang digunakan lumayan panjang juga, seperti berikut:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">query&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#39;query getJobs($country: String, $locale: String, $keyword: String, $createdAt: String, $jobFunctions: [Int], $categories: [String], $locations: [Int], $careerLevels: [Int], $minSalary: Int, $maxSalary: Int, $salaryType: Int, $candidateSalary: Int, $candidateSalaryCurrency: String, $datePosted: Int, $jobTypes: [Int], $workTypes: [String], $industries: [Int], $page: Int, $pageSize: Int, $companyId: String, $advertiserId: String, $userAgent: String, $accNums: Int, $subAccount: Int, $minEdu: Int, $maxEdu: Int, $edus: [Int], $minExp: Int, $maxExp: Int, $seo: String, $searchFields: String, $candidateId: ID, $isDesktop: Boolean, $isCompanySearch: Boolean, $sort: String, $sVi: String, $duplicates: String, $flight: String, $solVisitorId: String) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> jobs(country: $country, locale: $locale, keyword: $keyword, createdAt: $createdAt, jobFunctions: $jobFunctions, categories: $categories, locations: $locations, careerLevels: $careerLevels, minSalary: $minSalary, maxSalary: $maxSalary, salaryType: $salaryType, candidateSalary: $candidateSalary, candidateSalaryCurrency: $candidateSalaryCurrency, datePosted: $datePosted, jobTypes: $jobTypes, workTypes: $workTypes, industries: $industries, page: $page, pageSize: $pageSize, companyId: $companyId, advertiserId: $advertiserId, userAgent: $userAgent, accNums: $accNums, subAccount: $subAccount, minEdu: $minEdu, edus: $edus, maxEdu: $maxEdu, minExp: $minExp, maxExp: $maxExp, seo: $seo, searchFields: $searchFields, candidateId: $candidateId, isDesktop: $isDesktop, isCompanySearch: $isCompanySearch, sort: $sort, sVi: $sVi, duplicates: $duplicates, flight: $flight, solVisitorId: $solVisitorId) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ...LegacyCompat_SearchResult
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">fragment LegacyCompat_SearchResult on SearchResult {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> solMetadata
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> jobs {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> id
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sourceCountryCode
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> isStandout
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> companyMeta {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> id
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> isPrivate
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> jobTitle
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> jobUrl
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> jobTitleSlug
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> description
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> employmentTypes {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sellingPoints
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> locations {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> children {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> categories {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> children {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> postedAt
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> salaryRange {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> currency
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> max
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> min
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> period
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> term
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> isClassified
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Sebetulnya saya juga kurang begitu paham dan masih mempelajari salah satu metode servis web ini. Untuk query yang panjang ini saya copas dari hasil &lt;em>inspect element&lt;/em> di peramban yang saya gunakan. Penjelasan tentang query untuk GraphQL mungkin bisa dipelajari pada &lt;a href="https://blog.logrocket.com/designing-url-based-query-syntax-graphql/">laman berikut&lt;/a>.&lt;/p>
 &lt;h2 id="mengambil-data">Mengambil Data&lt;/h2>
 &lt;p>Tiba saatnya untuk coba menarik (&lt;em>pulling&lt;/em>) data. Tidak berjalan lama karena hanya sekitar 30 rekaman di halaman pertama saja. Di sinilah fungsi &lt;code>GQL()&lt;/code> dari Abang rentrop menjadi sangat bermanfaat.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">jobs&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">GQL&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="n">query&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">query&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">.variables&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">var&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">.url&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">url&lt;/span>
-&lt;span class="p">)&lt;/span>
-&lt;span class="n">job&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>
-&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[1]]&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Akan dihasilkan objek dengan struktur list. Saya definisikan dalam &lt;code>job&lt;/code> saja. Setelah subset konten yang dibutuhkan saja menjadi objek &lt;code>job&lt;/code>, kita bisa amati strukturnya menjadi seperti berikut ini (hanya item pertama dari 30 sebagai sampel, karena tentu saja strukturnya akan berulang):&lt;/p>
-&lt;pre>&lt;code>List of 15
-$ id : chr &amp;quot;3641190&amp;quot;
-$ sourceCountryCode: chr &amp;quot;id&amp;quot;
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">jobs&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">GQL&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">query&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">query&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">.variables&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">var&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">.url&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">url&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">job&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[1]]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Akan dihasilkan objek dengan struktur list. Saya definisikan dalam &lt;code>job&lt;/code> saja. Setelah subset konten yang dibutuhkan saja menjadi objek &lt;code>job&lt;/code>, kita bisa amati strukturnya menjadi seperti berikut ini (hanya item pertama dari 30 sebagai sampel, karena tentu saja strukturnya akan berulang):&lt;/p>
+&lt;pre tabindex="0">&lt;code>List of 15
+$ id : chr &amp;#34;3641190&amp;#34;
+$ sourceCountryCode: chr &amp;#34;id&amp;#34;
 $ isStandout : logi TRUE
 $ companyMeta :List of 3
-..$ id : chr &amp;quot;433563&amp;quot;
+..$ id : chr &amp;#34;433563&amp;#34;
 ..$ isPrivate: logi FALSE
-..$ name : chr &amp;quot;PT Indoglobal Nusa Persada&amp;quot;
-$ jobTitle : chr &amp;quot;SYSTEM ANALYST&amp;quot;
-$ jobUrl : chr &amp;quot;https://www.jobstreet.co.id/id/job/system-analyst-3641190?token=0~1daa0355-a242-4f92-87a9-90dbbca3a275&amp;amp;sectionR&amp;quot;| __truncated__
-$ jobTitleSlug : chr &amp;quot;system-analyst&amp;quot;
-$ description : chr &amp;quot;Design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements i&amp;quot;| __truncated__
+..$ name : chr &amp;#34;PT Indoglobal Nusa Persada&amp;#34;
+$ jobTitle : chr &amp;#34;SYSTEM ANALYST&amp;#34;
+$ jobUrl : chr &amp;#34;https://www.jobstreet.co.id/id/job/system-analyst-3641190?token=0~1daa0355-a242-4f92-87a9-90dbbca3a275&amp;amp;sectionR&amp;#34;| __truncated__
+$ jobTitleSlug : chr &amp;#34;system-analyst&amp;#34;
+$ description : chr &amp;#34;Design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements i&amp;#34;| __truncated__
 $ employmentTypes :List of 1
 ..$ :List of 1
-.. ..$ name: chr &amp;quot;Penuh Waktu&amp;quot;
+.. ..$ name: chr &amp;#34;Penuh Waktu&amp;#34;
 $ sellingPoints :List of 3
-..$ : chr &amp;quot;Good reputation company at the national level as edutech platform&amp;quot;
-..$ : chr &amp;quot;Incentive / Rewards Project&amp;quot;
-..$ : chr &amp;quot;A great environment, culture and partner&amp;quot;
+..$ : chr &amp;#34;Good reputation company at the national level as edutech platform&amp;#34;
+..$ : chr &amp;#34;Incentive / Rewards Project&amp;#34;
+..$ : chr &amp;#34;A great environment, culture and partner&amp;#34;
 $ locations :List of 1
 ..$ :List of 3
-.. ..$ code : chr &amp;quot;30500&amp;quot;
-.. ..$ name : chr &amp;quot;Jakarta Raya&amp;quot;
+.. ..$ code : chr &amp;#34;30500&amp;#34;
+.. ..$ name : chr &amp;#34;Jakarta Raya&amp;#34;
 .. ..$ children: NULL
 $ categories :List of 2
 ..$ :List of 3
-.. ..$ code : chr &amp;quot;508&amp;quot;
-.. ..$ name : chr &amp;quot;Komputer/Teknologi Informasi&amp;quot;
+.. ..$ code : chr &amp;#34;508&amp;#34;
+.. ..$ name : chr &amp;#34;Komputer/Teknologi Informasi&amp;#34;
 .. ..$ children: NULL
 ..$ :List of 3
-.. ..$ code : chr &amp;quot;191&amp;quot;
-.. ..$ name : chr &amp;quot;IT-Perangkat Lunak&amp;quot;
+.. ..$ code : chr &amp;#34;191&amp;#34;
+.. ..$ name : chr &amp;#34;IT-Perangkat Lunak&amp;#34;
 .. ..$ children: NULL
-$ postedAt : chr &amp;quot;2021-09-28T05:34:48Z&amp;quot;
+$ postedAt : chr &amp;#34;2021-09-28T05:34:48Z&amp;#34;
 $ salaryRange :List of 5
 ..$ currency: NULL
 ..$ max : NULL
 ..$ min : NULL
-..$ period : chr &amp;quot;monthly&amp;quot;
+..$ period : chr &amp;#34;monthly&amp;#34;
 ..$ term : NULL
 $ isClassified : logi FALSE
 &lt;/code>&lt;/pre>&lt;p>Selain menghasilkan kumpulan data lowongan, fungsi &lt;code>GQL()&lt;/code> dengan query dan parameter lain di atas juga menyimpan keterangan mengenai sesi yang terjadi ketika pengambilan data berlangsung, terdapat pada:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="p">(&lt;/span>&lt;span class="n">query_meta&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">solMetadata&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="perbandingan-skrip">Perbandingan Skrip&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="n">query_meta&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">jobs&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">solMetadata&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="perbandingan-skrip">Perbandingan Skrip&lt;/h2>
 &lt;h3 id="kode-pertama-dengan-lapply">Kode pertama dengan &lt;code>lapply()&lt;/code>&lt;/h3>
 &lt;p>Untuk skrip pertama saya memanfaatkan fungsi &lt;code>lapply()&lt;/code> yang disediakan oleh pustaka bawaan R yakni base. Agar dapat dibandingkan dengan mudah nantinya saya buat jadi fungsi &lt;code>v1()&lt;/code> saja.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="c1"># method 1&lt;/span>
-&lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
-&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">})&lt;/span>
-&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
-&lt;span class="p">)&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">})&lt;/span>
-&lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">do.call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;bind_rows&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v1&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;span class="n">vacancy1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Konten datanya dibahas di akhir saja, ya&amp;hellip; Kali ini fokus pada perbandingan dua skrip yang saya susun dulu.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># method 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lapply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">do.call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;bind_rows&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vacancy1&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Konten datanya dibahas di akhir saja, ya&amp;hellip; Kali ini fokus pada perbandingan dua skrip yang saya susun dulu.&lt;/p>
 &lt;h3 id="kode-kedua-dengan-for-loop">Kode kedua dengan &lt;code>for&lt;/code> loop&lt;/h3>
 &lt;p>Untuk skrip kedua, saya gunakan &lt;code>for&lt;/code> loop, yakni salah satu metode dasar pada tiap bahasa pemrograman untuk mengiterasi proses pada sequencial vector atau list.&lt;/p>
 &lt;p>Setelah itu, dilanjutkan dengan menggunakan fungsi-fungsi dari pustaka &lt;strong>dplyr&lt;/strong> dan &lt;strong>tidyr&lt;/strong>, juga meminjam fungsi &lt;code>clean_names()&lt;/code> dari &lt;strong>janitor&lt;/strong> untuk hidup lebih mudah. Skrip ini hanya mereplikasi fungsi-fungsi yang berjalan dengan skrip sebelumnya, tentunya dengan penyesuaian karena struktur objek yang diproses jadi berbeda.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="c1"># method 2&lt;/span>
-&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
-&lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="nf">seq_along&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[i]]&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span> &lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">){&lt;/span>
-&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">v&lt;/span>
-&lt;span class="p">}&lt;/span> &lt;span class="n">else&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">bind_rows&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="n">id_cols&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;num&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
-&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;span class="n">vacancy2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="perbandingan">Perbandingan&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># method 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="nf">seq_along&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">unlist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job[[i]]&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">data.frame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as_tibble&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span> &lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">v&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="n">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">bind_rows&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">summarise_all&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="nf">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">ungroup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">pivot_wider&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">id_cols&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;num&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">names_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">values_from&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;value&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">num&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">janitor&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">clean_names&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vacancy2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="perbandingan">Perbandingan&lt;/h3>
 &lt;p>Kedua skrip atau fungsi di atas dibuat agar hasil keluarannya pun menjadi identik. Untuk memeriksanya saya menggunakan fungsi &lt;code>waldo::compare()&lt;/code> seperti berikut.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">waldo&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">compare&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v2&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keterangan bahwa kedua objek &lt;code>v1&lt;/code> dan &lt;code>v2&lt;/code> tidak memiliki perbedaan: ✓ No differences&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">waldo&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">compare&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vacancy1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vacancy2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">x_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_arg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;v2&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keterangan bahwa kedua objek &lt;code>v1&lt;/code> dan &lt;code>v2&lt;/code> tidak memiliki perbedaan: ✓ No differences&lt;/p>
 &lt;p>Kemudian tiba saatnya pada bagian inti, yaitu perbandingan kedua metode di atas, saya menggunakan bantuan dari pustaka &lt;strong>microbenchmark&lt;/strong> dan menyimpan hasilnya dalam variabel &lt;code>b&lt;/code> agar mudah dieksplorasi nantinya.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">b&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keluaran seperti berikut:&lt;/p>
-&lt;pre>&lt;code>Unit: milliseconds
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">b&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Menghasilkan keluaran seperti berikut:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Unit: milliseconds
 expr min lq mean median uq max neval
 v1(job) 940.4223 999.8946 1068.7362 1025.7667 1123.6142 1444.3575 100
 v2(job) 162.2252 171.1944 186.4427 178.5282 189.2315 343.9679 100
 &lt;/code>&lt;/pre>&lt;p>Terjadi 100 kali pengulangan &lt;code>neval&lt;/code> untuk masing-masing expression (&lt;code>expr&lt;/code>), n-evaluation, katakanlah begitu. Parameter default fungsi tersebut memang mengulang operasi sebanyak 100 kali. Untuk jumlah lainnya bisa menggunakan argumen &lt;code>times&lt;/code>. Dapat pula membandingkan hasil dengan boxplot. Berikut statistik untuk 300 kali pengulangan.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">b2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">times&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">300L&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">boxplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">b2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">log&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">FALSE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">horizontal&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ylab&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;Time (millisecond)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://telegra.ph/file/663ca9a54fc2f589f27b4.png" alt="benchmark">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">b2&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">microbenchmark&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">microbenchmark&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">v1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">v2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">job&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">times&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">300L&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">boxplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">b2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">log&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">FALSE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">horizontal&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ylab&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;Time (millisecond)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://telegra.ph/file/663ca9a54fc2f589f27b4.png" alt="benchmark">&lt;/p>
 &lt;p>Dengan for loop sekali di awal dan diikuti dengan &lt;strong>dplyr&lt;/strong> + &lt;strong>tidyr&lt;/strong> tampak lebih konsisten kecepatannya dan lebih baik performanya.&lt;/p>
 &lt;h2 id="merapikan-data">Merapikan Data&lt;/h2>
 &lt;p>Setelah mengetahui baris kode mana yang baik, itulah yang saya simpan sebagai fungsi yang nantinya akan memudahkan jika ingin mengambil data lowongan kerja dari Jobstreet lewat R. Mari kita rapikan sedikit data yang sudah kita kumpulkan.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy2&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="n">id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;job&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">posted_at&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;categories&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">description&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;company&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;employ&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;is_&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;location&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;country&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;salary&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;selling&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">job_title_slug&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">vacancy&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya kurang lebih seperti ini dalam format data.frame kelas &lt;strong>tibble&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code># A tibble: 30 × 23
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="n">vacancy&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">vacancy2&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;job&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">posted_at&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;categories&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">description&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;company&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;employ&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;is_&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;location&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;country&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;salary&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nf">matches&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;selling&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">job_title_slug&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vacancy&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya kurang lebih seperti ini dalam format data.frame kelas &lt;strong>tibble&lt;/strong>:&lt;/p>
+&lt;pre tabindex="0">&lt;code># A tibble: 30 × 23
 id job_title job_url posted_at categories_code categories_name description
 &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt;
 1 3641190 SYSTEM A… https:… 2021-09-… 508, 191 Komputer/Tekno… Design new…
@@ -287,8 +298,8 @@ id job_title job_url posted_at categories_code categories_name description
 # salary_range_max &amp;lt;chr&amp;gt;, salary_range_min &amp;lt;chr&amp;gt;, selling_points1 &amp;lt;chr&amp;gt;,
 # selling_points2 &amp;lt;chr&amp;gt;, selling_points3 &amp;lt;chr&amp;gt;
 &lt;/code>&lt;/pre>&lt;h2 id="session-info">Session Info&lt;/h2>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">sessionInfo&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>R version 4.0.4 (2021-02-15)
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">sessionInfo&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>R version 4.0.4 (2021-02-15)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 20.04.3 LTS
 Matrix products: default
@@ -352,17 +363,16 @@ loaded via a namespace (and not attached):
 &lt;p>&lt;strong>Update:&lt;/strong>&lt;/p>
 &lt;p>Apakah saya sudah boleh bilang kalau target saya yang satu ini juga berhasil setelah saya puasa 2x tanpa keluhan perut? 😸 (alhamdulillah) Nantilah, ya, satu kali lagi pekan ini.&lt;/p></description></item><item><title>QGIS Zürich versi Anaconda</title><link>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</link><pubDate>Thu, 22 Apr 2021 15:54:19 +0700</pubDate><guid>https://akherlan.github.io/qgis-z%C3%BCrich-versi-anaconda/</guid><description>&lt;p>Sore ini saya iseng-iseng cek laman QGIS di channel &lt;a href="https://anaconda.org/conda-forge/qgis">conda-forge&lt;/a>. Lama sudah tidak cek update aplikasi ini karena sekarang juga malah sudah jarang pakai. Saat tulisan ini diketik, bertepatan dengan 3 hari (2 hari 21 jam) QGIS versi 3.18.2 Zürich (non-LTR) rilis versi conda. Masih sangat segar. Tapi sudah ada total unduh sebanyak 341.369 kali waktu saya mulai ikutan unduh juga.&lt;/p>
 &lt;p>Karena saya sudah punya environment conda (Miniconda) dengan nama &lt;code>qgis3&lt;/code> yang khusus saya peruntukkan bagi QGIS agar berjalan lancar tanpa gangguan, maka saya tinggal mutakhirkan saja yang lama ke versi terbaru 3.18.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ conda activate qgis3
-$ conda update -c conda-forge qgis
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Muncul detail semua dependensi yang akan terunduh, yang baru akan diinstal, yang akan dihapus, dst. Lalu saya tekan &lt;code>y&lt;/code> dan &lt;code>Enter&lt;/code>. Tanda setuju melakukan update.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ conda activate qgis3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ conda update -c conda-forge qgis
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Muncul detail semua dependensi yang akan terunduh, yang baru akan diinstal, yang akan dihapus, dst. Lalu saya tekan &lt;code>y&lt;/code> dan &lt;code>Enter&lt;/code>. Tanda setuju melakukan update.&lt;/p>
 &lt;p>Mengapa saya menggunakan QGIS keluaran Anaconda dan tidak menggunakan versi official dengan pasang repository QGIS resmi di komputer saya? Jawabannya, karena dependensi QGIS yang saya instal &lt;a href="https://twitter.com/terusterang__/status/1248900312150106113">pernah konflik&lt;/a> dengan dependensi R untuk analisis spasial, juga dengan aplikasi GIS lainnya.&lt;/p>
 &lt;p>Malaaaaas sekali kalau sudah kacau begitu. Lebih baik saya pisahkan lingkungan kerjanya saja. Mana QGIS ini banyak versinya pula, ada yang nightly lah, ada yang stable, ada yang cuma versi LTR, dan lain-lain. Dan versi dependensinya tentu saja berbeda-beda juga. Nanti beda lagi dengan yang dipakai di R.&lt;/p>
 &lt;p>Sebetulnya saya ingin pasang dan perbarui setiap ada rilis versi LTR saja. Tapi sistem yang terisolasi lebih penting sekarang ketimbang masalah up to date. Sekarang, tinggal jalankan aplikasi QGIS lewat terminal.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ qgis &lt;span class="c1"># dalam environment conda yang terinstal QGIS&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tampilan splash QGIS 3.18 di destop saya:&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/b49f3914333fffce6fc7b.png"
-alt="Running QGIS 3.18 Zürich on Ubuntu"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ qgis &lt;span class="c1"># dalam environment conda yang terinstal QGIS&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tampilan splash QGIS 3.18 di destop saya:&lt;/p>
+&lt;figure>&lt;img src="https://telegra.ph/file/b49f3914333fffce6fc7b.png"
+alt="Running QGIS 3.18 Zürich on Ubuntu"/>&lt;figcaption>
 &lt;p>QGIS 3.18 Zürich di Xubuntu&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -391,15 +401,16 @@ alt="Running QGIS 3.18 Zürich on Ubuntu"/> &lt;figcaption>
 &lt;h2 id="html-ke-markdown">HTML ke Markdown&lt;/h2>
 &lt;p>Sebetulnya saya sudah menginstal &lt;strong>pandoc&lt;/strong> di sistem komputer saya, bisa diakses menggunakan perintah bash dari terminal. Namun karena saya sangat cupu dalam menggunakan bash, makan saya pakai R saja. Saya sudah punya paket &lt;strong>rmarkdown&lt;/strong> di R yang juga merupakan &amp;ldquo;kepanjangan tangan&amp;rdquo; dari pandoc.&lt;/p>
 &lt;p>Kode yang saya gunakan seperti berikut:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;rmarkdown&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;/home/andi/Documents/Notes/Evernote/&amp;#34;&lt;/span>
-&lt;span class="n">files&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">dir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pattern&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">paste0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">files&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="n">out&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">gsub&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;md&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">pandoc_convert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;markdown_strict&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">output&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">out&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Variabel &lt;code>path&lt;/code> merupakan path ke berkas-berkas tulisan saya dalam format HTML, yang kemudian dikonversi menggunakan fungsi &lt;code>pandoc_convert()&lt;/code>. Iya, saya pakai for loop karena berkasnya banyak, tapi tidak terlalu banyak. Variabel &lt;code>out&lt;/code> digunakan untuk mengubah nama yang semula berakhiran &lt;code>*.html&lt;/code> menjadi &lt;code>*.md&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-R" data-lang="R">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;rmarkdown&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="s">&amp;#34;/home/andi/Documents/Notes/Evernote/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">files&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">dir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pattern&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">path&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">paste0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">files&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">for &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="n">in&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">out&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">gsub&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;html&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;md&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">pandoc_convert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;markdown_strict&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">output&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">out&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Variabel &lt;code>path&lt;/code> merupakan path ke berkas-berkas tulisan saya dalam format HTML, yang kemudian dikonversi menggunakan fungsi &lt;code>pandoc_convert()&lt;/code>. Iya, saya pakai for loop karena berkasnya banyak, tapi tidak terlalu banyak. Variabel &lt;code>out&lt;/code> digunakan untuk mengubah nama yang semula berakhiran &lt;code>*.html&lt;/code> menjadi &lt;code>*.md&lt;/code>.&lt;/p>
 &lt;p>Tapi hasilnya masih sedikit &amp;ldquo;cacat&amp;rdquo; karena ada masalah pada encoding berkas. Entahlah. Saya juga nggak ngerti. Setidaknya ini meringankan pekerjaan saya agar tidak copas-copas dari HTML ke markdown bolak-balik secara manual. Nanti kita coba akalin lagi mulai dari sini.&lt;/p></description></item><item><title>Lagu Favorit</title><link>https://akherlan.github.io/lagu-favorit/</link><pubDate>Tue, 06 Apr 2021 02:27:24 +0700</pubDate><guid>https://akherlan.github.io/lagu-favorit/</guid><description>&lt;p>Entah bagaimana Marigold (マリーゴールド / Marigorudo) dari Aimyon jadi lagu yang saya gemari. Baru kenal awal tahun ini. Tentu bukan satu-satunya. Tapi lagu ini salah satu yang suka diulang-ulang. &lt;em>Easy listening&lt;/em>.&lt;/p>
 &lt;p>Versi originalnya gampang dicari. Versi gitar (cover) yang menurut saya bagus ada &lt;a href="https://www.youtube.com/watch?v=yADSqAy80dg">di Youtube&lt;/a>.&lt;/p></description></item><item><title>Podcast Buku Langganan</title><link>https://akherlan.github.io/podcast-buku-langganan/</link><pubDate>Mon, 05 Apr 2021 08:20:47 +0700</pubDate><guid>https://akherlan.github.io/podcast-buku-langganan/</guid><description>&lt;p>Kalau dibandingkan dengan para pembaca buku lain, saya masih termasuk jarang baca buku. Kalau dibandingkan dengan para pendengar podcast, saya termasuk jarang dengar macam-macam podcast. Tapi saya suka dengar orang yang bercerita tentang buku.&lt;/p>
 &lt;p>Podcast favorit saya adalah tentang buku: &lt;a href="https://kepobuku.com">Kepo Buku&lt;/a>.&lt;/p>
@@ -480,35 +491,35 @@ alt="Running QGIS 3.18 Zürich on Ubuntu"/> &lt;figcaption>
 &lt;h2 id="menambah-repositori-its-pointless">Menambah repositori its-pointless&lt;/h2>
 &lt;p>Pertama, kita perlu &lt;code>curl&lt;/code> untuk unduh skrip bash yang sudah dibuatkan untuk kita. Jadi kita bisa menambah repo ini dengan mudah. Enak sekali jadi kita ini.&lt;/p>
 &lt;p>Periksa apakah &lt;code>curl&lt;/code> sudah terinstal.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ dpkg -l &lt;span class="p">|&lt;/span> grep curl
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah didahului &lt;strong>ii&lt;/strong> berarti sudah. Kalau belum, instal dengan cara berikut (kita tidak usah pakai mode root di termux):&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install curl
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah punya, kita akan unduh skrip dan menjalankannya dengan perintah:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
-$ bash setup-pointless-repo.sh
-$ rm setup-pointless-repo.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Repositori its-pointless selesai ditambahkan.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ dpkg -l &lt;span class="p">|&lt;/span> grep curl
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah didahului &lt;strong>ii&lt;/strong> berarti sudah. Kalau belum, instal dengan cara berikut (kita tidak usah pakai mode root di termux):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ pkg install curl
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau sudah punya, kita akan unduh skrip dan menjalankannya dengan perintah:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ bash setup-pointless-repo.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ rm setup-pointless-repo.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Repositori its-pointless selesai ditambahkan.&lt;/p>
 &lt;h2 id="instal-r-di-android">Instal R di Android&lt;/h2>
 &lt;p>Biasanya setelah menambahkan alamat repo baru, kita harus update daftar paketnya. Tapi tadi sudah dilakukan ketika menjalankan skrip. Jadi, daftar paket sudah diperbarui. Berikutnya tinggal instal R.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install r-base
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai. Kemudian tes, apakah sudah berhasil.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ R
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita juga bisa menginstal pustaka &lt;code>tidyverse&lt;/code> di Android. Tapi saya belum tes untuk yang itu. Karena sayang ruang penyimpanannya. Bahkan mungkin di ponsel saya tidak cukup, karena termux menggunakan ruang penyimpanan internal untuk aplikasi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ pkg install r-base
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai. Kemudian tes, apakah sudah berhasil.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ R
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita juga bisa menginstal pustaka &lt;code>tidyverse&lt;/code> di Android. Tapi saya belum tes untuk yang itu. Karena sayang ruang penyimpanannya. Bahkan mungkin di ponsel saya tidak cukup, karena termux menggunakan ruang penyimpanan internal untuk aplikasi.&lt;/p>
 &lt;p>Selain &lt;code>r-base&lt;/code>, its-pointless juga menyediakan &lt;code>gcc-7&lt;/code>, &lt;code>gfortran&lt;/code>, &lt;code>octave&lt;/code>, &lt;code>rustc&lt;/code>, &lt;code>scipy&lt;/code>, dan beberapa &lt;em>games&lt;/em>!&lt;/p>
 &lt;p>Sampai di sini, selamat menggunakan R di Android.&lt;/p>
 &lt;h2 id="video-demo">Video demo&lt;/h2>
 &lt;p>Bisa saksikan di laman &lt;a href="https://youtu.be/kDrc8-2K2DI" title="youtube">Youtube Channel&lt;/a> saya.&lt;/p>
 &lt;h2 id="tips">Tips&lt;/h2>
 &lt;p>Izinkan termux mengakses penyimpanan:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ termux-setup-storage
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.termux.com/wiki/Termux-setup-storage">lebih lanjut&amp;hellip;&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ termux-setup-storage
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.termux.com/wiki/Termux-setup-storage">lebih lanjut&amp;hellip;&lt;/a>&lt;/p>
 &lt;p>Tampilkan tombol-tombol keyboard yang biasanya ada di komputer, tapi di ponsel tidak ada:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ pkg install nano
-$ nano ~/.termux/termux.properties
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copas teks berikut:&lt;/p>
-&lt;pre>&lt;code>extra-keys = [ \
-['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
-['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ pkg install nano
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ nano ~/.termux/termux.properties
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copas teks berikut:&lt;/p>
+&lt;pre tabindex="0">&lt;code>extra-keys = [ \
+[&amp;#39;ESC&amp;#39;,&amp;#39;|&amp;#39;,&amp;#39;/&amp;#39;,&amp;#39;HOME&amp;#39;,&amp;#39;UP&amp;#39;,&amp;#39;END&amp;#39;,&amp;#39;PGUP&amp;#39;,&amp;#39;DEL&amp;#39;], \
+[&amp;#39;TAB&amp;#39;,&amp;#39;CTRL&amp;#39;,&amp;#39;ALT&amp;#39;,&amp;#39;LEFT&amp;#39;,&amp;#39;DOWN&amp;#39;,&amp;#39;RIGHT&amp;#39;,&amp;#39;PGDN&amp;#39;,&amp;#39;BKSP&amp;#39;] \
 ]
 &lt;/code>&lt;/pre>&lt;p>Kemudian &lt;code>Ctrl + S&lt;/code> dan &lt;code>Ctrl + X&lt;/code> lalu restart sesi termux-nya.&lt;/p>
 &lt;p>&lt;a href="https://wiki.termux.com/wiki/Touch_Keyboard">lebih lanjut&amp;hellip;&lt;/a>&lt;/p>
@@ -521,31 +532,29 @@ $ nano ~/.termux/termux.properties
 &lt;p>Apakah cukup jelas?&lt;/p>
 &lt;p>Langkah-langkah yang saya pakai secara teknis adalah seperti berikut:&lt;/p>
 &lt;p>&lt;strong>1. Clone repositori &lt;a href="https://github.com/akherlan/databoard">databoard&lt;/a>&lt;/strong>, saya pakai tautan ssh karena nyaman dan aman.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ mkdir databoard &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">cd&lt;/span> databoard
-$ git clone git@github.com:akherlan/databoard.git master
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tautan repo copas dari bagian ini.&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/163c081da6ad09bece7a8.png"
-alt="clone github repository"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ mkdir databoard &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">cd&lt;/span> databoard
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git clone git@github.com:akherlan/databoard.git master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tautan repo copas dari bagian ini.&lt;/p>
+&lt;figure>&lt;img src="https://telegra.ph/file/163c081da6ad09bece7a8.png"
+alt="clone github repository"/>&lt;figcaption>
 &lt;h4>Gambar 1&lt;/h4>&lt;p>Clone repositori&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>&lt;strong>2. Gandakan hasil clone ke lokal tadi&lt;/strong> menjadi direktori gh-pages.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ cp master gh-pages
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3. Buat branch baru dengan nama &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong> dari repo di direktori gh-pages yang nanti akan diunggah ke upstream &amp;ldquo;origin/gh-pages&amp;rdquo;.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ &lt;span class="nb">cd&lt;/span> gh-pages
-$ git checkout origin/gh-pages -b gh-pages
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ini akan membuat pekerjaan yang dilakukan berpindah dan direkam ke branch &amp;ldquo;gh-pages&amp;rdquo; (bukan &amp;ldquo;master&amp;rdquo; lagi). Periksa dengan:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git branch
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tanda bintang ada di branch &amp;ldquo;gh-pages&amp;rdquo;.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cp master gh-pages
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3. Buat branch baru dengan nama &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong> dari repo di direktori gh-pages yang nanti akan diunggah ke upstream &amp;ldquo;origin/gh-pages&amp;rdquo;.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ &lt;span class="nb">cd&lt;/span> gh-pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git checkout origin/gh-pages -b gh-pages
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ini akan membuat pekerjaan yang dilakukan berpindah dan direkam ke branch &amp;ldquo;gh-pages&amp;rdquo; (bukan &amp;ldquo;master&amp;rdquo; lagi). Periksa dengan:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ git branch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tanda bintang ada di branch &amp;ldquo;gh-pages&amp;rdquo;.&lt;/p>
 &lt;p>&lt;strong>4. Hapus branch &amp;ldquo;master&amp;rdquo; pada direktori gh-pages&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git branch -d master
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>5. Hapus semua isi direktori gh-pages yang ada&lt;/strong> KECUALI direktori &lt;strong>.git&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ git branch -d master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>5. Hapus semua isi direktori gh-pages yang ada&lt;/strong> KECUALI direktori &lt;strong>.git&lt;/strong>&lt;/p>
 &lt;p>&lt;strong>6. Buat proyek laman web statis di direktori lain&lt;/strong>&lt;/p>
 &lt;p>Saya membuat direktori rproj (sebagai &lt;em>child&lt;/em> dari direktori databoard) untuk membangun laman statis ini karena saya membuatnya menggunakan Rmarkdown.&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/90a89fea71e8319069267.png"
-alt="direktori"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/90a89fea71e8319069267.png"
+alt="direktori"/>&lt;figcaption>
 &lt;h4>Gambar 2&lt;/h4>&lt;p>Jadi ada tiga child dir dalam parent dir databoard&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -553,14 +562,13 @@ alt="direktori"/> &lt;figcaption>
 &lt;p>Mengapa tidak membuat alamat render langsung ditujukan ke direktori gh-pages? Karena nanti rekaman git-nya hilang. Rmarkdown akan mengganti/menimpa direktori gh-pages yang ada dan mengisinya dengan berkas-berkas baru hasil render.&lt;/p>
 &lt;p>Sebagai opsi, juga bisa gunakan version control pada direktori rproj ini, kalau diperlukan.&lt;/p>
 &lt;p>&lt;strong>8. Lakukan commit dan push dari branch &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ git add .
-$ git commit -m &lt;span class="s2">&amp;#34;commit pertama untuk gh-pages&amp;#34;&lt;/span>
-$ git push origin gh-pages
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Awas itu setelah &lt;code>add&lt;/code> ada titiknya.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git commit -m &lt;span class="s2">&amp;#34;commit pertama untuk gh-pages&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ git push origin gh-pages
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Awas itu setelah &lt;code>add&lt;/code> ada titiknya.&lt;/p>
 &lt;p>&lt;strong>9. Atur agar Github Pages dijalankan dari branch &amp;ldquo;gh-pages&amp;rdquo;&lt;/strong>&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/55170682f9bf97507e8e7.png"
-alt="github pages"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/55170682f9bf97507e8e7.png"
+alt="github pages"/>&lt;figcaption>
 &lt;h4>Gambar 3&lt;/h4>&lt;p>Pengaturan Github Pages&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -582,55 +590,56 @@ alt="github pages"/> &lt;figcaption>
 &lt;p>Ada beberapa cara untuk membuat dan menyimpan Github PAT ke komputer linux (saya pakai Xubuntu). Seharusnya, di Windows tidak akan jauh berbeda.&lt;/p>
 &lt;h2 id="1-menggunakan-paket-usethis">1. Menggunakan paket usethis&lt;/h2>
 &lt;p>Cara pertama ini adalah yang saya gunakan. Lebih mudah jika dilakukan lewat RStudio. Yang wajib disediakan adalah tentu saja paket &lt;code>usethis&lt;/code>. Jika belum punya, bisa instal dulu dari konsol:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;usethis&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Log in dulu ke akun Github di browser default, agar nanti ketika direct dari RStudio langsung terbuka halaman yang tinggal OK-OK saja. Gunakan perintah ini untuk menuju laman pembuatan token.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">browse_github_pat&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita akan diarahkan ke &lt;a href="https://github.com/settings/tokens/new">laman pembuatan PAT&lt;/a> dan otomatis terisi default yang dibutuhkan. Ini bisa di &lt;em>custom&lt;/em> dulu kalau kita perlukan. Kalau saya sementara biarkan yang sudah terpilih saja. Lalu tekan &amp;ldquo;Generate token&amp;rdquo; yang di paling bawah.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;usethis&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Log in dulu ke akun Github di browser default, agar nanti ketika direct dari RStudio langsung terbuka halaman yang tinggal OK-OK saja. Gunakan perintah ini untuk menuju laman pembuatan token.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">browse_github_pat&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kita akan diarahkan ke &lt;a href="https://github.com/settings/tokens/new">laman pembuatan PAT&lt;/a> dan otomatis terisi default yang dibutuhkan. Ini bisa di &lt;em>custom&lt;/em> dulu kalau kita perlukan. Kalau saya sementara biarkan yang sudah terpilih saja. Lalu tekan &amp;ldquo;Generate token&amp;rdquo; yang di paling bawah.&lt;/p>
 &lt;p>&lt;strong>INI PENTING!&lt;/strong> Jangan lupa copas seluruh 40 karakter acak yang muncul.&lt;/p>
 &lt;p>Berikutnya kita kembali ke jendela RStudio lagi, lalu gunakan perintah berikut untuk menampilkan berkas &lt;code>.Renviron&lt;/code> yang tersimpan di komputer:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">edit_r_environ&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
-&lt;img src="https://telegra.ph/file/2ff4dbf4ba62c842cf3e6.gif"
-alt="R environment"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">usethis&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="nf">edit_r_environ&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;figure>&lt;img src="https://telegra.ph/file/2ff4dbf4ba62c842cf3e6.gif"
+alt="R environment"/>&lt;figcaption>
 &lt;p>Membuka berkas .Renviron&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Akan terbuka berkas &lt;code>.Renviron&lt;/code> yang berada di direktori home. Jika tidak punya, berarti &lt;code>usethis&lt;/code> akan membuatkan berkas ini untukmu. Ketikkan teks berikut di editor skrip yang terbuka:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">GITHUB_PAT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">xxxxxxxxxxxxxx&lt;/span>
-&lt;span class="c1"># ganti xxxxxxxxxxxxxx dengan token yang tadi di copas dari Github&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
-&lt;img src="https://telegra.ph/file/51c0b4e6546f51392d9ff.gif"
-alt="Personal Access Token Github"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">GITHUB_PAT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">xxxxxxxxxxxxxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ganti xxxxxxxxxxxxxx dengan token yang tadi di copas dari Github&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;figure>&lt;img src="https://telegra.ph/file/51c0b4e6546f51392d9ff.gif"
+alt="Personal Access Token Github"/>&lt;figcaption>
 &lt;p>Memasukkan token&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Tanpa tanda kutip ya&amp;hellip;&lt;/p>
 &lt;p>Pastikan satu baris terakhir tersisa kosong (mereka bilang ini &lt;em>new line&lt;/em>). Jangan lupa di simpan. Kalau nggak, percuma tadi capek-capek bikin.&lt;/p>
 &lt;p>Cek, apakah sudah ada?&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">nchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">Sys.getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GITHUB_PAT&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;span class="c1">## [1] 40&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Betul, ada 40 karakter. Berikutnya, kita sudah bisa menggunakan berbagai fungsi dari paket R macam-macam yang membutuhkan akses token Github.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">nchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">Sys.getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GITHUB_PAT&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## [1] 40&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Betul, ada 40 karakter. Berikutnya, kita sudah bisa menggunakan berbagai fungsi dari paket R macam-macam yang membutuhkan akses token Github.&lt;/p>
 &lt;p>Misalnya saya mau koneksikan RStudio dengan &lt;a href="https://github.com/akherlan/dataset/">repositori dataset&lt;/a> yang saya punya.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;pins&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">board_register&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;span class="n">board&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;github&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">repo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;akherlan/dataset&amp;#34;&lt;/span>
-&lt;span class="p">)&lt;/span>
-&lt;span class="n">gempa&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pin_get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;gempa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gempa&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keluaran:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="c1">## # A tibble: 6 x 13&lt;/span>
-&lt;span class="c1">## tanggal waktu lat lon kdlm.KM mag.SR typemag smaj smin az&lt;/span>
-&lt;span class="c1">## &amp;lt;date&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;&lt;/span>
-&lt;span class="c1">## 1 2009-01-01 01:2… 3.73 127. 67 4.6 MLv 10317 1.80e+3 147&lt;/span>
-&lt;span class="c1">## 2 2009-01-01 03:4… -6.84 130. 103 5.2 mb 22841 2.78e+3 48&lt;/span>
-&lt;span class="c1">## 3 2009-01-01 05:2… 1.45 121. 10 5.1 MLv 10432 1.54e+0 121&lt;/span>
-&lt;span class="c1">## 4 2009-01-01 08:4… 1.52 122. 10 4.5 MLv 7557 1.04e+3 136&lt;/span>
-&lt;span class="c1">## 5 2009-01-01 08:5… -8.44 116. 91 3.4 MLv 2699 1.93e-1 261&lt;/span>
-&lt;span class="c1">## 6 2009-01-01 10:3… 1.41 122 34 5 Mw(mB) 84783 9.33e-1 46&lt;/span>
-&lt;span class="c1">## # … with 3 more variables: rms &amp;lt;dbl&amp;gt;, cphase &amp;lt;int&amp;gt;, region &amp;lt;chr&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-tanpa-menggunakan-usethis">2. Tanpa menggunakan usethis&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;pins&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">board_register&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">board&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;github&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">repo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;akherlan/dataset&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">gempa&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">pin_get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;gempa&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;databoard&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gempa&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keluaran:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## # A tibble: 6 x 13&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## tanggal waktu lat lon kdlm.KM mag.SR typemag smaj smin az&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## &amp;lt;date&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 1 2009-01-01 01:2… 3.73 127. 67 4.6 MLv 10317 1.80e+3 147&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 2 2009-01-01 03:4… -6.84 130. 103 5.2 mb 22841 2.78e+3 48&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 3 2009-01-01 05:2… 1.45 121. 10 5.1 MLv 10432 1.54e+0 121&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 4 2009-01-01 08:4… 1.52 122. 10 4.5 MLv 7557 1.04e+3 136&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 5 2009-01-01 08:5… -8.44 116. 91 3.4 MLv 2699 1.93e-1 261&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 6 2009-01-01 10:3… 1.41 122 34 5 Mw(mB) 84783 9.33e-1 46&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## # … with 3 more variables: rms &amp;lt;dbl&amp;gt;, cphase &amp;lt;int&amp;gt;, region &amp;lt;chr&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-tanpa-menggunakan-usethis">2. Tanpa menggunakan usethis&lt;/h2>
 &lt;p>Cara ini adalah cara manual. Mengapa saya bilang manual? Karena semua dilakukan sendiri langkah-langkahnya dan kita menentukan sendiri letak-letak berkasnya, juga akses halamannya cari sendiri. Kasian yah?&lt;/p>
 &lt;p>Tapi dengan cara ini kita nggak perlu instal &lt;code>usethis&lt;/code>.&lt;/p>
 &lt;ol>
@@ -670,33 +679,30 @@ alt="Personal Access Token Github"/> &lt;figcaption>
 &lt;p>Untuk saat ini saya menggunakan cara yang pertama. Langkah yang saya lakukan adalah:&lt;/p>
 &lt;h2 id="1-instal-odbc-drivers-di-komputer-linux">1. Instal odbc drivers di komputer linux&lt;/h2>
 &lt;p>Memasang odbc di Ubuntu dengan mengetikkan perintah berikut:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo apt update
-$ sudo apt install unixodbc unixodbc-dev odbc-postgresql
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setelah itu &amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ sudo apt install unixodbc unixodbc-dev odbc-postgresql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setelah itu &amp;hellip;&lt;/p>
 &lt;h2 id="2-periksa-hasil-instalasi-kita">2. Periksa hasil instalasi kita&lt;/h2>
 &lt;p>Beberapa berkas yang perlu kita tahu dan butuhkan untuk menunjang pengaturan dan kerja paket &lt;code>odbc&lt;/code> di R diantaranya berkas &lt;code>odbcinst.ini&lt;/code> dan &lt;code>odbc.ini&lt;/code>. Di mana mereka?&lt;/p>
 &lt;p>Kita bisa gunakan perintah berikut di terminal:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ odbcinst -j
-&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
-&lt;img src="https://telegra.ph/file/74d5055f0bc6505dec8e1.png"
-alt="terminal command output"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ odbcinst -j
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;figure>&lt;img src="https://telegra.ph/file/74d5055f0bc6505dec8e1.png"
+alt="terminal command output"/>&lt;figcaption>
 &lt;h4>Gambar 1&lt;/h4>&lt;p>Keluaran perintah &lt;code>odbcinst_j&lt;/code>&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Atau dengan cara lain, misalnya:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ locate odbcinst.ini
-$ locate odbc.ini
-&lt;/code>&lt;/pre>&lt;/div>&lt;figure>
-&lt;img src="https://telegra.ph/file/ab7612fe9f5b20325647e.png"
-alt="terminal command output"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ locate odbcinst.ini
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ locate odbc.ini
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;figure>&lt;img src="https://telegra.ph/file/ab7612fe9f5b20325647e.png"
+alt="terminal command output"/>&lt;figcaption>
 &lt;h4>Gambar 2&lt;/h4>&lt;p>Lokasi berkas konfigurasi odbc&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Akan ditampilkan tempat berkas-berkas itu tersimpan.&lt;/p>
 &lt;p>Kemudian coba kita cek apa isi dari berkas &lt;code>odbcinst.ini&lt;/code>. Berikut isinya:&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/a57cc39e019779844a954.png"
-alt="terminal command output"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/a57cc39e019779844a954.png"
+alt="terminal command output"/>&lt;figcaption>
 &lt;h4>Gambar 3&lt;/h4>&lt;p>Print odbcinst.ini&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -706,26 +712,25 @@ alt="terminal command output"/> &lt;figcaption>
 &lt;p>&lt;code>/etc/odbc.ini&lt;/code> menyimpan pengaturan yang bisa digunakan secara global. Artinya bisa diakses oleh semua user di komputer terinstal, tetapi untuk pengaturannya kita membutuhkan akses root.&lt;/p>
 &lt;p>Sedangkan &lt;code>~/.odbc.ini&lt;/code> hanya untuk user tertentu (sesuai lokasi home punya user mana). Kita tidak perlu root untuk ini. Berkasnya disembunyikan di direktori home.&lt;/p>
 &lt;p>Sunting berkas &lt;code>.odbc.ini&lt;/code> milik user menggunakan text editor &lt;code>nano&lt;/code> dengan perintah di terminal:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ nano ~/.odbc.ini
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Isikan detail seperti berikut:&lt;/p>
-&lt;pre>&lt;code>[PostgreSQL]
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ nano ~/.odbc.ini
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Isikan detail seperti berikut:&lt;/p>
+&lt;pre tabindex="0">&lt;code>[PostgreSQL]
 Driver = PostgreSQL Driver
 Database = namaDbKamu
 Servername = localhost
 UserName = usernamekamu
 Password = passwordSayaKamuGabolehTau
 Port = 5432
-&lt;/code>&lt;/pre>&lt;figure>
-&lt;img src="https://telegra.ph/file/6dcbc3daf6344722708d3.png"
-alt="terminal text nano"/> &lt;figcaption>
+&lt;/code>&lt;/pre>&lt;figure>&lt;img src="https://telegra.ph/file/6dcbc3daf6344722708d3.png"
+alt="terminal text nano"/>&lt;figcaption>
 &lt;h4>Gambar 4&lt;/h4>&lt;p>Isi konfigurasi&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Ganti nilai pada bagian &lt;code>Database&lt;/code> dan &lt;code>UserName&lt;/code>, juga pada bagian &lt;code>Password&lt;/code>, sesuai dengan pengaturan basis data PostgreSQL milik teman-teman.&lt;/p>
 &lt;h2 id="4-menginstal-paket-odbc-dan-dbi-di-r">4. Menginstal paket odbc dan DBI di R&lt;/h2>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;odbc&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;DBI&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kemudian restart R session.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;odbc&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;DBI&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kemudian restart R session.&lt;/p>
 &lt;p>Koneksi sudah bisa digunakan&amp;hellip; 😃 Jika ingin simak video demonstrasinya silakan di &lt;a href="https://youtube.com/watch?v=z5tZ1C9SVyo" title="postgresql in rstudio">youtube&lt;/a>.&lt;/p>
 &lt;p>Sekian.&lt;/p>
 &lt;p>&lt;strong>Referensi:&lt;/strong> &lt;a href="https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu">https://db.rstudio.com/best-practices/drivers/#linux-debian-ubuntu&lt;/a>&lt;/p></description></item><item><title>R Di Visual Studio Code</title><link>https://akherlan.github.io/r-di-visual-studio-code/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0700</pubDate><guid>https://akherlan.github.io/r-di-visual-studio-code/</guid><description>&lt;p>&lt;strong>Update&lt;/strong>&lt;/p>
@@ -746,8 +751,8 @@ alt="terminal text nano"/> &lt;figcaption>
 &lt;h2 id="1-siapkan-vs-code">1. Siapkan VS Code&lt;/h2>
 &lt;p>Saya &lt;a href="https://code.visualstudio.com/Download">unduh&lt;/a> dan instal VS Code dulu tentunya. Instalasi di linux Ubuntu semudah mengerjakan skripsi: &lt;em>copas ini saja!&lt;/em> (ups)&lt;/p>
 &lt;p>Ganti bagian &lt;code>~/Downloads/code_x.xx.x-xxxxxx_amd64.deb&lt;/code> dengan direktori tempat teman-teman menyimpan berkas &lt;code>deb&lt;/code>-nya VS Code.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ sudo dpkg -i ~/Downloads/code_x.xx.x-xxxxxx_amd64.deb
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lalu, pergi ke menu, cari Visual Studio Code. Atau di terminal ketikkan &lt;code>code&lt;/code>, enter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo dpkg -i ~/Downloads/code_x.xx.x-xxxxxx_amd64.deb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lalu, pergi ke menu, cari Visual Studio Code. Atau di terminal ketikkan &lt;code>code&lt;/code>, enter.&lt;/p>
 &lt;h2 id="2-instal-ekstensi-r-lsp-client">2. Instal Ekstensi R LSP Client&lt;/h2>
 &lt;p>Cara instal:&lt;/p>
 &lt;ul>
@@ -756,16 +761,14 @@ alt="terminal text nano"/> &lt;figcaption>
 &lt;li>pilih &lt;strong>R LSP Client&lt;/strong> yang dari REditorSupport (nomor 2),&lt;/li>
 &lt;li>lalu klik &amp;ldquo;Install&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/e95a671d8754cf7a1049a.png"
-alt="R in visual studio code"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/e95a671d8754cf7a1049a.png"
+alt="R in visual studio code"/>&lt;figcaption>
 &lt;p>Instal ekstensi R LSP&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Ketika menginstal ternyata ada pesan error yang muncul:&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/8cf9f5a5ebaaf7bbdd9b2.png"
-alt="R in visual studio code"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/8cf9f5a5ebaaf7bbdd9b2.png"
+alt="R in visual studio code"/>&lt;figcaption>
 &lt;p>Galat terjadi karena harus terinstal languageserver di R&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -774,26 +777,23 @@ alt="R in visual studio code"/> &lt;figcaption>
 &lt;p>Instalasinya bisa dari terminal linux, console R di terminal, console R di RStudio, atau terminal yang masuk ke console R dari VS Code.&lt;/p>
 &lt;p>Pilihan terakhir adalah yang saya pilih, biar gak kemana-mana lagi.&lt;/p>
 &lt;p>Di bagian bawah, ada TERMINAL, ketik R (tentu saja R sudah terinstal), kemudian ketikkan:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;languageserver&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai instal, ada beberapa dependensinya juga yang diperlukan. Cas-cis-cus&amp;hellip;&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/fce2613a545270b736a7e.png"
-alt="R in visual studio code"/> &lt;figcaption>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;languageserver&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tunggu sampai selesai instal, ada beberapa dependensinya juga yang diperlukan. Cas-cis-cus&amp;hellip;&lt;/p>
+&lt;figure>&lt;img src="https://telegra.ph/file/fce2613a545270b736a7e.png"
+alt="R in visual studio code"/>&lt;figcaption>
 &lt;p>Instal paket languageserver&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Terakhir, tutup dan buka kembali (restart) VS Code, biar afdhol.&lt;/p>
 &lt;h2 id="4-taraaa">4. Taraaa&amp;hellip;.&lt;/h2>
 &lt;p>&lt;em>Autocompletion&lt;/em> di VS Code untuk bahasa R.&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/1027c969895e737d1ec6d.gif"
-alt="R autocompletion in visual studio code"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/1027c969895e737d1ec6d.gif"
+alt="R autocompletion in visual studio code"/>&lt;figcaption>
 &lt;p>Berhasil. Autocompletion bahasa R di VS Code&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
-&lt;p>Sekian dulu.&lt;/p></description></item><item><title>Lenovo ThinkPad X240 &amp; Xubuntu</title><link>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</link><pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</guid><description>&lt;figure>
-&lt;img src="https://telegra.ph/file/881cdbef185018d82af0b.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;p>Sekian dulu.&lt;/p></description></item><item><title>Lenovo ThinkPad X240 &amp; Xubuntu</title><link>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</link><pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/lenovo-thinkpad-x240-xubuntu/</guid><description>&lt;figure>&lt;img src="https://telegra.ph/file/881cdbef185018d82af0b.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Logo Lenovo Thinkpad&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -812,9 +812,8 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;/ul>
 &lt;h2 id="kondisi-fisik">Kondisi fisik&lt;/h2>
 &lt;p>Kondisinya secara fisik masih bagus. Cuma engsel kanan yang bunyi &lt;em>krek-krek&lt;/em> saat dibuka-tutup. Juga baterainya agak sedikit longgar/goyang. Tapi jarang ada kelihatan lecet.&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/e68377430a720b9e2c8be.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/e68377430a720b9e2c8be.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Fisik bagian atas&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -824,15 +823,13 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;li>&lt;em>Gesture allowed&lt;/em> pada TrackPad, ketika dicoba di Windows 10 (OS bawaan toko) dan Xubuntu 18.04, tidak ada bedanya, sama-sama yahood!&lt;/li>
 &lt;li>TrackPoint, entah ini kelebihan atau bukan karena sebenarnya jarang saya pakai, ini juga berfungsi dengan baik di Xubuntu 18.04.&lt;/li>
 &lt;/ul>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/d761461664a7165c1d309.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/d761461664a7165c1d309.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>TrackPoint&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/b246b5ee83f1e712aa9a5.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/b246b5ee83f1e712aa9a5.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Baterai ganda&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -887,26 +884,23 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/ad129b387588bd9def192.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/ad129b387588bd9def192.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Tombol Fn dengan LED, dekat Ctrl&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>Selain itu malah jadi sangat nyaman:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>PgUp&lt;/code> dan &lt;code>PgDn&lt;/code> yang dekat dengan arrow, memudahkan saat membaca dan skrol halaman.
-&lt;figure>
-&lt;img src="https://telegra.ph/file/bc025e637165a1cda3f5c.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/bc025e637165a1cda3f5c.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Arrow, PgUp, PgDn&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;/li>
 &lt;li>&lt;code>Alt&lt;/code> kanan, &lt;code>PrtSc&lt;/code>, dan &lt;code>Ctrl&lt;/code> kanan yang berdekatan sehingga mudah untuk ambil tangkapan layar. Saya terbiasa dengan &lt;code>shortcut&lt;/code> kombinasi tombol-tombol ini.
-&lt;figure>
-&lt;img src="https://telegra.ph/file/bac94f6f9df7dc8291009.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/bac94f6f9df7dc8291009.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Tombol-tombol shortcut tangkapan layar&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -914,8 +908,8 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;/ul>
 &lt;h2 id="informasi-hardware">Informasi Hardware&lt;/h2>
 &lt;h3 id="prosesor">Prosesor&lt;/h3>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lscpu
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>Architecture: x86_64
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ lscpu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>Architecture: x86_64
 CPU op-mode(s): 32-bit, 64-bit
 Byte Order: Little Endian
 CPU(s): 4
@@ -941,10 +935,10 @@ L3 cache: 3072K
 NUMA node0 CPU(s): 0-3
 Flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
 &lt;/code>&lt;/pre>&lt;h3 id="monitor--audio">Monitor &amp;amp; audio&lt;/h3>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ xdpyinfo &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;dimensions:&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>dimensions: 1366x768 pixels (361x203 millimeters)
-&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lspci -v &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;VGA&amp;#34;&lt;/span> -A &lt;span class="m">12&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b) (prog-if 00 [VGA controller])
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ xdpyinfo &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;dimensions:&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>dimensions: 1366x768 pixels (361x203 millimeters)
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ lspci -v &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;VGA&amp;#34;&lt;/span> -A &lt;span class="m">12&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b) (prog-if 00 [VGA controller])
 Subsystem: Lenovo ThinkPad X240
 Flags: bus master, fast devsel, latency 0, IRQ 48
 Memory at f0000000 (64-bit, non-prefetchable) [size=4M]
@@ -957,8 +951,8 @@ Kernel modules: i915
 00:03.0 Audio device: Intel Corporation Haswell-ULT HD Audio Controller (rev 0b)
 Subsystem: Lenovo ThinkPad X240
 &lt;/code>&lt;/pre>&lt;p>Perangkat lainnya&amp;hellip;&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ lspci
-&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 0b)
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ lspci
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 0b)
 00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b)
 00:03.0 Audio device: Intel Corporation Haswell-ULT HD Audio Controller (rev 0b)
 00:14.0 USB controller: Intel Corporation 8 Series USB xHCI HC (rev 04)
@@ -976,9 +970,8 @@ Subsystem: Lenovo ThinkPad X240
 03:00.0 Network controller: Intel Corporation Wireless 7260 (rev 83)
 &lt;/code>&lt;/pre>&lt;h2 id="sistem-operasi">Sistem operasi&lt;/h2>
 &lt;p>Meskipun tertulis di &lt;em>casing&lt;/em> bahwa mesin laptop Lenovo ini dilengkapi dengan Windows 7 sebagai sistem operasi original, tetapi penjual mendistribusikan mesin second ini dengan sistem operasi Windows 10.&lt;/p>
-&lt;figure>
-&lt;img src="https://telegra.ph/file/68051e814a79300dd9c54.jpg"
-alt="Lenovo ThinkPad"/> &lt;figcaption>
+&lt;figure>&lt;img src="https://telegra.ph/file/68051e814a79300dd9c54.jpg"
+alt="Lenovo ThinkPad"/>&lt;figcaption>
 &lt;p>Casing dengan logo sistem operasi bawaan Windows7&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -989,56 +982,61 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;h2 id="preparation">Preparation&lt;/h2>
 &lt;p>Yang kita butuhkan untuk melakukan ini semua tentu saja &lt;strong>data&lt;/strong> hujan. Saya menyimpannya dalam format &lt;code>.Rda&lt;/code>. Sebenarnya juga bisa dari &lt;code>.csv&lt;/code> atau &lt;code>.xls&lt;/code>, tapi kalau dalam format data R tentu lebih rapi. Jadi saya pakai itu. Data hujan yang saya gunakan ini juga sudah bisa teman-teman akses &lt;a href="#">dari tadi&lt;/a> sebenarnya. Resolusi datanya hujan harian.&lt;/p>
 &lt;p>Selain data, kita juga butuh beberapa paket &lt;em>library&lt;/em> untuk manipulasi. Makna manipulasi di sini bukan &amp;ldquo;memalsukan&amp;rdquo;, tetapi &amp;ldquo;ngotak-ngatik&amp;rdquo;.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="c1"># library yang dibutuhkan&lt;/span>
-&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dplyr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi data&lt;/span>
-&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">lubridate&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi tanggal&lt;/span>
-&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ggplot2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># plot grafik&lt;/span>
-&lt;span class="c1"># memuat data, sesuaikan lokasi file&lt;/span>
-&lt;span class="nf">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;~/R/repo/hujan/data/prc/Raingauge/Precip.Rda&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="c1"># menghilangkan hari yang kosong (aneh, ya?)&lt;/span>
-&lt;span class="n">Precip&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip[&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">]&lt;/span>
-&lt;span class="c1"># kategorisasi nama stasiun&lt;/span>
-&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as.factor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="nf">summary&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Data ini sudah saya rapikan sebelumnya. Agar teman-teman bisa mengakses data ini dari RStudio di komputer masing-masing, silakan sesuaikan nilai &lt;code>&amp;quot;~/R/repo/hujan/data/precip.Rda&amp;quot;&lt;/code> dengan direktori yang tepat sesuai lokasi teman-teman menyimpannya.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># library yang dibutuhkan&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dplyr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">lubridate&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># manipulasi tanggal&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ggplot2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># plot grafik&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># memuat data, sesuaikan lokasi file&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;~/R/repo/hujan/data/prc/Raingauge/Precip.Rda&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># menghilangkan hari yang kosong (aneh, ya?)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Precip&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip[&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># kategorisasi nama stasiun&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">as.factor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">summary&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Data ini sudah saya rapikan sebelumnya. Agar teman-teman bisa mengakses data ini dari RStudio di komputer masing-masing, silakan sesuaikan nilai &lt;code>&amp;quot;~/R/repo/hujan/data/precip.Rda&amp;quot;&lt;/code> dengan direktori yang tepat sesuai lokasi teman-teman menyimpannya.&lt;/p>
 &lt;p>Simpan dalam hati? Oh, jangan.&lt;/p>
 &lt;p>Kembali ke laptop!&lt;/p>
 &lt;p>Kalau diperhatikan dari hasil &lt;code>summary&lt;/code> data, kolom tanggal (&lt;strong>tgl&lt;/strong>) dan kolom curah hujan (&lt;strong>prc&lt;/strong>) sudah tidak ada data kosong (&lt;em>NA&lt;/em>) seperti pada &lt;strong>(LONx, LATy)&lt;/strong>. Tetapi, sebenarnya ada beberapa tanggal yang data hujannya memang kosong. Hanya saja saya hilangkan.&lt;/p>
 &lt;p>Maka berikutnya, kita akan menghitung jumlah stasiun yang punya rekaman data pada hari X. &lt;em>Check it out!&lt;/em>&lt;/p>
 &lt;h2 id="counting-data">Counting Data&lt;/h2>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">summarise&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">as.numeric&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">ifelse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">prc&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">yes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">no&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">))))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">persen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nf">nlevels&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="m">100&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baris kode di atas akan membuat tabel baru bernama &lt;strong>p.mod&lt;/strong>, yang merupakan ringkasan dari tabel &lt;strong>Precip&lt;/strong> dengan nilai-nilai yang kita butuhkan untuk membuat visualisasi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="n">Precip&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">summarise&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">as.numeric&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">ifelse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">is.na&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">prc&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">yes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">no&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">))))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">persen&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">count&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nf">nlevels&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Precip&lt;/span>&lt;span class="o">$&lt;/span>&lt;span class="n">NamaStasiun&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="m">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baris kode di atas akan membuat tabel baru bernama &lt;strong>p.mod&lt;/strong>, yang merupakan ringkasan dari tabel &lt;strong>Precip&lt;/strong> dengan nilai-nilai yang kita butuhkan untuk membuat visualisasi.&lt;/p>
 &lt;ol>
 &lt;li>Bagian &lt;code>count = ...&lt;/code> bertujuan untuk membuat kolom baru yang berisi hasil hitungan jumlah data. Jika pada hari X stasiun hujan Q memiliki rekaman data, maka dihitung satu. Termasuk data nol (0 bukan NA).&lt;/li>
 &lt;li>Bagian &lt;code>persen = ...&lt;/code> adalah untuk membuat kolom baru yang berisi perhitungan persentase data hujan harian yang tersedia dari ke-19 stasiun hujan yang digunakan datanya. Jumlah stasiun yang punya data harian (nilai dalam masing-masing cell pada kolom &lt;strong>count&lt;/strong>) dibagi dengan jumlah stasiun (&lt;code>nlevels(Precip$NamaStasiun)&lt;/code>) kemudian dikali 100 persen.&lt;/li>
 &lt;/ol>
 &lt;p>Kalau kita lihat struktur tabel &lt;strong>p.mod&lt;/strong> itu seperti berikut.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># struktur data&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau dilihat dalam bentuk tabel, seperti di bawah ini.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># menampilkan 6 rekaman data teratas&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="plotting">Plotting&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># struktur data&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kalau dilihat dalam bentuk tabel, seperti di bawah ini.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">head&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p.mod&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># menampilkan 6 rekaman data teratas&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="plotting">Plotting&lt;/h2>
 &lt;p>Tiba saatnya untuk &lt;em>plotting&lt;/em> grafik. Waktu yang ditunggu-tunggu. Berikut baris data yang digunakan.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">month&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">label&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">abbr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">tahun&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">year&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">hari&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">wday&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">label&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">pekan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">ceiling&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">day&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="m">7&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tahun&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
-&lt;span class="nf">ggplot&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">fill&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">persen&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
-&lt;span class="nf">geom_tile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">colour&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;white&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
-&lt;span class="nf">facet_grid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tahun&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
-&lt;span class="nf">scale_fill_gradient2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">low&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">mid&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;yellow&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;red&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;span class="n">na.value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;grey70&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">midpoint&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">50&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
-&lt;span class="nf">theme&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">axis.title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
-&lt;span class="n">axis.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
-&lt;span class="n">axis.ticks&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
-&lt;span class="n">strip.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">strip.text.y&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;span class="n">panel.spacing&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">unit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;lines&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Taraaaaa, jadi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="n">p.mod&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">mutate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">month&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">label&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">abbr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tahun&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">year&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hari&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">wday&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">label&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">TRUE&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">pekan&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">ceiling&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">day&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tgl&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="m">7&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">group_by&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tahun&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">%&amp;gt;%&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">ggplot&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nf">aes&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="n">hari&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pekan&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">fill&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">persen&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">geom_tile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">colour&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;white&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">facet_grid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tahun&lt;/span>&lt;span class="o">~&lt;/span>&lt;span class="n">bulan&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">scale_fill_gradient2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">low&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">mid&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;yellow&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">high&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;red&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">na.value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;grey70&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">midpoint&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">50&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">theme&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">axis.title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">axis.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">axis.ticks&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_blank&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">strip.text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">strip.text.y&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nf">element_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">angle&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">panel.spacing&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">unit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;lines&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Taraaaaa, jadi.&lt;/p>
 &lt;script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-post="teknologimasagitu/11" data-width="100%" data-userpic="false">&lt;/script>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
 &lt;p>Hhmmm&amp;hellip; Data paling lengkap sepertinya pada 2009. Sepakat? Atau kita eliminasi saja stasiun hujannya. Hahaha&amp;hellip; Pada 2013 terjadi ke-ompong-an. Kita pakai 2004-2009 saja, bagaimana?&lt;/p>
@@ -1054,39 +1052,39 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;p>Tapi saya jadi pingin belajar, lho!&lt;/p>
 &lt;h2 id="antarmuka-ruby-irb">Antarmuka Ruby: irb&lt;/h2>
 &lt;p>Ruby di Ubuntu saya menggunakan &lt;strong>irb&lt;/strong> atau katakanlah &lt;em>&amp;ldquo;Interface Ruby&amp;rdquo;&lt;/em> lewat terminal emulator. Tandanya sudah jalan, begini:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Cara masuk ke antarmuka ini tinggal ketikkan &lt;code>irb&lt;/code> di terminal kesayanganmu.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Cara masuk ke antarmuka ini tinggal ketikkan &lt;code>irb&lt;/code> di terminal kesayanganmu.&lt;/p>
 &lt;h2 id="hello-world">Hello World!&lt;/h2>
 &lt;p>Yang pertama saya pelajari tentu saja &lt;code>&amp;quot;Hello world!&amp;quot;&lt;/code>. Bagaimana?&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya?&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
-&lt;span class="no">Hello&lt;/span> &lt;span class="n">world!&lt;/span>
-&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tentu saja saya langsung lanjut ke materi berikutnya karena langsung bisa. Selanjutnya belajar aritmatika sederhana.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">001&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;Hello world!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="no">Hello&lt;/span> &lt;span class="n">world!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tentu saja saya langsung lanjut ke materi berikutnya karena langsung bisa. Selanjutnya belajar aritmatika sederhana.&lt;/p>
 &lt;h2 id="operasi-aritmatika">Operasi Aritmatika&lt;/h2>
 &lt;p>Operasi yang mirip dengan bahasa pemrograman lainnya seperti &lt;code>+&lt;/code>, &lt;code>-&lt;/code>, &lt;code>*&lt;/code>, &lt;code>/&lt;/code>, &lt;code>**&lt;/code>, &lt;code>%&lt;/code>, tapi untuk akar dipakai &lt;code>Math.sqrt()&lt;/code>. Kenapa begitu? Nanti saya belajar lagi. Dijelaskan oleh tutorial. Tapi saya kurang perhatikan. Hehe&amp;hellip; Nanti saja di-&lt;em>update&lt;/em> artikel ini.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">002&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
-&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">4&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nah, lo! Tadi ada &lt;code>==&amp;gt; nil&lt;/code> begitu. Sekarang nggak. Coba lagi:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya seperti ini:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">003&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
-&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Coba kita balik lagi ke yang string tadi.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">004&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
-&lt;span class="n">saya&lt;/span> &lt;span class="n">siapa&lt;/span>
-&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baiklah, tapi kalau begini:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maka hasilnya menjadi:&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">005&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
-&lt;span class="n">saya&lt;/span> &lt;span class="n">andi&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Oke. Lanjut nulis nanti lagi. Sudah malam dan lelah.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">002&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nah, lo! Tadi ada &lt;code>==&amp;gt; nil&lt;/code> begitu. Sekarang nggak. Coba lagi:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya seperti ini:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">003&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">6&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Coba kita balik lagi ke yang string tadi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hasilnya:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">004&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">puts&lt;/span> &lt;span class="s2">&amp;#34;saya siapa&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">saya&lt;/span> &lt;span class="n">siapa&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baiklah, tapi kalau begini:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maka hasilnya menjadi:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-ruby" data-lang="ruby">&lt;span class="line">&lt;span class="cl">&lt;span class="n">irb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">):&lt;/span>&lt;span class="mo">005&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nb">print&lt;/span> &lt;span class="s2">&amp;#34;saya andi&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">saya&lt;/span> &lt;span class="n">andi&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="kp">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Oke. Lanjut nulis nanti lagi. Sudah malam dan lelah.&lt;/p>
 &lt;p>Bye!&lt;/p></description></item><item><title>Pemeliharaan Sungai</title><link>https://akherlan.github.io/pemeliharaan-sungai/</link><pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate><guid>https://akherlan.github.io/pemeliharaan-sungai/</guid><description>&lt;p>&lt;em>Merupakan topik basi, secara politis, yang diambil jadi bahan diskusi dalam kelas yang menyita waktu.&lt;/em>&lt;/p>
 &lt;p>&lt;em>Judul sebelumnya: Naturalisasi, Normalisasi, Restorasi dalam Bingkai Pemeliharaan Sungai&lt;/em>&lt;/p>
 &lt;hr>
@@ -1101,7 +1099,7 @@ alt="Lenovo ThinkPad"/> &lt;figcaption>
 &lt;li>&lt;strong>restorasi kelembagaan&lt;/strong>, fokus membuat peraturan-peraturan yang menjaga kelestarian sungai&lt;/li>
 &lt;/ol>
 &lt;p>Jika diperhatikan, dalam konsep tersebut disebutkan bahwa kelembagaan dan peraturan juga merupakan koponen yang mendukung restorasi sehingga sah-sah saja apabila Anies membuat suatu peraturan berkaitan dengan restorasi sungai dengan nama baru: naturalisasi sungai, untuk membedakannya dari kegiatan pembetonan yang notabene hal yang berlawanan dari konsep restorasi.&lt;/p>
-&lt;p>Normalisasi sungai juga sebetulnya merupakan hal yang sama, yakni upaya restorasi sungai. Definisi ini bisa ditemukan di Peraturan Daerah Khusus Ibu Kota Jakarta Nomor 6 Tahun 1999 tentang Rencana Tata Ruang Wilayah Daerah Khusus Ibukota Jakarta. Penjelasan Pasal 21 tentang normalisasi yakni: &lt;em>&amp;ldquo;Normalisasi sungai adalah upaya yang dilakukan terhadap badan sungai sehingga kapasitas badan sungai sesuai dengan debit air yang diinginkan dengan masih mempertahankan pola alamiah sungainya.&amp;quot;&lt;/em>&lt;/p>
+&lt;p>Normalisasi sungai juga sebetulnya merupakan hal yang sama, yakni upaya restorasi sungai. Definisi ini bisa ditemukan di Peraturan Daerah Khusus Ibu Kota Jakarta Nomor 6 Tahun 1999 tentang Rencana Tata Ruang Wilayah Daerah Khusus Ibukota Jakarta. Penjelasan Pasal 21 tentang normalisasi yakni: &lt;em>&amp;ldquo;Normalisasi sungai adalah upaya yang dilakukan terhadap badan sungai sehingga kapasitas badan sungai sesuai dengan debit air yang diinginkan dengan masih mempertahankan pola alamiah sungainya.&amp;rdquo;&lt;/em>&lt;/p>
 &lt;p>Naturalisasi, normalisasi, atau restorasi sungai ini berangkat dari keinginan untuk meningkatkan nilai kelestarian sungai agar berfungsi sebagaimana mestinya. Proses ini sangat baik dilakukan sejak dini, bahkan harus. Pada sungai-sungai di wilayah Eropa sudah &lt;a href="http://www.ecrr.org/RiverRestoration/Whatisriverrestoration/tabid/2614/Default.aspx">dilakukan restorasi&lt;/a> setelah sebelumnya sempat dilakukan rekayasa. Kasus tersebut dapat dijadikan contoh. Beberapa penelitian tentang restorasi sungai di Eropa dapat dibaca &lt;a href="http://ec.europa.eu/environment/life/project/Projects/index.cfm?fuseaction=home.showFile&amp;amp;rep=file&amp;amp;fil=ECRR_conference_river_restoration_2000.pdf">di sini&lt;/a>.&lt;/p>
 &lt;p>Perlu diingat bahwa restorasi sungai tentu saja butuh proses yang tidak instan. Tidak jarang–untuk tidak mengatakan pasti–akan diperlukan tindakan lain pada sungai dengan rekayasa infrastruktur, misalnya pada segmen-segmen tertentu yang memang tidak mungkin dilakukan restorasi dalam waktu singkat, serta pembebasan lahan di titik-titik tertentu bantaran sungai. Karena pada kasus Ciliwung fokus utama yang tidak dapat disingkirkan adalah menyelesaikan perkara banjir.&lt;/p>
 &lt;p>Yang juga perlu dipikirkan adalah bagaimana kesadaran masyarakat di sekitar bantaran sungai dapat meningkat dan mendukung terjadinya restorasi, seperti salah satu item pada konsep yang diutarakan Agus.&lt;/p>
