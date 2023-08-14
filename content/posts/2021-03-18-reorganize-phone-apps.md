@@ -17,9 +17,7 @@ Instagram sudah jelas aplikasi terlarang, seharusnya, sejak dulu. Karena banyak 
 
 Saya masih sering baca di Medium dan menulis juga di situ. Tapi seringkali saya menulis lewat laptop. Lagipula saya punya rencana untuk pindah menulis rutin di bear.blog ini. Mungkin beberapa artikel yang bisa dipamerkan dan ingin dapat audiens lebih luas baru ditulis di Medium. Hahahaha...
 
-Kalau untuk membaca, di Medium seringkali bentrok dengan *paywall* artikel berbintang karena saya tidak berlangganan. Jadi lebih baik baca lewat incognito mode dari peramban Chrome saja. OK? Chrome adalah peramban bawaan Samsung yang tidak bisa saya hapus. Sedih memang. Harusnya saya ingin pakai Firefox saja.
-
-> Judulnya: memanfaatkan fasilitas bawaan.
+Kalau untuk membaca, di Medium seringkali bentrok dengan *paywall* artikel berbintang karena saya tidak berlangganan. Jadi lebih baik baca lewat incognito mode dari peramban Chrome saja. OK? Chrome adalah peramban bawaan Samsung yang tidak bisa saya hapus. Sedih memang. Harusnya saya ingin pakai Firefox saja. Judulnya: {{< annotate "memanfaatkan fasilitas bawaan." >}}
 
 Cara lain membaca artikel *paywall* Medium adalah dari instant view lewat Telegram for Android. Kalau tulisan bagus, simpan di Pocket. Supaya bisa dibuat *highlight*. Begitu rencananya. Memang fasilitas Medium yang saya sangat sukai adalah *highlight* kalimat! Dengan Pocket jadi sudah tergantikan. Apalagi bisa untuk semua artikel, bukan cuma dari Medium.
 
@@ -33,5 +31,3 @@ Saya juga nyaman ganti ke aplikasi penerjemah bawaan Samsung yang nggak bisa di 
 
 Apa lagi ya? Itu aja sih...
 
-----
-*Tulisan ini diimpor dari bearblog.dev*

@@ -11,15 +11,15 @@ Data yang saya gunakan merupakan hasil mengumpulkan invoice dari Gojek yang diki
 
 ![time with gojek](https://raw.githubusercontent.com/akherlan/gojek/main/figs/clock.png)
 
-Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total lama waktu perjalanan saya sudah hampir dua harian terhitung sejak 2018 hingga saat tulisan ini ditulis.
+Saya tidak terlalu rutin menggunakan moda transporasi ini. Namun total {{< annotate underline "lama waktu perjalanan" >}} saya sudah hampir {{< annotate underline "dua harian" >}} terhitung sejak 2018 hingga saat tulisan ini ditulis.
 
-Waktu perjalanan paling sering adalah ketika malam hari antara pukul sembilanan hingga pukul sepuluhan, juga saat pagi menjelang siang.
+Waktu perjalanan {{< annotate underline "paling sering" >}} adalah ketika {{< annotate underline "malam hari" >}} antara pukul sembilanan hingga pukul sepuluhan, juga saat {{< annotate underline "pagi menjelang siang" >}}.
 
 ### Jarak
 
 ![movement with gojek](https://raw.githubusercontent.com/akherlan/gojek/main/figs/distance_map.png)
 
-Dengan Gojek saya sudah melaju seolah-olah mulai dari ujung Barat pulau Jawa hingga ke ujung Timurnya. Saya paling sering melakukan perjalanan dengan jarak yang bisa dicapai dalam 5-10 menitan.
+Dengan Gojek saya sudah melaju seolah-olah mulai dari ujung Barat pulau Jawa hingga ke ujung Timurnya. Saya paling sering melakukan {{< annotate underline "perjalanan dengan jarak yang bisa dicapai dalam 5-10 menitan" >}}.
 
 Ada saatnya beberapa kali saya menempuh perjalanan yang cukup jauh yaitu ketika terlambat mengejar jadwal kereta terakhir dari Sudirman menuju Depok, juga ketika pindah kosan dari Srengseng Jakarta Barat kembali ke Depok.
 
@@ -29,7 +29,7 @@ Namun ada beberapa data yang "aneh" dan tidak masuk akal karena durasi perjalana
 
 ![effort with gojek](https://raw.githubusercontent.com/akherlan/gojek/main/figs/needs.png)
 
-Perjalanan terbanyak ketika ng-Gojek adalah dari stasiun (atau halte) untuk pulang, disusul oleh perjalanan pulang selepas beraktivitas di luar selain kerja.
+Perjalanan terbanyak ketika ng-Gojek adalah {{< annotate underline "dari stasiun (atau halte) untuk pulang," >}} disusul oleh perjalanan pulang selepas beraktivitas di luar selain kerja.
 
 Ada hubungan yang erat antara kantor dengan aktivitas transit, dihubungkan dengan aktivitas ng-Gojek.
 
@@ -41,7 +41,7 @@ Pertanyaan berikutnya adalah kenapa ada perjalanan dari rumah ke rumah? Punya ru
 
 ![expenses with gojek](https://raw.githubusercontent.com/akherlan/gojek/main/figs/cost.png)
 
-Biaya dalam tapmilan grafik ini belum termasuk dengan penggunaan GoBills untuk BPJS, pulsa, dll. apalagi dengan GoFood. Belum. Jika saya harus menggunakan uang tunai saat bepergian kemungkinan karena saya kehabisan GoPay saat berada di luar rumah, bisa diperhatikan melalui grafik sebelumnya.
+Biaya dalam tampilan grafik ini {{< annotate underline "belum termasuk dengan penggunaan GoBills" >}} untuk BPJS, pulsa, dll. apalagi dengan GoFood. Belum. Jika saya harus menggunakan uang tunai saat bepergian kemungkinan karena saya kehabisan GoPay saat berada di luar rumah, bisa diperhatikan melalui grafik sebelumnya.
 
 Setelah ini apalagi yang bisa dieksplorasi?
 
