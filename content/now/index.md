@@ -16,8 +16,8 @@ Saya selalu berusaha menikmati hidup dengan segala proses yang ada di dalamnya, 
 
 ----
 
-<span style='color:#d72323'>**Pembaruan terakhir: 2022-10-13**</span>
+**{{< annotate "Pembaruan terakhir: 2022-10-13" >}}**
 
-*Saya menggunakan laman ini untuk selalu ingat dan fokus pada hal yang sedang saya kerjakan. Juga untuk penyemangat agar selalu memperbaiki hidup. Sekaligus untuk menjawab pertanyaan teman-teman di chat. Mungkin kamu juga sering dapat pertanyaan seperti:* **"Lagi sibuk apa sekarang?"**
+*Saya menggunakan laman ini untuk selalu ingat dan fokus pada hal yang sedang saya kerjakan. Juga untuk penyemangat agar selalu memperbaiki hidup. Sekaligus untuk menjawab pertanyaan teman-teman di chat. Mungkin kamu juga sering dapat pertanyaan seperti:* **{{< annotate "circle" "Lagi sibuk apa sekarang?" >}}**
 
 *Mereka di [nownownow](https://nownownow.com/about) juga bikin yang serupa.*

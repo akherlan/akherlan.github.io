@@ -1,8 +1,8 @@
 baseURL = "https://akherlan.github.io/"
 languageCode = "id-id"
-theme = "etch"
+theme = "etch-notation"
 title = "Notebook"
-# enableInlineShortcodes = true
+enableInlineShortcodes = true
 enableEmoji = true
 # use class names instead of directly inserting color codes
 pygmentsUseClasses = true
