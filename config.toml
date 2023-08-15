@@ -2,12 +2,14 @@ baseURL = "https://akherlan.github.io/"
 languageCode = "id-id"
 theme = "etch-notation"
 title = "Notebook"
+paginate = 10
 enableInlineShortcodes = true
 enableEmoji = true
 # use class names instead of directly inserting color codes
 pygmentsUseClasses = true
 # enable GitHub style code snippets
 pygmentsCodeFences = true
+defaultContentLanguage = 'id'
 
 [params]
 	description = "Catatan kecil Andi."

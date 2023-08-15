@@ -1,0 +1,33 @@
+# Learn how to use Date format (date, created, updated)
+# -> https://gohugo.io/functions/dateformat/
+
+[posts]
+
+[posts.title]
+other = "Catatan"
+
+[posts.date]
+other = "2 Jan 2006"
+
+
+[post]
+
+[post.created]
+other = "2 January 2006"
+
+[post.updated]
+other = "Pembaruan 2 January 2006"
+
+
+[pagination]
+
+[pagination.newer]
+other = "Catatan baru"
+
+[pagination.older]
+other = "Catatan lama"
+
+# 404.html
+[not.found]
+other = "Sepertinya kamu tersesat."
+
