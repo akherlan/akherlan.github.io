@@ -14,7 +14,7 @@ defaultContentLanguage = 'id'
 [params]
 	description = "Catatan kecil Andi."
 	copyright = "Powered by Hugo and Github Page."
-	dark = "off"
+	dark = "auto"
 	highlight = true
 
 [menu]
