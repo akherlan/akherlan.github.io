@@ -1,10 +1,12 @@
 ---
-title: "Hubungan saya dengan buku"
+title: "Hubungan saya dengan bacaan"
 ---
 
-Sejujurnya saya lebih sering membaca artikel di internet seperti orang pada umumnya di zaman sekarang daripada membaca buku. Saya membaca dari berbagai sumber dan menyimpan artikel daring di aplikasi [Pocket](https://getpocket.com/@f03A6g7ad4675T44c3peW73p98T5dm0l469B2ek010zcQ9n2fR893gd4iW8dgemn).
+Sejujurnya saya lebih sering membaca artikel di internet seperti orang pada umumnya di zaman sekarang daripada membaca buku. Saya membaca dari berbagai sumber dan menyimpan artikel daring di aplikasi [Raindrop](https://raindrop.io/).
 
-Tapi saya masih membaca buku. Untuk saat ini buku cetak atau buku fisik. Ada niatan ingin beli Kindle Paperwhite. Tapi mungkin nanti dulu.
+Kebanyakan topik artikel yang saya baca berkenaan dengan pengembangan piranti lunak, pengelolaan data, bisnis, dan produktivitas.
+
+Tapi saya juga masih membaca buku. Untuk saat ini buku dalam bentuk cetak atau buku fisik. Ada niatan ingin beli Kindle Paperwhite. Tapi mungkin nanti dulu.
 
 Buku-buku yang sedang saya baca:
 
@@ -16,6 +18,8 @@ Buku-buku yang sedang saya baca:
 - **Money the Millenial Ways** oleh Astrid Savitri | [beli](https://mizanstore.com/money_the_millenial_ways_68437)
 - Paper dan jurnal ilmiah :mask:
 
-Saya punya niatan untuk menjual kembali buku-buku yang sudah saya selesaikan. Tapi masih bingung bagaimana cara menjualnya. Kalau kalian berminat membeli buku dengan harga *cincay*, boleh kontak saya di [email](mailto:andiherlan@pm.me) atau [Telegram](https://t.me/akherlan).
+Nggak banyak memang.
+
+Saya punya niatan untuk menjual kembali buku-buku yang sudah saya selesaikan. Tapi masih bingung bagaimana cara menjualnya. Kalau kalian berminat membeli buku dengan harga *cincay*, boleh kontak saya di [email](mailto:getdata@duck.com) atau [Telegram](https://t.me/akherlan).
 
 Saya juga kadang mendengarkan [podcast](../podcast-buku-langganan/) tentang buku.

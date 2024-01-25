@@ -1,4 +1,4 @@
 ---
 title: "Notebook"
 ---
-Catatan kecil Andi ─ [Profil](https://www.linkedin.com/in/andiherlan/)
+Sedikit dari apa yang bisa saya bagikan. Apa yang saya kerjakan. Dan apa yang saya pikirkan. Untuk relasi profesional silakan ke [LinkedIn](https://www.linkedin.com/in/andiherlan/).

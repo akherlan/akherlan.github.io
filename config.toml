@@ -33,18 +33,25 @@ defaultContentLanguage = 'id'
 		weight = 11
 
 	[[menu.main]]
+		identifier = "roadmap"
+		name = "roadmap"
+		title = "roadmap"
+		url = "/roadmap/"
+		weight = 12
+
+	[[menu.main]]
 		identifier = "read"
 		name = "read"
 		title = "read"
 		url = "/read/"
-		weight = 12
+		weight = 13
 
 	[[menu.main]]
 		identifier = "rss"
 		name = "rss"
 		title = "rss"
 		url = "/index.xml"
-		weight = 13
+		weight = 14
 
 [permalinks]
 	posts = "/:title/"
